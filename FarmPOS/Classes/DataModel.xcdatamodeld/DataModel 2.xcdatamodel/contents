@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16B2659" minimumToolsVersion="Xcode 8.0" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FPCDCSA" representedClassName="FPCDCSA" syncable="YES">
+        <attribute name="id" attributeType="Integer 64" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="limit" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="customer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FPCDCustomer" inverseName="csas" inverseEntity="FPCDCustomer" syncable="YES"/>
+        <relationship name="productDescriptor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FPCDProductDescriptor" inverseName="csas" inverseEntity="FPCDProductDescriptor" syncable="YES"/>
+    </entity>
+    <entity name="FPCDCustomer" representedClassName="FPCDCustomer" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="balance" attributeType="Double" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" attributeType="String" syncable="YES"/>
+        <attribute name="farmBucks" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="hasCreditCard" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="hasOverdueBalance" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 64" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="phone" attributeType="String" syncable="YES"/>
+        <attribute name="phoneHome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pin" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="synchronized" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="wholesale" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="zip" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="csas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FPCDCSA" inverseName="customer" inverseEntity="FPCDCSA" syncable="YES"/>
+        <relationship name="productDescriptors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FPCDProductDescriptor" inverseName="customer" inverseEntity="FPCDProductDescriptor" syncable="YES"/>
+    </entity>
+    <entity name="FPCDProductDescriptor" representedClassName="FPCDProductDescriptor" syncable="YES">
+        <attribute name="discountPrice" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="productId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="csas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FPCDCSA" inverseName="productDescriptor" inverseEntity="FPCDCSA" syncable="YES"/>
+        <relationship name="customer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FPCDCustomer" inverseName="productDescriptors" inverseEntity="FPCDCustomer" syncable="YES"/>
+    </entity>
+    <entity name="FPCDPurchase" representedClassName="FPCDPurchase" syncable="YES">
+        <attribute name="clientId" optional="YES" attributeType="Integer 64" defaultValueString="-500000" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="params" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="FPCDCSA" positionX="-63" positionY="99" width="128" height="135"/>
+        <element name="FPCDCustomer" positionX="-63" positionY="-18" width="128" height="315"/>
+        <element name="FPCDProductDescriptor" positionX="-45" positionY="117" width="128" height="103"/>
+        <element name="FPCDPurchase" positionX="-36" positionY="126" width="128" height="75"/>
+    </elements>
+</model>

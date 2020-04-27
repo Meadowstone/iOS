@@ -1,0 +1,23 @@
+platform :ios, '8.0'
+use_frameworks!
+inhibit_all_warnings!
+
+def pods_to_add
+    pod 'MMDrawerController', '0.6.0'
+    pod 'AFNetworking', '2.5.4'
+    pod 'MBProgressHUD', '0.9.1'
+    pod 'SDWebImage', '3.7.3'
+    pod 'SVPullToRefresh', '0.4.1'
+    pod 'CardFlight', '2.0.6'
+    pod 'Harpy', '3.3.8'
+    pod 'Fabric', '1.6.11'
+    pod 'Crashlytics', '3.8.3'
+end
+
+target 'Farmstand Cart' do
+    pods_to_add
+end
+
+target 'FPOS Dev' do
+    pods_to_add
+end

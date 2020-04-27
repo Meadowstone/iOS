@@ -1,0 +1,78 @@
+- Wire usable interface to Products and Cart -> Search - Done
+- Implement cart view - Done
+- Implement product view controller - Done
+- Add binding logic to refreh products (discount prices, csa) - Done
+- Add category headers - Done
+- Add CSA limit calculations - Done
+- Complete Credit Cards controller - Done
+- Add session management - Done
+- Implement auxiliary controllers:
+    - Help - Done
+    - Gift Cards - Done
+    - Manage balance - Done
+    - Orders - Done
+    - Transactions - Done
+    - Void transactions - Done
+    - Customers - Done
+- Implement purchase checkout controller - Done
+- Implement payment options controller - Done
+- Add cleanup after successful purchase - Done
+- Replace green with red on Void Transaction button - Done
+- Restore search for Customers - Done
+- Implement offline orders processing:
+    - Sync Farm Workers, Customers, Products and Measurements - Done
+    - Store unprocessed purchases locally - Done
+    - Add request that will process multiple payments simultaneously - Done
+    - Monitor reachability status changes to resync unprocessed purchases - Done
+- Rework db sync - timer based approach - Done
+- Invalid balance processing on checkout - Done
+- Add Manage balance screen on customer auth - Done
+- Fix crashes on Orders and Voiding transactions - LGTM
+
+- Repalace SVProgressHUD with MBProgressHUD throughout the project - Done
+- Move all the data caching to CoreData
+
+- Add iPhone support:
+    - Create categories view controller - Done
+    - Create Orders controller - Done
+    - Create products view controller: - Base Done
+        - Complete Customers branch: - Done
+            - Complete Credit Card branch - Done
+            - Complete Transactions branch - Done
+        - Add CSA headers - Done
+        - Create view controller to add new products (Advanced)
+    - Create Checkout screen:
+        - Implement payment controllers - Done
+        - Implement gift card redeem mechanism - Done
+        
+        
+Changelog:
+- FI-42
+- FIP-7 (+ Ability to edit products)
+- FIP-8
+
+
+Changelog:
+- Fixed customer address bug that would display their address on Checkout screen as a set of "None" words
+
+Changelog:
+- Changed the welcome screen layout: moved the farm worker login to the bottom right, made it much less prominent
+- Added Help button to navigation
+- Removed customer balance payments / gift cards if appropriate option is toggled from the backend
+- Added a "Welcome <name>. Balance: $<sum>" message for logged in customers at the middle of the navigation bar
+- Changed "Enter quantity" to "Enter weight" for pounds
+- Reworked the popover of PIN code selection in customer creation controller, made them cover their own numbers and not get in the way
+
+Changelog:
+- Improved the logics behind app showing whether there are any updates available or not. Rebound the update date from local device date to server date which should remove the case where "update available" indication is lit right after syncing the data.
+- CardFlight purchases are now properly processed in regards to customer's active balance and farm bucks
+- FI-61. Now searching through all product categories insetad of latest selected
+- Products that don't have a default price set will now initially redirect to a new controller used to set price
+
+
+1) If balance over sum -> Pay with balance
+
+
+Check
+#selector
+as AnyObject(?)

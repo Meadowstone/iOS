@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="6185.7" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" rowHeight="51" id="KGk-i7-Jjw" customClass="FPGiftCardCell" customModule="FarmPOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="51"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gift Card - $25" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDh-NC-nXH">
+                        <rect key="frame" x="20" y="8" width="610" height="34"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                        <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQC-Rs-80Q">
+                        <rect key="frame" x="638" y="8" width="110" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="110" id="Lmq-tE-2CD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                        <state key="normal" title="Buy" backgroundImage="green_btn">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="buyPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CEU-wL-1W0"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="VQC-Rs-80Q" firstAttribute="leading" secondItem="UDh-NC-nXH" secondAttribute="trailing" constant="8" id="4gp-9u-2C1"/>
+                    <constraint firstAttribute="bottom" secondItem="UDh-NC-nXH" secondAttribute="bottom" constant="8" id="8kR-iM-bjH"/>
+                    <constraint firstItem="UDh-NC-nXH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="AUG-nV-Mh1"/>
+                    <constraint firstItem="UDh-NC-nXH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="FKH-tL-Q8h"/>
+                    <constraint firstAttribute="trailing" secondItem="VQC-Rs-80Q" secondAttribute="trailing" constant="20" id="Opg-aO-ltD"/>
+                    <constraint firstItem="VQC-Rs-80Q" firstAttribute="leading" secondItem="UDh-NC-nXH" secondAttribute="trailing" constant="8" id="Qh3-0q-OzZ"/>
+                    <constraint firstAttribute="bottom" secondItem="VQC-Rs-80Q" secondAttribute="bottom" constant="7" id="fJN-WQ-SHN"/>
+                    <constraint firstItem="VQC-Rs-80Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="oSt-dq-690"/>
+                </constraints>
+            </tableViewCellContentView>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="buyBtn" destination="VQC-Rs-80Q" id="JMC-En-GZv"/>
+                <outlet property="titleLabel" destination="UDh-NC-nXH" id="CBE-aF-8qn"/>
+            </connections>
+            <point key="canvasLocation" x="306" y="244.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="green_btn" width="349" height="40"/>
+    </resources>
+</document>
