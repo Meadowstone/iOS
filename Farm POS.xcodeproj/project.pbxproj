@@ -1097,7 +1097,6 @@
 				81DB7818195C2A860021DE57 /* Sources */,
 				81DB7819195C2A860021DE57 /* Frameworks */,
 				81DB781A195C2A860021DE57 /* Resources */,
-				9FEA9F0F1B306C9E001C28A0 /* ShellScript */,
 				C091B34384FDBFA6DE982B98 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -1283,19 +1282,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FPOS Dev/Pods-FPOS Dev-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		9FEA9F0F1B306C9E001C28A0 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run f80d1c607105d197498c0cb44d7802d589e41d1c c7353d6404c6da09509ddfb0ad072eac94d08e7258c8675f07869d69250cea23";
 		};
 		C091B34384FDBFA6DE982B98 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
