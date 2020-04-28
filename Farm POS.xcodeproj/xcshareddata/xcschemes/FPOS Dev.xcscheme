@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3746E019D6D36A47208BDC220CFF59F6"
+               BuildableName = "Pods_FPOS_Dev.framework"
+               BlueprintName = "Pods-FPOS Dev"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "50FB1FA11980176B00D7106C"
                BuildableName = "FPOS Dev.app"
                BlueprintName = "FPOS Dev"

@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "73C9A902C800162CA4992791D77DD398"
+               BuildableName = "Pods_Farmstand_Cart.framework"
+               BlueprintName = "Pods-Farmstand Cart"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "81DB781B195C2A860021DE57"
                BuildableName = "Farmstand Cart.app"
                BlueprintName = "Farmstand Cart"
