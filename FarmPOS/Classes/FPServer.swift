@@ -139,7 +139,7 @@ class FPServer : AFHTTPSessionManager {
         updatesTimer = nil
     }
     
-    func triggerUpdates() {
+    @objc func triggerUpdates() {
         self.checkUpdates(nil)
     }
     
@@ -1024,7 +1024,7 @@ class FPServer : AFHTTPSessionManager {
             body.append("--\(boundary)\r\n".data(using: .utf8)!)
             body.append("Content-Disposition: form-data; name=\"image\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)
             body.append("Content-Type: application/octet-stream\r\n\r\n".data(using: .utf8)!)
-            body.append(UIImageJPEGRepresentation(img, 0.7)!)
+            body.append(img.jpegData(compressionQuality: 0.7)!)
             body.append("\r\n".data(using: .utf8)!)
         }
         

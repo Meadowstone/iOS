@@ -80,7 +80,7 @@ class FPAuthOptionsViewController: FPRotationViewController {
         FPServer.sharedInstance.syncAPNsToken()
     }
     
-    func updateUI() {
+    @objc func updateUI() {
         if FPServer.sharedInstance.syncingDatabase || FPServer.sharedInstance.syncing {
             syncActivityIndicator.startAnimating()
             syncBtn.setTitle("Synchronizing", for: .normal)
@@ -101,7 +101,7 @@ class FPAuthOptionsViewController: FPRotationViewController {
         markImageView.isHidden = !(FPDataAccessLayer.sharedInstance.hasUnsyncedCustomers() || FPDataAccessLayer.sharedInstance.hasUnsyncedPurchases() || FPServer.sharedInstance.hasUpdates)
     }
     
-    func timerOff() {
+    @objc func timerOff() {
         view.isUserInteractionEnabled = true
         timer.invalidate()
         
@@ -111,7 +111,7 @@ class FPAuthOptionsViewController: FPRotationViewController {
         }
     }
     
-    func logout() {
+    @objc func logout() {
         let activeUser = FPUser.activeUser()!
         let vc = FPPasswordInputViewController.passwordInputViewControllerForPassword(activeUser.password, message: "Please enter Farm Owner password to log out", completion: { [weak self] (cancelled: Bool) -> Void in
             if cancelled {

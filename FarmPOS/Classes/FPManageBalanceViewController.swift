@@ -83,7 +83,7 @@ class FPManageBalanceViewController: FPRotationViewController, UIAlertViewDelega
             }
             numPadView = FPNumPadView.numPadViewForPounds(false, maxInputCount: Int.max, shouldShowDot: true, editingHanlder: editingHandler)
             numPadView.textField.placeholder = "Enter Sum"
-            numPadView.textField.attributedPlaceholder = NSAttributedString(string : numPadView.textField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
+            numPadView.textField.attributedPlaceholder = NSAttributedString(string : numPadView.textField.placeholder!, attributes: [.foregroundColor: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
             numPadPlaceholderView.addSubview(numPadView)
             
             preferredContentSize = CGSize(width: 640.0, height: 468.0)
@@ -91,7 +91,7 @@ class FPManageBalanceViewController: FPRotationViewController, UIAlertViewDelega
         
         if sumTextField != nil {
             if let placeholder = sumTextField.placeholder {
-                sumTextField.attributedPlaceholder = NSAttributedString(string : placeholder, attributes: [NSForegroundColorAttributeName: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
+                sumTextField.attributedPlaceholder = NSAttributedString(string : placeholder, attributes: [.foregroundColor: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
             }
         }
         

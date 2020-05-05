@@ -34,7 +34,7 @@ class FPUnsyncedItemsTableViewController: FPRotationTableViewController, UIAlert
         tableView.register(UINib(nibName: "FPUnsyncedPurchaseCell", bundle: nil), forCellReuseIdentifier: "FPUnsyncedPurchaseCell")
     }
     
-    func filterChanged(_ sc: UISegmentedControl) {
+    @objc func filterChanged(_ sc: UISegmentedControl) {
         showsCustomers = sc.selectedSegmentIndex == 0
         updateContents()
     }
@@ -84,7 +84,7 @@ class FPUnsyncedItemsTableViewController: FPRotationTableViewController, UIAlert
     }
 
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             if showsCustomers {
                 let customer = items[indexPath.row] as! FPCustomer

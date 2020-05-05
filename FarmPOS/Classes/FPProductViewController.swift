@@ -122,7 +122,7 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
             notesTextField = UITextField(frame: CGRect(x: 20.0, y: yOffset, width: view.bounds.size.width - 40.0, height: 48.0))
             notesTextField!.delegate = self
             notesTextField!.placeholder = "Rental notes"
-            notesTextField!.attributedPlaceholder = NSAttributedString(string : notesTextField!.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
+            notesTextField!.attributedPlaceholder = NSAttributedString(string : notesTextField!.placeholder!, attributes: [.foregroundColor: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
             notesTextField!.autoresizingMask = .flexibleWidth
             notesTextField!.textAlignment = .center
             notesTextField!.backgroundColor = UIColor.clear
@@ -166,7 +166,7 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
         csaSegmented.tintColor = UIColor.darkGray
         csaSegmented.isHidden = csaLabel.isHidden
         csaSegmented.addTarget(self, action: #selector(FPProductViewController.updateProductQuantity(_:)), for: .valueChanged)
-        csaSegmented.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 18.0)!], for: .normal)
+        csaSegmented.setTitleTextAttributes([.font: UIFont(name: "HelveticaNeue", size: 18.0)!], for: .normal)
         view.addSubview(csaSegmented)
         
         unitsPerCreditLabel = UILabel()
@@ -181,7 +181,7 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
         let csaCreditText = FPCurrencyFormatter.printableCurrency(Double(cartProduct.product.unitsPerCredit))
         let csaAttrText = NSMutableAttributedString(string: "Units per CSA credit: \(csaCreditText)")
         let csaRange = (csaAttrText.string as NSString).range(of: "\(csaCreditText)")
-        csaAttrText.addAttributes([NSForegroundColorAttributeName: FPColorGreen, NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 30.0)!], range: csaRange)
+        csaAttrText.addAttributes([.foregroundColor: FPColorGreen, .font: UIFont(name: "HelveticaNeue", size: 30.0)!], range: csaRange)
         unitsPerCreditLabel.attributedText = csaAttrText
         
         view.addSubview(unitsPerCreditLabel)
@@ -208,13 +208,13 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
                 } else {
                     numPadView!.textField.placeholder = "Enter weight"
                 }
-                numPadView!.textField.attributedPlaceholder = NSAttributedString(string : numPadView!.textField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
+                numPadView!.textField.attributedPlaceholder = NSAttributedString(string : numPadView!.textField.placeholder!, attributes: [.foregroundColor: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
                 
                 view.addSubview(numPadView!)
             } else {
                 quantityTextField = UITextField()
                 quantityTextField!.placeholder = "Enter weight"
-                quantityTextField!.attributedPlaceholder = NSAttributedString(string : quantityTextField!.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
+                quantityTextField!.attributedPlaceholder = NSAttributedString(string : quantityTextField!.placeholder!, attributes: [.foregroundColor: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
                 
                 quantityTextField!.autoresizingMask = .flexibleWidth
                 quantityTextField!.textAlignment = .center
@@ -245,8 +245,8 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
                 
                 quantityTextField!.inputAccessoryView = qiav
                 
-                NotificationCenter.default.addObserver(self, selector: #selector(FPProductViewController.keyboardWillChangeFrame(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-                NotificationCenter.default.addObserver(self, selector: #selector(FPProductViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(FPProductViewController.keyboardWillChangeFrame(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(FPProductViewController.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
                 
                 scrollView = UIScrollView(frame: view.bounds)
                 scrollView!.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -346,32 +346,32 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
         var priceAttrText: NSMutableAttributedString
         
         if isOunce {
-            priceAttrText = NSMutableAttributedString(string: "Price per ounce: \(priceText)", attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 24)!, NSForegroundColorAttributeName: UIColor.darkGray])
+            priceAttrText = NSMutableAttributedString(string: "Price per ounce: \(priceText)", attributes: [.font: UIFont(name: "HelveticaNeue-Light", size: 24)!, .foregroundColor: UIColor.darkGray])
         } else {
-            priceAttrText = NSMutableAttributedString(string: "Price per \(cartProduct.product.measurement.longName.capitalized): \(priceText)", attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 24)!, NSForegroundColorAttributeName: UIColor.darkGray])
+            priceAttrText = NSMutableAttributedString(string: "Price per \(cartProduct.product.measurement.longName.capitalized): \(priceText)", attributes: [.font: UIFont(name: "HelveticaNeue-Light", size: 24)!, .foregroundColor: UIColor.darkGray])
         }
         
         let priceRange = (priceAttrText.string as NSString).range(of: priceText)
-        priceAttrText.addAttributes([NSForegroundColorAttributeName: FPColorGreen, NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 30.0)!], range: priceRange)
+        priceAttrText.addAttributes([.foregroundColor: FPColorGreen, .font: UIFont(name: "HelveticaNeue", size: 30.0)!], range: priceRange)
         
         if cartProduct.product.hasDiscount {
 //            let discountText = "$" + FPCurrencyFormatter.printableCurrency(cartProduct.product.actualPriceWithTax)
             let discountText = "$" + FPCurrencyFormatter.printableCurrency(cartProduct.product.actualPrice)
             let discountAttrText = NSMutableAttributedString(string: " / \(discountText)")
             let discountRange = (discountAttrText.string as NSString).range(of: discountText)
-            discountAttrText.addAttributes([NSForegroundColorAttributeName: FPColorGreen, NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 30.0)!], range: discountRange)
+            discountAttrText.addAttributes([.foregroundColor: FPColorGreen, .font: UIFont(name: "HelveticaNeue", size: 30.0)!], range: discountRange)
             priceAttrText.append(discountAttrText)
-            priceAttrText.addAttribute(NSStrikethroughStyleAttributeName, value: NSNumber(value: NSUnderlineStyle.styleSingle.rawValue as Int), range: priceRange)
+            priceAttrText.addAttribute(.strikethroughStyle, value: NSNumber(value: NSUnderlineStyle.single.rawValue as Int), range: priceRange)
         }
         
         if !cartProduct.product.hasDefaultPrice {
-            priceAttrText.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: priceRange)
+            priceAttrText.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: priceRange)
         }
         
         return priceAttrText
     }
     
-    func selectPrice() {
+    @objc func selectPrice() {
         self.preprice = self.cartProduct.product.price
         let vc = FPSelectPriceViewController.selectPriceViewControllerWithPriceSelectedHandler({ [weak self] (price) -> Void in
             self!.cartProduct.product.price = price
@@ -385,7 +385,7 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func textFieldEditingChanged(_ sender: UITextField) {
+    @objc func textFieldEditingChanged(_ sender: UITextField) {
         if (sender.text! as NSString).length > 0 {
             let text = (sender.text! as NSString).substring(from: (sender.text! as NSString).length - 1)
             sender.text = (sender.text! as NSString).substring(to: (sender.text! as NSString).length - 1)
@@ -416,7 +416,7 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
         updateProductQuantity(nil)
     }
     
-    func quantityBtnPressed(_ btn: UIButton) {
+    @objc func quantityBtnPressed(_ btn: UIButton) {
         let nf = NumberFormatter()
         nf.locale = Locale(identifier: "en_US")
         nf.numberStyle = .decimal
@@ -444,8 +444,8 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
         
         if let ep = existingCartProduct {
             let str = NSMutableAttributedString(string: "This item is currently in your cart.  Did you want to update the quantity from \(ep.quantity) to \(ep.quantity + cartProduct.quantity)?")
-            str.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue-Bold", size: 24.0)!, range: (str.string as NSString).range(of: "\(ep.quantity)"))
-            str.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue-Bold", size: 24.0)!, range: (str.string as NSString).range(of: "\(ep.quantity + cartProduct.quantity)", options: .backwards))
+            str.addAttribute(.font, value: UIFont(name: "HelveticaNeue-Bold", size: 24.0)!, range: (str.string as NSString).range(of: "\(ep.quantity)"))
+            str.addAttribute(.font, value: UIFont(name: "HelveticaNeue-Bold", size: 24.0)!, range: (str.string as NSString).range(of: "\(ep.quantity + cartProduct.quantity)", options: .backwards))
             existingProductLabel.attributedText = str
         }
         
@@ -506,7 +506,7 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
         
     }
     
-    func updateProductQuantity(_ sender: UIButton?) {
+    @objc func updateProductQuantity(_ sender: UIButton?) {
         if minusBtn != nil {
             if sender === minusBtn {
                 cartProduct.quantity = max(0, cartProduct.quantity - 1)
@@ -556,7 +556,7 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
             csaAttrText.append(NSAttributedString(string: " \(cartProduct.product.measurement.longName)(s)"))
         //}
         let csaRange = (csaAttrText.string as NSString).range(of: "\(csaText)")
-        csaAttrText.addAttributes([NSForegroundColorAttributeName: FPColorGreen, NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 30.0)!], range: csaRange)
+        csaAttrText.addAttributes([.foregroundColor: FPColorGreen, .font: UIFont(name: "HelveticaNeue", size: 30.0)!], range: csaRange)
         csaLabel.attributedText = csaAttrText
         
 //        let priceText = "$" + FPCurrencyFormatter.printableCurrency(cartProduct.sumWithTax)
@@ -568,13 +568,13 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
             priceAttrText = NSMutableAttributedString(string: "Total Price: \(priceText)")
         }
         let priceRange = (priceAttrText.string as NSString).range(of: priceText)
-        priceAttrText.addAttributes([NSForegroundColorAttributeName: FPColorRed, NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 30.0)!], range: priceRange)
+        priceAttrText.addAttributes([.foregroundColor: FPColorRed, .font: UIFont(name: "HelveticaNeue", size: 30.0)!], range: priceRange)
         totalPriceLabel.attributedText = priceAttrText
         
         self.layoutSubviews()
     }
     
-    func cancelPressed() {
+    @objc func cancelPressed() {
         if updating {
             if let ac = FPCustomer.activeCustomer() {
                 for csa in cartProduct.product.csas {
@@ -594,7 +594,7 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
         delegate?.productViewControllerDidCancel(self)
     }
     
-    func addPressed() {
+    @objc func addPressed() {
         
         if delegate == nil {
             FPAlertManager.showMessage("Delegate not set", withTitle: "Critical Error")
@@ -643,15 +643,15 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
         scrollView!.scrollIndicatorInsets = insets
     }
     
-    func keyboardWillChangeFrame(_ note: Notification) {
-        if var kbRect = (note.userInfo![UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue {
+    @objc func keyboardWillChangeFrame(_ note: Notification) {
+        if var kbRect = (note.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue {
             kbRect = FPAppDelegate.instance().window!.convert(kbRect, to: view)
-            let insets = UIEdgeInsetsMake(0, 0, kbRect.size.height, 0)
+            let insets = UIEdgeInsets(top: 0, left: 0, bottom: kbRect.size.height, right: 0)
             self.setScrollViewInsets(insets)
         }
     }
     
-    func keyboardWillHide(_ note: Notification) {
+    @objc func keyboardWillHide(_ note: Notification) {
         self.setScrollViewInsets(UIEdgeInsets.zero)
     }
     

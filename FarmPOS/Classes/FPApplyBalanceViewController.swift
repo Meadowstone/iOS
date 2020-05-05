@@ -84,7 +84,7 @@ class FPApplyBalanceViewController: FPRotationViewController, UIAlertViewDelegat
         preferredContentSize = CGSize(width: 640, height: 468)
     }
     
-    func payWithBalancePressed() {
+    @objc func payWithBalancePressed() {
         UIAlertView(title: "Are you sure you want to pay with balance?", message: "", delegate: self, cancelButtonTitle: "Cancel", otherButtonTitles: "Pay With Balance").show()
     }
     

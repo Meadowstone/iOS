@@ -64,7 +64,7 @@ class FPCheckoutViewController: FPRotationViewController, UITableViewDelegate, U
             helpBtn.setImage(UIImage(named: "ipad_help_btn"), for: .normal)
             helpBtn.setTitleColor(UIColor.lightGray, for: .highlighted)
             helpBtn.setTitle("Help", for: .normal)
-            helpBtn.titleEdgeInsets = UIEdgeInsetsMake(0.0, 8.0, 0.0, 0.0)
+            helpBtn.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 8.0, bottom: 0.0, right: 0.0)
             helpBtn.sizeToFit()
             helpBtn.frame = CGRect(x: cancelBtn.frame.size.width + cancelBtn.frame.origin.x + 8.0, y: 0.0, width: helpBtn.frame.size.width + 8.0, height: 64.0)
             leftView.addSubview(helpBtn)
@@ -119,7 +119,7 @@ class FPCheckoutViewController: FPRotationViewController, UITableViewDelegate, U
         paymentTimer = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(FPCheckoutViewController.paymentProcessed), userInfo: nil, repeats: false)
     }
     
-    func paymentProcessed() {
+    @objc func paymentProcessed() {
         paymentTimer?.invalidate()
         paymentAlertView?.dismiss(withClickedButtonIndex: 0, animated: false)
         
@@ -137,7 +137,7 @@ class FPCheckoutViewController: FPRotationViewController, UITableViewDelegate, U
         
     }
     
-    func dismiss() {
+    @objc func dismiss() {
         if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
             popover!.dismiss(animated: false)
         } else {
@@ -145,7 +145,7 @@ class FPCheckoutViewController: FPRotationViewController, UITableViewDelegate, U
         }
     }
     
-    func manageBalancePressed() {
+    @objc func manageBalancePressed() {
         let completion = { [weak self] () -> Void in
             self!.tableView.reloadData()
             self!.updateFooter()
@@ -174,7 +174,7 @@ class FPCheckoutViewController: FPRotationViewController, UITableViewDelegate, U
         tableView.tableFooterView = FPCheckoutFooterView.checkoutFooterView()
     }
     
-    func cancelPressed() {
+    @objc func cancelPressed() {
         let alert = UIAlertView()
         alert.delegate = self
         alert.title = "Cancel transaction"
@@ -184,7 +184,7 @@ class FPCheckoutViewController: FPRotationViewController, UITableViewDelegate, U
         alert.show()
     }
     
-    func buyPressed() {
+    @objc func buyPressed() {
         NotificationCenter.default.addObserver(self, selector: #selector(FPCheckoutViewController.paymentMethodSelected(_:)), name: NSNotification.Name(rawValue: FPPaymentMethodSelectedNotification), object: nil)
         
         if FPCurrencyFormatter.intCurrencyRepresentation(FPCartView.sharedCart().sumWithTax) == 0 {
@@ -200,7 +200,7 @@ class FPCheckoutViewController: FPRotationViewController, UITableViewDelegate, U
         }
     }
     
-    func helpPressed() {
+    @objc func helpPressed() {
         let vc = FPHelpViewController.helpNavigationViewControllerWithCancelBlock({[weak self] in self!.popover!.dismiss(animated: false)})
         displayPopoverInViewController(vc)
     }
@@ -252,7 +252,7 @@ class FPCheckoutViewController: FPRotationViewController, UITableViewDelegate, U
     }
     
     // Observers
-    func paymentMethodSelected(_ note: Notification) {
+    @objc func paymentMethodSelected(_ note: Notification) {
         
         let noteInfo = (note.object as! NSDictionary)
         print("method selected \(noteInfo)")

@@ -37,7 +37,7 @@ class FPInventoryProductViewController: FPRotationViewController, UITableViewDel
         self.navigationItem.title = "Inventory product"
         
         self.tableView.estimatedRowHeight = 44.0
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "add_btn"), style: .plain, target: self, action: #selector(FPInventoryProductViewController.addPressed))
         
@@ -110,7 +110,7 @@ class FPInventoryProductViewController: FPRotationViewController, UITableViewDel
         }
     }
     
-    func addPressed() {
+    @objc func addPressed() {
         let actionSheet = UIActionSheet(title: "Choose option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Add Notes", "Product Delivery", "Update Inventory", "Product Spoilage")
         actionSheet.show(in: self.view)
     }
@@ -162,8 +162,8 @@ class FPInventoryProductViewController: FPRotationViewController, UITableViewDel
         return cell
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
             let hud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
             hud?.removeFromSuperViewOnHide = true
             hud?.labelText = "Processing"

@@ -24,7 +24,7 @@ class FPUnsyncedPurchaseCell: UITableViewCell {
                 str = "\n"
                 if key == "client_id" {
                     let range = (attrText.string as NSString).range(of: "client_id")
-                    attrText.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: range)
+                    attrText.addAttribute(.foregroundColor, value: UIColor.red, range: range)
                 }
                 contentAttrText.append(attrText)
             }

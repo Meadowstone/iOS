@@ -47,11 +47,11 @@ class FPLoginViewController: FPRotationViewController, UITextFieldDelegate {
         UIApplication.shared.statusBarStyle = .default
         
         // Setup observers
-        NotificationCenter.default.addObserver(self, selector: #selector(FPLoginViewController.keyboardWillChangeFrame(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(FPLoginViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(FPLoginViewController.keyboardWillChangeFrame(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(FPLoginViewController.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         for textField in [emailTextField, passwordTextField] {
-            textField?.attributedPlaceholder = NSAttributedString(string : (textField?.placeholder!)!, attributes: [NSForegroundColorAttributeName: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
+            textField?.attributedPlaceholder = NSAttributedString(string : (textField?.placeholder!)!, attributes: [.foregroundColor: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
         }
     }
     
@@ -73,15 +73,15 @@ class FPLoginViewController: FPRotationViewController, UITextFieldDelegate {
         scrollView.scrollIndicatorInsets = insets
     }
     
-    func keyboardWillChangeFrame(_ note: Notification) {
-        if var kbRect = (note.userInfo![UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue {
+    @objc func keyboardWillChangeFrame(_ note: Notification) {
+        if var kbRect = (note.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue {
             kbRect = FPAppDelegate.instance().window!.convert(kbRect, to: view)
-            let insets = UIEdgeInsetsMake(0, 0, kbRect.size.height, 0)
+            let insets = UIEdgeInsets(top: 0, left: 0, bottom: kbRect.size.height, right: 0)
             self.setScrollViewInsets(insets)
         }
     }
     
-    func keyboardWillHide(_ note: Notification) {
+    @objc func keyboardWillHide(_ note: Notification) {
         self.setScrollViewInsets(UIEdgeInsets.zero)
     }
     

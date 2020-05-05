@@ -33,7 +33,7 @@ class FPProductCategoriesViewController: FPRotationTableViewController {
         
     }
     
-    func refreshCategories() {
+    @objc func refreshCategories() {
         FPServer.sharedInstance.productCategoriesWithCompletion({
             [weak self] errMsg, categories in
             if self == nil {

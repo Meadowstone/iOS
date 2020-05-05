@@ -22,9 +22,9 @@ class FPCheckoutFooterView: UIView {
         
         if let farm = FPUser.activeUser()?.farm {
             let farmAddressAttrText = NSMutableAttributedString(string: "Farm:\n\(farm.name)\n\(farm.address), \(farm.city), \(farm.state), \(farm.zipCode)")
-            farmAddressAttrText.addAttributes([NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 21.0)!, NSForegroundColorAttributeName: FPColorGreen], range: (farmAddressAttrText.string as NSString).range(of: "Farm:"))
-            farmAddressAttrText.addAttributes([NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 20.0)!, NSForegroundColorAttributeName: UIColor.darkText], range: (farmAddressAttrText.string as NSString).range(of: "\(farm.name)"))
-            farmAddressAttrText.addAttributes([NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 20.0)!, NSForegroundColorAttributeName: UIColor.darkText], range: (farmAddressAttrText.string as NSString).range(of: "\(farm.address), \(farm.city), \(farm.state), \(farm.zipCode)"))
+            farmAddressAttrText.addAttributes([.font: UIFont(name: "HelveticaNeue", size: 21.0)!, .foregroundColor: FPColorGreen], range: (farmAddressAttrText.string as NSString).range(of: "Farm:"))
+            farmAddressAttrText.addAttributes([.font: UIFont(name: "HelveticaNeue", size: 20.0)!, .foregroundColor: UIColor.darkText], range: (farmAddressAttrText.string as NSString).range(of: "\(farm.name)"))
+            farmAddressAttrText.addAttributes([.font: UIFont(name: "HelveticaNeue-Light", size: 20.0)!, .foregroundColor: UIColor.darkText], range: (farmAddressAttrText.string as NSString).range(of: "\(farm.address), \(farm.city), \(farm.state), \(farm.zipCode)"))
             view.farmAddressTextView.attributedText = farmAddressAttrText
             view.farmAddressTextView.textAlignment = NSTextAlignment.center
         }
@@ -43,7 +43,7 @@ class FPCheckoutFooterView: UIView {
                 }
                 let balanceAttrText = NSMutableAttributedString(string: "Your current balance: \(balanceText)")
                 let range = (balanceAttrText.string as NSString).range(of: balanceText)
-                balanceAttrText.addAttributes([NSForegroundColorAttributeName: FPColorGreen, NSFontAttributeName: UIFont(name: "HelveticaNeue", size: view.currentBalanceLabel.font.pointSize)!], range: range)
+                balanceAttrText.addAttributes([.foregroundColor: FPColorGreen, .font: UIFont(name: "HelveticaNeue", size: view.currentBalanceLabel.font.pointSize)!], range: range)
                 contentAttrText.append(balanceAttrText)
             }
             
@@ -63,7 +63,7 @@ class FPCheckoutFooterView: UIView {
                 }
                 let balanceAfterAttrText = NSMutableAttributedString(string: "\nWith this purchase, your new account balance is: \(balanceAfterText)")
                 let range = (balanceAfterAttrText.string as NSString).range(of: balanceAfterText)
-                balanceAfterAttrText.addAttributes([NSForegroundColorAttributeName: FPColorGreen, NSFontAttributeName: UIFont(name: "HelveticaNeue", size: view.currentBalanceLabel.font.pointSize)!], range: range)
+                balanceAfterAttrText.addAttributes([.foregroundColor: FPColorGreen, .font: UIFont(name: "HelveticaNeue", size: view.currentBalanceLabel.font.pointSize)!], range: range)
                 contentAttrText.append(balanceAfterAttrText)
             }
             
@@ -91,15 +91,15 @@ class FPCheckoutFooterView: UIView {
             }
             
             customerAddressAttrText = NSMutableAttributedString(string: customerString)
-            customerAddressAttrText.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue-Light", size: 20.0)!, range: NSMakeRange(0, (customerAddressAttrText.string as NSString).length))
-            customerAddressAttrText.addAttributes([NSForegroundColorAttributeName: FPColorGreen, NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 21.0)!], range: (customerAddressAttrText.string as NSString).range(of: "Receipt For:"))
-            customerAddressAttrText.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue", size: 20.0)!, range: (customerAddressAttrText.string as NSString).range(of: ac.name))
+            customerAddressAttrText.addAttribute(.font, value: UIFont(name: "HelveticaNeue-Light", size: 20.0)!, range: NSMakeRange(0, (customerAddressAttrText.string as NSString).length))
+            customerAddressAttrText.addAttributes([.foregroundColor: FPColorGreen, .font: UIFont(name: "HelveticaNeue", size: 21.0)!], range: (customerAddressAttrText.string as NSString).range(of: "Receipt For:"))
+            customerAddressAttrText.addAttribute(.font, value: UIFont(name: "HelveticaNeue", size: 20.0)!, range: (customerAddressAttrText.string as NSString).range(of: ac.name))
         } else {
             view.currentBalanceLabel.isHidden = true
             customerAddressAttrText = NSMutableAttributedString(string: "Receipt For: Guest")
-            customerAddressAttrText.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue-Light", size: 20.0)!, range: NSMakeRange(0, (customerAddressAttrText.string as NSString).length))
-            customerAddressAttrText.addAttributes([NSForegroundColorAttributeName: FPColorGreen, NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 21.0)!], range: (customerAddressAttrText.string as NSString).range(of: "Receipt For:"))
-            customerAddressAttrText.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue", size: 20.0)!, range: (customerAddressAttrText.string as NSString).range(of: "Guest"))
+            customerAddressAttrText.addAttribute(.font, value: UIFont(name: "HelveticaNeue-Light", size: 20.0)!, range: NSMakeRange(0, (customerAddressAttrText.string as NSString).length))
+            customerAddressAttrText.addAttributes([.foregroundColor: FPColorGreen, .font: UIFont(name: "HelveticaNeue", size: 21.0)!], range: (customerAddressAttrText.string as NSString).range(of: "Receipt For:"))
+            customerAddressAttrText.addAttribute(.font, value: UIFont(name: "HelveticaNeue", size: 20.0)!, range: (customerAddressAttrText.string as NSString).range(of: "Guest"))
         }
         view.customerAddressTextView.attributedText = customerAddressAttrText
         view.customerAddressTextView.textAlignment = .center

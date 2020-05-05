@@ -41,7 +41,7 @@ class FPBuyGiftCardViewController: FPRotationViewController, UITextFieldDelegate
     
     @IBAction func sendPressed(_ sender: AnyObject) {
         var hud: MBProgressHUD!
-        let vc = FPCreateCreditCardViewController.createCreditCardViewControllerWithCardSelectedHandler({[weak self] creditCard in
+        let vc = FPCreateCreditCardViewController.createCreditCardViewControllerWithCardSelectedHandler({[weak self] _, _, _  in
             let completion = {[weak self] (errMsg: String?) -> Void in
                 hud.hide(false)
                 if errMsg != nil {

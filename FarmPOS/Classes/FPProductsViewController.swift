@@ -37,8 +37,8 @@ class FPProductsViewController: FPRotationViewController, UITableViewDelegate, U
             navigationItem.title = "Products"
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(FPProductsViewController.keyboardWillChangeFrame(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(FPProductsViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(FPProductsViewController.keyboardWillChangeFrame(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(FPProductsViewController.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         searchBar = UISearchBar(frame: CGRect(x: 0.0, y: 0.0, width: view.bounds.size.width, height: 44.0))
         searchBar.autocorrectionType = UITextAutocorrectionType.no
@@ -65,7 +65,7 @@ class FPProductsViewController: FPRotationViewController, UITableViewDelegate, U
         self.tableView.reloadData()
     }
     
-    func optionsPressed() {
+    @objc func optionsPressed() {
         let actionSheet = UIActionSheet(title: "Choose option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Create New Product", "Scan barcode", "Notifications")
         actionSheet.tag = 1
         actionSheet.show(in: self.view)
@@ -128,7 +128,7 @@ class FPProductsViewController: FPRotationViewController, UITableViewDelegate, U
         tableView.reloadData()
     }
     
-    func editPressed(_ sender: UIBarButtonItem) {
+    @objc func editPressed(_ sender: UIBarButtonItem) {
         ed = !ed
         sender.title = ed ? "Done" : "Edit"
     }
@@ -385,14 +385,14 @@ class FPProductsViewController: FPRotationViewController, UITableViewDelegate, U
         tableView.scrollIndicatorInsets = insets
     }
     
-    func keyboardWillChangeFrame(_ note: Notification) {
-        if let kbRect = (note.userInfo![UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue {
-            let insets = UIEdgeInsetsMake(0, 0, kbRect.size.height, 0)
+    @objc func keyboardWillChangeFrame(_ note: Notification) {
+        if let kbRect = (note.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue {
+            let insets = UIEdgeInsets(top: 0, left: 0, bottom: kbRect.size.height, right: 0)
             self.setScrollViewInsets(insets)
         }
     }
     
-    func keyboardWillHide(_ note: Notification) {
+    @objc func keyboardWillHide(_ note: Notification) {
         self.setScrollViewInsets(UIEdgeInsets.zero)
     }
     

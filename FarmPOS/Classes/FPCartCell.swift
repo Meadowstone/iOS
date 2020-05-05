@@ -29,28 +29,28 @@ class FPCartCell: UITableViewCell {
             
             let contentAttrText = NSMutableAttributedString()
             
-            let nameText = NSAttributedString(string: "\(cartProduct.product.name) X \(nf!.string(from: NSNumber(value: cartProduct.quantity))!) \(cartProduct.product.measurement.shortName)", attributes:[NSFontAttributeName: UIFont(name: "HelveticaNeue-Medium", size: 16.0)!])
+            let nameText = NSAttributedString(string: "\(cartProduct.product.name) X \(nf!.string(from: NSNumber(value: cartProduct.quantity))!) \(cartProduct.product.measurement.shortName)", attributes:[.font: UIFont(name: "HelveticaNeue-Medium", size: 16.0)!])
             contentAttrText.append(nameText)
             
             if cartProduct.quantityPaid > 0.0 {
                 let sumText = "$" + FPCurrencyFormatter.printableCurrency(cartProduct.sum)
                 let priceText = FPCurrencyFormatter.printableCurrency(cartProduct.product.actualPrice)
-                let sumAttrText = NSMutableAttributedString(string: "\n\(nf!.string(from: NSNumber(value: cartProduct.quantityPaid))!)  X  $\(priceText) = \(sumText)", attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 16.0)!, NSForegroundColorAttributeName: UIColor.darkGray])
-                sumAttrText.addAttribute(NSForegroundColorAttributeName, value: FPColorRed, range: (sumAttrText.string as NSString).range(of: sumText, options: .backwards))
+                let sumAttrText = NSMutableAttributedString(string: "\n\(nf!.string(from: NSNumber(value: cartProduct.quantityPaid))!)  X  $\(priceText) = \(sumText)", attributes: [.font: UIFont(name: "HelveticaNeue-Light", size: 16.0)!, .foregroundColor: UIColor.darkGray])
+                sumAttrText.addAttribute(.foregroundColor, value: FPColorRed, range: (sumAttrText.string as NSString).range(of: sumText, options: .backwards))
                 contentAttrText.append(sumAttrText)
             }
             
             if cartProduct.quantityCSA > 0.0 {
-                let csaAttrText = NSMutableAttributedString(string: "\n\(nf!.string(from: NSNumber(value: cartProduct.quantityCSA))!)  X  $0.00 = $0.00 (CSA)", attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 16.0)!, NSForegroundColorAttributeName: UIColor.darkGray])
-                csaAttrText.addAttribute(NSForegroundColorAttributeName, value: FPColorRed, range: (csaAttrText.string as NSString).range(of: "$0.00", options: .backwards))
-                csaAttrText.addAttribute(NSForegroundColorAttributeName, value: FPColorRed, range: (csaAttrText.string as NSString).range(of: "(CSA)"))
+                let csaAttrText = NSMutableAttributedString(string: "\n\(nf!.string(from: NSNumber(value: cartProduct.quantityCSA))!)  X  $0.00 = $0.00 (CSA)", attributes: [.font: UIFont(name: "HelveticaNeue-Light", size: 16.0)!, .foregroundColor: UIColor.darkGray])
+                csaAttrText.addAttribute(.foregroundColor, value: FPColorRed, range: (csaAttrText.string as NSString).range(of: "$0.00", options: .backwards))
+                csaAttrText.addAttribute(.foregroundColor, value: FPColorRed, range: (csaAttrText.string as NSString).range(of: "(CSA)"))
                 contentAttrText.append(csaAttrText)
             }
             
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.alignment = .left
             paragraphStyle.lineSpacing = 2.0
-            contentAttrText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, (contentAttrText.string as NSString).length))
+            contentAttrText.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, (contentAttrText.string as NSString).length))
             
             contentLabel.attributedText = contentAttrText
             deleteBtn.frame.origin.x = self.contentView.bounds.size.width - (8.0 + deleteBtn.frame.size.width)

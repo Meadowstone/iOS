@@ -50,7 +50,7 @@ class FPGiftCardOptionsViewController: FPRotationViewController {
         preferredContentSize = CGSize(width: 640, height: 468)
     }
     
-    func giftCardFAQPressed() {
+    @objc func giftCardFAQPressed() {
         let vc = UIViewController()
         vc.preferredContentSize = preferredContentSize
         vc.loadView()
@@ -72,7 +72,7 @@ class FPGiftCardOptionsViewController: FPRotationViewController {
         self.navigationController!.pushViewController(vc, animated: true)
     }
     
-    func cancelPressed() {
+    @objc func cancelPressed() {
         closeBlock()
     }
 

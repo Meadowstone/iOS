@@ -108,8 +108,8 @@ class FPProductCreateViewController: FPRotationViewController, UIPickerViewDeleg
         super.viewDidLoad()
         
         // Register observers
-        NotificationCenter.default.addObserver(self, selector: #selector(FPProductCreateViewController.keyboardWillChangeFrame(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(FPProductCreateViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(FPProductCreateViewController.keyboardWillChangeFrame(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(FPProductCreateViewController.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         // Customize controller appearance
         UIApplication.shared.statusBarStyle = .lightContent
@@ -253,11 +253,11 @@ class FPProductCreateViewController: FPRotationViewController, UIPickerViewDeleg
         //        }
     }
     
-    func cancelPressed() {
+    @objc func cancelPressed() {
         completion?(nil)
     }
     
-    func savePressed() {
+    @objc func savePressed() {
         var errors = ""
         if (nameTextField.text! as NSString).length == 0 {
             errors = "\nEnter name"
@@ -318,7 +318,7 @@ class FPProductCreateViewController: FPRotationViewController, UIPickerViewDeleg
     }
     
     //MARK: Date picker
-    func dateChanged(_ sender: UIDatePicker) {
+    @objc func dateChanged(_ sender: UIDatePicker) {
         availableFrom = sender.date
         let f = DateFormatter()
         f.dateFormat = "MMM yyyy"
@@ -331,14 +331,14 @@ class FPProductCreateViewController: FPRotationViewController, UIPickerViewDeleg
         scrollView.scrollIndicatorInsets = insets
     }
     
-    func keyboardWillChangeFrame(_ note: Notification) {
-        if let kbRect = (note.userInfo![UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue {
-            let insets = UIEdgeInsetsMake(0, 0, kbRect.size.height, 0)
+    @objc func keyboardWillChangeFrame(_ note: Notification) {
+        if let kbRect = (note.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue {
+            let insets = UIEdgeInsets(top: 0, left: 0, bottom: kbRect.size.height, right: 0)
             self.setScrollViewInsets(insets)
         }
     }
     
-    func keyboardWillHide(_ note: Notification) {
+    @objc func keyboardWillHide(_ note: Notification) {
         self.setScrollViewInsets(UIEdgeInsets.zero)
     }
     
@@ -377,7 +377,7 @@ class FPProductCreateViewController: FPRotationViewController, UIPickerViewDeleg
         if buttonIndex != 2 {
             let pickerController = UIImagePickerController()
             pickerController.allowsEditing = true
-            pickerController.sourceType = buttonIndex == 0 ? UIImagePickerControllerSourceType.photoLibrary : UIImagePickerControllerSourceType.camera
+            pickerController.sourceType = buttonIndex == 0 ? UIImagePickerController.SourceType.photoLibrary : UIImagePickerController.SourceType.camera
             present(pickerController, animated: true, completion: {
                 [weak self] in
                 pickerController.delegate = self!
@@ -386,8 +386,8 @@ class FPProductCreateViewController: FPRotationViewController, UIPickerViewDeleg
     }
     
     // MARK: UIImagePickerControllerDelegate
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        image = (info[UIImagePickerControllerEditedImage] as? UIImage)!
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        image = (info[.editedImage] as? UIImage)!
         imgBtn.setBackgroundImage(image, for: .normal)
         picker.dismiss(animated: true, completion: nil)
     }

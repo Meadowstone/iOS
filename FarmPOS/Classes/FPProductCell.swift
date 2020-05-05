@@ -24,14 +24,14 @@ class FPProductCell: UITableViewCell {
                 onSaleText = "No"
                 color = FPColorRed
             }
-            let onSaleAttrText = NSMutableAttributedString(string: "\nOn sale now: " + onSaleText, attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 15.0)!])
-            onSaleAttrText.addAttribute(NSForegroundColorAttributeName, value: color, range: (onSaleAttrText.string as NSString).range(of: onSaleText))
+            let onSaleAttrText = NSMutableAttributedString(string: "\nOn sale now: " + onSaleText, attributes: [.font: UIFont(name: "HelveticaNeue", size: 15.0)!])
+            onSaleAttrText.addAttribute(.foregroundColor, value: color, range: (onSaleAttrText.string as NSString).range(of: onSaleText))
             contentAttrText.append(onSaleAttrText)
             
             if let d = product.availableFrom {
                 let df = DateFormatter()
                 df.dateFormat = "MMM yyyy"
-                contentAttrText.append(NSAttributedString(string: "\nAvailable from: " + df.string(from: d as Date), attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 15.0)!]))
+                contentAttrText.append(NSAttributedString(string: "\nAvailable from: " + df.string(from: d as Date), attributes: [.font: UIFont(name: "HelveticaNeue", size: 15.0)!]))
             }
             
             if inventory {
@@ -41,8 +41,8 @@ class FPProductCell: UITableViewCell {
                     statusText = "Disabled"
                     statusColor = FPColorRed
                 }
-                let statusAttrText = NSMutableAttributedString(string: "\nInventory Status: " + statusText, attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 15.0)!])
-                statusAttrText.addAttribute(NSForegroundColorAttributeName, value: statusColor, range: (statusAttrText.string as NSString).range(of: statusText))
+                let statusAttrText = NSMutableAttributedString(string: "\nInventory Status: " + statusText, attributes: [.font: UIFont(name: "HelveticaNeue", size: 15.0)!])
+                statusAttrText.addAttribute(.foregroundColor, value: statusColor, range: (statusAttrText.string as NSString).range(of: statusText))
                 contentAttrText.append(statusAttrText)
             }
             

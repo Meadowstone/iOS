@@ -38,7 +38,7 @@ class FPCartViewController: FPRotationViewController, FPCartViewDelegate, FPProd
         cartView.updateSum()
     }
     
-    func addPressed() {
+    @objc func addPressed() {
 //        let vc = FPCategoriesViewController.categoriesViewController()
         let vc = FPProductsViewController.productsViewControllerForCategory(nil)
         navigationController!.pushViewController(vc, animated: true)

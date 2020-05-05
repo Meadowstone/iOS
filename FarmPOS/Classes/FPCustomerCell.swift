@@ -35,10 +35,10 @@ class FPCustomerCell: UITableViewCell {
             }
             
             let contentAttrText = NSMutableAttributedString(string: text)
-            contentAttrText.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue-Medium", size: 21.0)!, range: (contentAttrText.string as NSString).range(of: customer.name))
+            contentAttrText.addAttribute(.font, value: UIFont(name: "HelveticaNeue-Medium", size: 21.0)!, range: (contentAttrText.string as NSString).range(of: customer.name))
             
             for txt in processStrs {
-                contentAttrText.addAttribute(NSForegroundColorAttributeName, value: UIColor(red: 146.0 / 255.0, green: 146.0 / 255.0, blue: 146.0 / 255.0, alpha: 1.0), range: (contentAttrText.string as NSString).range(of: txt))
+                contentAttrText.addAttribute(.foregroundColor, value: UIColor(red: 146.0 / 255.0, green: 146.0 / 255.0, blue: 146.0 / 255.0, alpha: 1.0), range: (contentAttrText.string as NSString).range(of: txt))
             }
             
             contentLabel.attributedText = contentAttrText

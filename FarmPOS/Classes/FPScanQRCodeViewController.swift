@@ -37,12 +37,12 @@ class FPScanQRCodeViewController: FPRotationViewController, AVCaptureMetadataOut
         
         let isPad = UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad
         
-        var captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        var captureDevice = AVCaptureDevice.default(for: .video)
         
         if isPad {
             preferredContentSize = CGSize(width: 640.0, height: 468.0);
-            let videoDevices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo)
-            for device in videoDevices as! [AVCaptureDevice] {
+            let videoDevices = AVCaptureDevice.devices(for: .video)
+            for device in videoDevices {
                 if shouldScanQROnly {
                     if device.position == .front {
                         captureDevice = device
@@ -58,32 +58,32 @@ class FPScanQRCodeViewController: FPRotationViewController, AVCaptureMetadataOut
             
         }
         
-        let videoInput: AVCaptureDeviceInput! = try? AVCaptureDeviceInput(device: captureDevice)
-        if videoInput == nil {
-            FPAlertManager.showMessage("Video input unavailable", withTitle: "Error")
-        } else {
+        let videoInput = captureDevice.flatMap { try? AVCaptureDeviceInput(device: $0) }
+        if let videoInput = videoInput {
             captureSession.addInput(videoInput)
+        } else {
+            FPAlertManager.showMessage("Video input unavailable", withTitle: "Error")
         }
         
         let metadataOutput = AVCaptureMetadataOutput()
         captureSession.addOutput(metadataOutput)
         metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         
-        var metadataObjectTypes = [AVMetadataObjectTypeQRCode]
+        var metadataObjectTypes: [AVMetadataObject.ObjectType] = [.qr]
         if !shouldScanQROnly {
-            metadataObjectTypes = [AVMetadataObjectTypeUPCECode, AVMetadataObjectTypeCode39Code,AVMetadataObjectTypeCode39Mod43Code, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeCode128Code]
+            metadataObjectTypes = [.upce, .code39, .code39Mod43, .ean13, .ean8, .code93, .code128]
         }
         metadataOutput.metadataObjectTypes = metadataObjectTypes
         
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.frame = view.layer.bounds
-        previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        previewLayer.videoGravity = .resizeAspectFill
         
         if !shouldScanQROnly && isPad {
             if UIApplication.shared.statusBarOrientation == UIInterfaceOrientation.landscapeLeft {
-                previewLayer.connection.videoOrientation = AVCaptureVideoOrientation.landscapeLeft
+                previewLayer.connection?.videoOrientation = AVCaptureVideoOrientation.landscapeLeft
             } else {
-                previewLayer.connection.videoOrientation = AVCaptureVideoOrientation.landscapeRight
+                previewLayer.connection?.videoOrientation = AVCaptureVideoOrientation.landscapeRight
             }
         }
         
@@ -93,14 +93,16 @@ class FPScanQRCodeViewController: FPRotationViewController, AVCaptureMetadataOut
     }
     
     
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+    func metadataOutput(_ captureOutput: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         
-        for metadataObject in metadataObjects as! [AVMetadataObject] {
-            if let readableObj = metadataObject as? AVMetadataMachineReadableCodeObject {
+        for metadataObject in metadataObjects {
+            if let readableObj = metadataObject as? AVMetadataMachineReadableCodeObject,
+                let readableObjStringValue = readableObj.stringValue
+            {
                 captureSession.stopRunning()
                 if !gotCode {
                     gotCode = true
-                    codeScannedBlock(readableObj.stringValue)
+                    codeScannedBlock(readableObjStringValue)
                 }
             }
         }
@@ -110,9 +112,9 @@ class FPScanQRCodeViewController: FPRotationViewController, AVCaptureMetadataOut
         let isPad = UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad
         if !shouldScanQROnly && isPad {
             if UIApplication.shared.statusBarOrientation == UIInterfaceOrientation.landscapeLeft {
-                previewLayer.connection.videoOrientation = AVCaptureVideoOrientation.landscapeLeft
+                previewLayer.connection?.videoOrientation = AVCaptureVideoOrientation.landscapeLeft
             } else {
-                previewLayer.connection.videoOrientation = AVCaptureVideoOrientation.landscapeRight
+                previewLayer.connection?.videoOrientation = AVCaptureVideoOrientation.landscapeRight
             }
         }
     }

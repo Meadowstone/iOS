@@ -15,19 +15,19 @@ class FPOrderCell: UITableViewCell {
     var cellHeight: CGFloat = 0.0
     var order: FPOrder! {
     didSet {
-        let contentAttrText = NSMutableAttributedString(string: "\(order.customer.name)", attributes: [NSForegroundColorAttributeName: FPColorGreen, NSFontAttributeName: UIFont(name: "HelveticaNeue-Medium", size: 19.0)!])
+        let contentAttrText = NSMutableAttributedString(string: "\(order.customer.name)", attributes: [.foregroundColor: FPColorGreen, .font: UIFont(name: "HelveticaNeue-Medium", size: 19.0)!])
         
         // Email
-        contentAttrText.append(NSAttributedString(string: "\nEmail: ", attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 17.0)!, NSForegroundColorAttributeName: FPColorGreen]))
-        contentAttrText.append(NSAttributedString(string: "\(order.customer.email)", attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 19.0)!, NSForegroundColorAttributeName: FPColorDarkGray]))
+        contentAttrText.append(NSAttributedString(string: "\nEmail: ", attributes: [.font: UIFont(name: "HelveticaNeue-Light", size: 17.0)!, .foregroundColor: FPColorGreen]))
+        contentAttrText.append(NSAttributedString(string: "\(order.customer.email)", attributes: [.font: UIFont(name: "HelveticaNeue-Light", size: 19.0)!, .foregroundColor: FPColorDarkGray]))
         
         // Phone
-        contentAttrText.append(NSAttributedString(string: "\nPhone: ", attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 17.0)!, NSForegroundColorAttributeName: FPColorGreen]))
-        contentAttrText.append(NSAttributedString(string: "\(order.customer.phone)", attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 19.0)!, NSForegroundColorAttributeName: FPColorDarkGray]))
+        contentAttrText.append(NSAttributedString(string: "\nPhone: ", attributes: [.font: UIFont(name: "HelveticaNeue-Light", size: 17.0)!, .foregroundColor: FPColorGreen]))
+        contentAttrText.append(NSAttributedString(string: "\(order.customer.phone)", attributes: [.font: UIFont(name: "HelveticaNeue-Light", size: 19.0)!, .foregroundColor: FPColorDarkGray]))
         
         // Due date
-        contentAttrText.append(NSAttributedString(string: "\nDue: ", attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 17.0)!, NSForegroundColorAttributeName: FPColorGreen]))
-        contentAttrText.append(NSAttributedString(string: "\(df!.string(from: order.dueDate as Date))", attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 19.0)!, NSForegroundColorAttributeName: FPColorDarkGray]))
+        contentAttrText.append(NSAttributedString(string: "\nDue: ", attributes: [.font: UIFont(name: "HelveticaNeue-Light", size: 17.0)!, .foregroundColor: FPColorGreen]))
+        contentAttrText.append(NSAttributedString(string: "\(df!.string(from: order.dueDate as Date))", attributes: [.font: UIFont(name: "HelveticaNeue-Light", size: 19.0)!, .foregroundColor: FPColorDarkGray]))
         
         // Delivery to
         if order.shippingOption != FPOrder.ShippingOption.farmstand {
@@ -46,15 +46,15 @@ class FPOrderCell: UITableViewCell {
             }
             
             if addressItems.count > 0 {
-                contentAttrText.append(NSAttributedString(string: "\nDelivery to: ", attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 17.0)!, NSForegroundColorAttributeName: FPColorGreen]))
+                contentAttrText.append(NSAttributedString(string: "\nDelivery to: ", attributes: [.font: UIFont(name: "HelveticaNeue-Light", size: 17.0)!, .foregroundColor: FPColorGreen]))
                 let joiner = ", "
-                contentAttrText.append(NSAttributedString(string: "\((addressItems as NSArray).componentsJoined(by: joiner))", attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 19.0)!, NSForegroundColorAttributeName: FPColorDarkGray]))
+                contentAttrText.append(NSAttributedString(string: "\((addressItems as NSArray).componentsJoined(by: joiner))", attributes: [.font: UIFont(name: "HelveticaNeue-Light", size: 19.0)!, .foregroundColor: FPColorDarkGray]))
             }
         }
 
         // Delivery type
-        contentAttrText.append(NSAttributedString(string: "\nDelivery type: ", attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 17.0)!, NSForegroundColorAttributeName: FPColorGreen]))
-        contentAttrText.append(NSAttributedString(string: "\(order.shippingOption.toString())", attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 19.0)!, NSForegroundColorAttributeName: FPColorDarkGray]))
+        contentAttrText.append(NSAttributedString(string: "\nDelivery type: ", attributes: [.font: UIFont(name: "HelveticaNeue-Light", size: 17.0)!, .foregroundColor: FPColorGreen]))
+        contentAttrText.append(NSAttributedString(string: "\(order.shippingOption.toString())", attributes: [.font: UIFont(name: "HelveticaNeue-Light", size: 19.0)!, .foregroundColor: FPColorDarkGray]))
         
         contentLabel.attributedText = contentAttrText
         contentLabel.frame.size.width = UIScreen.main.bounds.size.width - 25.0

@@ -32,7 +32,7 @@ class FPAppDelegate: UIApplication, UIApplicationDelegate, UIAlertViewDelegate {
         return UIApplication.shared.delegate as! FPAppDelegate
     }
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         print("Hello".count)
         
@@ -173,7 +173,7 @@ class FPAppDelegate: UIApplication, UIApplicationDelegate, UIAlertViewDelegate {
     func setupNavigationBar() {
         UINavigationBar.appearance().barTintColor = UIColor(red: 109.0 / 255.0, green: 140.0 / 255.0, blue: 83.0 / 255.0, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [ NSForegroundColorAttributeName : UIColor.white ]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor.white]
     }
     
 //    func resetTimers() {
@@ -235,7 +235,7 @@ class FPAppDelegate: UIApplication, UIApplicationDelegate, UIAlertViewDelegate {
 //    }
     
     // Observers
-    func userLoginStatusChanged(_ note: Notification) {
+    @objc func userLoginStatusChanged(_ note: Notification) {
         let userInfo = note.object as! NSDictionary
         let status = FPLoginStatus(rawValue: (userInfo["status"] as! Int))
         let user = userInfo["user"] as AnyObject

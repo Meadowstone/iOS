@@ -45,15 +45,15 @@ class FPCustomerEditViewController: FPRotationViewController, UITextFieldDelegat
         self.emailTextField.text = self.customer.email
         self.phoneTextField.text = self.customer.phone
         
-        NotificationCenter.default.addObserver(self, selector: #selector(FPCustomerEditViewController.keyboardWillChangeFrame(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(FPCustomerEditViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(FPCustomerEditViewController.keyboardWillChangeFrame(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(FPCustomerEditViewController.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    func cancelPressed() {
+    @objc func cancelPressed() {
         self.completion(nil, true)
     }
     
-    func savePressed() {
+    @objc func savePressed() {
         if nameTextField.text!.count == 0 || emailTextField.text!.count == 0 || phoneTextField.text!.count == 0 {
             FPAlertManager.showMessage("Please fill in all the fields.", withTitle: "Error")
             return
@@ -103,15 +103,15 @@ class FPCustomerEditViewController: FPRotationViewController, UITextFieldDelegat
         scrollView.scrollIndicatorInsets = insets
     }
     
-    func keyboardWillChangeFrame(_ note: Notification) {
-        if var kbRect = (note.userInfo![UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue {
+    @objc func keyboardWillChangeFrame(_ note: Notification) {
+        if var kbRect = (note.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue {
             kbRect = FPAppDelegate.instance().window!.convert(kbRect, to: view)
-            let insets = UIEdgeInsetsMake(0, 0, kbRect.size.height, 0)
+            let insets = UIEdgeInsets(top: 0, left: 0, bottom: kbRect.size.height, right: 0)
             self.setScrollViewInsets(insets)
         }
     }
     
-    func keyboardWillHide(_ note: Notification) {
+    @objc func keyboardWillHide(_ note: Notification) {
         self.setScrollViewInsets(UIEdgeInsets.zero)
     }
 

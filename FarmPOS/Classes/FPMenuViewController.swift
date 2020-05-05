@@ -58,7 +58,7 @@ class FPMenuViewController: FPRotationViewController, UITableViewDelegate, UITab
         hiv.frame = CGRect(x: 0.0, y: 0.0, width: hiv.image!.size.width, height: hiv.image!.size.height + 40.0)
         tableView.tableHeaderView = hiv
         
-        tableView.contentInset = UIEdgeInsetsMake(15.0, 0.0, 0.0, 0.0)
+        tableView.contentInset = UIEdgeInsets(top: 15.0, left: 0.0, bottom: 0.0, right: 0.0)
         tableView.contentOffset = CGPoint(x: 0.0, y: -tableView.contentInset.top)
         tableView.tableFooterView = UIView() // to remove unused separators
 
@@ -79,7 +79,7 @@ class FPMenuViewController: FPRotationViewController, UITableViewDelegate, UITab
     }
     
     //MARK: MMDrawerController related
-    func showMenu() {
+    @objc func showMenu() {
         tableView.reloadData()
         view.endEditing(true)
         if drawerController.openSide == .left {

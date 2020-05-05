@@ -55,12 +55,12 @@ class FPCashCheckViewController: FPRotationViewController {
             if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
                 numPadView.textField.text = text
                 numPadView.textField.placeholder = placeholder
-                numPadView.textField.attributedPlaceholder = NSAttributedString(string : placeholder, attributes: [NSForegroundColorAttributeName: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
+                numPadView.textField.attributedPlaceholder = NSAttributedString(string : placeholder, attributes: [.foregroundColor: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
                 numPadView.shouldShowDot = useDecimal
             } else {
                 sumTextField.text = text
                 sumTextField.placeholder = placeholder
-                sumTextField.attributedPlaceholder = NSAttributedString(string : placeholder, attributes: [NSForegroundColorAttributeName: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
+                sumTextField.attributedPlaceholder = NSAttributedString(string : placeholder, attributes: [.foregroundColor: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
                 sumTextField.keyboardType = useDecimal ? .decimalPad : .numberPad
             }
         } else {
@@ -140,8 +140,8 @@ class FPCashCheckViewController: FPRotationViewController {
             numPadView.textField.placeholder = "Enter Sum"
             numPadPlaceholderView.addSubview(numPadView)
         } else {
-            NotificationCenter.default.addObserver(self, selector: #selector(FPCashCheckViewController.keyboardWillChangeFrame(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(FPCashCheckViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(FPCashCheckViewController.keyboardWillChangeFrame(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(FPCashCheckViewController.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
             
             sumTextField.placeholder = "Enter Sum"
             sumTextField.becomeFirstResponder()
@@ -205,7 +205,7 @@ class FPCashCheckViewController: FPRotationViewController {
         }
     }
     
-    func applyBalancePressed() {
+    @objc func applyBalancePressed() {
         let vc = FPApplyBalanceViewController.applyBalanceViewControllerWithBalanceSelectedHandler {[weak self] (balance) -> Void in
             FPCartView.sharedCart().applicableBalance = balance
             self!.updateRightBarButtonItem()
@@ -224,7 +224,7 @@ class FPCashCheckViewController: FPRotationViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func cancelPressed() {
+    @objc func cancelPressed() {
         NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification), object: ["method": FPPaymentMethod.cancelled.rawValue])
     }
     
@@ -259,15 +259,15 @@ class FPCashCheckViewController: FPRotationViewController {
         scrollView.scrollIndicatorInsets = insets
     }
     
-    func keyboardWillChangeFrame(_ note: Notification) {
-        if var kbRect = (note.userInfo![UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue {
+    @objc func keyboardWillChangeFrame(_ note: Notification) {
+        if var kbRect = (note.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue {
             kbRect = FPAppDelegate.instance().window!.convert(kbRect, to: view)
-            let insets = UIEdgeInsetsMake(0, 0, kbRect.size.height, 0)
+            let insets = UIEdgeInsets(top: 0, left: 0, bottom: kbRect.size.height, right: 0)
             self.setScrollViewInsets(insets)
         }
     }
     
-    func keyboardWillHide(_ note: Notification) {
+    @objc func keyboardWillHide(_ note: Notification) {
         self.setScrollViewInsets(UIEdgeInsets.zero)
     }
     

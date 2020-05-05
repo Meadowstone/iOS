@@ -72,7 +72,7 @@ class FPOrdersViewController: FPRotationViewController, UITableViewDelegate, UIT
         view.addSubview(tableView)
     }
     
-    func filterChanged(_ fs: UISegmentedControl) {
+    @objc func filterChanged(_ fs: UISegmentedControl) {
         if fs.selectedSegmentIndex == 0 {
             filterDate = nil
         } else {

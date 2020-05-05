@@ -54,12 +54,12 @@ class FPRedeemGiftCardViewController: FPRotationViewController, UITextFieldDeleg
             numPadView = FPNumPadView.numPadViewForPounds(false, maxInputCount: 8, shouldShowDot: false, editingHanlder: nil)
             numPadView.textField.placeholder = "Enter Gift Card Code"
             numPadPlaceholderView.addSubview(numPadView)
-            numPadView.textField.attributedPlaceholder = NSAttributedString(string : numPadView.textField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
+            numPadView.textField.attributedPlaceholder = NSAttributedString(string : numPadView.textField.placeholder!, attributes: [.foregroundColor: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
             
             preferredContentSize = CGSize(width: 640, height: 468)
         } else {
             textField.becomeFirstResponder()
-            textField.attributedPlaceholder = NSAttributedString(string : textField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
+            textField.attributedPlaceholder = NSAttributedString(string : textField.placeholder!, attributes: [.foregroundColor: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
         }
     }
     

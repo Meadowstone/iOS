@@ -362,7 +362,7 @@ class FPPaymentOptionsViewController: FPRotationViewController {
         }
     }
     
-    func cancelPressed() {
+    @objc func cancelPressed() {
         if !balancePayment {
             NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification), object: ["method": FPPaymentMethod.cancelled.rawValue])
         } else {
@@ -418,7 +418,7 @@ class FPPaymentOptionsViewController: FPRotationViewController {
         }
     }
     //MARK: - Cardflight
-    func checkCardFlightStatus() {
+    @objc func checkCardFlightStatus() {
         print("reader status: \(FPCardFlightManager.sharedInstance.statusCode.hashValue)")
         if FPCardFlightManager.sharedInstance.statusCode == StatusCode.readerAttached || FPCardFlightManager.sharedInstance.statusCode == StatusCode.readerConnecting {
             cardflightActivityIndicator.isHidden = false

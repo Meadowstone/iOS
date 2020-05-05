@@ -76,14 +76,14 @@ class FPHelpViewController: FPRotationViewController {
         
         numPadView = FPNumPadView.numPadViewForPounds(false, maxInputCount: 10, shouldShowDot: false, editingHanlder: nil)
         numPadView.textField.placeholder = "Phone number"
-        numPadView.textField.attributedPlaceholder = NSAttributedString(string : numPadView.textField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
+        numPadView.textField.attributedPlaceholder = NSAttributedString(string : numPadView.textField.placeholder!, attributes: [.foregroundColor: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
         numPadViewContainerView.addSubview(numPadView)
         
         let lastView = view.lastView()!
         preferredContentSize = CGSize(width: popoverWidth, height: lastView.frame.size.height + lastView.frame.origin.y + 20.0)
     }
     
-    func cancelPressed() {
+    @objc func cancelPressed() {
         cancelBlock()
     }
     

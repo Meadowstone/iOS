@@ -70,7 +70,7 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         helpBtn.setImage(UIImage(named: "ipad_help_btn"), for: .normal)
         helpBtn.setTitleColor(UIColor.lightGray, for: .highlighted)
         helpBtn.setTitle("Help", for: .normal)
-        helpBtn.titleEdgeInsets = UIEdgeInsetsMake(0.0, 8.0, 0.0, 0.0)
+        helpBtn.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 8.0, bottom: 0.0, right: 0.0)
         helpBtn.sizeToFit()
         helpBtn.frame = CGRect(x: logoutBtn.frame.size.width + logoutBtn.frame.origin.x + 8.0, y: 0.0, width: helpBtn.frame.size.width + 8.0, height: 64.0);
         
@@ -86,7 +86,7 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         summaryBtn.addTarget(self, action: #selector(FPProductsAndCartViewController.summaryPressed), for: .touchUpInside)
         summaryBtn.setTitleColor(UIColor.lightGray, for: .highlighted)
         summaryBtn.setTitle("Cash / Check Summary", for: .normal)
-        summaryBtn.titleEdgeInsets = UIEdgeInsetsMake(0.0, 8.0, 0.0, 0.0)
+        summaryBtn.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 8.0, bottom: 0.0, right: 0.0)
         summaryBtn.sizeToFit()
         summaryBtn.frame = CGRect(x: logoutBtn.frame.size.width + logoutBtn.frame.origin.x + 8.0, y: 0.0, width: summaryBtn.frame.size.width + 8.0, height: 64.0);
         
@@ -155,22 +155,22 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         searchTextField = UITextField(frame: searchBar.frame)
         searchTextField.autocorrectionType = UITextAutocorrectionType.no
         searchTextField.placeholder = "Search"
-        searchTextField.borderStyle = UITextBorderStyle.none
+        searchTextField.borderStyle = UITextField.BorderStyle.none
         searchTextField.layer.borderWidth = 1
         searchTextField.layer.borderColor = UIColor.lightGray.cgColor
         searchTextField.backgroundColor = UIColor.white
         searchTextField.delegate = self
         searchTextField.enablesReturnKeyAutomatically = true
         searchTextField.returnKeyType = UIReturnKeyType.search
-        searchTextField.addTarget(self, action: #selector(FPProductsAndCartViewController.searchTextFieldValueChanged(_:)), for: UIControlEvents.editingChanged)
-        searchTextField.clearButtonMode = UITextFieldViewMode.whileEditing
+        searchTextField.addTarget(self, action: #selector(FPProductsAndCartViewController.searchTextFieldValueChanged(_:)), for: UIControl.Event.editingChanged)
+        searchTextField.clearButtonMode = UITextField.ViewMode.whileEditing
         
         view.addSubview(searchTextField)
         
         let spacerView = UIImageView(frame: CGRect(x: 0, y: 0, width: 35, height: 24))
-        spacerView.contentMode = UIViewContentMode.center
+        spacerView.contentMode = UIView.ContentMode.center
         spacerView.image = UIImage(named: "search_icon")
-        searchTextField.leftViewMode = UITextFieldViewMode.always
+        searchTextField.leftViewMode = UITextField.ViewMode.always
         searchTextField.leftView = spacerView
         
         headerTitleLabel = UILabel(frame: searchBar.frame)
@@ -198,8 +198,8 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         categoriesFooterView.delegate = self
         categoriesFooterPlaceholderView.addSubview(categoriesFooterView)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(FPProductsAndCartViewController.keyboardWillChangeFrame(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(FPProductsAndCartViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(FPProductsAndCartViewController.keyboardWillChangeFrame(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(FPProductsAndCartViewController.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         self.reframeForMode(true)
     }
@@ -217,13 +217,13 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         //})
     }
     
-    func summaryPressed() {
+    @objc func summaryPressed() {
         self.searchTextField.endEditing(true)
         let vc = FPCashCheckSummaryViewController.cashCheckSummaryNavigationViewControllerWithCloseBlock({[weak self] in self!.popover!.dismiss(animated: false)})
         displayPopoverInViewController(vc)
     }
     
-    func updateUI() {
+    @objc func updateUI() {
         // Title view
         if let customer = FPCustomer.activeCustomer() {
             navigationItem.titleView = nil
@@ -275,7 +275,7 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         tableView.reloadData()
     }
     
-    func dismiss() {
+    @objc func dismiss() {
         
         products = FPProduct.allProducts()!
         cartView.resetCart()
@@ -289,7 +289,7 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         popover!.dismiss(animated: true)
     }
     
-    func logoutPressed() {
+    @objc func logoutPressed() {
 //        if let fw = FPFarmWorker.activeWorker() {
 //            let vc = FPPasswordInputViewController.passwordInputViewControllerForPassword(fw.password, message: "Enter password to log out", completion: { [weak self] (cancelled: Bool) -> Void in
 //                if cancelled {
@@ -362,12 +362,12 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         popover!.present(from: centerRect, in: view, permittedArrowDirections: .init(rawValue: 0), animated: false)
     }
     
-    func inventoryPressed() {
+    @objc func inventoryPressed() {
         let vc = FPProductsViewController.productsViewControllerForCategory(nil, inventory: true)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func helpPressed() {
+    @objc func helpPressed() {
         self.searchTextField.endEditing(true)
         let vc = FPHelpViewController.helpNavigationViewControllerWithCancelBlock({[weak self] in self!.popover!.dismiss(animated: false)})
         displayPopoverInViewController(vc)
@@ -405,7 +405,7 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
     }
     
     
-    func ordersPressed() {
+    @objc func ordersPressed() {
         let handler = { [weak self] (order: FPOrder) -> Void in
             // Clear the cart
             self!.cartView.resetCart()
@@ -433,38 +433,38 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         navigationController!.pushViewController(vc, animated: true)
     }
     
-    func processOrderOrTransaction() {
+    @objc func processOrderOrTransaction() {
         displayCategories()
     }
     
-    func customerAuthenticated() {
+    @objc func customerAuthenticated() {
         self.products = FPProduct.allProducts()!
         self.displayCategories()
     }
     
-    func transactionsPressed() {
+    @objc func transactionsPressed() {
         let vc = FPTransactionsViewController.transactionsViewControllerForCustomer(nil)
         navigationController!.pushViewController(vc, animated: true)
     }
     
-    func customersPressed() {
+    @objc func customersPressed() {
         let vc = FPCustomersViewController.customersViewController()
         navigationController!.pushViewController(vc, animated: true)
     }
     
-    func balancePressed() {
+    @objc func balancePressed() {
         self.searchTextField.endEditing(true)
         let vc = FPGiftCardOptionsViewController.giftCardOptionsNavigationViewControllerWithCloseBlock({[weak self] in self!.popover!.dismiss(animated: false)})
         displayPopoverInViewController(vc)
     }
     
-    func editPressed(_ sender: UIBarButtonItem) {
+    @objc func editPressed(_ sender: UIBarButtonItem) {
         self.searchTextField.endEditing(true)
         cartView.tableView.setEditing(!cartView.tableView.isEditing, animated: true)
         sender.title = cartView.tableView.isEditing ? "Done" : "Edit"
     }
     
-    func refreshProductsPressed() {
+    @objc func refreshProductsPressed() {
         if FPFarmWorker.activeWorker() != nil {
             let alert = UIAlertView()
             alert.tag = 1
@@ -528,7 +528,7 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         }
     }
     
-    func displayCategories() {
+    @objc func displayCategories() {
         sectionsBackup = [Dictionary<String, AnyObject>]()
 //        showingCategories = true
         view.endEditing(true)
@@ -999,7 +999,7 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         }
     }
     
-    func searchTextFieldValueChanged(_ textfield : UITextField) {
+    @objc func searchTextFieldValueChanged(_ textfield : UITextField) {
         if (textfield.text! as NSString).length == 0 {
             sections = sectionsBackup
             sectionsBackup = [Dictionary<String, AnyObject>]()
@@ -1064,8 +1064,8 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         self.reframeForMode(false)
     }
     
-    func keyboardWillChangeFrame(_ note: NSNotification) {
-        if let kbRect = (note.userInfo![UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue {
+    @objc func keyboardWillChangeFrame(_ note: NSNotification) {
+        if let kbRect = (note.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue {
             reframeForMode(true)
             UIView.animate(withDuration: 0.2, animations: {
 //                var val :CGFloat = kbRect.origin.y - self.searchTextField.frame.height
@@ -1074,7 +1074,7 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         }
     }
     
-    func keyboardWillHide(_ note: NSNotification) {
+    @objc func keyboardWillHide(_ note: NSNotification) {
         //self.setScrollViewInsets(UIEdgeInsetsZero)
         self.reframeForMode(false)
     }

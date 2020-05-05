@@ -67,15 +67,18 @@ class FPAccountSetupViewController: FPRotationViewController {
             
             let attrText = NSMutableAttributedString(string: "Your account has been set up. You have been emailed your account information. Your information is:\n\nName: \(c.name)\nPhone: \(c.phone)\nE-mail: \(c.email)\nPIN code: \(c.pin)\n\nWe will email your purchase receipts and your monthly statement to \(c.email)\n\nPlease let us know of any comments and concerns. " + FPUser.activeUser()!.farm!.name)
             
-            attrText.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue-Light", size:20.0)!, range: NSMakeRange(0, (attrText.string as NSString).length))
+            attrText.addAttribute(.font, value: UIFont(name: "HelveticaNeue-Light", size:20.0)!, range: NSMakeRange(0, (attrText.string as NSString).length))
             
-            let attributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 20)!, NSForegroundColorAttributeName: FPColorGreen]
+            let attributes: [NSAttributedString.Key : Any] = [
+                .font: UIFont(name: "HelveticaNeue", size: 20)!,
+                .foregroundColor: FPColorGreen
+            ]
             for text in [c.name, c.phone, c.email, c.pin] {
                 attrText.addAttributes(attributes, range: (attrText.string as NSString).range(of: text))
             }
             
             let range = (attrText.string as NSString).range(of: "to \(c.email)")
-            attrText.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue", size: 20)!, range: NSMakeRange(range.location + 3, range.length - 3))
+            attrText.addAttribute(.font, value: UIFont(name: "HelveticaNeue", size: 20)!, range: NSMakeRange(range.location + 3, range.length - 3))
             
             contentLabel.attributedText = attrText
         } else {

@@ -97,7 +97,7 @@ class FPCartView: UIView, UIAlertViewDelegate, UITableViewDelegate, UITableViewD
         NotificationCenter.default.removeObserver(self)
     }
     
-    func processOrderOrTransaction() {
+    @objc func processOrderOrTransaction() {
         var cartProductsInfo: [NSDictionary]?
         if let order = FPOrder.activeOrder() {
             cartProductsInfo = order.cartProductsInfo
@@ -365,7 +365,7 @@ class FPCartView: UIView, UIAlertViewDelegate, UITableViewDelegate, UITableViewD
         delegate?.cartViewDidReset?(self)
     }
     
-    func resetPressed() {
+    @objc func resetPressed() {
         let av = UIAlertView()
         av.title = "Would you like to reset the cart?"
         av.addButton(withTitle: "Reset cart")
@@ -380,7 +380,7 @@ class FPCartView: UIView, UIAlertViewDelegate, UITableViewDelegate, UITableViewD
         av.show()
     }
     
-    func checkoutPressed() {
+    @objc func checkoutPressed() {
         delegate?.cartViewDidCheckout?(self)
     }
     
@@ -448,7 +448,7 @@ class FPCartView: UIView, UIAlertViewDelegate, UITableViewDelegate, UITableViewD
         return cell
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let cp = cartProducts[indexPath.row]
             self.deleteCartProduct(cp, atIndexPath: indexPath)

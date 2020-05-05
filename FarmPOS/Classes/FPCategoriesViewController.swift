@@ -37,7 +37,7 @@ class FPCategoriesViewController: FPRotationViewController, UITableViewDelegate,
         refreshCategories()
     }
 
-    func refreshCategories() {
+    @objc func refreshCategories() {
         categories = [NSDictionary]()
 
         if let products = FPProduct.allProducts() {

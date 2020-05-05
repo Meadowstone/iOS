@@ -170,7 +170,7 @@ class FPCreateCreditCardViewController: FPRotationViewController, UITextFieldDel
         
         self.applicableBalanceBtn?.titleLabel?.adjustsFontSizeToFitWidth = true
         self.applicableBalanceBtn?.titleLabel?.minimumScaleFactor = 0.7
-        applicableBalanceBtn?.addTarget(self, action: #selector(FPCreateCreditCardViewController.applyBalancePressed), for: UIControlEvents.touchUpInside)
+        applicableBalanceBtn?.addTarget(self, action: #selector(FPCreateCreditCardViewController.applyBalancePressed), for: UIControl.Event.touchUpInside)
         
         // Check applicable balance
         if let customer = FPCustomer.activeCustomer(), FPCurrencyFormatter.intCurrencyRepresentation(customer.balance) > 0 {
@@ -264,7 +264,7 @@ class FPCreateCreditCardViewController: FPRotationViewController, UITextFieldDel
         
         for textField in [monthTextField, yearTextField, cvvTextField, cardNumberTextField1, cardNumberTextField2, cardNumberTextField3, cardNumberTextField4] {
             if let placeholder = textField?.placeholder {
-                textField?.attributedPlaceholder = NSAttributedString(string : placeholder, attributes: [NSForegroundColorAttributeName: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
+                textField?.attributedPlaceholder = NSAttributedString(string : placeholder, attributes: [.foregroundColor: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
             }
         }
 
@@ -276,7 +276,7 @@ class FPCreateCreditCardViewController: FPRotationViewController, UITextFieldDel
         NotificationCenter.default.removeObserver(self)
     }
     
-    func editPressed(_ sender: UIBarButtonItem) {
+    @objc func editPressed(_ sender: UIBarButtonItem) {
         self.tableView.setEditing(!self.tableView.isEditing, animated: true)
         if tableView.isEditing {
             sender.title = "Done"
@@ -285,7 +285,7 @@ class FPCreateCreditCardViewController: FPRotationViewController, UITextFieldDel
         }
     }
     
-    func triggerCreateCard() {
+    @objc func triggerCreateCard() {
         tableView.isHidden = !tableView.isHidden
         scrollView.isHidden = !scrollView.isHidden
         var title = ""
@@ -305,7 +305,7 @@ class FPCreateCreditCardViewController: FPRotationViewController, UITextFieldDel
       }
     }
     
-    func applyBalancePressed() {
+    @objc func applyBalancePressed() {
         let vc = FPApplyBalanceViewController.applyBalanceViewControllerWithBalanceSelectedHandler {[weak self] (balance) -> Void in
             FPCartView.sharedCart().applicableBalance = balance
             self!.updateApplicableBalanceBtn()
@@ -391,8 +391,8 @@ class FPCreateCreditCardViewController: FPRotationViewController, UITextFieldDel
         alert.show()
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
             let hud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
             hud?.removeFromSuperViewOnHide = true
             hud?.labelText = "Deleting card"
@@ -439,7 +439,7 @@ class FPCreateCreditCardViewController: FPRotationViewController, UITextFieldDel
         }
     }
     
-    func updateCardStatus() {
+    @objc func updateCardStatus() {
         var status = FPCardFlightManager.sharedInstance.status
         
         switch (FPCardFlightManager.sharedInstance.statusCode!) {
@@ -488,7 +488,7 @@ class FPCreateCreditCardViewController: FPRotationViewController, UITextFieldDel
         }
     }
     
-    func waitForSwipe() {
+    @objc func waitForSwipe() {
         switch (FPCardFlightManager.sharedInstance.statusCode!) {
         case .readerAttached, .readerConnecting, .readerDisconnected:
             _ = ""

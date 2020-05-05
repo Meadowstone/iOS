@@ -32,7 +32,7 @@ class FPInventoryProductHistoryViewController: FPRotationViewController, UITable
         self.tableView.backgroundColor = UIColor.clear
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
         self.tableView.estimatedRowHeight = 44.0
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.view.addSubview(self.tableView)
@@ -59,11 +59,11 @@ class FPInventoryProductHistoryViewController: FPRotationViewController, UITable
         self.tableView.triggerInfiniteScrolling()
     }
     
-    func resetPressed(_ btn: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Warning", message: "You are about to reset this product's inventory. Are you sure you want to reset?", preferredStyle: UIAlertControllerStyle.actionSheet)
+    @objc func resetPressed(_ btn: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Warning", message: "You are about to reset this product's inventory. Are you sure you want to reset?", preferredStyle: UIAlertController.Style.actionSheet)
         alert.popoverPresentationController?.barButtonItem = btn
         alert.popoverPresentationController?.sourceView = self.view
-        alert.addAction(UIAlertAction(title: "Reset", style: UIAlertActionStyle.destructive, handler: { (action) -> Void in
+        alert.addAction(UIAlertAction(title: "Reset", style: UIAlertAction.Style.destructive, handler: { (action) -> Void in
             let hud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
             hud?.removeFromSuperViewOnHide = true
             hud?.labelText = "Processing"
@@ -81,7 +81,7 @@ class FPInventoryProductHistoryViewController: FPRotationViewController, UITable
                 }
             })
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (action) -> Void in
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { (action) -> Void in
             
         }))
         
@@ -121,8 +121,8 @@ class FPInventoryProductHistoryViewController: FPRotationViewController, UITable
         return cell!
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
             let hud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
             hud?.removeFromSuperViewOnHide = true
             hud?.labelText = "Processing"

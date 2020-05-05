@@ -38,7 +38,7 @@ class FPProductCheckoutCell: UITableViewCell {
                     
                     let titles = ["Tax:", "Total:"]
                     for title in titles {
-                        contentAttrText.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue", size: contentLabel.font.pointSize)!, range: (contentAttrText.string as NSString).range(of: title))
+                        contentAttrText.addAttribute(.font, value: UIFont(name: "HelveticaNeue", size: contentLabel.font.pointSize)!, range: (contentAttrText.string as NSString).range(of: title))
                     }
                     
                     contentLabel.attributedText = contentAttrText
@@ -68,7 +68,7 @@ class FPProductCheckoutCell: UITableViewCell {
                     
                     if hasDiscount {
                         let discountText = FPCurrencyFormatter.printableCurrency(discountPrice)
-                        priceAttrText.append(NSAttributedString(string: " / $\(discountText)", attributes: [NSForegroundColorAttributeName: FPColorGreen]))
+                        priceAttrText.append(NSAttributedString(string: " / $\(discountText)", attributes: [.foregroundColor: FPColorGreen]))
                     }
                     
                     priceLabel.attributedText = priceAttrText
@@ -95,7 +95,7 @@ class FPProductCheckoutCell: UITableViewCell {
                     let priceAttrText = NSMutableAttributedString(string: "\nPrice: " + priceText)
                     if hasDiscount {
                         let discountText = FPCurrencyFormatter.printableCurrency(discountPrice)
-                        priceAttrText.append(NSAttributedString(string: " / $\(discountText)", attributes: [NSForegroundColorAttributeName: FPColorGreen]))
+                        priceAttrText.append(NSAttributedString(string: " / $\(discountText)", attributes: [.foregroundColor: FPColorGreen]))
                     }
                     contentAttrText.append(priceAttrText)
                     
@@ -109,7 +109,7 @@ class FPProductCheckoutCell: UITableViewCell {
                     
                     let titles = ["Product:", "Price:", "Quantity:", "Total:"]
                     for title in titles {
-                        contentAttrText.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue", size: contentLabel.font.pointSize)!, range: (contentAttrText.string as NSString).range(of: title))
+                        contentAttrText.addAttribute(.font, value: UIFont(name: "HelveticaNeue", size: contentLabel.font.pointSize)!, range: (contentAttrText.string as NSString).range(of: title))
                     }
                     
                     contentLabel.attributedText = contentAttrText

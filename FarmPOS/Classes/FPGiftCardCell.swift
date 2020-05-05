@@ -18,7 +18,7 @@ class FPGiftCardCell: UITableViewCell {
         let sumText = nf.string(from: NSNumber(value: giftCard.sum))!
         let sumAttrText = NSMutableAttributedString(string: "Gift Card - $\(sumText)")
         let sumRange = (sumAttrText.string as NSString).range(of: sumText)
-        sumAttrText.addAttributes([NSForegroundColorAttributeName: FPColorGreen, NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 25.0)!], range: sumRange)
+        sumAttrText.addAttributes([.foregroundColor: FPColorGreen, .font: UIFont(name: "HelveticaNeue", size: 25.0)!], range: sumRange)
         titleLabel.attributedText = sumAttrText
 
         buyBtn.setTitle("Buy ($\(sumText))", for: .normal)

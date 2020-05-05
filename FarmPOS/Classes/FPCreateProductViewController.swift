@@ -107,13 +107,13 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         if self.editProduct != nil {
             self.titleSegmented = UISegmentedControl(items: ["Product", "Inventory"])
             self.titleSegmented?.selectedSegmentIndex = 0
-            self.titleSegmented?.addTarget(self, action: #selector(FPCreateProductViewController.segmentedValueChanged(_:)), for: UIControlEvents.valueChanged)
+            self.titleSegmented?.addTarget(self, action: #selector(FPCreateProductViewController.segmentedValueChanged(_:)), for: UIControl.Event.valueChanged)
             self.navigationItem.titleView = self.titleSegmented
         }
         
         // Register observers
-        NotificationCenter.default.addObserver(self, selector: #selector(FPCreateProductViewController.keyboardWillChangeFrame(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(FPCreateProductViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(FPCreateProductViewController.keyboardWillChangeFrame(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(FPCreateProductViewController.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         // Customize controller appearance
         UIApplication.shared.statusBarStyle = .lightContent
@@ -158,12 +158,12 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         }
     }
     
-    func historyPressed() {
+    @objc func historyPressed() {
         let vc = FPInventoryProductHistoryViewController.inventoryProductHistoryViewControllerForProduct(self.editProduct!)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func savePressed() {
+    @objc func savePressed() {
         var errors = ""
         if (self.nameTextField.text! as NSString).length == 0 {
             errors = "\nEnter name"
@@ -226,7 +226,7 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         FPServer.sharedInstance.productCreateWithName(self.nameTextField.text!, editProduct: self.editProduct, searchId: self.searchIDTextField.text!, price: self.priceTextField.text!, measurement: self.selectedMeasurement, image: self.selectedImage, productCategory: self.selectedCategory!, availabilityDate: nil, onSaleNow: onSaleNow, hidden: self.visibilitySegmented.selectedSegmentIndex == 1, trackInventory: trackInventory, supplier: self.selectedSupplier, triggerAmount: triggerAmount, barcodeValue: self.editProduct?.barcodeValue, completion: completion)
     }
     
-    func addPressed() {
+    @objc func addPressed() {
         let actionSheet = UIActionSheet(title: "Choose option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Add Notes", "Product Delivery", "Update Inventory", "Product Spoilage")
         actionSheet.tag = 2
         actionSheet.show(in: self.view)
@@ -279,7 +279,7 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         
         // imageBtn
         self.addConstraintsToView(self.view, forView: self.imageBtn, placeBelowView: self.imageHeaderLabel, xPadding: -1, yPadding: yPadding, width: 280, height: 280)
-        self.view.addConstraint(NSLayoutConstraint(item: self.imageBtn, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self.imageBtn.superview, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0))
+        self.view.addConstraint(NSLayoutConstraint(item: self.imageBtn, attribute: .centerX, relatedBy: .equal, toItem: self.imageBtn.superview, attribute: .centerX, multiplier: 1, constant: 0))
         
         // measurementHeaderLabel
         self.addConstraintsToView(self.view, forView: self.measurementHeaderLabel, placeBelowView: self.imageBtn, xPadding: headerLabelXPadding, yPadding: yPadding, width: 0, height: headerLabelHeight)
@@ -449,7 +449,7 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         self.inventoryTableView.backgroundColor = UIColor.clear
         self.inventoryTableView.translatesAutoresizingMaskIntoConstraints = false
         self.inventoryTableView.estimatedRowHeight = 44.0
-        self.inventoryTableView.rowHeight = UITableViewAutomaticDimension
+        self.inventoryTableView.rowHeight = UITableView.automaticDimension
         self.inventoryTableView.dataSource = self
         self.inventoryTableView.delegate = self
         self.inventoryTableView.isHidden = true
@@ -510,7 +510,7 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         
         self.imageBtn = UIButton(type: .custom)
         self.imageBtn.translatesAutoresizingMaskIntoConstraints = false
-        self.imageBtn.addTarget(self, action: #selector(FPCreateProductViewController.imagePressed), for: UIControlEvents.touchUpInside)
+        self.imageBtn.addTarget(self, action: #selector(FPCreateProductViewController.imagePressed), for: UIControl.Event.touchUpInside)
         self.imageBtn.backgroundColor = UIColor.clear
         self.imageBtn.layer.borderColor = FPColorGreen.cgColor
         self.imageBtn.layer.borderWidth = 1.0
@@ -523,7 +523,7 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         self.priceHeaderLabel = self.genericHeaderLabelAddedToHeaderView()
         
         self.priceTextField = self.genericTextFieldAddedToHeaderView()
-        self.priceTextField.addTarget(self, action: #selector(FPCreateProductViewController.textFieldEditingChanged(_:)), for: UIControlEvents.editingChanged)
+        self.priceTextField.addTarget(self, action: #selector(FPCreateProductViewController.textFieldEditingChanged(_:)), for: UIControl.Event.editingChanged)
         self.priceTextField.keyboardType = UIKeyboardType.decimalPad
         
         self.categoryHeaderLabel = self.genericHeaderLabelAddedToHeaderView()
@@ -534,7 +534,7 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         
         self.visibilitySegmented = UISegmentedControl(items: ["Visibile", "Hidden"])
         self.visibilitySegmented.translatesAutoresizingMaskIntoConstraints = false
-        self.visibilitySegmented.addTarget(self, action: #selector(FPCreateProductViewController.segmentedValueChanged(_:)), for: UIControlEvents.valueChanged)
+        self.visibilitySegmented.addTarget(self, action: #selector(FPCreateProductViewController.segmentedValueChanged(_:)), for: UIControl.Event.valueChanged)
         self.visibilitySegmented.selectedSegmentIndex = 0
         self.visibilitySegmented.tintColor = FPColorGreen
         self.productTableHeaderView.addSubview(self.visibilitySegmented)
@@ -546,7 +546,7 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         
         self.inventorySegmented = UISegmentedControl(items: ["Enabled", "Disabled"])
         self.inventorySegmented.translatesAutoresizingMaskIntoConstraints = false
-        self.inventorySegmented.addTarget(self, action: #selector(FPCreateProductViewController.segmentedValueChanged(_:)), for: UIControlEvents.valueChanged)
+        self.inventorySegmented.addTarget(self, action: #selector(FPCreateProductViewController.segmentedValueChanged(_:)), for: UIControl.Event.valueChanged)
         self.inventorySegmented.selectedSegmentIndex = 0
         self.inventorySegmented.tintColor = FPColorGreen
         conditionalHeaderSubviews.append(self.inventorySegmented)
@@ -560,7 +560,7 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         self.inventoryExpandableView.addSubview(self.triggerAmountHeaderLabel)
         
         self.triggerAmountTextField = self.genericTextField()
-        self.triggerAmountTextField.addTarget(self, action: #selector(FPCreateProductViewController.textFieldEditingChanged(_:)), for: UIControlEvents.editingChanged)
+        self.triggerAmountTextField.addTarget(self, action: #selector(FPCreateProductViewController.textFieldEditingChanged(_:)), for: UIControl.Event.editingChanged)
         self.triggerAmountTextField.keyboardType = UIKeyboardType.decimalPad
         self.inventoryExpandableView.addSubview(self.triggerAmountTextField)
         
@@ -776,11 +776,11 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         for textField in textFields {
             textField.delegate = self
             if textField.leftView == nil {
-                textField.leftViewMode = UITextFieldViewMode.always
+                textField.leftViewMode = UITextField.ViewMode.always
                 self.addLeftViewForTextField(textField)
                 
                 if textField === self.priceTextField {
-                    textField.rightViewMode = UITextFieldViewMode.always
+                    textField.rightViewMode = UITextField.ViewMode.always
                     let usdLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 40, height: textField.frame.size.height))
                     usdLabel.translatesAutoresizingMaskIntoConstraints = false
                     usdLabel.backgroundColor = UIColor.clear
@@ -800,11 +800,11 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         self.view.endEditing(true)
     }
     
-    func textFieldEditingChanged(_ textField: UITextField) {
+    @objc func textFieldEditingChanged(_ textField: UITextField) {
         textField.text = FPInputValidator.textAfterValidatingCurrencyText(textField.text!)
     }
     
-    func imagePressed() {
+    @objc func imagePressed() {
         let actionSheet = UIActionSheet(title: "Select option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Camera roll", "Take a photo")
         actionSheet.tag = 1
         actionSheet.show(in: self.view)
@@ -846,7 +846,7 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         }
     }
     
-    func segmentedValueChanged(_ segmented: UISegmentedControl) {
+    @objc func segmentedValueChanged(_ segmented: UISegmentedControl) {
         if segmented === self.inventorySegmented {
             
             self.view.endEditing(true)
@@ -924,8 +924,8 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         return cell!
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
             let hud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
             hud?.removeFromSuperViewOnHide = true
             hud?.labelText = "Processing"
@@ -949,7 +949,7 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
                 let shouldUseCameraRoll = buttonTitle == "camera roll"
                 let pickerController = UIImagePickerController()
                 pickerController.allowsEditing = true
-                pickerController.sourceType = shouldUseCameraRoll ? UIImagePickerControllerSourceType.photoLibrary : UIImagePickerControllerSourceType.camera
+                pickerController.sourceType = shouldUseCameraRoll ? UIImagePickerController.SourceType.photoLibrary : UIImagePickerController.SourceType.camera
                 pickerController.delegate = self
                 self.present(pickerController, animated: true, completion: nil)
             } else if actionSheet.tag == 2 {
@@ -1002,8 +1002,8 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
     }
     
     // MARK: - UIImagePickerControllerDelegate
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        self.selectedImage = info[UIImagePickerControllerEditedImage] as? UIImage
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        self.selectedImage = info[.editedImage] as? UIImage
         self.imageBtn.setBackgroundImage(self.selectedImage, for: .normal)
         picker.dismiss(animated: true, completion: nil)
     }
@@ -1085,14 +1085,14 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         tableView?.scrollIndicatorInsets = insets
     }
     
-    func keyboardWillChangeFrame(_ note: Notification) {
-        if let kbRect = (note.userInfo![UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue {
-            let insets = UIEdgeInsetsMake(0, 0, kbRect.size.height, 0)
+    @objc func keyboardWillChangeFrame(_ note: Notification) {
+        if let kbRect = (note.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue {
+            let insets = UIEdgeInsets(top: 0, left: 0, bottom: kbRect.size.height, right: 0)
             self.setScrollViewInsets(insets)
         }
     }
     
-    func keyboardWillHide(_ note: Notification) {
+    @objc func keyboardWillHide(_ note: Notification) {
         self.setScrollViewInsets(UIEdgeInsets.zero)
     }
     

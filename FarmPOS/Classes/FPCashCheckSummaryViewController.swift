@@ -127,7 +127,7 @@ class FPCashCheckSummaryViewController: FPRotationViewController, UITableViewDel
         })
     }
     
-    func closePressed() {
+    @objc func closePressed() {
         self.view.endEditing(true)
         if hasChanges {
             displayAlertForAction(.close)

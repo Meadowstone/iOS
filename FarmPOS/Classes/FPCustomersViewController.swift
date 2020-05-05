@@ -113,7 +113,7 @@ class FPCustomersViewController: FPRotationViewController, UIPopoverControllerDe
         tableView.triggerInfiniteScrolling()
     }
     
-    func dismiss() {
+    @objc func dismiss() {
         FPCustomer.setActiveCustomer(nil)
         if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
             self.popover!.dismiss(animated: false)
@@ -122,7 +122,7 @@ class FPCustomersViewController: FPRotationViewController, UIPopoverControllerDe
         }
     }
     
-    func unassign() {
+    @objc func unassign() {
         FPCardFlightManager.sharedInstance.cardFlightCard = nil
         FPCustomer.setActiveCustomer(nil)
         FPOrder.setActiveOrder(nil)
@@ -130,7 +130,7 @@ class FPCustomersViewController: FPRotationViewController, UIPopoverControllerDe
         navigationController!.popViewController(animated: true)
     }
     
-    func addCustomerPressed() {
+    @objc func addCustomerPressed() {
         searchBar.endEditing(true)
         let completion = { [weak self] (customer: FPCustomer?) -> Void in
             if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {

@@ -52,7 +52,7 @@ class FPPasswordInputViewController: FPRotationViewController, UITextFieldDelega
             navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(FPPasswordInputViewController.cancelPressed(_:)))
         }
         
-        passwordTextField.attributedPlaceholder = NSAttributedString(string : passwordTextField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string : passwordTextField.placeholder!, attributes: [.foregroundColor: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
     }
     
     override func viewDidAppear(_ animated: Bool) {

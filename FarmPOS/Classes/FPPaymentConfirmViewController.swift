@@ -49,12 +49,12 @@ class FPPaymentConfirmViewController: FPRotationViewController {
         
         let amountText = "$" + FPCurrencyFormatter.printableCurrency(FPCartView.sharedCart().checkoutSum)
         let amountAttrText = NSMutableAttributedString(string: "Purchase Amount: \(amountText)")
-        amountAttrText.addAttribute(NSForegroundColorAttributeName, value: FPColorGreen, range: (amountAttrText.string as NSString).range(of: amountText, options: .backwards))
+        amountAttrText.addAttribute(.foregroundColor, value: FPColorGreen, range: (amountAttrText.string as NSString).range(of: amountText, options: .backwards))
         contentAttrText.append(amountAttrText)
         
         let paidText = "$" + FPCurrencyFormatter.printableCurrency(sumPaid)
         let paidAttrText = NSMutableAttributedString(string: "\nCash/Check Paid: \(paidText)")
-        paidAttrText.addAttribute(NSForegroundColorAttributeName, value: FPColorGreen, range: (paidAttrText.string as NSString).range(of: paidText, options: .backwards))
+        paidAttrText.addAttribute(.foregroundColor, value: FPColorGreen, range: (paidAttrText.string as NSString).range(of: paidText, options: .backwards))
         contentAttrText.append(paidAttrText)
         
         let sPaid = FPCurrencyFormatter.roundCrrency(sumPaid)
@@ -67,17 +67,17 @@ class FPPaymentConfirmViewController: FPRotationViewController {
             } else {
                 let leftoverText = "$" + FPCurrencyFormatter.printableCurrency(sumPaid - FPCartView.sharedCart().checkoutSum)
                 let leftoverAttrText = NSMutableAttributedString(string: "\n\nAmount Leftover For Credit: \(leftoverText)")
-                leftoverAttrText.addAttribute(NSForegroundColorAttributeName, value: FPColorGreen, range: (leftoverAttrText.string as NSString).range(of: leftoverText, options: .backwards))
+                leftoverAttrText.addAttribute(.foregroundColor, value: FPColorGreen, range: (leftoverAttrText.string as NSString).range(of: leftoverText, options: .backwards))
                 contentAttrText.append(leftoverAttrText)
                 
                 let balanceText = "$" + FPCurrencyFormatter.printableCurrency(FPCustomer.activeCustomer()!.balance)
                 let balanceAttrText = NSMutableAttributedString(string: "\nAccount Balance Before Credit: \(balanceText)")
-                balanceAttrText.addAttribute(NSForegroundColorAttributeName, value: FPColorGreen, range: (balanceAttrText.string as NSString).range(of: balanceText, options: .backwards))
+                balanceAttrText.addAttribute(.foregroundColor, value: FPColorGreen, range: (balanceAttrText.string as NSString).range(of: balanceText, options: .backwards))
                 contentAttrText.append(balanceAttrText)
                 
                 let balanceAfterText = "$" + FPCurrencyFormatter.printableCurrency((FPCustomer.activeCustomer()!.balance) + (sumPaid - FPCartView.sharedCart().checkoutSum))
                 let balanceAfterAttrText = NSMutableAttributedString(string: "\nAccount Balance After Credit: \(balanceAfterText)")
-                balanceAfterAttrText.addAttribute(NSForegroundColorAttributeName, value: FPColorGreen, range: (balanceAfterAttrText.string as NSString).range(of: balanceAfterText, options: .backwards))
+                balanceAfterAttrText.addAttribute(.foregroundColor, value: FPColorGreen, range: (balanceAfterAttrText.string as NSString).range(of: balanceAfterText, options: .backwards))
                 contentAttrText.append(balanceAfterAttrText)
                 
                 contentAttrText.append(NSAttributedString(string: "\n\nYou are paying $\(FPCurrencyFormatter.printableCurrency(sumPaid)) by \(paymentMethod.toString()). This amount is more than your purchase price and a credit will be issued to your account for future purchases. Please press Confirm if correct or Back to change."))

@@ -31,7 +31,7 @@ class FPSelectNamableViewController: FPRotationViewController, UITableViewDelega
         self.tableView.backgroundColor = UIColor.clear
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
         self.tableView.estimatedRowHeight = 44.0
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.view.addSubview(self.tableView)
