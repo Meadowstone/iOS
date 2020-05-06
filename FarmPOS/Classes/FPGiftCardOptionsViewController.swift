@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Eugene Reshetov. All rights reserved.
 //
 
+import WebKit
 
 class FPGiftCardOptionsViewController: FPRotationViewController {
     
@@ -55,9 +56,8 @@ class FPGiftCardOptionsViewController: FPRotationViewController {
         vc.preferredContentSize = preferredContentSize
         vc.loadView()
         
-        let wv = UIWebView(frame: vc.view.bounds)
+        let wv = WKWebView(frame: vc.view.bounds)
         wv.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        wv.scalesPageToFit = true
         if let path = Bundle.main.path(forResource: "gift_card_FAQ", ofType: "html") {
             if let data = FileManager.default.contents(atPath: path) {
                 var htmlString = String(data: data, encoding: .utf8)!
