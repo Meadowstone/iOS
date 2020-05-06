@@ -1,11 +1,4 @@
 PODS:
-  - AFNetworking (2.5.4):
-    - AFNetworking/NSURLConnection (= 2.5.4)
-    - AFNetworking/NSURLSession (= 2.5.4)
-    - AFNetworking/Reachability (= 2.5.4)
-    - AFNetworking/Security (= 2.5.4)
-    - AFNetworking/Serialization (= 2.5.4)
-    - AFNetworking/UIKit (= 2.5.4)
   - AFNetworking/NSURLConnection (2.5.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -17,9 +10,6 @@ PODS:
   - AFNetworking/Reachability (2.5.4)
   - AFNetworking/Security (2.5.4)
   - AFNetworking/Serialization (2.5.4)
-  - AFNetworking/UIKit (2.5.4):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
   - CardFlight (2.0.6):
     - CardFlight/AudioJack (= 2.0.6)
   - CardFlight/AudioJack (2.0.6)
@@ -46,7 +36,11 @@ PODS:
   - SVPullToRefresh (0.4.1)
 
 DEPENDENCIES:
-  - AFNetworking (= 2.5.4)
+  - AFNetworking/NSURLConnection (= 2.5.4)
+  - AFNetworking/NSURLSession (= 2.5.4)
+  - AFNetworking/Reachability (= 2.5.4)
+  - AFNetworking/Security (= 2.5.4)
+  - AFNetworking/Serialization (= 2.5.4)
   - CardFlight (= 2.0.6)
   - Crashlytics (= 3.8.3)
   - Fabric (= 1.6.11)
@@ -79,6 +73,6 @@ SPEC CHECKSUMS:
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
 
-PODFILE CHECKSUM: 2b641ca5904e85318e921f5f1f3ce947af797060
+PODFILE CHECKSUM: 3f27648fcb84ab6ba389f7b9e94febd864ad0241
 
 COCOAPODS: 1.7.2
