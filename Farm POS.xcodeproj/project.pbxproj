@@ -1120,7 +1120,7 @@
 				ORGANIZATIONNAME = "Eugene Reshetov";
 				TargetAttributes = {
 					50FB1FA11980176B00D7106C = {
-						DevelopmentTeam = 8YA7983M3A;
+						DevelopmentTeam = 4268HQ9ZMJ;
 						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -1130,7 +1130,7 @@
 					};
 					81DB781B195C2A860021DE57 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = E58439VKF4;
+						DevelopmentTeam = 4268HQ9ZMJ;
 						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1588,6 +1588,7 @@
 				CODE_SIGN_ENTITLEMENTS = "FPOS Dev.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4268HQ9ZMJ;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -1599,7 +1600,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-DDevbuild -DDebug $(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mojo.farmposdev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meadowstonefarm.farmposdev;
 				PRODUCT_NAME = "FPOS Dev";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = FarmPOS/bridge.h;
@@ -1679,7 +1680,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Farmstand Cart.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = E58439VKF4;
+				DEVELOPMENT_TEAM = 4268HQ9ZMJ;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -1689,7 +1690,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDebug";
-				PRODUCT_BUNDLE_IDENTIFIER = com.denismendica.farmposiphone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meadowstonefarm.farmpos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1762,13 +1763,13 @@
 				CODE_SIGN_ENTITLEMENTS = "Farmstand Cart.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = E58439VKF4;
+				DEVELOPMENT_TEAM = 4268HQ9ZMJ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "FarmPOS/FarmstandCart-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.denismendica.farmposiphone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meadowstonefarm.farmpos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1798,7 +1799,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-DDevbuild $(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mojo.farmposdev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meadowstonefarm.farmposdev;
 				PRODUCT_NAME = "FPOS Dev";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = FarmPOS/bridge.h;
