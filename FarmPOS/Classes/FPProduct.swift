@@ -16,13 +16,13 @@ class FPProduct: NSObject {
     var remaining: Double?
     var sold: Double?
     var orderDiscount: Double?
-    var barcodeValue: String?
+    @objc var barcodeValue: String?
     var triggerAmount: Double?
     var trackInventory = false
     var id = 0
     var notes: String?
     var rental = false
-    var searchId: String?
+    @objc var searchId: String?
     var hasDefaultPrice = true
     var grownOnFarm = false
     var forbidAnonymousPurchase = false
@@ -30,12 +30,12 @@ class FPProduct: NSObject {
     var price = 0.0
     var discountPrice = 0.0
     var isCSA = false
-    var name = ""
+    @objc var name = ""
     var unitsPerCredit = 0.0
     var category: FPProductCategory!
     var measurement: FPMeasurement!
     var availableFrom: Date?
-    var onSaleNow: Bool = true
+    @objc var onSaleNow: Bool = true
     var wholesale: Bool = false
     var imageURL: URL?
     var thumbURL: URL?

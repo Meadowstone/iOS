@@ -151,7 +151,7 @@ class FPCustomerLoginViewController: FPRotationViewController, UIPopoverControll
         return false
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    @objc func textField(_ textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         if (string as NSString).length == 0 {
             return true
         }
