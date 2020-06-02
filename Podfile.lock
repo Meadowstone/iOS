@@ -13,9 +13,6 @@ PODS:
   - CardFlight (2.0.6):
     - CardFlight/AudioJack (= 2.0.6)
   - CardFlight/AudioJack (2.0.6)
-  - Crashlytics (3.8.3):
-    - Fabric (~> 1.6.3)
-  - Fabric (1.6.11)
   - Harpy (3.3.8)
   - MBProgressHUD (0.9.1)
   - MMDrawerController (0.6.0):
@@ -42,8 +39,6 @@ DEPENDENCIES:
   - AFNetworking/Security (= 2.5.4)
   - AFNetworking/Serialization (= 2.5.4)
   - CardFlight (= 2.0.6)
-  - Crashlytics (= 3.8.3)
-  - Fabric (= 1.6.11)
   - Harpy (= 3.3.8)
   - MBProgressHUD (= 0.9.1)
   - MMDrawerController (= 0.6.0)
@@ -54,8 +49,6 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - CardFlight
-    - Crashlytics
-    - Fabric
     - Harpy
     - MBProgressHUD
     - MMDrawerController
@@ -65,14 +58,12 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   CardFlight: eae95b7f9bbbf190f7de64cd5b29f95e1f515e83
-  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
-  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   Harpy: d8d089fbc909114affd2bfe7aa6fe5cd0f72902e
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
 
-PODFILE CHECKSUM: 3f27648fcb84ab6ba389f7b9e94febd864ad0241
+PODFILE CHECKSUM: 8300101890a526e0d022b65eea22d4944778e866
 
 COCOAPODS: 1.7.2

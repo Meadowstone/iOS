@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import Fabric
-import Crashlytics
 import AFNetworking
 
 let kInternalError = "Internal server error"
@@ -556,9 +554,6 @@ class FPServer : AFHTTPSessionManager {
             
             var errors: String? = kInternalError
             var customer: FPCustomer? = nil
-            
-            // Identify user in Crashlytics
-            Crashlytics.sharedInstance().setUserIdentifier(FPUser.activeUser()?.farm?.name)
             
             if let r = responseObject as? NSDictionary {
                 

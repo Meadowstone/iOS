@@ -517,8 +517,6 @@
 		81FF080F196C28830046457A /* FPCartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPCartCell.xib; sourceTree = "<group>"; };
 		87C9812238DD924549F7CE56 /* Pods-FPOS Dev.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPOS Dev.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-FPOS Dev/Pods-FPOS Dev.appstore.xcconfig"; sourceTree = "<group>"; };
 		9F659EF51C1F24DC005F0FF6 /* FPCustomLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCustomLogger.swift; sourceTree = "<group>"; };
-		9FEA9F101B306CDE001C28A0 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		9FEA9F111B306CDE001C28A0 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		9FEC404919B9D62C003AB29A /* FPCardFlightManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCardFlightManager.swift; sourceTree = "<group>"; };
 		B8B7E037757AE290B9EBD116 /* Pods_FPOS_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FPOS_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFE2C3F086060FC12C04E372 /* Pods_Farmstand_Cart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Farmstand_Cart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1054,8 +1052,6 @@
 				812967451B403B9B009ABC6A /* MediaPlayer.framework */,
 				812967431B403B94009ABC6A /* AudioToolbox.framework */,
 				812967411B403B8C009ABC6A /* AVFoundation.framework */,
-				9FEA9F101B306CDE001C28A0 /* Fabric.framework */,
-				9FEA9F111B306CDE001C28A0 /* Crashlytics.framework */,
 				8183F5A71B25BC42001EFFAF /* QuickLook.framework */,
 				81FB195F198B953300FF6815 /* CoreData.framework */,
 				503EB70E197D635A00B86869 /* UIKit.framework */,
@@ -1097,7 +1093,6 @@
 				81DB7818195C2A860021DE57 /* Sources */,
 				81DB7819195C2A860021DE57 /* Frameworks */,
 				81DB781A195C2A860021DE57 /* Resources */,
-				9FEA9F0F1B306C9E001C28A0 /* ShellScript */,
 				C091B34384FDBFA6DE982B98 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -1284,19 +1279,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FPOS Dev/Pods-FPOS Dev-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		9FEA9F0F1B306C9E001C28A0 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# uncomment when re-enabling Fabric\n#./Fabric.framework/run f80d1c607105d197498c0cb44d7802d589e41d1c c7353d6404c6da09509ddfb0ad072eac94d08e7258c8675f07869d69250cea23\n";
 		};
 		C091B34384FDBFA6DE982B98 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

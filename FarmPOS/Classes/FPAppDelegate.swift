@@ -8,8 +8,6 @@
 
 import UIKit
 import Harpy
-import Fabric
-import Crashlytics
 import UserNotifications
 
 let kFPAPNsTokenUserDefaultsKey = "kFPAPNsTokenUserDefaultsKey"
@@ -46,9 +44,6 @@ class FPAppDelegate: UIApplication, UIApplicationDelegate, UIAlertViewDelegate {
             application.registerUserNotificationSettings(settings)
         }
         application.registerForRemoteNotifications()
-        
-        Fabric.with([Crashlytics()])
-        
         
         _ = FPCardFlightManager.sharedInstance
         FPCustomLogger.startLogWrite("===== session started")
