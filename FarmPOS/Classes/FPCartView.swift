@@ -117,7 +117,7 @@ class FPCartView: UIView, UIAlertViewDelegate, UITableViewDelegate, UITableViewD
         
         self.resetCart()
         for pi in cartProductsInfo! {
-            var products = FPProduct.allProducts()!.filter({ $0.id == pi["product_id"] as! Int})
+            let products = FPProduct.allProducts()!.filter({ $0.id == pi["product_id"] as! Int})
             if products.count > 0 {
                 let cp = FPCartProduct(product: products[0])
                 cp.quantity = 0.0
