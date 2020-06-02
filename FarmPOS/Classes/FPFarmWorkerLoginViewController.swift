@@ -99,7 +99,7 @@ class FPFarmWorkerLoginViewController: FPRotationViewController, UITextFieldDele
                 FPAlertManager.showMessage(errMsg!, withTitle: "Error")
             } else {
                 self!.emails = emails
-                self!.emailTextField.inputView = FPChoiceInputView.choiceInputViewWithDataSource(self!.emails as! Array<String>!,
+                self!.emailTextField.inputView = FPChoiceInputView.choiceInputViewWithDataSource(self!.emails as! Array<String>,
                     completion: { [weak self] (choice: String) -> Void in
                         self!.emailTextField.text = choice
                         self!.passwordTextField.becomeFirstResponder()

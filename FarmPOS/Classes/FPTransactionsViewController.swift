@@ -163,6 +163,6 @@ class FPTransactionsViewController: FPRotationViewController, UITableViewDelegat
         if let receiptPath = self.receiptPath {
             receiptURL = URL(fileURLWithPath: receiptPath)
         }
-        return receiptURL as QLPreviewItem!
+        return receiptURL as QLPreviewItem
     }
 }

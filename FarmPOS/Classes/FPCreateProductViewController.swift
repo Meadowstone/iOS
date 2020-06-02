@@ -1012,7 +1012,7 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField === self.measurementTextField {
             let vc = FPSelectNamableViewController.selectNamableViewControllerWithDataSource(self.measurements, navigationBarTitle: "Select Measurement", objectSelectedHandler: { (object) -> Void in
-                self.selectedMeasurement = object as! FPMeasurement
+                self.selectedMeasurement = object as? FPMeasurement
                 _ = self.navigationController?.popViewController(animated: true)
             })
             self.navigationController?.pushViewController(vc, animated: true)

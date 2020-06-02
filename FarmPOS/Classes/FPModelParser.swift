@@ -446,7 +446,7 @@ class FPModelParser {
         order.state = info["state"] as! String
         order.zipCode = info["zip_code"] as! String
         order.customer = self.customerWithInfo(info["client"] as! NSDictionary)
-        order.cartProductsInfo = info["products"] as! [NSDictionary]
+        order.cartProductsInfo = info["products"] as? [NSDictionary]
         
         let df = DateFormatter()
         df.timeZone = TimeZone(abbreviation: "UTC")

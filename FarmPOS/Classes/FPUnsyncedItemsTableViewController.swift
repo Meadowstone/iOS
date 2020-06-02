@@ -73,12 +73,12 @@ class FPUnsyncedItemsTableViewController: FPRotationTableViewController, UIAlert
             cell.displayId = true
             cell.balanceBtn.isHidden = true
             cell.transactionsBtn.isHidden = true
-            cell.customer = items[indexPath.row] as! FPCustomer
+            cell.customer = items[indexPath.row] as? FPCustomer
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FPUnsyncedPurchaseCell", for: indexPath) as! FPUnsyncedPurchaseCell
             cell.tableView = tableView // burn
-            cell.purchase = items[indexPath.row] as! FPCDPurchase
+            cell.purchase = items[indexPath.row] as? FPCDPurchase
             return cell
         }
     }

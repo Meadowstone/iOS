@@ -398,7 +398,7 @@ class FPServer : AFHTTPSessionManager {
     //MARK: - Login and authentication
     func loginWithFarmID(_ farmID: String, email: String, password: String, completion:@escaping (_ errMsg: String?) -> Void) {
         
-        let version = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as NSString as String) as! String!
+        let version = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as NSString as String) as? String
         let params = ["farm_id": farmID, "email": email, "password": password, "version": version]
         
         let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
@@ -1046,7 +1046,7 @@ class FPServer : AFHTTPSessionManager {
                     
                     var r: NSDictionary!
                     do {
-                        r = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSDictionary
+                        r = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? NSDictionary
                     } catch {}
                     if r == nil {
                         completion("Error", nil)

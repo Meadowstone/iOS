@@ -220,7 +220,7 @@ class FPProductsViewController: FPRotationViewController, UITableViewDelegate, U
         let cell = tableView.dequeueReusableCell(withIdentifier: "FPProductCell") as! FPProductCell
         cell.frame.size.width = tableView.bounds.size.width
         cell.inventory = self.inventory
-        cell.product = (sections[indexPath.section]["items"] as! NSArray)[indexPath.row] as! FPProduct
+        cell.product = (sections[indexPath.section]["items"] as! NSArray)[indexPath.row] as? FPProduct
         return cell
     }
     
