@@ -1131,11 +1131,11 @@
 			};
 			buildConfigurationList = 81DB7817195C2A860021DE57 /* Build configuration list for PBXProject "Farm POS" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = 81DB7813195C2A860021DE57;
 			productRefGroup = 81DB781D195C2A860021DE57 /* Products */;
