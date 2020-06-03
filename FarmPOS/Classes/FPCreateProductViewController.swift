@@ -279,7 +279,7 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         
         // imageBtn
         self.addConstraintsToView(self.view, forView: self.imageBtn, placeBelowView: self.imageHeaderLabel, xPadding: -1, yPadding: yPadding, width: 280, height: 280)
-        self.view.addConstraint(NSLayoutConstraint(item: self.imageBtn, attribute: .centerX, relatedBy: .equal, toItem: self.imageBtn.superview, attribute: .centerX, multiplier: 1, constant: 0))
+        self.view.addConstraint(NSLayoutConstraint(item: self.imageBtn!, attribute: .centerX, relatedBy: .equal, toItem: self.imageBtn.superview, attribute: .centerX, multiplier: 1, constant: 0))
         
         // measurementHeaderLabel
         self.addConstraintsToView(self.view, forView: self.measurementHeaderLabel, placeBelowView: self.imageBtn, xPadding: headerLabelXPadding, yPadding: yPadding, width: 0, height: headerLabelHeight)
@@ -702,12 +702,12 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         //        ]
         
         // tableView
-        var tableViewConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[inventoryTableView]|", options: [], metrics: nil, views: ["inventoryTableView": self.inventoryTableView])
-        tableViewConstraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|[inventoryTableView]|", options: [], metrics: nil, views: ["inventoryTableView": self.inventoryTableView])
+        var tableViewConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[inventoryTableView]|", options: [], metrics: nil, views: ["inventoryTableView": self.inventoryTableView!])
+        tableViewConstraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|[inventoryTableView]|", options: [], metrics: nil, views: ["inventoryTableView": self.inventoryTableView!])
         self.view.addConstraints(tableViewConstraints)
         
-        tableViewConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[productTableView]|", options: [], metrics: nil, views: ["productTableView": self.productTableView])
-        tableViewConstraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|[productTableView]|", options: [], metrics: nil, views: ["productTableView": self.productTableView])
+        tableViewConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[productTableView]|", options: [], metrics: nil, views: ["productTableView": self.productTableView!])
+        tableViewConstraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|[productTableView]|", options: [], metrics: nil, views: ["productTableView": self.productTableView!])
         self.view.addConstraints(tableViewConstraints)
         
         self.assembleTableHeaderViewForProduct()
@@ -825,7 +825,7 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
             
             let views: [String: Any] = [
                 "inventoryExpandableViewOverlayView": self.inventoryExpandableViewOverlayView!,
-                "inventoryExpandableView": self.inventoryExpandableView,
+                "inventoryExpandableView": self.inventoryExpandableView!,
                 "inventoryExpandableViewOverlayViewLabel": self.inventoryExpandableViewOverlayViewLabel!
             ]
             

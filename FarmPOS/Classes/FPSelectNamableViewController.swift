@@ -37,7 +37,7 @@ class FPSelectNamableViewController: FPRotationViewController, UITableViewDelega
         self.view.addSubview(self.tableView)
         
         let views: [String: Any] = [
-            "tableView": self.tableView
+            "tableView": self.tableView!
         ]
         
         // tableView

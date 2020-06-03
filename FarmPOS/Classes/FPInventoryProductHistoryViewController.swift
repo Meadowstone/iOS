@@ -37,8 +37,8 @@ class FPInventoryProductHistoryViewController: FPRotationViewController, UITable
         self.tableView.delegate = self
         self.view.addSubview(self.tableView)
         
-        var tableViewConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[tableView]|", options: [], metrics: nil, views: ["tableView": self.tableView])
-        tableViewConstraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|[tableView]|", options: [], metrics: nil, views: ["tableView": self.tableView])
+        var tableViewConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[tableView]|", options: [], metrics: nil, views: ["tableView": self.tableView!])
+        tableViewConstraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|[tableView]|", options: [], metrics: nil, views: ["tableView": self.tableView!])
         self.view.addConstraints(tableViewConstraints)
 
     }

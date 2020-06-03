@@ -27,7 +27,7 @@ class FPPaymentConfirmViewController: FPRotationViewController {
         if paymentMethod == FPPaymentMethod.check {
             method = 3
         }
-        NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification), object: ["method": method, "checkNumber": checkNumber, "sumPaid": sumPaid - change, "change": change])
+        NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification), object: ["method": method, "checkNumber": checkNumber, "sumPaid": sumPaid - change, "change": change!])
     }
     
     
