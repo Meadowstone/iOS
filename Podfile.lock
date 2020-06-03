@@ -13,7 +13,6 @@ PODS:
   - CardFlight (2.0.6):
     - CardFlight/AudioJack (= 2.0.6)
   - CardFlight/AudioJack (2.0.6)
-  - Harpy (3.3.8)
   - MBProgressHUD (0.9.1)
   - MMDrawerController (0.6.0):
     - MMDrawerController/Core (= 0.6.0)
@@ -39,7 +38,6 @@ DEPENDENCIES:
   - AFNetworking/Security (= 2.5.4)
   - AFNetworking/Serialization (= 2.5.4)
   - CardFlight (= 2.0.6)
-  - Harpy (= 3.3.8)
   - MBProgressHUD (= 0.9.1)
   - MMDrawerController (= 0.6.0)
   - SDWebImage (= 3.7.3)
@@ -49,7 +47,6 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - CardFlight
-    - Harpy
     - MBProgressHUD
     - MMDrawerController
     - SDWebImage
@@ -58,12 +55,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   CardFlight: eae95b7f9bbbf190f7de64cd5b29f95e1f515e83
-  Harpy: d8d089fbc909114affd2bfe7aa6fe5cd0f72902e
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
 
-PODFILE CHECKSUM: 8300101890a526e0d022b65eea22d4944778e866
+PODFILE CHECKSUM: 8b93b1c6f3648693ae88899c5a60ed708d4d1f51
 
 COCOAPODS: 1.7.2

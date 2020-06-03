@@ -144,13 +144,11 @@
 		812BEEE91B2AE31800F01436 /* FPApplyBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812BEEE81B2AE31800F01436 /* FPApplyBalanceViewController.swift */; };
 		812BEEEA1B2AE31800F01436 /* FPApplyBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812BEEE81B2AE31800F01436 /* FPApplyBalanceViewController.swift */; };
 		812DDEC21E0AC11C00DE1777 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEBB1E0AC11C00DE1777 /* AFNetworking.framework */; };
-		812DDEC31E0AC11C00DE1777 /* Harpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEBC1E0AC11C00DE1777 /* Harpy.framework */; };
 		812DDEC41E0AC11C00DE1777 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEBD1E0AC11C00DE1777 /* MBProgressHUD.framework */; };
 		812DDEC51E0AC11C00DE1777 /* MMDrawerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEBE1E0AC11C00DE1777 /* MMDrawerController.framework */; };
 		812DDEC71E0AC11C00DE1777 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEC01E0AC11C00DE1777 /* SDWebImage.framework */; };
 		812DDEC81E0AC11C00DE1777 /* SVPullToRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEC11E0AC11C00DE1777 /* SVPullToRefresh.framework */; };
 		812DDED01E0AC12400DE1777 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEC91E0AC12400DE1777 /* AFNetworking.framework */; };
-		812DDED11E0AC12400DE1777 /* Harpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDECA1E0AC12400DE1777 /* Harpy.framework */; };
 		812DDED21E0AC12400DE1777 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDECB1E0AC12400DE1777 /* MBProgressHUD.framework */; };
 		812DDED31E0AC12400DE1777 /* MMDrawerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDECC1E0AC12400DE1777 /* MMDrawerController.framework */; };
 		812DDED51E0AC12400DE1777 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDECE1E0AC12400DE1777 /* SDWebImage.framework */; };
@@ -384,13 +382,11 @@
 		8129674D1B403BC7009ABC6A /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		812BEEE81B2AE31800F01436 /* FPApplyBalanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPApplyBalanceViewController.swift; sourceTree = "<group>"; };
 		812DDEBB1E0AC11C00DE1777 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
-		812DDEBC1E0AC11C00DE1777 /* Harpy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Harpy.framework; path = "Pods/../build/Debug-iphoneos/Harpy/Harpy.framework"; sourceTree = "<group>"; };
 		812DDEBD1E0AC11C00DE1777 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = "Pods/../build/Debug-iphoneos/MBProgressHUD/MBProgressHUD.framework"; sourceTree = "<group>"; };
 		812DDEBE1E0AC11C00DE1777 /* MMDrawerController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MMDrawerController.framework; path = "Pods/../build/Debug-iphoneos/MMDrawerController/MMDrawerController.framework"; sourceTree = "<group>"; };
 		812DDEC01E0AC11C00DE1777 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
 		812DDEC11E0AC11C00DE1777 /* SVPullToRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVPullToRefresh.framework; path = "Pods/../build/Debug-iphoneos/SVPullToRefresh/SVPullToRefresh.framework"; sourceTree = "<group>"; };
 		812DDEC91E0AC12400DE1777 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
-		812DDECA1E0AC12400DE1777 /* Harpy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Harpy.framework; path = "Pods/../build/Debug-iphoneos/Harpy/Harpy.framework"; sourceTree = "<group>"; };
 		812DDECB1E0AC12400DE1777 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = "Pods/../build/Debug-iphoneos/MBProgressHUD/MBProgressHUD.framework"; sourceTree = "<group>"; };
 		812DDECC1E0AC12400DE1777 /* MMDrawerController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MMDrawerController.framework; path = "Pods/../build/Debug-iphoneos/MMDrawerController/MMDrawerController.framework"; sourceTree = "<group>"; };
 		812DDECE1E0AC12400DE1777 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
@@ -541,7 +537,6 @@
 				81CDBC101B67B15200D37E0B /* Foundation.framework in Frameworks */,
 				95AA9CBAFF268782BEE5B28D /* Pods_FPOS_Dev.framework in Frameworks */,
 				812DDED01E0AC12400DE1777 /* AFNetworking.framework in Frameworks */,
-				812DDED11E0AC12400DE1777 /* Harpy.framework in Frameworks */,
 				812DDED21E0AC12400DE1777 /* MBProgressHUD.framework in Frameworks */,
 				812DDED31E0AC12400DE1777 /* MMDrawerController.framework in Frameworks */,
 				812DDED51E0AC12400DE1777 /* SDWebImage.framework in Frameworks */,
@@ -567,7 +562,6 @@
 				810FFD4919669F0B00BF652C /* CFNetwork.framework in Frameworks */,
 				2AB368113D911F7177EA950F /* Pods_Farmstand_Cart.framework in Frameworks */,
 				812DDEC21E0AC11C00DE1777 /* AFNetworking.framework in Frameworks */,
-				812DDEC31E0AC11C00DE1777 /* Harpy.framework in Frameworks */,
 				812DDEC41E0AC11C00DE1777 /* MBProgressHUD.framework in Frameworks */,
 				812DDEC51E0AC11C00DE1777 /* MMDrawerController.framework in Frameworks */,
 				812DDEC71E0AC11C00DE1777 /* SDWebImage.framework in Frameworks */,
@@ -1033,13 +1027,11 @@
 			isa = PBXGroup;
 			children = (
 				812DDEC91E0AC12400DE1777 /* AFNetworking.framework */,
-				812DDECA1E0AC12400DE1777 /* Harpy.framework */,
 				812DDECB1E0AC12400DE1777 /* MBProgressHUD.framework */,
 				812DDECC1E0AC12400DE1777 /* MMDrawerController.framework */,
 				812DDECE1E0AC12400DE1777 /* SDWebImage.framework */,
 				812DDECF1E0AC12400DE1777 /* SVPullToRefresh.framework */,
 				812DDEBB1E0AC11C00DE1777 /* AFNetworking.framework */,
-				812DDEBC1E0AC11C00DE1777 /* Harpy.framework */,
 				812DDEBD1E0AC11C00DE1777 /* MBProgressHUD.framework */,
 				812DDEBE1E0AC11C00DE1777 /* MMDrawerController.framework */,
 				812DDEC01E0AC11C00DE1777 /* SDWebImage.framework */,
@@ -1260,7 +1252,6 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-FPOS Dev/Pods-FPOS Dev-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/Harpy/Harpy.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MMDrawerController/MMDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -1269,7 +1260,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Harpy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -1288,7 +1278,6 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Farmstand Cart/Pods-Farmstand Cart-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/Harpy/Harpy.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MMDrawerController/MMDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -1297,7 +1286,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Harpy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",

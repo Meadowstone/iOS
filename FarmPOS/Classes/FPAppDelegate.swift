@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Harpy
 import UserNotifications
 
 let kFPAPNsTokenUserDefaultsKey = "kFPAPNsTokenUserDefaultsKey"
@@ -54,10 +53,6 @@ class FPAppDelegate: UIApplication, UIApplicationDelegate, UIAlertViewDelegate {
         self.setupNavigationBar()
         self.setupObservers()
         
-        // Set the App ID for your app
-        Harpy.sharedInstance().appID = "939642379"
-        Harpy.sharedInstance().appName = "Farmstand Cart"
-        
         window = UIWindow(frame: UIScreen.main.bounds)
         window!.makeKeyAndVisible()
         
@@ -96,10 +91,6 @@ class FPAppDelegate: UIApplication, UIApplicationDelegate, UIAlertViewDelegate {
     
     override func supportedInterfaceOrientations(for window: UIWindow?) -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.allButUpsideDown
-    }
-    
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        Harpy.sharedInstance().checkVersionDaily()
     }
     
     func redirectUser(_ user: AnyObject?, withLoginStatus status: FPLoginStatus) {
