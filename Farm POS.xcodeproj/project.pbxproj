@@ -1567,7 +1567,6 @@
 			baseConfigurationReference = 239888C3D9488AD9D9E23A03 /* Pods-FPOS Dev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "FPOS Dev.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1658,7 +1657,6 @@
 			baseConfigurationReference = 18B0578E21B89A29BFB0613E /* Pods-Farmstand Cart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Farmstand Cart.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1740,7 +1738,6 @@
 			baseConfigurationReference = 1BEC7D13A5B77B3C3C366833 /* Pods-Farmstand Cart.appstore.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Farmstand Cart.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1766,7 +1763,6 @@
 			baseConfigurationReference = 87C9812238DD924549F7CE56 /* Pods-FPOS Dev.appstore.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "FPOS Dev.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
