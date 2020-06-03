@@ -461,7 +461,7 @@ class FPCartView: UIView, UIAlertViewDelegate, UITableViewDelegate, UITableViewD
     }
     
     func deleteCartProduct(_ cp: FPCartProduct) {
-        if let idx = self.cartProducts.index(of: cp) {
+        if let idx = self.cartProducts.firstIndex(of: cp) {
             self.deleteCartProduct(cp, atIndexPath: IndexPath(row: idx, section: 0))
         }
     }

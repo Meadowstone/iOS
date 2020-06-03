@@ -1109,7 +1109,7 @@
 				TargetAttributes = {
 					50FB1FA11980176B00D7106C = {
 						DevelopmentTeam = 4268HQ9ZMJ;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1100;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -1119,7 +1119,7 @@
 					81DB781B195C2A860021DE57 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = 4268HQ9ZMJ;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1100;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -1588,7 +1588,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = FarmPOS/bridge.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1677,7 +1677,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = FarmPOS/bridge.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1753,7 +1753,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = FarmPOS/bridge.h;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = AppStore;
@@ -1781,7 +1781,7 @@
 				PRODUCT_NAME = "FPOS Dev";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = FarmPOS/bridge.h;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = AppStore;

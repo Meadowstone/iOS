@@ -128,7 +128,7 @@ class FPOrdersViewController: FPRotationViewController, UITableViewDelegate, UIT
                 if errMsg != nil {
                     FPAlertManager.showMessage(errMsg!, withTitle: "Error")
                 } else {
-                    if let idx = self!.orders.index(of: self!.cancelingOrder!) {
+                    if let idx = self!.orders.firstIndex(of: self!.cancelingOrder!) {
                         self!.orders.remove(at: idx)
                         self!.cancelingOrder = nil
                         self!.tableView.reloadData()
