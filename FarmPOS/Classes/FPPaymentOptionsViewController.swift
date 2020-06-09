@@ -392,13 +392,12 @@ class FPPaymentOptionsViewController: FPRotationViewController {
                         message = "Please drop your cash into the container labeled \"Cash/Check Box.\"\nYou will receive an email receipt of your deposit."
                     }
                 }
-                let alert = UIAlertView()
-                alert.tag = 1
-                alert.title = "Deposit successfull!"
-                alert.message = message
-                alert.delegate = self
-                alert.addButton(withTitle: "OK")
-                alert.show()
+                
+                let alertController = UIAlertController(title: "Deposit successfull!", message: message, preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                    self?.balanceCompletionHandler()
+                })
+                self?.present(alertController, animated: true)
             }
         }
         hud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
@@ -407,8 +406,8 @@ class FPPaymentOptionsViewController: FPRotationViewController {
         FPServer.sharedInstance.balanceDepositWithSum(self.balanceSum, isCheck: isCheck, useCreditCard: creditCard, checkNumber: checkNumber, transactionToken: transactionToken, last4: last4, completion: completion)
     }
     
-    // UIAlertView delegate
-    func alertView(_ alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    // UIAlertView delegate (probably can be removed since it's deprecated and not called anymore)
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if alertView.tag == 1 {
             // Call balance competion handler
             balanceCompletionHandler()
