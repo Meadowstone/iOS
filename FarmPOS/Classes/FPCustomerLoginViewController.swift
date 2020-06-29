@@ -9,7 +9,7 @@
 import UIKit
 import MBProgressHUD
 
-class FPCustomerLoginViewController: FPRotationViewController, UIPopoverControllerDelegate {
+class FPCustomerLoginViewController: FPRotationViewController, UIPopoverControllerDelegate, UITextFieldDelegate {
     
     var popover: UIPopoverController?
     
@@ -151,7 +151,7 @@ class FPCustomerLoginViewController: FPRotationViewController, UIPopoverControll
         return false
     }
     
-    @objc func textField(_ textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    @objc func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if (string as NSString).length == 0 {
             return true
         }
