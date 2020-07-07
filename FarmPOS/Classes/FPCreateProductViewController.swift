@@ -154,7 +154,7 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         let vc = FPInventoryProductHistoryViewController.inventoryProductHistoryViewControllerForProduct(
             editProduct,
             historyUpdated: { [weak self] in
-                self?.refreshHistoryRelatedProperties(for: editProduct)
+                self?.refreshHistoryRelatedViews(for: editProduct)
             }
         )
         self.navigationController?.pushViewController(vc, animated: true)
@@ -663,7 +663,7 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
                 self.triggerAmountTextField.text = FPCurrencyFormatter.printableCurrency(triggerAmount)
             }
             
-            refreshHistoryRelatedProperties(for: p)
+            refreshHistoryRelatedViews(for: p)
             
             if let b = p.barcodeValue {
                 self.barcodeTextField.text = b
@@ -674,24 +674,10 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         
     }
     
-    func refreshHistoryRelatedProperties(for editProduct: FPProduct) {
-        if let b = editProduct.bought {
-            self.boughtTextField.text = FPCurrencyFormatter.printableCurrency(b)
-        } else {
-            self.boughtTextField.text = FPCurrencyFormatter.printableCurrency(0)
-        }
-        
-        if let r = editProduct.remaining {
-            self.remainingTextField.text = FPCurrencyFormatter.printableCurrency(r)
-        } else {
-            self.remainingTextField.text = FPCurrencyFormatter.printableCurrency(0)
-        }
-        
-        if let s = editProduct.sold {
-            self.soldTextField.text = FPCurrencyFormatter.printableCurrency(s)
-        } else {
-            self.soldTextField.text = FPCurrencyFormatter.printableCurrency(0)
-        }
+    func refreshHistoryRelatedViews(for product: FPProduct) {
+        boughtTextField.text = FPCurrencyFormatter.printableCurrency(product.bought ?? 0)
+        remainingTextField.text = FPCurrencyFormatter.printableCurrency(product.remaining ?? 0)
+        soldTextField.text = FPCurrencyFormatter.printableCurrency(product.sold ?? 0)
     }
     
     func applyConstraints() {
