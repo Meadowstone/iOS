@@ -140,15 +140,6 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if editProduct != nil {
-            self.populateSubviews() // for returning from inventory management
-        }
-        
-    }
-    
     func updateNavigationBar() {
         //        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: "savePressed")
         if let t = self.titleSegmented, t.selectedSegmentIndex == 1 {
@@ -159,7 +150,13 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
     }
     
     @objc func historyPressed() {
-        let vc = FPInventoryProductHistoryViewController.inventoryProductHistoryViewControllerForProduct(self.editProduct!)
+        guard let editProduct = editProduct else { return }
+        let vc = FPInventoryProductHistoryViewController.inventoryProductHistoryViewControllerForProduct(
+            editProduct,
+            historyUpdated: { [weak self] in
+                self?.refreshHistoryRelatedProperties(for: editProduct)
+            }
+        )
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -666,23 +663,7 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
                 self.triggerAmountTextField.text = FPCurrencyFormatter.printableCurrency(triggerAmount)
             }
             
-            if let b = p.bought {
-                self.boughtTextField.text = FPCurrencyFormatter.printableCurrency(b)
-            } else {
-                self.boughtTextField.text = FPCurrencyFormatter.printableCurrency(0)
-            }
-            
-            if let r = p.remaining {
-                self.remainingTextField.text = FPCurrencyFormatter.printableCurrency(r)
-            } else {
-                self.remainingTextField.text = FPCurrencyFormatter.printableCurrency(0)
-            }
-            
-            if let s = p.sold {
-                self.soldTextField.text = FPCurrencyFormatter.printableCurrency(s)
-            } else {
-                self.soldTextField.text = FPCurrencyFormatter.printableCurrency(0)
-            }
+            refreshHistoryRelatedProperties(for: p)
             
             if let b = p.barcodeValue {
                 self.barcodeTextField.text = b
@@ -691,6 +672,26 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
             self.selectedSupplier = p.supplier
         }
         
+    }
+    
+    func refreshHistoryRelatedProperties(for editProduct: FPProduct) {
+        if let b = editProduct.bought {
+            self.boughtTextField.text = FPCurrencyFormatter.printableCurrency(b)
+        } else {
+            self.boughtTextField.text = FPCurrencyFormatter.printableCurrency(0)
+        }
+        
+        if let r = editProduct.remaining {
+            self.remainingTextField.text = FPCurrencyFormatter.printableCurrency(r)
+        } else {
+            self.remainingTextField.text = FPCurrencyFormatter.printableCurrency(0)
+        }
+        
+        if let s = editProduct.sold {
+            self.soldTextField.text = FPCurrencyFormatter.printableCurrency(s)
+        } else {
+            self.soldTextField.text = FPCurrencyFormatter.printableCurrency(0)
+        }
     }
     
     func applyConstraints() {
