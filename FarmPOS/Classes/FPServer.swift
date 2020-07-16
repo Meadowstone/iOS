@@ -101,7 +101,7 @@ class FPServer : AFHTTPSessionManager {
         #if Devbuild
             kHost = "http://www.developmentdomain.net/pos/api/"
             #else
-            kHost = "http://farmstand.skihearthfarm.com/pos/api"
+            kHost = "https://api.farmstandcart.com/pos/api"
         #endif
         let instance = FPServer(baseURL: URL(string: kHost))
         instance?.requestSerializer.timeoutInterval = 60.0
