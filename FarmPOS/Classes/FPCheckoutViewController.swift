@@ -46,21 +46,14 @@ class FPCheckoutViewController: FPRotationViewController, UITableViewDelegate, U
             imgView.frame = CGRect(x: 0.0, y: 0.0, width: imgView.image!.size.width, height: imgView.image!.size.height)
             navigationItem.titleView = imgView
             
-            // Left buttons
-            let leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 0.0, height: 64.0))
-            leftView.isUserInteractionEnabled = true
-            leftView.backgroundColor = UIColor.clear
-            
+            // Cancel button
             let cancelBtn = UIButton(type: .custom)
             cancelBtn.addTarget(self, action: #selector(FPCheckoutViewController.cancelPressed), for: .touchUpInside)
             cancelBtn.setTitle("Cancel", for: .normal)
             cancelBtn.setTitleColor(UIColor.lightGray, for: .highlighted)
             cancelBtn.sizeToFit()
-            cancelBtn.frame.size.height = leftView.frame.size.height
-            leftView.addSubview(cancelBtn)
             
-            leftView.frame = CGRect(x: 0.0, y: 0.0, width: cancelBtn.frame.size.width + cancelBtn.frame.origin.x, height: 64.0)
-            navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftView)
+            navigationItem.leftBarButtonItem = UIBarButtonItem(customView: cancelBtn)
         } else {
             
             // Cell
