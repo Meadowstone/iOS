@@ -101,17 +101,6 @@ class FPCustomerLoginViewController: FPRotationViewController, UIPopoverControll
         // @Cardflight notifications
         NotificationCenter.default.addObserver(self, selector: #selector(FPCustomerLoginViewController.updateReaderStatus), name: Notification.Name(rawValue: FPReaderStatusChangedNotification), object: nil)
         
-        let helpBtn = UIButton(type: .custom)
-        helpBtn.addTarget(self, action: #selector(FPCustomerLoginViewController.helpPressed), for: .touchUpInside)
-        helpBtn.setImage(UIImage(named: "ipad_help_btn"), for: .normal)
-        helpBtn.setTitleColor(UIColor.lightGray, for: .highlighted)
-        helpBtn.setTitle("Help", for: .normal)
-        helpBtn.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 8.0, bottom: 0.0, right: 0.0)
-        helpBtn.sizeToFit()
-        helpBtn.frame.size.width = 90.0
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: helpBtn)
-        
         for textField in [phoneTextField, pinTextField] {
             if let placeholder = textField?.placeholder {
                 textField?.attributedPlaceholder = NSAttributedString(string : placeholder, attributes: [.foregroundColor: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
@@ -120,18 +109,6 @@ class FPCustomerLoginViewController: FPRotationViewController, UIPopoverControll
         
         // Initialize instance
         _ = FPCardFlightManager.sharedInstance
-    }
-    
-    @objc func helpPressed() {
-        let vc = FPHelpViewController.helpNavigationViewControllerWithCancelBlock({[weak self] in self!.popover!.dismiss(animated: false)})
-        displayPopoverInViewController(vc)
-    }
-    
-    func displayPopoverInViewController(_ vc: UIViewController) {
-        let centerRect = CGRect(x: view.frame.size.width / 2, y: view.frame.size.height / 2, width: 1, height: 1)
-        popover = UIPopoverController(contentViewController: vc)
-        popover!.delegate = self
-        popover!.present(from: centerRect, in: view, permittedArrowDirections: UIPopoverArrowDirection(rawValue: 0), animated: false)
     }
     
     func customerAuthenticated(_ customer: FPCustomer?) {

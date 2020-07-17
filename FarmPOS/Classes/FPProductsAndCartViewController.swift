@@ -65,15 +65,6 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         leftView.addSubview(logoutBtn)
         leftView.frame = CGRect(x: 0.0, y: 0.0, width: logoutBtn.frame.size.width + logoutBtn.frame.origin.x, height: 64.0);
         
-        let helpBtn = UIButton(type: .custom)
-        helpBtn.addTarget(self, action: #selector(FPProductsAndCartViewController.helpPressed), for: .touchUpInside)
-        helpBtn.setImage(UIImage(named: "ipad_help_btn"), for: .normal)
-        helpBtn.setTitleColor(UIColor.lightGray, for: .highlighted)
-        helpBtn.setTitle("Help", for: .normal)
-        helpBtn.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 8.0, bottom: 0.0, right: 0.0)
-        helpBtn.sizeToFit()
-        helpBtn.frame = CGRect(x: logoutBtn.frame.size.width + logoutBtn.frame.origin.x + 8.0, y: 0.0, width: helpBtn.frame.size.width + 8.0, height: 64.0);
-        
 //        let locationBtn = UIButton.buttonWithType(.Custom) as! UIButton
 //        locationBtn.addTarget(self, action: "locationPressed", forControlEvents: .TouchUpInside)
 //        locationBtn.setTitleColor(UIColor.lightGrayColor(), forState: .Highlighted)
@@ -91,7 +82,6 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         summaryBtn.frame = CGRect(x: logoutBtn.frame.size.width + logoutBtn.frame.origin.x + 8.0, y: 0.0, width: summaryBtn.frame.size.width + 8.0, height: 64.0);
         
         if FPFarmWorker.activeWorker() != nil {
-            helpBtn.isHidden = true
             leftView.addSubview(summaryBtn)
             leftView.frame = CGRect(x: 0.0, y: 0.0, width: summaryBtn.frame.size.width + summaryBtn.frame.origin.x, height: 64.0)
 //            locationBtn.hidden = false
@@ -101,13 +91,7 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
 //                    leftView.frame = CGRectMake(0.0, 0.0, locationBtn.frame.size.width + locationBtn.frame.origin.x, 64.0);
 //                }
 //            }
-        } else {
-            helpBtn.isHidden = false
-//            locationBtn.hidden = true
-            leftView.addSubview(helpBtn)
-            leftView.frame = CGRect(x: 0.0, y: 0.0, width: helpBtn.frame.size.width + helpBtn.frame.origin.x, height: 64.0);
         }
-        
         
         let item = UIBarButtonItem(customView: leftView)
         navigationItem.leftBarButtonItem = item
@@ -365,12 +349,6 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
     @objc func inventoryPressed() {
         let vc = FPProductsViewController.productsViewControllerForCategory(nil, inventory: true)
         self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @objc func helpPressed() {
-        self.searchTextField.endEditing(true)
-        let vc = FPHelpViewController.helpNavigationViewControllerWithCancelBlock({[weak self] in self!.popover!.dismiss(animated: false)})
-        displayPopoverInViewController(vc)
     }
     
     func locationPressed() {

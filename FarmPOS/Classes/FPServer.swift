@@ -27,7 +27,6 @@ let kFarmWorkerEmails = "farm_worker_emails/"
 // Cutomers
 let kCustomerCreate         = "client_create/"
 let kCustomerEdit           = "client_edit/"
-let kHelp                   = "help/"
 let kCreditCards            = "client_credit_card_list/"
 let kCreditCardCreate       = "client_credit_card_create/"
 let kCreditCardDelete       = "client_credit_card_delete/"
@@ -705,26 +704,6 @@ class FPServer : AFHTTPSessionManager {
         }
         
         self.post(kCustomerEdit, parameters: params, success: success, failure: failure)
-    }
-    
-    func helpWithPhone(_ phone: String, completion:@escaping (_ errMsg: String?) -> Void) {
-        let params = ["phone": phone]
-        
-        let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
-            var errors: String? = kInternalError
-            
-            if let r = responseObject as? NSDictionary {
-                errors = self.errors(r["errors"])
-            }
-            
-            completion(errors)
-        }
-        
-        let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
-            let errors = self.errors(error)
-            completion(errors)
-        }
-        self.post(kHelp, parameters: params, success: success, failure: failure)
     }
     
     func creditCardsWithCompletion(_ countOnly: Bool, completion: @escaping (_ errMsg: String?, _ cards: Array<FPCreditCard>?, _ count : Int?) -> Void) {

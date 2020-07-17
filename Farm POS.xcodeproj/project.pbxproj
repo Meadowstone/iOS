@@ -32,7 +32,6 @@
 		50FB1FB11980176B00D7106C /* FPTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DD91CE1977D5640056754B /* FPTransactionsViewController.swift */; };
 		50FB1FB21980176B00D7106C /* FPChoiceInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8128CDD119615B7E009D92EE /* FPChoiceInputView.swift */; };
 		50FB1FB31980176B00D7106C /* FPProductCartCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD1DA1196A185D00EEAD8F /* FPProductCartCellView.swift */; };
-		50FB1FB41980176B00D7106C /* FPHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682BE196F4A6B00BE4E90 /* FPHelpViewController.swift */; };
 		50FB1FB51980176B00D7106C /* FPCheckoutProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151073319797C0400AFC491 /* FPCheckoutProduct.swift */; };
 		50FB1FB61980176B00D7106C /* FPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81199D48195C3B0400BE139D /* FPServer.swift */; };
 		50FB1FB71980176B00D7106C /* FPBuyGiftCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682CF1970153B00BE4E90 /* FPBuyGiftCardViewController.swift */; };
@@ -157,7 +156,6 @@
 		812ED2B6195CF354008F178C /* FPModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812ED2B5195CF354008F178C /* FPModelParser.swift */; };
 		813237FE19617DE300461B74 /* UIView+FirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813237FD19617DE300461B74 /* UIView+FirstResponder.swift */; };
 		81363E87196C705100A0F0DC /* FPProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81363E86196C705100A0F0DC /* FPProductViewController.swift */; };
-		813682BF196F4A6B00BE4E90 /* FPHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682BE196F4A6B00BE4E90 /* FPHelpViewController.swift */; };
 		813682C1196F575B00BE4E90 /* FPGiftCardOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682C0196F575B00BE4E90 /* FPGiftCardOptionsViewController.swift */; };
 		813682C3196F5BD900BE4E90 /* gift_card_FAQ.html in Resources */ = {isa = PBXBuildFile; fileRef = 813682C2196F5BD900BE4E90 /* gift_card_FAQ.html */; };
 		813682C9196F69FB00BE4E90 /* FPGiftCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682C7196F69FB00BE4E90 /* FPGiftCardCell.swift */; };
@@ -395,7 +393,6 @@
 		812ED2B5195CF354008F178C /* FPModelParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPModelParser.swift; sourceTree = "<group>"; };
 		813237FD19617DE300461B74 /* UIView+FirstResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FirstResponder.swift"; sourceTree = "<group>"; };
 		81363E86196C705100A0F0DC /* FPProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPProductViewController.swift; sourceTree = "<group>"; };
-		813682BE196F4A6B00BE4E90 /* FPHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPHelpViewController.swift; sourceTree = "<group>"; };
 		813682C0196F575B00BE4E90 /* FPGiftCardOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPGiftCardOptionsViewController.swift; sourceTree = "<group>"; };
 		813682C2196F5BD900BE4E90 /* gift_card_FAQ.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gift_card_FAQ.html; sourceTree = "<group>"; };
 		813682C7196F69FB00BE4E90 /* FPGiftCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPGiftCardCell.swift; sourceTree = "<group>"; };
@@ -789,7 +786,6 @@
 				81FB1968198BA4FB00FF6815 /* FPMenuViewController.swift */,
 				814A71FA19622CFB00F2A689 /* FPProductsAndCartViewController.swift */,
 				81363E86196C705100A0F0DC /* FPProductViewController.swift */,
-				813682BE196F4A6B00BE4E90 /* FPHelpViewController.swift */,
 				813682C0196F575B00BE4E90 /* FPGiftCardOptionsViewController.swift */,
 				813682CB196F6C4500BE4E90 /* FPGiftCardsViewController.swift */,
 				813682CF1970153B00BE4E90 /* FPBuyGiftCardViewController.swift */,
@@ -1356,7 +1352,6 @@
 				81F452691E1162D800A583D3 /* FPCDProductDescriptor+CoreDataProperties.swift in Sources */,
 				50FB1FB21980176B00D7106C /* FPChoiceInputView.swift in Sources */,
 				50FB1FB31980176B00D7106C /* FPProductCartCellView.swift in Sources */,
-				50FB1FB41980176B00D7106C /* FPHelpViewController.swift in Sources */,
 				81B63A251B53AA79002E795F /* FPCustomerEditViewController.swift in Sources */,
 				50FB1FB51980176B00D7106C /* FPCheckoutProduct.swift in Sources */,
 				50FB1FB61980176B00D7106C /* FPServer.swift in Sources */,
@@ -1477,7 +1472,6 @@
 				81F452681E1162D800A583D3 /* FPCDProductDescriptor+CoreDataProperties.swift in Sources */,
 				8128CDD219615B7E009D92EE /* FPChoiceInputView.swift in Sources */,
 				81CD1DA2196A185D00EEAD8F /* FPProductCartCellView.swift in Sources */,
-				813682BF196F4A6B00BE4E90 /* FPHelpViewController.swift in Sources */,
 				81B63A241B53AA79002E795F /* FPCustomerEditViewController.swift in Sources */,
 				8151073419797C0400AFC491 /* FPCheckoutProduct.swift in Sources */,
 				81199D49195C3B0400BE139D /* FPServer.swift in Sources */,

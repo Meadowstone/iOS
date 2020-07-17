@@ -59,17 +59,7 @@ class FPCheckoutViewController: FPRotationViewController, UITableViewDelegate, U
             cancelBtn.frame.size.height = leftView.frame.size.height
             leftView.addSubview(cancelBtn)
             
-            let helpBtn = UIButton(type: .custom)
-            helpBtn.addTarget(self, action: #selector(FPCheckoutViewController.helpPressed), for: .touchUpInside)
-            helpBtn.setImage(UIImage(named: "ipad_help_btn"), for: .normal)
-            helpBtn.setTitleColor(UIColor.lightGray, for: .highlighted)
-            helpBtn.setTitle("Help", for: .normal)
-            helpBtn.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 8.0, bottom: 0.0, right: 0.0)
-            helpBtn.sizeToFit()
-            helpBtn.frame = CGRect(x: cancelBtn.frame.size.width + cancelBtn.frame.origin.x + 8.0, y: 0.0, width: helpBtn.frame.size.width + 8.0, height: 64.0)
-            leftView.addSubview(helpBtn)
-            
-            leftView.frame = CGRect(x: 0.0, y: 0.0, width: helpBtn.frame.size.width + helpBtn.frame.origin.x, height: 64.0)
+            leftView.frame = CGRect(x: 0.0, y: 0.0, width: cancelBtn.frame.size.width + cancelBtn.frame.origin.x, height: 64.0)
             navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftView)
         } else {
             
@@ -198,11 +188,6 @@ class FPCheckoutViewController: FPRotationViewController, UITableViewDelegate, U
                 present(nc, animated: true, completion: nil)
             }
         }
-    }
-    
-    @objc func helpPressed() {
-        let vc = FPHelpViewController.helpNavigationViewControllerWithCancelBlock({[weak self] in self!.popover!.dismiss(animated: false)})
-        displayPopoverInViewController(vc)
     }
     
     func displayPopoverInViewController(_ vc: UIViewController) {
