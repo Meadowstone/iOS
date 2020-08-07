@@ -112,8 +112,15 @@ class FPAuthOptionsViewController: FPRotationViewController {
     }
     
     @objc func logout() {
-        let obj = ["status": FPLoginStatus.loggedOut.rawValue, "user": FPUser.activeUser()!] as [String : Any]
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue:  FPUserLoginStatusChanged), object: obj, userInfo: nil)
+        let alert = UIAlertController(title: "Are you sure you want to log out?", message: nil, preferredStyle: .alert)
+        let noAction = UIAlertAction(title: "No", style: .cancel)
+        let yesAction = UIAlertAction(title: "Yes", style: .default) { _ in
+            let obj = ["status": FPLoginStatus.loggedOut.rawValue, "user": FPUser.activeUser()!] as [String : Any]
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue:  FPUserLoginStatusChanged), object: obj, userInfo: nil)            
+        }
+        alert.addAction(noAction)
+        alert.addAction(yesAction)
+        present(alert, animated: true)
     }
     
 }
