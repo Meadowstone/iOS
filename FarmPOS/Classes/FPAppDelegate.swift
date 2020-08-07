@@ -104,7 +104,6 @@ class FPAppDelegate: UIApplication, UIApplicationDelegate, UIAlertViewDelegate {
                     let farmWorker = FPFarmWorker()
                     farmWorker.id = aUser.id
                     farmWorker.email = aUser.email
-                    farmWorker.password = aUser.password
                     FPFarmWorker.setActiveWorker(farmWorker)
                     FPMenuViewController.setRootAndDisplay()
                 }

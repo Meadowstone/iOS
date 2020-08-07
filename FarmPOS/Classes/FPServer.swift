@@ -406,7 +406,6 @@ class FPServer : AFHTTPSessionManager {
             if let r = responseObject as? NSDictionary {
                 if r["status"] as! Bool {
                     var userInfo = r["user"] as! Dictionary<String, Any>
-                    userInfo["password"] = password as AnyObject?
                     userInfo["default_state_code"] = r["default_state_code"]
                     user = FPModelParser.userWithInfo(userInfo as NSDictionary)
                     FPUser.save(user!)
@@ -480,8 +479,7 @@ class FPServer : AFHTTPSessionManager {
             if let r = responseObject as? NSDictionary {
                 
                 if r["status"] as! Bool {
-                    var workerInfo = r["worker"] as! Dictionary<String, AnyObject>
-                    workerInfo["password"] = password as AnyObject?
+                    let workerInfo = r["worker"] as! Dictionary<String, AnyObject>
                     let worker = FPModelParser.workerWithInfo(workerInfo as NSDictionary)
                     FPFarmWorker.setActiveWorker(worker)
                 }
@@ -496,29 +494,8 @@ class FPServer : AFHTTPSessionManager {
         }
         
         let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
-            var timedOut = false
-            if let e = error as NSError? {
-                timedOut = e.code == NSURLErrorTimedOut
-            }
-            if (!self.reachabilityManager.isReachable || timedOut) {
-                if let fws = FPFarmWorker.allWorkers() {
-                    var errMsg: String? = "Email or password does not match"
-                    for fw in fws {
-                        if fw.password == password && fw.email == email {
-                            FPFarmWorker.setActiveWorker(fw)
-                            errMsg = nil
-                            break;
-                        }
-                    }
-                    completion(nil)
-                    if errMsg == nil {
-                        NotificationCenter.default.post(name: Notification.Name(rawValue: FPUserLoginStatusChanged), object: ["status": FPLoginStatus.loggedIn.rawValue, "user": FPFarmWorker.activeWorker()!])
-                    }
-                }
-            } else {
-                let errors = self.errors(error)
-                completion(errors)
-            }
+            let errors = self.errors(error)
+            completion(errors)
         }
         
         self.post(kFarmWorkerAuth, parameters: params, success: success, failure: failure)
@@ -1201,7 +1178,7 @@ class FPServer : AFHTTPSessionManager {
     }
     
     func voidTransaction(_ t: FPTransaction, completion: @escaping (_ errMsg: String?) -> Void) {
-        let params = ["purchase_id": t.id, "worker_id": FPFarmWorker.activeWorker()!.id, "password": FPFarmWorker.activeWorker()!.password] as [String : Any]
+        let params = ["purchase_id": t.id, "worker_id": FPFarmWorker.activeWorker()!.id] as [String : Any]
         
         let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
             var errors: String? = kInternalError

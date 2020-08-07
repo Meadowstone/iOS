@@ -274,21 +274,9 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
     }
     
     @objc func logoutPressed() {
-//        if let fw = FPFarmWorker.activeWorker() {
-//            let vc = FPPasswordInputViewController.passwordInputViewControllerForPassword(fw.password, message: "Enter password to log out", completion: { [weak self] (cancelled: Bool) -> Void in
-//                if cancelled {
-//                    self!.popover!.dismissPopoverAnimated(true)
-//                }
-//                else {
-//                    NSNotificationCenter.defaultCenter().postNotificationName(FPUserLoginStatusChanged, object: ["status": FPLoginStatus.LoggedOut.rawValue, "user": fw])
-//                }
-//            })
-//            self.displayPopoverInViewController(vc)
-//        } else {
-            let alert = UIAlertView(title: "Are you sure you want to log out?", message: "", delegate: self, cancelButtonTitle: "No", otherButtonTitles: "Yes")
-            alert.tag = 4
-            alert.show()
-//        }
+        let alert = UIAlertView(title: "Are you sure you want to log out?", message: "", delegate: self, cancelButtonTitle: "No", otherButtonTitles: "Yes")
+        alert.tag = 4
+        alert.show()
     }
     
     override func viewWillAppear(_ animated: Bool) {

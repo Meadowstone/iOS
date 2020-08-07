@@ -112,19 +112,8 @@ class FPAuthOptionsViewController: FPRotationViewController {
     }
     
     @objc func logout() {
-        let activeUser = FPUser.activeUser()!
-        let vc = FPPasswordInputViewController.passwordInputViewControllerForPassword(activeUser.password, message: "Please enter Farm Owner password to log out", completion: { [weak self] (cancelled: Bool) -> Void in
-            if cancelled {
-                self!.popover!.dismiss(animated: true)
-            }
-            else {
-                let obj = ["status": FPLoginStatus.loggedOut.rawValue, "user": FPUser.activeUser()!] as [String : Any]
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue:  FPUserLoginStatusChanged), object: obj, userInfo: nil)
-            }
-        })
-        let centerRect = CGRect(x: view.frame.size.width / 2, y: view.frame.size.height / 2, width: 1, height: 1)
-        popover = UIPopoverController(contentViewController: vc)
-        popover?.present(from: centerRect, in: view, permittedArrowDirections: UIPopoverArrowDirection(rawValue: 0), animated: false)
+        let obj = ["status": FPLoginStatus.loggedOut.rawValue, "user": FPUser.activeUser()!] as [String : Any]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue:  FPUserLoginStatusChanged), object: obj, userInfo: nil)
     }
     
 }

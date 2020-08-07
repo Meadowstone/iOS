@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="PWV-Y4-I8h">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="PWV-Y4-I8h">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -141,59 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iY4-5Y-DnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="286.5" y="370"/>
-        </scene>
-        <!--Password Input View Controller-->
-        <scene sceneID="6nJ-IE-DZ0">
-            <objects>
-                <viewController storyboardIdentifier="FPPasswordInputViewController" automaticallyAdjustsScrollViewInsets="NO" id="eUw-rJ-OPw" customClass="FPPasswordInputViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MJL-gl-vx3"/>
-                        <viewControllerLayoutGuide type="bottom" id="Iah-aU-yBZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="k3h-5a-SfQ">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter Farm Owner password to log out" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="277" translatesAutoresizingMaskIntoConstraints="NO" id="mho-hU-yPN">
-                                <rect key="frame" x="20" y="20" width="335" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="zWA-Ig-6wE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="input_bg" translatesAutoresizingMaskIntoConstraints="NO" id="QSI-lU-6Ed">
-                                <rect key="frame" x="20" y="73" width="335" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="hbt-Ql-erI"/>
-                                </constraints>
-                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="QSI-lU-6Ed" secondAttribute="trailing" constant="20" id="8QZ-ep-iLW"/>
-                            <constraint firstItem="mho-hU-yPN" firstAttribute="leading" secondItem="k3h-5a-SfQ" secondAttribute="leading" constant="20" id="9JH-Z6-lm0"/>
-                            <constraint firstItem="mho-hU-yPN" firstAttribute="top" secondItem="MJL-gl-vx3" secondAttribute="bottom" constant="20" id="BZf-A6-LrR"/>
-                            <constraint firstAttribute="trailing" secondItem="mho-hU-yPN" secondAttribute="trailing" constant="20" id="Ppe-IF-04m"/>
-                            <constraint firstItem="QSI-lU-6Ed" firstAttribute="top" secondItem="mho-hU-yPN" secondAttribute="bottom" constant="8" id="i0g-e6-7bQ"/>
-                            <constraint firstItem="QSI-lU-6Ed" firstAttribute="leading" secondItem="k3h-5a-SfQ" secondAttribute="leading" constant="20" id="vfP-S5-34g"/>
-                        </constraints>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <connections>
-                        <outlet property="messageLabel" destination="mho-hU-yPN" id="quW-ef-0aq"/>
-                        <outlet property="passwordTextField" destination="QSI-lU-6Ed" id="sOf-ee-BuY"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LmM-tu-gZw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="694" y="371"/>
+            <point key="canvasLocation" x="415.21739130434787" y="247.76785714285714"/>
         </scene>
         <!--Customer Create View Controller-->
         <scene sceneID="C5v-he-QOh">
@@ -204,11 +150,11 @@
                         <viewControllerLayoutGuide type="bottom" id="RLW-Rn-b9i"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JDo-cK-8OV">
-                        <rect key="frame" x="0.0" y="64" width="375" height="240"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5h-fa-9Eb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evS-Ef-keg">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
@@ -311,18 +257,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oua-QI-0tB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="693.5" y="1103.5"/>
+            <point key="canvasLocation" x="1005.072463768116" y="738.95089285714278"/>
         </scene>
     </scenes>
     <resources>
         <image name="farmstand_logo" width="253" height="130"/>
-        <image name="green_btn" width="10" height="40"/>
+        <image name="green_btn" width="10.5" height="40"/>
         <image name="input_bg" width="250" height="44"/>
         <image name="login_bg" width="320" height="480"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
 </document>

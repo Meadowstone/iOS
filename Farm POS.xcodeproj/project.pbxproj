@@ -19,7 +19,6 @@
 		50FB1FA41980176B00D7106C /* FPRedeemGiftCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E4431971F2540037FCD0 /* FPRedeemGiftCardViewController.swift */; };
 		50FB1FA51980176B00D7106C /* FPProductsAndCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814A71FA19622CFB00F2A689 /* FPProductsAndCartViewController.swift */; };
 		50FB1FA61980176B00D7106C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157106619781C3300F184D0 /* main.swift */; };
-		50FB1FA71980176B00D7106C /* FPPasswordInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A03EC81960C358006B887D /* FPPasswordInputViewController.swift */; };
 		50FB1FA81980176B00D7106C /* FPChoiceOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F463C1966DF75007A009E /* FPChoiceOverlayView.swift */; };
 		50FB1FA91980176B00D7106C /* FPCheckoutHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81510736197988E200AFC491 /* FPCheckoutHeaderView.swift */; };
 		50FB1FAA1980176B00D7106C /* FPPaymentOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EB710197D66E800B86869 /* FPPaymentOptionsViewController.swift */; };
@@ -201,7 +200,6 @@
 		818A3A801A82938E00C2A12C /* FPFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818A3A7E1A82938E00C2A12C /* FPFarm.swift */; };
 		818FE98219890C6C00B3AF4A /* FPProductDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE98119890C6C00B3AF4A /* FPProductDescriptor.swift */; };
 		818FE98319890C6C00B3AF4A /* FPProductDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE98119890C6C00B3AF4A /* FPProductDescriptor.swift */; };
-		81A03EC91960C358006B887D /* FPPasswordInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A03EC81960C358006B887D /* FPPasswordInputViewController.swift */; };
 		81A0FEBA1998C6820022D31D /* FPProductCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A0FEB91998C6820022D31D /* FPProductCategoriesViewController.swift */; };
 		81A0FEBB1998C6820022D31D /* FPProductCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A0FEB91998C6820022D31D /* FPProductCategoriesViewController.swift */; };
 		81A1CC79196771AD00587E50 /* ProductsAndCart-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81A1CC78196771AD00587E50 /* ProductsAndCart-iPad.storyboard */; };
@@ -431,7 +429,6 @@
 		8183F5A71B25BC42001EFFAF /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		818A3A7E1A82938E00C2A12C /* FPFarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPFarm.swift; sourceTree = "<group>"; };
 		818FE98119890C6C00B3AF4A /* FPProductDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPProductDescriptor.swift; sourceTree = "<group>"; };
-		81A03EC81960C358006B887D /* FPPasswordInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPPasswordInputViewController.swift; sourceTree = "<group>"; };
 		81A0FEB91998C6820022D31D /* FPProductCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPProductCategoriesViewController.swift; sourceTree = "<group>"; };
 		81A1CC78196771AD00587E50 /* ProductsAndCart-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "ProductsAndCart-iPad.storyboard"; sourceTree = "<group>"; };
 		81A1CC7A196773CD00587E50 /* FPCartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCartView.swift; sourceTree = "<group>"; };
@@ -653,7 +650,6 @@
 				81199D3C195C313F00BE139D /* Login-iPad.storyboard */,
 				81199D46195C333100BE139D /* FPLoginViewController.swift */,
 				8111A98E195DB15F00F1928E /* FPAuthOptionsViewController.swift */,
-				81A03EC81960C358006B887D /* FPPasswordInputViewController.swift */,
 				81E914371960E62C00865AFC /* FPFarmWorkerLoginViewController.swift */,
 				814A71FE19622EF000F2A689 /* FPCustomerLoginViewController.swift */,
 				810FFD411965997900BF652C /* FPAccountSetupViewController.swift */,
@@ -1324,7 +1320,6 @@
 				81F452631E11628D00A583D3 /* FPCDCSA+CoreDataProperties.swift in Sources */,
 				50FB1FA61980176B00D7106C /* main.swift in Sources */,
 				811B4559198A520A000EC090 /* FPDataAccessLayer.swift in Sources */,
-				50FB1FA71980176B00D7106C /* FPPasswordInputViewController.swift in Sources */,
 				50FB1FA81980176B00D7106C /* FPChoiceOverlayView.swift in Sources */,
 				81BB47F91990F803003A3DEE /* FPInputValidator.swift in Sources */,
 				50FB1FA91980176B00D7106C /* FPCheckoutHeaderView.swift in Sources */,
@@ -1444,7 +1439,6 @@
 				81F452621E11628D00A583D3 /* FPCDCSA+CoreDataProperties.swift in Sources */,
 				8157106719781C3300F184D0 /* main.swift in Sources */,
 				811B4558198A520A000EC090 /* FPDataAccessLayer.swift in Sources */,
-				81A03EC91960C358006B887D /* FPPasswordInputViewController.swift in Sources */,
 				814F463D1966DF75007A009E /* FPChoiceOverlayView.swift in Sources */,
 				81BB47F81990F803003A3DEE /* FPInputValidator.swift in Sources */,
 				81510737197988E200AFC491 /* FPCheckoutHeaderView.swift in Sources */,

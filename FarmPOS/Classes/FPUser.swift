@@ -19,7 +19,6 @@ class FPBaseUser : NSObject {
     
     var id = -1
     var email = ""
-    var password = ""
     
 }
 

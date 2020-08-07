@@ -14,7 +14,6 @@ class FPModelParser {
         let user = FPUser()
         user.id = userInfo["user_id"] as! Int
         user.email = userInfo["email"] as! String
-        user.password = userInfo["password"] as! String
         user.farmId = userInfo["farm_id"] as! String
         user.defaultStateCode = (userInfo["default_state_code"] as! NSNumber).stringValue
         if let f = userInfo["farm"] as? NSDictionary {
@@ -24,7 +23,7 @@ class FPModelParser {
     }
     
     class func infoWithUser(_ user: FPUser) -> NSDictionary {
-        let info: NSMutableDictionary = ["user_id": user.id, "email": user.email, "password": user.password, "default_state_code": Int(user.defaultStateCode)!, "farm_id": user.farmId]
+        let info: NSMutableDictionary = ["user_id": user.id, "email": user.email, "default_state_code": Int(user.defaultStateCode)!, "farm_id": user.farmId]
         if let f = user.farm {
             info["farm"] = self.infoWithFarm(f)
         }
@@ -36,13 +35,12 @@ class FPModelParser {
         let worker = FPFarmWorker()
         worker.id = workerInfo["worker_id"] as! Int
         worker.email = workerInfo["email"] as! String
-        worker.password = workerInfo["password"] as! String
         return worker
     }
 
 
     class func infoWithFarmWorker(_ fw: FPFarmWorker) -> NSDictionary {
-        return ["worker_id": fw.id, "email": fw.email, "password": fw.password]
+        return ["worker_id": fw.id, "email": fw.email]
     }
 
 
