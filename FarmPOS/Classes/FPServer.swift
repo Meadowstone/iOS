@@ -342,11 +342,9 @@ class FPServer : AFHTTPSessionManager {
                     let filteredProducts = FPProduct.products()?.filter({ (product) -> Bool in
                         return product.id == d.productId
                     })
-                    if let products = filteredProducts {
-                        //                        if products.count > 0 {
+                    if let products = filteredProducts, products.count > 0 {
                         let product = products[0]
                         product.dayDiscounts.append(d)
-                        //                        }
                     }
                 }
             }
