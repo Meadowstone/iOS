@@ -9,106 +9,20 @@
 /* Begin PBXBuildFile section */
 		2AB368113D911F7177EA950F /* Pods_Farmstand_Cart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFE2C3F086060FC12C04E372 /* Pods_Farmstand_Cart.framework */; };
 		444852EE199246DF00A1F87C /* FPRetailLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444852ED199246DF00A1F87C /* FPRetailLocation.swift */; };
-		444852EF199246DF00A1F87C /* FPRetailLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444852ED199246DF00A1F87C /* FPRetailLocation.swift */; };
 		503EB70F197D635A00B86869 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503EB70E197D635A00B86869 /* UIKit.framework */; };
 		503EB711197D66E800B86869 /* FPPaymentOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EB710197D66E800B86869 /* FPPaymentOptionsViewController.swift */; };
 		503EB713197D67C300B86869 /* FPPayNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EB712197D67C300B86869 /* FPPayNowViewController.swift */; };
-		503EB715197D735D00B86869 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503EB714197D735D00B86869 /* Images.xcassets */; };
 		50EA292A197E5A6F0024B299 /* FPCashCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA2929197E5A6F0024B299 /* FPCashCheckViewController.swift */; };
 		50EA292C197E71580024B299 /* FPPaymentConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA292B197E71580024B299 /* FPPaymentConfirmViewController.swift */; };
-		50FB1FA41980176B00D7106C /* FPRedeemGiftCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E4431971F2540037FCD0 /* FPRedeemGiftCardViewController.swift */; };
-		50FB1FA51980176B00D7106C /* FPProductsAndCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814A71FA19622CFB00F2A689 /* FPProductsAndCartViewController.swift */; };
-		50FB1FA61980176B00D7106C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157106619781C3300F184D0 /* main.swift */; };
-		50FB1FA81980176B00D7106C /* FPChoiceOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F463C1966DF75007A009E /* FPChoiceOverlayView.swift */; };
-		50FB1FA91980176B00D7106C /* FPCheckoutHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81510736197988E200AFC491 /* FPCheckoutHeaderView.swift */; };
-		50FB1FAA1980176B00D7106C /* FPPaymentOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EB710197D66E800B86869 /* FPPaymentOptionsViewController.swift */; };
-		50FB1FAB1980176B00D7106C /* FPAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F3DD3195C76D100005F14 /* FPAlertManager.swift */; };
-		50FB1FAC1980176B00D7106C /* FPCustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157106B1978238600F184D0 /* FPCustomerCell.swift */; };
-		50FB1FAD1980176B00D7106C /* FPCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8104E6EE19653DB700F079F3 /* FPCustomer.swift */; };
-		50FB1FAE1980176B00D7106C /* FPCheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81510727197978A000AFC491 /* FPCheckoutViewController.swift */; };
-		50FB1FAF1980176B00D7106C /* FPProductCheckoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151072F19797B7B00AFC491 /* FPProductCheckoutCell.swift */; };
-		50FB1FB01980176B00D7106C /* FPCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682D31970455100BE4E90 /* FPCreditCard.swift */; };
-		50FB1FB11980176B00D7106C /* FPTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DD91CE1977D5640056754B /* FPTransactionsViewController.swift */; };
-		50FB1FB21980176B00D7106C /* FPChoiceInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8128CDD119615B7E009D92EE /* FPChoiceInputView.swift */; };
-		50FB1FB31980176B00D7106C /* FPProductCartCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD1DA1196A185D00EEAD8F /* FPProductCartCellView.swift */; };
-		50FB1FB51980176B00D7106C /* FPCheckoutProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151073319797C0400AFC491 /* FPCheckoutProduct.swift */; };
-		50FB1FB61980176B00D7106C /* FPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81199D48195C3B0400BE139D /* FPServer.swift */; };
-		50FB1FB71980176B00D7106C /* FPBuyGiftCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682CF1970153B00BE4E90 /* FPBuyGiftCardViewController.swift */; };
-		50FB1FB81980176B00D7106C /* FPCartProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3A84A196B7B0B0006C479 /* FPCartProduct.swift */; };
-		50FB1FB91980176B00D7106C /* FPOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E462197676110037FCD0 /* FPOrderCell.swift */; };
-		50FB1FBA1980176B00D7106C /* FPCashCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA2929197E5A6F0024B299 /* FPCashCheckViewController.swift */; };
-		50FB1FBB1980176B00D7106C /* FPStoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8115CDE7195D90E800C51C83 /* FPStoryboardManager.swift */; };
-		50FB1FBC1980176B00D7106C /* FPGiftCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682CD196F713900BE4E90 /* FPGiftCard.swift */; };
-		50FB1FBD1980176B00D7106C /* FPGiftCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682CB196F6C4500BE4E90 /* FPGiftCardsViewController.swift */; };
-		50FB1FBE1980176B00D7106C /* FPScanQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E4451971FF930037FCD0 /* FPScanQRCodeViewController.swift */; };
-		50FB1FBF1980176B00D7106C /* FPCartHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3A846196B73B60006C479 /* FPCartHeaderView.swift */; };
-		50FB1FC01980176B00D7106C /* FPManageBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E45B197557CB0037FCD0 /* FPManageBalanceViewController.swift */; };
-		50FB1FC11980176B00D7106C /* FPCheckoutFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151073B197BB31700AFC491 /* FPCheckoutFooterView.swift */; };
-		50FB1FC21980176B00D7106C /* FPModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812ED2B5195CF354008F178C /* FPModelParser.swift */; };
-		50FB1FC31980176B00D7106C /* FPTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DD91D11977DA340056754B /* FPTransaction.swift */; };
-		50FB1FC41980176B00D7106C /* FPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81199D46195C333100BE139D /* FPLoginViewController.swift */; };
-		50FB1FC51980176B00D7106C /* FPNumPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81018279196EA95F009C9E98 /* FPNumPadView.swift */; };
-		50FB1FC61980176B00D7106C /* FPAccountSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FFD411965997900BF652C /* FPAccountSetupViewController.swift */; };
-		50FB1FC71980176B00D7106C /* FPProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81363E86196C705100A0F0DC /* FPProductViewController.swift */; };
-		50FB1FC81980176B00D7106C /* FPCustomersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157106819781F2300F184D0 /* FPCustomersViewController.swift */; };
-		50FB1FC91980176B00D7106C /* FPOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E45F1975E36A0037FCD0 /* FPOrder.swift */; };
-		50FB1FCA1980176B00D7106C /* FPFarmWorkerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E914371960E62C00865AFC /* FPFarmWorkerLoginViewController.swift */; };
-		50FB1FCB1980176B00D7106C /* FPPayNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EB712197D67C300B86869 /* FPPayNowViewController.swift */; };
-		50FB1FCC1980176B00D7106C /* UIView+FirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813237FD19617DE300461B74 /* UIView+FirstResponder.swift */; };
-		50FB1FCD1980176B00D7106C /* FPProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC7C1967756F00587E50 /* FPProduct.swift */; };
-		50FB1FCE1980176B00D7106C /* FPCreateCreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682D11970266300BE4E90 /* FPCreateCreditCardViewController.swift */; };
-		50FB1FCF1980176B00D7106C /* FPGiftCardOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682C0196F575B00BE4E90 /* FPGiftCardOptionsViewController.swift */; };
-		50FB1FD01980176B00D7106C /* FPGiftCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682C7196F69FB00BE4E90 /* FPGiftCardCell.swift */; };
-		50FB1FD11980176B00D7106C /* FPAuthOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8111A98E195DB15F00F1928E /* FPAuthOptionsViewController.swift */; };
-		50FB1FD21980176B00D7106C /* FPCustomerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814A71FE19622EF000F2A689 /* FPCustomerLoginViewController.swift */; };
-		50FB1FD31980176B00D7106C /* FPMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC82196778A800587E50 /* FPMeasurement.swift */; };
-		50FB1FD41980176B00D7106C /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FFD431966990D00BF652C /* Defines.swift */; };
-		50FB1FD51980176B00D7106C /* FPFarmWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81148ADD1961A05100A40D26 /* FPFarmWorker.swift */; };
-		50FB1FD61980176B00D7106C /* FPAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81199D3B195C313F00BE139D /* FPAppDelegate.swift */; };
-		50FB1FD71980176B00D7106C /* FPCSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC801967763500587E50 /* FPCSA.swift */; };
-		50FB1FD81980176B00D7106C /* FPPaymentConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA292B197E71580024B299 /* FPPaymentConfirmViewController.swift */; };
-		50FB1FD91980176B00D7106C /* FPCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FF080D196C28660046457A /* FPCartCell.swift */; };
-		50FB1FDA1980176B00D7106C /* FPCustomerCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D23F871966B66A00A330E0 /* FPCustomerCreateViewController.swift */; };
-		50FB1FDB1980176B00D7106C /* FPCurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3A84D196BF99B0006C479 /* FPCurrencyFormatter.swift */; };
-		50FB1FDC1980176B00D7106C /* FPTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DD91D41977DC810056754B /* FPTransactionCell.swift */; };
-		50FB1FDD1980176B00D7106C /* FPUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812ED2B3195CEFEC008F178C /* FPUser.swift */; };
-		50FB1FDF1980176B00D7106C /* FPOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E45D1975DC470037FCD0 /* FPOrdersViewController.swift */; };
-		50FB1FE01980176B00D7106C /* FPProductCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD1D9F196A13CA00EEAD8F /* FPProductCartCell.swift */; };
-		50FB1FE11980176B00D7106C /* FPProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC7E196775BE00587E50 /* FPProductCategory.swift */; };
-		50FB1FE21980176B00D7106C /* FPCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC7A196773CD00587E50 /* FPCartView.swift */; };
-		50FB1FE91980176B00D7106C /* FPProductCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81CD1DA6196A90D300EEAD8F /* FPProductCartCell.xib */; };
-		50FB1FEA1980176B00D7106C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8111A98A195DA56800F1928E /* Login.storyboard */; };
-		50FB1FEB1980176B00D7106C /* FPProductCheckoutCell-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8151073019797B7B00AFC491 /* FPProductCheckoutCell-iPad.xib */; };
-		50FB1FEC1980176B00D7106C /* FPTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81DD91D51977DC810056754B /* FPTransactionCell.xib */; };
-		50FB1FED1980176B00D7106C /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 81210F86196B5AE200F14458 /* TODO */; };
-		50FB1FEE1980176B00D7106C /* gift_card_FAQ.html in Resources */ = {isa = PBXBuildFile; fileRef = 813682C2196F5BD900BE4E90 /* gift_card_FAQ.html */; };
-		50FB1FF01980176B00D7106C /* FPNumPadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101827D196EAB4A009C9E98 /* FPNumPadView.xib */; };
-		50FB1FF11980176B00D7106C /* FPCheckoutFooterView-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8151073D197BB32F00AFC491 /* FPCheckoutFooterView-iPad.xib */; };
-		50FB1FF21980176B00D7106C /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 81C038F6195C70940086D48B /* Podfile */; };
-		50FB1FF31980176B00D7106C /* FPCheckoutHeaderView-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 815107381979892000AFC491 /* FPCheckoutHeaderView-iPad.xib */; };
-		50FB1FF41980176B00D7106C /* Login-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81199D3C195C313F00BE139D /* Login-iPad.storyboard */; };
-		50FB1FF51980176B00D7106C /* FPGiftCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813682C8196F69FB00BE4E90 /* FPGiftCardCell.xib */; };
-		50FB1FF61980176B00D7106C /* ProductsAndCart-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81A1CC78196771AD00587E50 /* ProductsAndCart-iPad.storyboard */; };
-		50FB1FF71980176B00D7106C /* FPCustomerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8157106C1978238600F184D0 /* FPCustomerCell.xib */; };
-		50FB1FF81980176B00D7106C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503EB714197D735D00B86869 /* Images.xcassets */; };
-		50FB1FF91980176B00D7106C /* FPProductCartCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81CD1DA3196A190400EEAD8F /* FPProductCartCellView.xib */; };
-		50FB1FFA1980176B00D7106C /* FPCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81FF080F196C28830046457A /* FPCartCell.xib */; };
-		50FB1FFB1980176B00D7106C /* FPCartHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81A3A848196B73CC0006C479 /* FPCartHeaderView.xib */; };
 		8101827A196EA95F009C9E98 /* FPNumPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81018279196EA95F009C9E98 /* FPNumPadView.swift */; };
 		8101827E196EAB4A009C9E98 /* FPNumPadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101827D196EAB4A009C9E98 /* FPNumPadView.xib */; };
 		8101EE8E19927EAC0042FBB6 /* FPCheckoutHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101EE8D19927EAC0042FBB6 /* FPCheckoutHeaderView.xib */; };
-		8101EE8F19927EAC0042FBB6 /* FPCheckoutHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101EE8D19927EAC0042FBB6 /* FPCheckoutHeaderView.xib */; };
 		8101EE91199280280042FBB6 /* FPProductCheckoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101EE90199280280042FBB6 /* FPProductCheckoutCell.xib */; };
-		8101EE92199280280042FBB6 /* FPProductCheckoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101EE90199280280042FBB6 /* FPProductCheckoutCell.xib */; };
 		8101EE9419928D4A0042FBB6 /* FPCheckoutFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101EE9319928D4A0042FBB6 /* FPCheckoutFooterView.xib */; };
-		8101EE9519928D4A0042FBB6 /* FPCheckoutFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101EE9319928D4A0042FBB6 /* FPCheckoutFooterView.xib */; };
 		8104E6EF19653DB700F079F3 /* FPCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8104E6EE19653DB700F079F3 /* FPCustomer.swift */; };
 		8108AF3D19ACEE3800869B86 /* FPUnsyncedItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8108AF3C19ACEE3800869B86 /* FPUnsyncedItemsTableViewController.swift */; };
-		8108AF3E19ACEE3800869B86 /* FPUnsyncedItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8108AF3C19ACEE3800869B86 /* FPUnsyncedItemsTableViewController.swift */; };
 		8108AF4119ACF8E000869B86 /* FPUnsyncedPurchaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8108AF4019ACF8E000869B86 /* FPUnsyncedPurchaseCell.swift */; };
-		8108AF4219ACF8E000869B86 /* FPUnsyncedPurchaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8108AF4019ACF8E000869B86 /* FPUnsyncedPurchaseCell.swift */; };
 		8108AF4419ACF91200869B86 /* FPUnsyncedPurchaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8108AF4319ACF91200869B86 /* FPUnsyncedPurchaseCell.xib */; };
-		8108AF4519ACF91200869B86 /* FPUnsyncedPurchaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8108AF4319ACF91200869B86 /* FPUnsyncedPurchaseCell.xib */; };
 		810FFD421965997900BF652C /* FPAccountSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FFD411965997900BF652C /* FPAccountSetupViewController.swift */; };
 		810FFD441966990D00BF652C /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FFD431966990D00BF652C /* Defines.swift */; };
 		810FFD4719669F0400BF652C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810FFD4619669F0400BF652C /* Foundation.framework */; };
@@ -122,15 +36,11 @@
 		81199D47195C333100BE139D /* FPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81199D46195C333100BE139D /* FPLoginViewController.swift */; };
 		81199D49195C3B0400BE139D /* FPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81199D48195C3B0400BE139D /* FPServer.swift */; };
 		811B4558198A520A000EC090 /* FPDataAccessLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811B4557198A520A000EC090 /* FPDataAccessLayer.swift */; };
-		811B4559198A520A000EC090 /* FPDataAccessLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811B4557198A520A000EC090 /* FPDataAccessLayer.swift */; };
 		811B455C198A52B8000EC090 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 811B455A198A52B8000EC090 /* DataModel.xcdatamodeld */; };
 		812065511B566E9E00CA180F /* FPCheckoutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812065501B566E9E00CA180F /* FPCheckoutItem.swift */; };
-		812065521B566E9E00CA180F /* FPCheckoutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812065501B566E9E00CA180F /* FPCheckoutItem.swift */; };
 		812065541B566FAE00CA180F /* FPCheckoutTaxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812065531B566FAE00CA180F /* FPCheckoutTaxItem.swift */; };
-		812065551B566FAE00CA180F /* FPCheckoutTaxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812065531B566FAE00CA180F /* FPCheckoutTaxItem.swift */; };
 		81210F87196B5AE200F14458 /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 81210F86196B5AE200F14458 /* TODO */; };
 		812657001E11966D00588EA9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 812656FF1E11966D00588EA9 /* Launch Screen.storyboard */; };
-		812657011E11966D00588EA9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 812656FF1E11966D00588EA9 /* Launch Screen.storyboard */; };
 		8128CDD219615B7E009D92EE /* FPChoiceInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8128CDD119615B7E009D92EE /* FPChoiceInputView.swift */; };
 		812967421B403B8C009ABC6A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812967411B403B8C009ABC6A /* AVFoundation.framework */; };
 		812967441B403B94009ABC6A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812967431B403B94009ABC6A /* AudioToolbox.framework */; };
@@ -140,17 +50,11 @@
 		8129674C1B403BB8009ABC6A /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8129674B1B403BB8009ABC6A /* ExternalAccessory.framework */; };
 		8129674E1B403BC7009ABC6A /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8129674D1B403BC7009ABC6A /* libstdc++.6.0.9.dylib */; };
 		812BEEE91B2AE31800F01436 /* FPApplyBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812BEEE81B2AE31800F01436 /* FPApplyBalanceViewController.swift */; };
-		812BEEEA1B2AE31800F01436 /* FPApplyBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812BEEE81B2AE31800F01436 /* FPApplyBalanceViewController.swift */; };
 		812DDEC21E0AC11C00DE1777 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEBB1E0AC11C00DE1777 /* AFNetworking.framework */; };
 		812DDEC41E0AC11C00DE1777 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEBD1E0AC11C00DE1777 /* MBProgressHUD.framework */; };
 		812DDEC51E0AC11C00DE1777 /* MMDrawerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEBE1E0AC11C00DE1777 /* MMDrawerController.framework */; };
 		812DDEC71E0AC11C00DE1777 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEC01E0AC11C00DE1777 /* SDWebImage.framework */; };
 		812DDEC81E0AC11C00DE1777 /* SVPullToRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEC11E0AC11C00DE1777 /* SVPullToRefresh.framework */; };
-		812DDED01E0AC12400DE1777 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEC91E0AC12400DE1777 /* AFNetworking.framework */; };
-		812DDED21E0AC12400DE1777 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDECB1E0AC12400DE1777 /* MBProgressHUD.framework */; };
-		812DDED31E0AC12400DE1777 /* MMDrawerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDECC1E0AC12400DE1777 /* MMDrawerController.framework */; };
-		812DDED51E0AC12400DE1777 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDECE1E0AC12400DE1777 /* SDWebImage.framework */; };
-		812DDED61E0AC12400DE1777 /* SVPullToRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDECF1E0AC12400DE1777 /* SVPullToRefresh.framework */; };
 		812ED2B4195CEFEC008F178C /* FPUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812ED2B3195CEFEC008F178C /* FPUser.swift */; };
 		812ED2B6195CF354008F178C /* FPModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812ED2B5195CF354008F178C /* FPModelParser.swift */; };
 		813237FE19617DE300461B74 /* UIView+FirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813237FD19617DE300461B74 /* UIView+FirstResponder.swift */; };
@@ -187,21 +91,13 @@
 		8157106D1978238600F184D0 /* FPCustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157106B1978238600F184D0 /* FPCustomerCell.swift */; };
 		816F3DD4195C76D100005F14 /* FPAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F3DD3195C76D100005F14 /* FPAlertManager.swift */; };
 		8179D43A198F8B2C00B49FC3 /* FPSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D439198F8B2C00B49FC3 /* FPSyncManager.swift */; };
-		8179D43B198F8B2C00B49FC3 /* FPSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D439198F8B2C00B49FC3 /* FPSyncManager.swift */; };
 		8179D43D198F969800B49FC3 /* FPCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D43C198F969800B49FC3 /* FPCategoriesViewController.swift */; };
-		8179D43E198F969800B49FC3 /* FPCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D43C198F969800B49FC3 /* FPCategoriesViewController.swift */; };
 		8179D442198F9EE400B49FC3 /* FPCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D440198F9EE400B49FC3 /* FPCategoryCell.swift */; };
-		8179D443198F9EE400B49FC3 /* FPCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D440198F9EE400B49FC3 /* FPCategoryCell.swift */; };
 		8179D444198F9EE400B49FC3 /* FPCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8179D441198F9EE400B49FC3 /* FPCategoryCell.xib */; };
-		8179D445198F9EE400B49FC3 /* FPCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8179D441198F9EE400B49FC3 /* FPCategoryCell.xib */; };
-		817D9AFE1C20415700DDB28B /* FPCustomLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F659EF51C1F24DC005F0FF6 /* FPCustomLogger.swift */; };
 		8183F5A81B25BC42001EFFAF /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8183F5A71B25BC42001EFFAF /* QuickLook.framework */; };
 		818A3A7F1A82938E00C2A12C /* FPFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818A3A7E1A82938E00C2A12C /* FPFarm.swift */; };
-		818A3A801A82938E00C2A12C /* FPFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818A3A7E1A82938E00C2A12C /* FPFarm.swift */; };
 		818FE98219890C6C00B3AF4A /* FPProductDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE98119890C6C00B3AF4A /* FPProductDescriptor.swift */; };
-		818FE98319890C6C00B3AF4A /* FPProductDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE98119890C6C00B3AF4A /* FPProductDescriptor.swift */; };
 		81A0FEBA1998C6820022D31D /* FPProductCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A0FEB91998C6820022D31D /* FPProductCategoriesViewController.swift */; };
-		81A0FEBB1998C6820022D31D /* FPProductCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A0FEB91998C6820022D31D /* FPProductCategoriesViewController.swift */; };
 		81A1CC79196771AD00587E50 /* ProductsAndCart-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81A1CC78196771AD00587E50 /* ProductsAndCart-iPad.storyboard */; };
 		81A1CC7B196773CD00587E50 /* FPCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC7A196773CD00587E50 /* FPCartView.swift */; };
 		81A1CC7D1967756F00587E50 /* FPProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC7C1967756F00587E50 /* FPProduct.swift */; };
@@ -213,120 +109,224 @@
 		81A3A84B196B7B0B0006C479 /* FPCartProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3A84A196B7B0B0006C479 /* FPCartProduct.swift */; };
 		81A3A84E196BF99B0006C479 /* FPCurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3A84D196BF99B0006C479 /* FPCurrencyFormatter.swift */; };
 		81A9F1031B8CBEA700CA548C /* FPRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A9F1021B8CBEA700CA548C /* FPRotationViewController.swift */; };
-		81A9F1041B8CBEA700CA548C /* FPRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A9F1021B8CBEA700CA548C /* FPRotationViewController.swift */; };
 		81A9FC4419AFB95400CCAD37 /* FPReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A9FC4319AFB95400CCAD37 /* FPReader.m */; };
-		81A9FC4519AFB95400CCAD37 /* FPReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A9FC4319AFB95400CCAD37 /* FPReader.m */; };
 		81ADF35A1B172A360092A9FD /* FPProductCategoriesFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81ADF3591B172A360092A9FD /* FPProductCategoriesFooterView.xib */; };
-		81ADF35B1B172A360092A9FD /* FPProductCategoriesFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81ADF3591B172A360092A9FD /* FPProductCategoriesFooterView.xib */; };
 		81B63A241B53AA79002E795F /* FPCustomerEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B63A231B53AA79002E795F /* FPCustomerEditViewController.swift */; };
-		81B63A251B53AA79002E795F /* FPCustomerEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B63A231B53AA79002E795F /* FPCustomerEditViewController.swift */; };
 		81B63A281B556455002E795F /* FPProductCategoryTax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B63A271B556455002E795F /* FPProductCategoryTax.swift */; };
-		81B63A291B556455002E795F /* FPProductCategoryTax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B63A271B556455002E795F /* FPProductCategoryTax.swift */; };
 		81BB47EB198FB327003A3DEE /* FPCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB47EA198FB327003A3DEE /* FPCartViewController.swift */; };
-		81BB47EC198FB327003A3DEE /* FPCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB47EA198FB327003A3DEE /* FPCartViewController.swift */; };
 		81BB47EE198FC673003A3DEE /* FPProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB47ED198FC673003A3DEE /* FPProductsViewController.swift */; };
-		81BB47EF198FC673003A3DEE /* FPProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB47ED198FC673003A3DEE /* FPProductsViewController.swift */; };
 		81BB47F3198FD1C8003A3DEE /* FPProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB47F1198FD1C8003A3DEE /* FPProductCell.swift */; };
-		81BB47F4198FD1C8003A3DEE /* FPProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB47F1198FD1C8003A3DEE /* FPProductCell.swift */; };
 		81BB47F5198FD1C8003A3DEE /* FPProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81BB47F2198FD1C8003A3DEE /* FPProductCell.xib */; };
-		81BB47F6198FD1C8003A3DEE /* FPProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81BB47F2198FD1C8003A3DEE /* FPProductCell.xib */; };
 		81BB47F81990F803003A3DEE /* FPInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB47F71990F803003A3DEE /* FPInputValidator.swift */; };
-		81BB47F91990F803003A3DEE /* FPInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB47F71990F803003A3DEE /* FPInputValidator.swift */; };
 		81BBEA4C19925F9E006310F7 /* FPOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81BBEA4B19925F9E006310F7 /* FPOrderCell.xib */; };
-		81BBEA4D19925F9E006310F7 /* FPOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81BBEA4B19925F9E006310F7 /* FPOrderCell.xib */; };
-		81BC10881992B73F00D8165D /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 811B455A198A52B8000EC090 /* DataModel.xcdatamodeld */; };
 		81C038F7195C70940086D48B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 81C038F6195C70940086D48B /* Podfile */; };
 		81C31C4C19B4C0B300C90E6A /* FPProductDiscount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C31C4B19B4C0B300C90E6A /* FPProductDiscount.swift */; };
-		81C31C4D19B4C0B300C90E6A /* FPProductDiscount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C31C4B19B4C0B300C90E6A /* FPProductDiscount.swift */; };
 		81C31C4F19B5C6CE00C90E6A /* FPJSONResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C31C4E19B5C6CE00C90E6A /* FPJSONResponseSerializer.swift */; };
-		81C31C5019B5C6CE00C90E6A /* FPJSONResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C31C4E19B5C6CE00C90E6A /* FPJSONResponseSerializer.swift */; };
-		81C330F61B17365700D31F1F /* FPProductCategoriesFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ADF3551B172A120092A9FD /* FPProductCategoriesFooterView.swift */; };
 		81C330F71B17365700D31F1F /* FPProductCategoriesFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ADF3551B172A120092A9FD /* FPProductCategoriesFooterView.swift */; };
 		81CCDB9C1B288B8D0072CEB4 /* FPSelectPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCDB9B1B288B8D0072CEB4 /* FPSelectPriceViewController.swift */; };
-		81CCDB9D1B288B8D0072CEB4 /* FPSelectPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCDB9B1B288B8D0072CEB4 /* FPSelectPriceViewController.swift */; };
 		81CD1DA0196A13CA00EEAD8F /* FPProductCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD1D9F196A13CA00EEAD8F /* FPProductCartCell.swift */; };
 		81CD1DA2196A185D00EEAD8F /* FPProductCartCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD1DA1196A185D00EEAD8F /* FPProductCartCellView.swift */; };
 		81CD1DA4196A190400EEAD8F /* FPProductCartCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81CD1DA3196A190400EEAD8F /* FPProductCartCellView.xib */; };
 		81CD1DA7196A90D300EEAD8F /* FPProductCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81CD1DA6196A90D300EEAD8F /* FPProductCartCell.xib */; };
-		81CDBC031B67B15200D37E0B /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8129674D1B403BC7009ABC6A /* libstdc++.6.0.9.dylib */; };
-		81CDBC041B67B15200D37E0B /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8129674B1B403BB8009ABC6A /* ExternalAccessory.framework */; };
-		81CDBC051B67B15200D37E0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812967491B403BAF009ABC6A /* CoreGraphics.framework */; };
-		81CDBC061B67B15200D37E0B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812967471B403BA3009ABC6A /* MessageUI.framework */; };
-		81CDBC071B67B15200D37E0B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812967451B403B9B009ABC6A /* MediaPlayer.framework */; };
-		81CDBC081B67B15200D37E0B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812967431B403B94009ABC6A /* AudioToolbox.framework */; };
-		81CDBC091B67B15200D37E0B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812967411B403B8C009ABC6A /* AVFoundation.framework */; };
-		81CDBC0C1B67B15200D37E0B /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8183F5A71B25BC42001EFFAF /* QuickLook.framework */; };
-		81CDBC0D1B67B15200D37E0B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81FB195F198B953300FF6815 /* CoreData.framework */; };
-		81CDBC0E1B67B15200D37E0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503EB70E197D635A00B86869 /* UIKit.framework */; };
-		81CDBC0F1B67B15200D37E0B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810FFD4819669F0B00BF652C /* CFNetwork.framework */; };
-		81CDBC101B67B15200D37E0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810FFD4619669F0400BF652C /* Foundation.framework */; };
 		81CFDDB319CAFB37003BB974 /* FPProductCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CFDDB219CAFB37003BB974 /* FPProductCreateViewController.swift */; };
-		81CFDDB419CAFB37003BB974 /* FPProductCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CFDDB219CAFB37003BB974 /* FPProductCreateViewController.swift */; };
 		81D23F881966B66A00A330E0 /* FPCustomerCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D23F871966B66A00A330E0 /* FPCustomerCreateViewController.swift */; };
 		81DC1D4B1B6674E1002029C8 /* FPCreateProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC1D4A1B6674E1002029C8 /* FPCreateProductViewController.swift */; };
-		81DC1D4C1B6674E1002029C8 /* FPCreateProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC1D4A1B6674E1002029C8 /* FPCreateProductViewController.swift */; };
 		81DC1D7F1B66DE27002029C8 /* FPNamable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC1D7E1B66DE27002029C8 /* FPNamable.swift */; };
-		81DC1D801B66DE27002029C8 /* FPNamable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC1D7E1B66DE27002029C8 /* FPNamable.swift */; };
 		81DC1D821B66E048002029C8 /* FPSelectNamableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC1D811B66E048002029C8 /* FPSelectNamableViewController.swift */; };
-		81DC1D831B66E048002029C8 /* FPSelectNamableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC1D811B66E048002029C8 /* FPSelectNamableViewController.swift */; };
 		81DD3D2719C98C24002CCBF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81DD3D2619C98C24002CCBF3 /* Main.storyboard */; };
-		81DD3D2819C98C24002CCBF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81DD3D2619C98C24002CCBF3 /* Main.storyboard */; };
 		81DD91CF1977D5640056754B /* FPTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DD91CE1977D5640056754B /* FPTransactionsViewController.swift */; };
 		81DD91D21977DA340056754B /* FPTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DD91D11977DA340056754B /* FPTransaction.swift */; };
 		81DD91D61977DC810056754B /* FPTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DD91D41977DC810056754B /* FPTransactionCell.swift */; };
 		81DD91D71977DC810056754B /* FPTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81DD91D51977DC810056754B /* FPTransactionCell.xib */; };
 		81E5B7DC1B5FFA420061E377 /* FPProductSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5B7DB1B5FFA420061E377 /* FPProductSupplier.swift */; };
-		81E5B7DD1B5FFA420061E377 /* FPProductSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5B7DB1B5FFA420061E377 /* FPProductSupplier.swift */; };
 		81E914381960E62C00865AFC /* FPFarmWorkerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E914371960E62C00865AFC /* FPFarmWorkerLoginViewController.swift */; };
 		81E95A3B1B600F0100F95F18 /* FPProductSuppliersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A3A1B600F0100F95F18 /* FPProductSuppliersViewController.swift */; };
-		81E95A3C1B600F0100F95F18 /* FPProductSuppliersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A3A1B600F0100F95F18 /* FPProductSuppliersViewController.swift */; };
 		81E95A461B612AFE00F95F18 /* FPInventoryProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A451B612AFE00F95F18 /* FPInventoryProductViewController.swift */; };
-		81E95A471B612AFE00F95F18 /* FPInventoryProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A451B612AFE00F95F18 /* FPInventoryProductViewController.swift */; };
 		81E95A491B612CC500F95F18 /* FPInventoryProductNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A481B612CC500F95F18 /* FPInventoryProductNote.swift */; };
-		81E95A4A1B612CC500F95F18 /* FPInventoryProductNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A481B612CC500F95F18 /* FPInventoryProductNote.swift */; };
 		81E95A4C1B61461C00F95F18 /* FPAddNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A4B1B61461C00F95F18 /* FPAddNotesViewController.swift */; };
-		81E95A4D1B61461C00F95F18 /* FPAddNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A4B1B61461C00F95F18 /* FPAddNotesViewController.swift */; };
 		81E95A501B623C9400F95F18 /* FPTriggerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A4F1B623C9400F95F18 /* FPTriggerAlert.swift */; };
-		81E95A511B623C9400F95F18 /* FPTriggerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A4F1B623C9400F95F18 /* FPTriggerAlert.swift */; };
 		81E95A531B623E6A00F95F18 /* FPTriggerAlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A521B623E6A00F95F18 /* FPTriggerAlertsViewController.swift */; };
-		81E95A541B623E6A00F95F18 /* FPTriggerAlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A521B623E6A00F95F18 /* FPTriggerAlertsViewController.swift */; };
 		81E9AC1D1B6A4FAD00DF81AA /* FPInventoryProductHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AC1C1B6A4FAD00DF81AA /* FPInventoryProductHistory.swift */; };
-		81E9AC1E1B6A4FAD00DF81AA /* FPInventoryProductHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AC1C1B6A4FAD00DF81AA /* FPInventoryProductHistory.swift */; };
 		81E9AC201B6A536100DF81AA /* FPInventoryProductHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AC1F1B6A536100DF81AA /* FPInventoryProductHistoryViewController.swift */; };
-		81E9AC211B6A536100DF81AA /* FPInventoryProductHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AC1F1B6A536100DF81AA /* FPInventoryProductHistoryViewController.swift */; };
 		81F14B061B1731680068372B /* FPProductCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F14B041B1731680068372B /* FPProductCategoryCollectionViewCell.swift */; };
-		81F14B071B1731680068372B /* FPProductCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F14B041B1731680068372B /* FPProductCategoryCollectionViewCell.swift */; };
 		81F14B081B1731680068372B /* FPProductCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81F14B051B1731680068372B /* FPProductCategoryCollectionViewCell.xib */; };
-		81F14B091B1731680068372B /* FPProductCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81F14B051B1731680068372B /* FPProductCategoryCollectionViewCell.xib */; };
 		81F4525A1E1161B200A583D3 /* FPCDCustomer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452581E1161B200A583D3 /* FPCDCustomer+CoreDataClass.swift */; };
-		81F4525B1E1161B200A583D3 /* FPCDCustomer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452581E1161B200A583D3 /* FPCDCustomer+CoreDataClass.swift */; };
 		81F4525C1E1161B200A583D3 /* FPCDCustomer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452591E1161B200A583D3 /* FPCDCustomer+CoreDataProperties.swift */; };
-		81F4525D1E1161B200A583D3 /* FPCDCustomer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452591E1161B200A583D3 /* FPCDCustomer+CoreDataProperties.swift */; };
 		81F452601E11628D00A583D3 /* FPCDCSA+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F4525E1E11628D00A583D3 /* FPCDCSA+CoreDataClass.swift */; };
-		81F452611E11628D00A583D3 /* FPCDCSA+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F4525E1E11628D00A583D3 /* FPCDCSA+CoreDataClass.swift */; };
 		81F452621E11628D00A583D3 /* FPCDCSA+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F4525F1E11628D00A583D3 /* FPCDCSA+CoreDataProperties.swift */; };
-		81F452631E11628D00A583D3 /* FPCDCSA+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F4525F1E11628D00A583D3 /* FPCDCSA+CoreDataProperties.swift */; };
 		81F452661E1162D800A583D3 /* FPCDProductDescriptor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452641E1162D800A583D3 /* FPCDProductDescriptor+CoreDataClass.swift */; };
-		81F452671E1162D800A583D3 /* FPCDProductDescriptor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452641E1162D800A583D3 /* FPCDProductDescriptor+CoreDataClass.swift */; };
 		81F452681E1162D800A583D3 /* FPCDProductDescriptor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452651E1162D800A583D3 /* FPCDProductDescriptor+CoreDataProperties.swift */; };
-		81F452691E1162D800A583D3 /* FPCDProductDescriptor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452651E1162D800A583D3 /* FPCDProductDescriptor+CoreDataProperties.swift */; };
 		81F452721E11632800A583D3 /* FPCDPurchase+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452701E11632800A583D3 /* FPCDPurchase+CoreDataClass.swift */; };
-		81F452731E11632800A583D3 /* FPCDPurchase+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452701E11632800A583D3 /* FPCDPurchase+CoreDataClass.swift */; };
 		81F452741E11632800A583D3 /* FPCDPurchase+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452711E11632800A583D3 /* FPCDPurchase+CoreDataProperties.swift */; };
-		81F452751E11632800A583D3 /* FPCDPurchase+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452711E11632800A583D3 /* FPCDPurchase+CoreDataProperties.swift */; };
 		81FA71841B3998C000C0CD7D /* FPCashCheckSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA71831B3998C000C0CD7D /* FPCashCheckSummaryViewController.swift */; };
-		81FA71851B3998C000C0CD7D /* FPCashCheckSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA71831B3998C000C0CD7D /* FPCashCheckSummaryViewController.swift */; };
 		81FB1960198B953300FF6815 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81FB195F198B953300FF6815 /* CoreData.framework */; };
 		81FB1966198BA4A900FF6815 /* ProductsAndCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81FB1965198BA4A900FF6815 /* ProductsAndCart.storyboard */; };
-		81FB1967198BA4A900FF6815 /* ProductsAndCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81FB1965198BA4A900FF6815 /* ProductsAndCart.storyboard */; };
 		81FB1969198BA4FB00FF6815 /* FPMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FB1968198BA4FB00FF6815 /* FPMenuViewController.swift */; };
-		81FB196A198BA4FB00FF6815 /* FPMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FB1968198BA4FB00FF6815 /* FPMenuViewController.swift */; };
 		81FF080E196C28660046457A /* FPCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FF080D196C28660046457A /* FPCartCell.swift */; };
 		81FF0810196C28830046457A /* FPCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81FF080F196C28830046457A /* FPCartCell.xib */; };
-		95AA9CBAFF268782BEE5B28D /* Pods_FPOS_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B7E037757AE290B9EBD116 /* Pods_FPOS_Dev.framework */; };
 		9F659EF61C1F24DC005F0FF6 /* FPCustomLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F659EF51C1F24DC005F0FF6 /* FPCustomLogger.swift */; };
 		9FEC404A19B9D62C003AB29A /* FPCardFlightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC404919B9D62C003AB29A /* FPCardFlightManager.swift */; };
-		9FEC404B19B9D62C003AB29A /* FPCardFlightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC404919B9D62C003AB29A /* FPCardFlightManager.swift */; };
+		E92BF89124EBBC77002CB596 /* FPProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB47ED198FC673003A3DEE /* FPProductsViewController.swift */; };
+		E92BF89224EBBC77002CB596 /* FPRetailLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444852ED199246DF00A1F87C /* FPRetailLocation.swift */; };
+		E92BF89324EBBC77002CB596 /* FPRedeemGiftCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E4431971F2540037FCD0 /* FPRedeemGiftCardViewController.swift */; };
+		E92BF89424EBBC77002CB596 /* FPProductsAndCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814A71FA19622CFB00F2A689 /* FPProductsAndCartViewController.swift */; };
+		E92BF89524EBBC77002CB596 /* FPCDCSA+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F4525F1E11628D00A583D3 /* FPCDCSA+CoreDataProperties.swift */; };
+		E92BF89624EBBC77002CB596 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157106619781C3300F184D0 /* main.swift */; };
+		E92BF89724EBBC77002CB596 /* FPDataAccessLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811B4557198A520A000EC090 /* FPDataAccessLayer.swift */; };
+		E92BF89824EBBC77002CB596 /* FPChoiceOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F463C1966DF75007A009E /* FPChoiceOverlayView.swift */; };
+		E92BF89924EBBC77002CB596 /* FPInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB47F71990F803003A3DEE /* FPInputValidator.swift */; };
+		E92BF89A24EBBC77002CB596 /* FPCheckoutHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81510736197988E200AFC491 /* FPCheckoutHeaderView.swift */; };
+		E92BF89B24EBBC77002CB596 /* FPCardFlightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC404919B9D62C003AB29A /* FPCardFlightManager.swift */; };
+		E92BF89C24EBBC77002CB596 /* FPJSONResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C31C4E19B5C6CE00C90E6A /* FPJSONResponseSerializer.swift */; };
+		E92BF89D24EBBC77002CB596 /* FPPaymentOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EB710197D66E800B86869 /* FPPaymentOptionsViewController.swift */; };
+		E92BF89E24EBBC77002CB596 /* FPAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F3DD3195C76D100005F14 /* FPAlertManager.swift */; };
+		E92BF89F24EBBC77002CB596 /* FPCustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157106B1978238600F184D0 /* FPCustomerCell.swift */; };
+		E92BF8A024EBBC77002CB596 /* FPProductCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A0FEB91998C6820022D31D /* FPProductCategoriesViewController.swift */; };
+		E92BF8A124EBBC77002CB596 /* FPCheckoutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812065501B566E9E00CA180F /* FPCheckoutItem.swift */; };
+		E92BF8A224EBBC77002CB596 /* FPInventoryProductHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AC1F1B6A536100DF81AA /* FPInventoryProductHistoryViewController.swift */; };
+		E92BF8A324EBBC77002CB596 /* FPUnsyncedPurchaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8108AF4019ACF8E000869B86 /* FPUnsyncedPurchaseCell.swift */; };
+		E92BF8A424EBBC77002CB596 /* FPUnsyncedItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8108AF3C19ACEE3800869B86 /* FPUnsyncedItemsTableViewController.swift */; };
+		E92BF8A524EBBC77002CB596 /* FPCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8104E6EE19653DB700F079F3 /* FPCustomer.swift */; };
+		E92BF8A624EBBC77002CB596 /* FPProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB47F1198FD1C8003A3DEE /* FPProductCell.swift */; };
+		E92BF8A724EBBC77002CB596 /* FPProductDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE98119890C6C00B3AF4A /* FPProductDescriptor.swift */; };
+		E92BF8A824EBBC77002CB596 /* FPSelectPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCDB9B1B288B8D0072CEB4 /* FPSelectPriceViewController.swift */; };
+		E92BF8A924EBBC77002CB596 /* FPCheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81510727197978A000AFC491 /* FPCheckoutViewController.swift */; };
+		E92BF8AA24EBBC77002CB596 /* FPProductDiscount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C31C4B19B4C0B300C90E6A /* FPProductDiscount.swift */; };
+		E92BF8AB24EBBC77002CB596 /* FPProductCheckoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151072F19797B7B00AFC491 /* FPProductCheckoutCell.swift */; };
+		E92BF8AC24EBBC77002CB596 /* FPCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682D31970455100BE4E90 /* FPCreditCard.swift */; };
+		E92BF8AD24EBBC77002CB596 /* FPTriggerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A4F1B623C9400F95F18 /* FPTriggerAlert.swift */; };
+		E92BF8AE24EBBC77002CB596 /* FPTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DD91CE1977D5640056754B /* FPTransactionsViewController.swift */; };
+		E92BF8AF24EBBC77002CB596 /* FPCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D440198F9EE400B49FC3 /* FPCategoryCell.swift */; };
+		E92BF8B024EBBC77002CB596 /* FPCDProductDescriptor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452651E1162D800A583D3 /* FPCDProductDescriptor+CoreDataProperties.swift */; };
+		E92BF8B124EBBC77002CB596 /* FPChoiceInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8128CDD119615B7E009D92EE /* FPChoiceInputView.swift */; };
+		E92BF8B224EBBC77002CB596 /* FPProductCartCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD1DA1196A185D00EEAD8F /* FPProductCartCellView.swift */; };
+		E92BF8B324EBBC77002CB596 /* FPCustomerEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B63A231B53AA79002E795F /* FPCustomerEditViewController.swift */; };
+		E92BF8B424EBBC77002CB596 /* FPCheckoutProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151073319797C0400AFC491 /* FPCheckoutProduct.swift */; };
+		E92BF8B524EBBC77002CB596 /* FPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81199D48195C3B0400BE139D /* FPServer.swift */; };
+		E92BF8B624EBBC77002CB596 /* FPApplyBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812BEEE81B2AE31800F01436 /* FPApplyBalanceViewController.swift */; };
+		E92BF8B724EBBC77002CB596 /* FPProductSuppliersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A3A1B600F0100F95F18 /* FPProductSuppliersViewController.swift */; };
+		E92BF8B824EBBC77002CB596 /* FPCDCSA+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F4525E1E11628D00A583D3 /* FPCDCSA+CoreDataClass.swift */; };
+		E92BF8B924EBBC77002CB596 /* FPCreateProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC1D4A1B6674E1002029C8 /* FPCreateProductViewController.swift */; };
+		E92BF8BA24EBBC77002CB596 /* FPBuyGiftCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682CF1970153B00BE4E90 /* FPBuyGiftCardViewController.swift */; };
+		E92BF8BB24EBBC77002CB596 /* FPCartProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3A84A196B7B0B0006C479 /* FPCartProduct.swift */; };
+		E92BF8BC24EBBC77002CB596 /* FPOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E462197676110037FCD0 /* FPOrderCell.swift */; };
+		E92BF8BD24EBBC77002CB596 /* FPCashCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA2929197E5A6F0024B299 /* FPCashCheckViewController.swift */; };
+		E92BF8BE24EBBC77002CB596 /* FPStoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8115CDE7195D90E800C51C83 /* FPStoryboardManager.swift */; };
+		E92BF8BF24EBBC77002CB596 /* FPCashCheckSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA71831B3998C000C0CD7D /* FPCashCheckSummaryViewController.swift */; };
+		E92BF8C024EBBC77002CB596 /* FPProductCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F14B041B1731680068372B /* FPProductCategoryCollectionViewCell.swift */; };
+		E92BF8C124EBBC77002CB596 /* FPInventoryProductNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A481B612CC500F95F18 /* FPInventoryProductNote.swift */; };
+		E92BF8C224EBBC77002CB596 /* FPGiftCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682CD196F713900BE4E90 /* FPGiftCard.swift */; };
+		E92BF8C324EBBC77002CB596 /* FPGiftCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682CB196F6C4500BE4E90 /* FPGiftCardsViewController.swift */; };
+		E92BF8C424EBBC77002CB596 /* FPScanQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E4451971FF930037FCD0 /* FPScanQRCodeViewController.swift */; };
+		E92BF8C524EBBC77002CB596 /* FPCartHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3A846196B73B60006C479 /* FPCartHeaderView.swift */; };
+		E92BF8C624EBBC77002CB596 /* FPNamable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC1D7E1B66DE27002029C8 /* FPNamable.swift */; };
+		E92BF8C724EBBC77002CB596 /* FPManageBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E45B197557CB0037FCD0 /* FPManageBalanceViewController.swift */; };
+		E92BF8C824EBBC77002CB596 /* FPSelectNamableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC1D811B66E048002029C8 /* FPSelectNamableViewController.swift */; };
+		E92BF8C924EBBC77002CB596 /* FPCheckoutFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151073B197BB31700AFC491 /* FPCheckoutFooterView.swift */; };
+		E92BF8CA24EBBC77002CB596 /* FPModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812ED2B5195CF354008F178C /* FPModelParser.swift */; };
+		E92BF8CB24EBBC77002CB596 /* FPFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818A3A7E1A82938E00C2A12C /* FPFarm.swift */; };
+		E92BF8CC24EBBC77002CB596 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 811B455A198A52B8000EC090 /* DataModel.xcdatamodeld */; };
+		E92BF8CD24EBBC77002CB596 /* FPCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D43C198F969800B49FC3 /* FPCategoriesViewController.swift */; };
+		E92BF8CE24EBBC77002CB596 /* FPCDPurchase+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452701E11632800A583D3 /* FPCDPurchase+CoreDataClass.swift */; };
+		E92BF8CF24EBBC77002CB596 /* FPCDCustomer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452591E1161B200A583D3 /* FPCDCustomer+CoreDataProperties.swift */; };
+		E92BF8D024EBBC77002CB596 /* FPTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DD91D11977DA340056754B /* FPTransaction.swift */; };
+		E92BF8D124EBBC77002CB596 /* FPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81199D46195C333100BE139D /* FPLoginViewController.swift */; };
+		E92BF8D224EBBC77002CB596 /* FPNumPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81018279196EA95F009C9E98 /* FPNumPadView.swift */; };
+		E92BF8D324EBBC77002CB596 /* FPAccountSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FFD411965997900BF652C /* FPAccountSetupViewController.swift */; };
+		E92BF8D424EBBC77002CB596 /* FPRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A9F1021B8CBEA700CA548C /* FPRotationViewController.swift */; };
+		E92BF8D524EBBC77002CB596 /* FPProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81363E86196C705100A0F0DC /* FPProductViewController.swift */; };
+		E92BF8D624EBBC77002CB596 /* FPCDProductDescriptor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452641E1162D800A583D3 /* FPCDProductDescriptor+CoreDataClass.swift */; };
+		E92BF8D724EBBC77002CB596 /* FPCustomersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157106819781F2300F184D0 /* FPCustomersViewController.swift */; };
+		E92BF8D824EBBC77002CB596 /* FPProductSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5B7DB1B5FFA420061E377 /* FPProductSupplier.swift */; };
+		E92BF8D924EBBC77002CB596 /* FPInventoryProductHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AC1C1B6A4FAD00DF81AA /* FPInventoryProductHistory.swift */; };
+		E92BF8DA24EBBC77002CB596 /* FPOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E45F1975E36A0037FCD0 /* FPOrder.swift */; };
+		E92BF8DB24EBBC77002CB596 /* FPFarmWorkerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E914371960E62C00865AFC /* FPFarmWorkerLoginViewController.swift */; };
+		E92BF8DC24EBBC77002CB596 /* FPSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D439198F8B2C00B49FC3 /* FPSyncManager.swift */; };
+		E92BF8DD24EBBC77002CB596 /* FPPayNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EB712197D67C300B86869 /* FPPayNowViewController.swift */; };
+		E92BF8DE24EBBC77002CB596 /* UIView+FirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813237FD19617DE300461B74 /* UIView+FirstResponder.swift */; };
+		E92BF8DF24EBBC77002CB596 /* FPCustomLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F659EF51C1F24DC005F0FF6 /* FPCustomLogger.swift */; };
+		E92BF8E024EBBC77002CB596 /* FPCDCustomer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452581E1161B200A583D3 /* FPCDCustomer+CoreDataClass.swift */; };
+		E92BF8E124EBBC77002CB596 /* FPProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC7C1967756F00587E50 /* FPProduct.swift */; };
+		E92BF8E224EBBC77002CB596 /* FPCreateCreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682D11970266300BE4E90 /* FPCreateCreditCardViewController.swift */; };
+		E92BF8E324EBBC77002CB596 /* FPGiftCardOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682C0196F575B00BE4E90 /* FPGiftCardOptionsViewController.swift */; };
+		E92BF8E424EBBC77002CB596 /* FPTriggerAlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A521B623E6A00F95F18 /* FPTriggerAlertsViewController.swift */; };
+		E92BF8E524EBBC77002CB596 /* FPGiftCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682C7196F69FB00BE4E90 /* FPGiftCardCell.swift */; };
+		E92BF8E624EBBC77002CB596 /* FPAuthOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8111A98E195DB15F00F1928E /* FPAuthOptionsViewController.swift */; };
+		E92BF8E724EBBC77002CB596 /* FPProductCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CFDDB219CAFB37003BB974 /* FPProductCreateViewController.swift */; };
+		E92BF8E824EBBC77002CB596 /* FPCustomerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814A71FE19622EF000F2A689 /* FPCustomerLoginViewController.swift */; };
+		E92BF8E924EBBC77002CB596 /* FPMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC82196778A800587E50 /* FPMeasurement.swift */; };
+		E92BF8EA24EBBC77002CB596 /* FPAddNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A4B1B61461C00F95F18 /* FPAddNotesViewController.swift */; };
+		E92BF8EB24EBBC77002CB596 /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FFD431966990D00BF652C /* Defines.swift */; };
+		E92BF8EC24EBBC77002CB596 /* FPFarmWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81148ADD1961A05100A40D26 /* FPFarmWorker.swift */; };
+		E92BF8ED24EBBC77002CB596 /* FPAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81199D3B195C313F00BE139D /* FPAppDelegate.swift */; };
+		E92BF8EE24EBBC77002CB596 /* FPCSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC801967763500587E50 /* FPCSA.swift */; };
+		E92BF8EF24EBBC77002CB596 /* FPCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB47EA198FB327003A3DEE /* FPCartViewController.swift */; };
+		E92BF8F024EBBC77002CB596 /* FPCDPurchase+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452711E11632800A583D3 /* FPCDPurchase+CoreDataProperties.swift */; };
+		E92BF8F124EBBC77002CB596 /* FPPaymentConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA292B197E71580024B299 /* FPPaymentConfirmViewController.swift */; };
+		E92BF8F224EBBC77002CB596 /* FPCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FF080D196C28660046457A /* FPCartCell.swift */; };
+		E92BF8F324EBBC77002CB596 /* FPCustomerCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D23F871966B66A00A330E0 /* FPCustomerCreateViewController.swift */; };
+		E92BF8F424EBBC77002CB596 /* FPMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FB1968198BA4FB00FF6815 /* FPMenuViewController.swift */; };
+		E92BF8F524EBBC77002CB596 /* FPInventoryProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A451B612AFE00F95F18 /* FPInventoryProductViewController.swift */; };
+		E92BF8F624EBBC77002CB596 /* FPCurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3A84D196BF99B0006C479 /* FPCurrencyFormatter.swift */; };
+		E92BF8F724EBBC77002CB596 /* FPTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DD91D41977DC810056754B /* FPTransactionCell.swift */; };
+		E92BF8F824EBBC77002CB596 /* FPUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812ED2B3195CEFEC008F178C /* FPUser.swift */; };
+		E92BF8F924EBBC77002CB596 /* FPReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A9FC4319AFB95400CCAD37 /* FPReader.m */; };
+		E92BF8FA24EBBC77002CB596 /* FPOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E45D1975DC470037FCD0 /* FPOrdersViewController.swift */; };
+		E92BF8FB24EBBC77002CB596 /* FPCheckoutTaxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812065531B566FAE00CA180F /* FPCheckoutTaxItem.swift */; };
+		E92BF8FC24EBBC77002CB596 /* FPProductCategoriesFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ADF3551B172A120092A9FD /* FPProductCategoriesFooterView.swift */; };
+		E92BF8FD24EBBC77002CB596 /* FPProductCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD1D9F196A13CA00EEAD8F /* FPProductCartCell.swift */; };
+		E92BF8FE24EBBC77002CB596 /* FPProductCategoryTax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B63A271B556455002E795F /* FPProductCategoryTax.swift */; };
+		E92BF8FF24EBBC77002CB596 /* FPProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC7E196775BE00587E50 /* FPProductCategory.swift */; };
+		E92BF90024EBBC77002CB596 /* FPCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC7A196773CD00587E50 /* FPCartView.swift */; };
+		E92BF90224EBBC77002CB596 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8129674D1B403BC7009ABC6A /* libstdc++.6.0.9.dylib */; };
+		E92BF90324EBBC77002CB596 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8129674B1B403BB8009ABC6A /* ExternalAccessory.framework */; };
+		E92BF90424EBBC77002CB596 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812967491B403BAF009ABC6A /* CoreGraphics.framework */; };
+		E92BF90524EBBC77002CB596 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812967471B403BA3009ABC6A /* MessageUI.framework */; };
+		E92BF90624EBBC77002CB596 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812967451B403B9B009ABC6A /* MediaPlayer.framework */; };
+		E92BF90724EBBC77002CB596 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812967431B403B94009ABC6A /* AudioToolbox.framework */; };
+		E92BF90824EBBC77002CB596 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812967411B403B8C009ABC6A /* AVFoundation.framework */; };
+		E92BF90924EBBC77002CB596 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8183F5A71B25BC42001EFFAF /* QuickLook.framework */; };
+		E92BF90A24EBBC77002CB596 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81FB195F198B953300FF6815 /* CoreData.framework */; };
+		E92BF90B24EBBC77002CB596 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503EB70E197D635A00B86869 /* UIKit.framework */; };
+		E92BF90C24EBBC77002CB596 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810FFD4619669F0400BF652C /* Foundation.framework */; };
+		E92BF90D24EBBC77002CB596 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810FFD4819669F0B00BF652C /* CFNetwork.framework */; };
+		E92BF90E24EBBC77002CB596 /* Pods_Farmstand_Cart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFE2C3F086060FC12C04E372 /* Pods_Farmstand_Cart.framework */; };
+		E92BF90F24EBBC77002CB596 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEBB1E0AC11C00DE1777 /* AFNetworking.framework */; };
+		E92BF91024EBBC77002CB596 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEBD1E0AC11C00DE1777 /* MBProgressHUD.framework */; };
+		E92BF91124EBBC77002CB596 /* MMDrawerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEBE1E0AC11C00DE1777 /* MMDrawerController.framework */; };
+		E92BF91224EBBC77002CB596 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEC01E0AC11C00DE1777 /* SDWebImage.framework */; };
+		E92BF91324EBBC77002CB596 /* SVPullToRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEC11E0AC11C00DE1777 /* SVPullToRefresh.framework */; };
+		E92BF91524EBBC77002CB596 /* FPProductCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81CD1DA6196A90D300EEAD8F /* FPProductCartCell.xib */; };
+		E92BF91624EBBC77002CB596 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8111A98A195DA56800F1928E /* Login.storyboard */; };
+		E92BF91724EBBC77002CB596 /* FPProductCheckoutCell-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8151073019797B7B00AFC491 /* FPProductCheckoutCell-iPad.xib */; };
+		E92BF91824EBBC77002CB596 /* FPTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81DD91D51977DC810056754B /* FPTransactionCell.xib */; };
+		E92BF91924EBBC77002CB596 /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 81210F86196B5AE200F14458 /* TODO */; };
+		E92BF91A24EBBC77002CB596 /* FPUnsyncedPurchaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8108AF4319ACF91200869B86 /* FPUnsyncedPurchaseCell.xib */; };
+		E92BF91B24EBBC77002CB596 /* gift_card_FAQ.html in Resources */ = {isa = PBXBuildFile; fileRef = 813682C2196F5BD900BE4E90 /* gift_card_FAQ.html */; };
+		E92BF91C24EBBC77002CB596 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81DD3D2619C98C24002CCBF3 /* Main.storyboard */; };
+		E92BF91D24EBBC77002CB596 /* FPOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81BBEA4B19925F9E006310F7 /* FPOrderCell.xib */; };
+		E92BF91E24EBBC77002CB596 /* FPNumPadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101827D196EAB4A009C9E98 /* FPNumPadView.xib */; };
+		E92BF91F24EBBC77002CB596 /* FPCheckoutFooterView-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8151073D197BB32F00AFC491 /* FPCheckoutFooterView-iPad.xib */; };
+		E92BF92024EBBC77002CB596 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 81C038F6195C70940086D48B /* Podfile */; };
+		E92BF92124EBBC77002CB596 /* FPCheckoutHeaderView-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 815107381979892000AFC491 /* FPCheckoutHeaderView-iPad.xib */; };
+		E92BF92224EBBC77002CB596 /* Login-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81199D3C195C313F00BE139D /* Login-iPad.storyboard */; };
+		E92BF92324EBBC77002CB596 /* FPGiftCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813682C8196F69FB00BE4E90 /* FPGiftCardCell.xib */; };
+		E92BF92424EBBC77002CB596 /* ProductsAndCart-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81A1CC78196771AD00587E50 /* ProductsAndCart-iPad.storyboard */; };
+		E92BF92524EBBC77002CB596 /* FPCheckoutHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101EE8D19927EAC0042FBB6 /* FPCheckoutHeaderView.xib */; };
+		E92BF92624EBBC77002CB596 /* FPCustomerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8157106C1978238600F184D0 /* FPCustomerCell.xib */; };
+		E92BF92724EBBC77002CB596 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 812656FF1E11966D00588EA9 /* Launch Screen.storyboard */; };
+		E92BF92924EBBC77002CB596 /* FPProductCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81F14B051B1731680068372B /* FPProductCategoryCollectionViewCell.xib */; };
+		E92BF92A24EBBC77002CB596 /* FPProductCategoriesFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81ADF3591B172A360092A9FD /* FPProductCategoriesFooterView.xib */; };
+		E92BF92B24EBBC77002CB596 /* FPCheckoutFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101EE9319928D4A0042FBB6 /* FPCheckoutFooterView.xib */; };
+		E92BF92C24EBBC77002CB596 /* FPProductCartCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81CD1DA3196A190400EEAD8F /* FPProductCartCellView.xib */; };
+		E92BF92D24EBBC77002CB596 /* FPCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81FF080F196C28830046457A /* FPCartCell.xib */; };
+		E92BF92E24EBBC77002CB596 /* ProductsAndCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81FB1965198BA4A900FF6815 /* ProductsAndCart.storyboard */; };
+		E92BF92F24EBBC77002CB596 /* FPProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81BB47F2198FD1C8003A3DEE /* FPProductCell.xib */; };
+		E92BF93024EBBC77002CB596 /* FPCartHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81A3A848196B73CC0006C479 /* FPCartHeaderView.xib */; };
+		E92BF93124EBBC77002CB596 /* FPCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8179D441198F9EE400B49FC3 /* FPCategoryCell.xib */; };
+		E92BF93224EBBC77002CB596 /* FPProductCheckoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101EE90199280280042FBB6 /* FPProductCheckoutCell.xib */; };
+		E92BF93C24EBC641002CB596 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503EB714197D735D00B86869 /* Images.xcassets */; };
+		E92BF93E24EBC81F002CB596 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503EB714197D735D00B86869 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -340,7 +340,6 @@
 		503EB714197D735D00B86869 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		50EA2929197E5A6F0024B299 /* FPCashCheckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCashCheckViewController.swift; sourceTree = "<group>"; };
 		50EA292B197E71580024B299 /* FPPaymentConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPPaymentConfirmViewController.swift; sourceTree = "<group>"; };
-		50FB20001980176B00D7106C /* FPOS Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FPOS Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81018279196EA95F009C9E98 /* FPNumPadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNumPadView.swift; sourceTree = "<group>"; };
 		8101827D196EAB4A009C9E98 /* FPNumPadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPNumPadView.xib; sourceTree = "<group>"; };
 		8101EE8D19927EAC0042FBB6 /* FPCheckoutHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPCheckoutHeaderView.xib; sourceTree = "<group>"; };
@@ -490,7 +489,6 @@
 		81EE76841E13F88F00CCCF6B /* Farmstand Cart.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "Farmstand Cart.entitlements"; path = "../Farmstand Cart.entitlements"; sourceTree = "<group>"; };
 		81F14B041B1731680068372B /* FPProductCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPProductCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		81F14B051B1731680068372B /* FPProductCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPProductCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
-		81F4524F1E1079F100A583D3 /* FarmPOSDev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FarmPOSDev-Info.plist"; sourceTree = "<group>"; };
 		81F452581E1161B200A583D3 /* FPCDCustomer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FPCDCustomer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		81F452591E1161B200A583D3 /* FPCDCustomer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FPCDCustomer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		81F4525E1E11628D00A583D3 /* FPCDCSA+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FPCDCSA+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -509,35 +507,12 @@
 		9F659EF51C1F24DC005F0FF6 /* FPCustomLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCustomLogger.swift; sourceTree = "<group>"; };
 		9FEC404919B9D62C003AB29A /* FPCardFlightManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCardFlightManager.swift; sourceTree = "<group>"; };
 		B8B7E037757AE290B9EBD116 /* Pods_FPOS_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FPOS_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E92BF93724EBBC77002CB596 /* Farmstand Cart (DEV).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmstand Cart (DEV).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E92BF93824EBBC78002CB596 /* FarmstandCartDEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FarmstandCartDEV-Info.plist"; path = "/Users/denismendica/Projects/toptal/Meadowstone Farm/FarmPOS-MobileApp/FarmstandCartDEV-Info.plist"; sourceTree = "<absolute>"; };
 		EFE2C3F086060FC12C04E372 /* Pods_Farmstand_Cart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Farmstand_Cart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		50FB1FE31980176B00D7106C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				81CDBC031B67B15200D37E0B /* libstdc++.6.0.9.dylib in Frameworks */,
-				81CDBC041B67B15200D37E0B /* ExternalAccessory.framework in Frameworks */,
-				81CDBC051B67B15200D37E0B /* CoreGraphics.framework in Frameworks */,
-				81CDBC061B67B15200D37E0B /* MessageUI.framework in Frameworks */,
-				81CDBC071B67B15200D37E0B /* MediaPlayer.framework in Frameworks */,
-				81CDBC081B67B15200D37E0B /* AudioToolbox.framework in Frameworks */,
-				81CDBC091B67B15200D37E0B /* AVFoundation.framework in Frameworks */,
-				81CDBC0C1B67B15200D37E0B /* QuickLook.framework in Frameworks */,
-				81CDBC0D1B67B15200D37E0B /* CoreData.framework in Frameworks */,
-				81CDBC0E1B67B15200D37E0B /* UIKit.framework in Frameworks */,
-				81CDBC0F1B67B15200D37E0B /* CFNetwork.framework in Frameworks */,
-				81CDBC101B67B15200D37E0B /* Foundation.framework in Frameworks */,
-				95AA9CBAFF268782BEE5B28D /* Pods_FPOS_Dev.framework in Frameworks */,
-				812DDED01E0AC12400DE1777 /* AFNetworking.framework in Frameworks */,
-				812DDED21E0AC12400DE1777 /* MBProgressHUD.framework in Frameworks */,
-				812DDED31E0AC12400DE1777 /* MMDrawerController.framework in Frameworks */,
-				812DDED51E0AC12400DE1777 /* SDWebImage.framework in Frameworks */,
-				812DDED61E0AC12400DE1777 /* SVPullToRefresh.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		81DB7819195C2A860021DE57 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -560,6 +535,31 @@
 				812DDEC51E0AC11C00DE1777 /* MMDrawerController.framework in Frameworks */,
 				812DDEC71E0AC11C00DE1777 /* SDWebImage.framework in Frameworks */,
 				812DDEC81E0AC11C00DE1777 /* SVPullToRefresh.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E92BF90124EBBC77002CB596 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E92BF90224EBBC77002CB596 /* libstdc++.6.0.9.dylib in Frameworks */,
+				E92BF90324EBBC77002CB596 /* ExternalAccessory.framework in Frameworks */,
+				E92BF90424EBBC77002CB596 /* CoreGraphics.framework in Frameworks */,
+				E92BF90524EBBC77002CB596 /* MessageUI.framework in Frameworks */,
+				E92BF90624EBBC77002CB596 /* MediaPlayer.framework in Frameworks */,
+				E92BF90724EBBC77002CB596 /* AudioToolbox.framework in Frameworks */,
+				E92BF90824EBBC77002CB596 /* AVFoundation.framework in Frameworks */,
+				E92BF90924EBBC77002CB596 /* QuickLook.framework in Frameworks */,
+				E92BF90A24EBBC77002CB596 /* CoreData.framework in Frameworks */,
+				E92BF90B24EBBC77002CB596 /* UIKit.framework in Frameworks */,
+				E92BF90C24EBBC77002CB596 /* Foundation.framework in Frameworks */,
+				E92BF90D24EBBC77002CB596 /* CFNetwork.framework in Frameworks */,
+				E92BF90E24EBBC77002CB596 /* Pods_Farmstand_Cart.framework in Frameworks */,
+				E92BF90F24EBBC77002CB596 /* AFNetworking.framework in Frameworks */,
+				E92BF91024EBBC77002CB596 /* MBProgressHUD.framework in Frameworks */,
+				E92BF91124EBBC77002CB596 /* MMDrawerController.framework in Frameworks */,
+				E92BF91224EBBC77002CB596 /* SDWebImage.framework in Frameworks */,
+				E92BF91324EBBC77002CB596 /* SVPullToRefresh.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -958,7 +958,7 @@
 			isa = PBXGroup;
 			children = (
 				81DB781C195C2A860021DE57 /* Farmstand Cart.app */,
-				50FB20001980176B00D7106C /* FPOS Dev.app */,
+				E92BF93724EBBC77002CB596 /* Farmstand Cart (DEV).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -980,7 +980,7 @@
 			children = (
 				813682C2196F5BD900BE4E90 /* gift_card_FAQ.html */,
 				81DB7820195C2A860021DE57 /* FarmstandCart-Info.plist */,
-				81F4524F1E1079F100A583D3 /* FarmPOSDev-Info.plist */,
+				E92BF93824EBBC78002CB596 /* FarmstandCartDEV-Info.plist */,
 				81EE76841E13F88F00CCCF6B /* Farmstand Cart.entitlements */,
 				81EE76831E13F88C00CCCF6B /* FPOS Dev.entitlements */,
 				81C2335B1A499EB5003E9239 /* bridge.h */,
@@ -1050,25 +1050,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		50FB1FA11980176B00D7106C /* FPOS Dev */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 50FB1FFD1980176B00D7106C /* Build configuration list for PBXNativeTarget "FPOS Dev" */;
-			buildPhases = (
-				48CE1300A1087B4805DC6AB2 /* [CP] Check Pods Manifest.lock */,
-				50FB1FA31980176B00D7106C /* Sources */,
-				50FB1FE31980176B00D7106C /* Frameworks */,
-				50FB1FE81980176B00D7106C /* Resources */,
-				7D3EF3E6233BBA6152138C82 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "FPOS Dev";
-			productName = FarmPOS;
-			productReference = 50FB20001980176B00D7106C /* FPOS Dev.app */;
-			productType = "com.apple.product-type.application";
-		};
 		81DB781B195C2A860021DE57 /* Farmstand Cart */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 81DB7833195C2A870021DE57 /* Build configuration list for PBXNativeTarget "Farmstand Cart" */;
@@ -1088,6 +1069,25 @@
 			productReference = 81DB781C195C2A860021DE57 /* Farmstand Cart.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E92BF88E24EBBC77002CB596 /* Farmstand Cart (DEV) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E92BF93424EBBC77002CB596 /* Build configuration list for PBXNativeTarget "Farmstand Cart (DEV)" */;
+			buildPhases = (
+				E92BF88F24EBBC77002CB596 /* [CP] Check Pods Manifest.lock */,
+				E92BF89024EBBC77002CB596 /* Sources */,
+				E92BF90124EBBC77002CB596 /* Frameworks */,
+				E92BF91424EBBC77002CB596 /* Resources */,
+				E92BF93324EBBC77002CB596 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Farmstand Cart (DEV)";
+			productName = FarmPOS;
+			productReference = E92BF93724EBBC77002CB596 /* Farmstand Cart (DEV).app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1099,15 +1099,6 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Eugene Reshetov";
 				TargetAttributes = {
-					50FB1FA11980176B00D7106C = {
-						DevelopmentTeam = 4268HQ9ZMJ;
-						LastSwiftMigration = 1100;
-						SystemCapabilities = {
-							com.apple.Push = {
-								enabled = 1;
-							};
-						};
-					};
 					81DB781B195C2A860021DE57 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = 4268HQ9ZMJ;
@@ -1118,6 +1109,9 @@
 								enabled = 1;
 							};
 						};
+					};
+					E92BF88E24EBBC77002CB596 = {
+						DevelopmentTeam = 4268HQ9ZMJ;
 					};
 				};
 			};
@@ -1135,49 +1129,12 @@
 			projectRoot = "";
 			targets = (
 				81DB781B195C2A860021DE57 /* Farmstand Cart */,
-				50FB1FA11980176B00D7106C /* FPOS Dev */,
+				E92BF88E24EBBC77002CB596 /* Farmstand Cart (DEV) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		50FB1FE81980176B00D7106C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				50FB1FE91980176B00D7106C /* FPProductCartCell.xib in Resources */,
-				50FB1FEA1980176B00D7106C /* Login.storyboard in Resources */,
-				50FB1FEB1980176B00D7106C /* FPProductCheckoutCell-iPad.xib in Resources */,
-				50FB1FEC1980176B00D7106C /* FPTransactionCell.xib in Resources */,
-				50FB1FED1980176B00D7106C /* TODO in Resources */,
-				8108AF4519ACF91200869B86 /* FPUnsyncedPurchaseCell.xib in Resources */,
-				50FB1FEE1980176B00D7106C /* gift_card_FAQ.html in Resources */,
-				81DD3D2819C98C24002CCBF3 /* Main.storyboard in Resources */,
-				81BBEA4D19925F9E006310F7 /* FPOrderCell.xib in Resources */,
-				50FB1FF01980176B00D7106C /* FPNumPadView.xib in Resources */,
-				50FB1FF11980176B00D7106C /* FPCheckoutFooterView-iPad.xib in Resources */,
-				50FB1FF21980176B00D7106C /* Podfile in Resources */,
-				50FB1FF31980176B00D7106C /* FPCheckoutHeaderView-iPad.xib in Resources */,
-				50FB1FF41980176B00D7106C /* Login-iPad.storyboard in Resources */,
-				50FB1FF51980176B00D7106C /* FPGiftCardCell.xib in Resources */,
-				50FB1FF61980176B00D7106C /* ProductsAndCart-iPad.storyboard in Resources */,
-				8101EE8F19927EAC0042FBB6 /* FPCheckoutHeaderView.xib in Resources */,
-				50FB1FF71980176B00D7106C /* FPCustomerCell.xib in Resources */,
-				812657011E11966D00588EA9 /* Launch Screen.storyboard in Resources */,
-				50FB1FF81980176B00D7106C /* Images.xcassets in Resources */,
-				81F14B091B1731680068372B /* FPProductCategoryCollectionViewCell.xib in Resources */,
-				81ADF35B1B172A360092A9FD /* FPProductCategoriesFooterView.xib in Resources */,
-				8101EE9519928D4A0042FBB6 /* FPCheckoutFooterView.xib in Resources */,
-				50FB1FF91980176B00D7106C /* FPProductCartCellView.xib in Resources */,
-				50FB1FFA1980176B00D7106C /* FPCartCell.xib in Resources */,
-				81FB1967198BA4A900FF6815 /* ProductsAndCart.storyboard in Resources */,
-				81BB47F6198FD1C8003A3DEE /* FPProductCell.xib in Resources */,
-				50FB1FFB1980176B00D7106C /* FPCartHeaderView.xib in Resources */,
-				8179D445198F9EE400B49FC3 /* FPCategoryCell.xib in Resources */,
-				8101EE92199280280042FBB6 /* FPProductCheckoutCell.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		81DB781A195C2A860021DE57 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1201,9 +1158,9 @@
 				8101EE8E19927EAC0042FBB6 /* FPCheckoutHeaderView.xib in Resources */,
 				8151072619783A5A00AFC491 /* FPCustomerCell.xib in Resources */,
 				812657001E11966D00588EA9 /* Launch Screen.storyboard in Resources */,
-				503EB715197D735D00B86869 /* Images.xcassets in Resources */,
 				81F14B081B1731680068372B /* FPProductCategoryCollectionViewCell.xib in Resources */,
 				81ADF35A1B172A360092A9FD /* FPProductCategoriesFooterView.xib in Resources */,
+				E92BF93E24EBC81F002CB596 /* Images.xcassets in Resources */,
 				8101EE9419928D4A0042FBB6 /* FPCheckoutFooterView.xib in Resources */,
 				81CD1DA4196A190400EEAD8F /* FPProductCartCellView.xib in Resources */,
 				81FF0810196C28830046457A /* FPCartCell.xib in Resources */,
@@ -1215,34 +1172,53 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E92BF91424EBBC77002CB596 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E92BF91524EBBC77002CB596 /* FPProductCartCell.xib in Resources */,
+				E92BF91624EBBC77002CB596 /* Login.storyboard in Resources */,
+				E92BF91724EBBC77002CB596 /* FPProductCheckoutCell-iPad.xib in Resources */,
+				E92BF91824EBBC77002CB596 /* FPTransactionCell.xib in Resources */,
+				E92BF91924EBBC77002CB596 /* TODO in Resources */,
+				E92BF91A24EBBC77002CB596 /* FPUnsyncedPurchaseCell.xib in Resources */,
+				E92BF91B24EBBC77002CB596 /* gift_card_FAQ.html in Resources */,
+				E92BF91C24EBBC77002CB596 /* Main.storyboard in Resources */,
+				E92BF91D24EBBC77002CB596 /* FPOrderCell.xib in Resources */,
+				E92BF91E24EBBC77002CB596 /* FPNumPadView.xib in Resources */,
+				E92BF91F24EBBC77002CB596 /* FPCheckoutFooterView-iPad.xib in Resources */,
+				E92BF92024EBBC77002CB596 /* Podfile in Resources */,
+				E92BF92124EBBC77002CB596 /* FPCheckoutHeaderView-iPad.xib in Resources */,
+				E92BF92224EBBC77002CB596 /* Login-iPad.storyboard in Resources */,
+				E92BF92324EBBC77002CB596 /* FPGiftCardCell.xib in Resources */,
+				E92BF92424EBBC77002CB596 /* ProductsAndCart-iPad.storyboard in Resources */,
+				E92BF92524EBBC77002CB596 /* FPCheckoutHeaderView.xib in Resources */,
+				E92BF92624EBBC77002CB596 /* FPCustomerCell.xib in Resources */,
+				E92BF92724EBBC77002CB596 /* Launch Screen.storyboard in Resources */,
+				E92BF92924EBBC77002CB596 /* FPProductCategoryCollectionViewCell.xib in Resources */,
+				E92BF92A24EBBC77002CB596 /* FPProductCategoriesFooterView.xib in Resources */,
+				E92BF93C24EBC641002CB596 /* Images.xcassets in Resources */,
+				E92BF92B24EBBC77002CB596 /* FPCheckoutFooterView.xib in Resources */,
+				E92BF92C24EBBC77002CB596 /* FPProductCartCellView.xib in Resources */,
+				E92BF92D24EBBC77002CB596 /* FPCartCell.xib in Resources */,
+				E92BF92E24EBBC77002CB596 /* ProductsAndCart.storyboard in Resources */,
+				E92BF92F24EBBC77002CB596 /* FPProductCell.xib in Resources */,
+				E92BF93024EBBC77002CB596 /* FPCartHeaderView.xib in Resources */,
+				E92BF93124EBBC77002CB596 /* FPCategoryCell.xib in Resources */,
+				E92BF93224EBBC77002CB596 /* FPProductCheckoutCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		48CE1300A1087B4805DC6AB2 /* [CP] Check Pods Manifest.lock */ = {
+		C091B34384FDBFA6DE982B98 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FPOS Dev-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7D3EF3E6233BBA6152138C82 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FPOS Dev/Pods-FPOS Dev-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Farmstand Cart/Pods-Farmstand Cart-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MMDrawerController/MMDrawerController.framework",
@@ -1259,10 +1235,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FPOS Dev/Pods-FPOS Dev-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Farmstand Cart/Pods-Farmstand Cart-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C091B34384FDBFA6DE982B98 /* [CP] Embed Pods Frameworks */ = {
+		E92BF88F24EBBC77002CB596 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Farmstand Cart-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E92BF93324EBBC77002CB596 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1309,125 +1303,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		50FB1FA31980176B00D7106C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				81BB47EF198FC673003A3DEE /* FPProductsViewController.swift in Sources */,
-				444852EF199246DF00A1F87C /* FPRetailLocation.swift in Sources */,
-				50FB1FA41980176B00D7106C /* FPRedeemGiftCardViewController.swift in Sources */,
-				50FB1FA51980176B00D7106C /* FPProductsAndCartViewController.swift in Sources */,
-				81F452631E11628D00A583D3 /* FPCDCSA+CoreDataProperties.swift in Sources */,
-				50FB1FA61980176B00D7106C /* main.swift in Sources */,
-				811B4559198A520A000EC090 /* FPDataAccessLayer.swift in Sources */,
-				50FB1FA81980176B00D7106C /* FPChoiceOverlayView.swift in Sources */,
-				81BB47F91990F803003A3DEE /* FPInputValidator.swift in Sources */,
-				50FB1FA91980176B00D7106C /* FPCheckoutHeaderView.swift in Sources */,
-				9FEC404B19B9D62C003AB29A /* FPCardFlightManager.swift in Sources */,
-				81C31C5019B5C6CE00C90E6A /* FPJSONResponseSerializer.swift in Sources */,
-				50FB1FAA1980176B00D7106C /* FPPaymentOptionsViewController.swift in Sources */,
-				50FB1FAB1980176B00D7106C /* FPAlertManager.swift in Sources */,
-				50FB1FAC1980176B00D7106C /* FPCustomerCell.swift in Sources */,
-				81A0FEBB1998C6820022D31D /* FPProductCategoriesViewController.swift in Sources */,
-				812065521B566E9E00CA180F /* FPCheckoutItem.swift in Sources */,
-				81E9AC211B6A536100DF81AA /* FPInventoryProductHistoryViewController.swift in Sources */,
-				8108AF4219ACF8E000869B86 /* FPUnsyncedPurchaseCell.swift in Sources */,
-				8108AF3E19ACEE3800869B86 /* FPUnsyncedItemsTableViewController.swift in Sources */,
-				50FB1FAD1980176B00D7106C /* FPCustomer.swift in Sources */,
-				81BB47F4198FD1C8003A3DEE /* FPProductCell.swift in Sources */,
-				818FE98319890C6C00B3AF4A /* FPProductDescriptor.swift in Sources */,
-				81CCDB9D1B288B8D0072CEB4 /* FPSelectPriceViewController.swift in Sources */,
-				50FB1FAE1980176B00D7106C /* FPCheckoutViewController.swift in Sources */,
-				81C31C4D19B4C0B300C90E6A /* FPProductDiscount.swift in Sources */,
-				50FB1FAF1980176B00D7106C /* FPProductCheckoutCell.swift in Sources */,
-				50FB1FB01980176B00D7106C /* FPCreditCard.swift in Sources */,
-				81E95A511B623C9400F95F18 /* FPTriggerAlert.swift in Sources */,
-				50FB1FB11980176B00D7106C /* FPTransactionsViewController.swift in Sources */,
-				8179D443198F9EE400B49FC3 /* FPCategoryCell.swift in Sources */,
-				81F452691E1162D800A583D3 /* FPCDProductDescriptor+CoreDataProperties.swift in Sources */,
-				50FB1FB21980176B00D7106C /* FPChoiceInputView.swift in Sources */,
-				50FB1FB31980176B00D7106C /* FPProductCartCellView.swift in Sources */,
-				81B63A251B53AA79002E795F /* FPCustomerEditViewController.swift in Sources */,
-				50FB1FB51980176B00D7106C /* FPCheckoutProduct.swift in Sources */,
-				50FB1FB61980176B00D7106C /* FPServer.swift in Sources */,
-				812BEEEA1B2AE31800F01436 /* FPApplyBalanceViewController.swift in Sources */,
-				81E95A3C1B600F0100F95F18 /* FPProductSuppliersViewController.swift in Sources */,
-				81F452611E11628D00A583D3 /* FPCDCSA+CoreDataClass.swift in Sources */,
-				81DC1D4C1B6674E1002029C8 /* FPCreateProductViewController.swift in Sources */,
-				50FB1FB71980176B00D7106C /* FPBuyGiftCardViewController.swift in Sources */,
-				50FB1FB81980176B00D7106C /* FPCartProduct.swift in Sources */,
-				50FB1FB91980176B00D7106C /* FPOrderCell.swift in Sources */,
-				50FB1FBA1980176B00D7106C /* FPCashCheckViewController.swift in Sources */,
-				50FB1FBB1980176B00D7106C /* FPStoryboardManager.swift in Sources */,
-				81FA71851B3998C000C0CD7D /* FPCashCheckSummaryViewController.swift in Sources */,
-				81F14B071B1731680068372B /* FPProductCategoryCollectionViewCell.swift in Sources */,
-				81E95A4A1B612CC500F95F18 /* FPInventoryProductNote.swift in Sources */,
-				50FB1FBC1980176B00D7106C /* FPGiftCard.swift in Sources */,
-				50FB1FBD1980176B00D7106C /* FPGiftCardsViewController.swift in Sources */,
-				50FB1FBE1980176B00D7106C /* FPScanQRCodeViewController.swift in Sources */,
-				50FB1FBF1980176B00D7106C /* FPCartHeaderView.swift in Sources */,
-				81DC1D801B66DE27002029C8 /* FPNamable.swift in Sources */,
-				50FB1FC01980176B00D7106C /* FPManageBalanceViewController.swift in Sources */,
-				81DC1D831B66E048002029C8 /* FPSelectNamableViewController.swift in Sources */,
-				50FB1FC11980176B00D7106C /* FPCheckoutFooterView.swift in Sources */,
-				50FB1FC21980176B00D7106C /* FPModelParser.swift in Sources */,
-				818A3A801A82938E00C2A12C /* FPFarm.swift in Sources */,
-				8179D43E198F969800B49FC3 /* FPCategoriesViewController.swift in Sources */,
-				50FB1FC31980176B00D7106C /* FPTransaction.swift in Sources */,
-				81F452731E11632800A583D3 /* FPCDPurchase+CoreDataClass.swift in Sources */,
-				81F4525D1E1161B200A583D3 /* FPCDCustomer+CoreDataProperties.swift in Sources */,
-				50FB1FC41980176B00D7106C /* FPLoginViewController.swift in Sources */,
-				50FB1FC51980176B00D7106C /* FPNumPadView.swift in Sources */,
-				50FB1FC61980176B00D7106C /* FPAccountSetupViewController.swift in Sources */,
-				50FB1FC71980176B00D7106C /* FPProductViewController.swift in Sources */,
-				81A9F1041B8CBEA700CA548C /* FPRotationViewController.swift in Sources */,
-				50FB1FC81980176B00D7106C /* FPCustomersViewController.swift in Sources */,
-				81F452671E1162D800A583D3 /* FPCDProductDescriptor+CoreDataClass.swift in Sources */,
-				50FB1FC91980176B00D7106C /* FPOrder.swift in Sources */,
-				81E5B7DD1B5FFA420061E377 /* FPProductSupplier.swift in Sources */,
-				81E9AC1E1B6A4FAD00DF81AA /* FPInventoryProductHistory.swift in Sources */,
-				50FB1FCA1980176B00D7106C /* FPFarmWorkerLoginViewController.swift in Sources */,
-				8179D43B198F8B2C00B49FC3 /* FPSyncManager.swift in Sources */,
-				50FB1FCB1980176B00D7106C /* FPPayNowViewController.swift in Sources */,
-				50FB1FCC1980176B00D7106C /* UIView+FirstResponder.swift in Sources */,
-				50FB1FCD1980176B00D7106C /* FPProduct.swift in Sources */,
-				817D9AFE1C20415700DDB28B /* FPCustomLogger.swift in Sources */,
-				81F4525B1E1161B200A583D3 /* FPCDCustomer+CoreDataClass.swift in Sources */,
-				50FB1FCE1980176B00D7106C /* FPCreateCreditCardViewController.swift in Sources */,
-				50FB1FCF1980176B00D7106C /* FPGiftCardOptionsViewController.swift in Sources */,
-				50FB1FD01980176B00D7106C /* FPGiftCardCell.swift in Sources */,
-				81E95A541B623E6A00F95F18 /* FPTriggerAlertsViewController.swift in Sources */,
-				50FB1FD11980176B00D7106C /* FPAuthOptionsViewController.swift in Sources */,
-				50FB1FD21980176B00D7106C /* FPCustomerLoginViewController.swift in Sources */,
-				81CFDDB419CAFB37003BB974 /* FPProductCreateViewController.swift in Sources */,
-				50FB1FD31980176B00D7106C /* FPMeasurement.swift in Sources */,
-				50FB1FD41980176B00D7106C /* Defines.swift in Sources */,
-				81E95A4D1B61461C00F95F18 /* FPAddNotesViewController.swift in Sources */,
-				50FB1FD51980176B00D7106C /* FPFarmWorker.swift in Sources */,
-				50FB1FD61980176B00D7106C /* FPAppDelegate.swift in Sources */,
-				50FB1FD71980176B00D7106C /* FPCSA.swift in Sources */,
-				81BB47EC198FB327003A3DEE /* FPCartViewController.swift in Sources */,
-				50FB1FD81980176B00D7106C /* FPPaymentConfirmViewController.swift in Sources */,
-				81F452751E11632800A583D3 /* FPCDPurchase+CoreDataProperties.swift in Sources */,
-				50FB1FD91980176B00D7106C /* FPCartCell.swift in Sources */,
-				50FB1FDA1980176B00D7106C /* FPCustomerCreateViewController.swift in Sources */,
-				81FB196A198BA4FB00FF6815 /* FPMenuViewController.swift in Sources */,
-				50FB1FDB1980176B00D7106C /* FPCurrencyFormatter.swift in Sources */,
-				81E95A471B612AFE00F95F18 /* FPInventoryProductViewController.swift in Sources */,
-				50FB1FDC1980176B00D7106C /* FPTransactionCell.swift in Sources */,
-				50FB1FDD1980176B00D7106C /* FPUser.swift in Sources */,
-				81A9FC4519AFB95400CCAD37 /* FPReader.m in Sources */,
-				50FB1FDF1980176B00D7106C /* FPOrdersViewController.swift in Sources */,
-				50FB1FE01980176B00D7106C /* FPProductCartCell.swift in Sources */,
-				812065551B566FAE00CA180F /* FPCheckoutTaxItem.swift in Sources */,
-				81C330F61B17365700D31F1F /* FPProductCategoriesFooterView.swift in Sources */,
-				81BC10881992B73F00D8165D /* DataModel.xcdatamodeld in Sources */,
-				81B63A291B556455002E795F /* FPProductCategoryTax.swift in Sources */,
-				50FB1FE11980176B00D7106C /* FPProductCategory.swift in Sources */,
-				50FB1FE21980176B00D7106C /* FPCartView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		81DB7818195C2A860021DE57 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1547,39 +1422,128 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E92BF89024EBBC77002CB596 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E92BF89124EBBC77002CB596 /* FPProductsViewController.swift in Sources */,
+				E92BF89224EBBC77002CB596 /* FPRetailLocation.swift in Sources */,
+				E92BF89324EBBC77002CB596 /* FPRedeemGiftCardViewController.swift in Sources */,
+				E92BF89424EBBC77002CB596 /* FPProductsAndCartViewController.swift in Sources */,
+				E92BF89524EBBC77002CB596 /* FPCDCSA+CoreDataProperties.swift in Sources */,
+				E92BF89624EBBC77002CB596 /* main.swift in Sources */,
+				E92BF89724EBBC77002CB596 /* FPDataAccessLayer.swift in Sources */,
+				E92BF89824EBBC77002CB596 /* FPChoiceOverlayView.swift in Sources */,
+				E92BF89924EBBC77002CB596 /* FPInputValidator.swift in Sources */,
+				E92BF89A24EBBC77002CB596 /* FPCheckoutHeaderView.swift in Sources */,
+				E92BF89B24EBBC77002CB596 /* FPCardFlightManager.swift in Sources */,
+				E92BF89C24EBBC77002CB596 /* FPJSONResponseSerializer.swift in Sources */,
+				E92BF89D24EBBC77002CB596 /* FPPaymentOptionsViewController.swift in Sources */,
+				E92BF89E24EBBC77002CB596 /* FPAlertManager.swift in Sources */,
+				E92BF89F24EBBC77002CB596 /* FPCustomerCell.swift in Sources */,
+				E92BF8A024EBBC77002CB596 /* FPProductCategoriesViewController.swift in Sources */,
+				E92BF8A124EBBC77002CB596 /* FPCheckoutItem.swift in Sources */,
+				E92BF8A224EBBC77002CB596 /* FPInventoryProductHistoryViewController.swift in Sources */,
+				E92BF8A324EBBC77002CB596 /* FPUnsyncedPurchaseCell.swift in Sources */,
+				E92BF8A424EBBC77002CB596 /* FPUnsyncedItemsTableViewController.swift in Sources */,
+				E92BF8A524EBBC77002CB596 /* FPCustomer.swift in Sources */,
+				E92BF8A624EBBC77002CB596 /* FPProductCell.swift in Sources */,
+				E92BF8A724EBBC77002CB596 /* FPProductDescriptor.swift in Sources */,
+				E92BF8A824EBBC77002CB596 /* FPSelectPriceViewController.swift in Sources */,
+				E92BF8A924EBBC77002CB596 /* FPCheckoutViewController.swift in Sources */,
+				E92BF8AA24EBBC77002CB596 /* FPProductDiscount.swift in Sources */,
+				E92BF8AB24EBBC77002CB596 /* FPProductCheckoutCell.swift in Sources */,
+				E92BF8AC24EBBC77002CB596 /* FPCreditCard.swift in Sources */,
+				E92BF8AD24EBBC77002CB596 /* FPTriggerAlert.swift in Sources */,
+				E92BF8AE24EBBC77002CB596 /* FPTransactionsViewController.swift in Sources */,
+				E92BF8AF24EBBC77002CB596 /* FPCategoryCell.swift in Sources */,
+				E92BF8B024EBBC77002CB596 /* FPCDProductDescriptor+CoreDataProperties.swift in Sources */,
+				E92BF8B124EBBC77002CB596 /* FPChoiceInputView.swift in Sources */,
+				E92BF8B224EBBC77002CB596 /* FPProductCartCellView.swift in Sources */,
+				E92BF8B324EBBC77002CB596 /* FPCustomerEditViewController.swift in Sources */,
+				E92BF8B424EBBC77002CB596 /* FPCheckoutProduct.swift in Sources */,
+				E92BF8B524EBBC77002CB596 /* FPServer.swift in Sources */,
+				E92BF8B624EBBC77002CB596 /* FPApplyBalanceViewController.swift in Sources */,
+				E92BF8B724EBBC77002CB596 /* FPProductSuppliersViewController.swift in Sources */,
+				E92BF8B824EBBC77002CB596 /* FPCDCSA+CoreDataClass.swift in Sources */,
+				E92BF8B924EBBC77002CB596 /* FPCreateProductViewController.swift in Sources */,
+				E92BF8BA24EBBC77002CB596 /* FPBuyGiftCardViewController.swift in Sources */,
+				E92BF8BB24EBBC77002CB596 /* FPCartProduct.swift in Sources */,
+				E92BF8BC24EBBC77002CB596 /* FPOrderCell.swift in Sources */,
+				E92BF8BD24EBBC77002CB596 /* FPCashCheckViewController.swift in Sources */,
+				E92BF8BE24EBBC77002CB596 /* FPStoryboardManager.swift in Sources */,
+				E92BF8BF24EBBC77002CB596 /* FPCashCheckSummaryViewController.swift in Sources */,
+				E92BF8C024EBBC77002CB596 /* FPProductCategoryCollectionViewCell.swift in Sources */,
+				E92BF8C124EBBC77002CB596 /* FPInventoryProductNote.swift in Sources */,
+				E92BF8C224EBBC77002CB596 /* FPGiftCard.swift in Sources */,
+				E92BF8C324EBBC77002CB596 /* FPGiftCardsViewController.swift in Sources */,
+				E92BF8C424EBBC77002CB596 /* FPScanQRCodeViewController.swift in Sources */,
+				E92BF8C524EBBC77002CB596 /* FPCartHeaderView.swift in Sources */,
+				E92BF8C624EBBC77002CB596 /* FPNamable.swift in Sources */,
+				E92BF8C724EBBC77002CB596 /* FPManageBalanceViewController.swift in Sources */,
+				E92BF8C824EBBC77002CB596 /* FPSelectNamableViewController.swift in Sources */,
+				E92BF8C924EBBC77002CB596 /* FPCheckoutFooterView.swift in Sources */,
+				E92BF8CA24EBBC77002CB596 /* FPModelParser.swift in Sources */,
+				E92BF8CB24EBBC77002CB596 /* FPFarm.swift in Sources */,
+				E92BF8CC24EBBC77002CB596 /* DataModel.xcdatamodeld in Sources */,
+				E92BF8CD24EBBC77002CB596 /* FPCategoriesViewController.swift in Sources */,
+				E92BF8CE24EBBC77002CB596 /* FPCDPurchase+CoreDataClass.swift in Sources */,
+				E92BF8CF24EBBC77002CB596 /* FPCDCustomer+CoreDataProperties.swift in Sources */,
+				E92BF8D024EBBC77002CB596 /* FPTransaction.swift in Sources */,
+				E92BF8D124EBBC77002CB596 /* FPLoginViewController.swift in Sources */,
+				E92BF8D224EBBC77002CB596 /* FPNumPadView.swift in Sources */,
+				E92BF8D324EBBC77002CB596 /* FPAccountSetupViewController.swift in Sources */,
+				E92BF8D424EBBC77002CB596 /* FPRotationViewController.swift in Sources */,
+				E92BF8D524EBBC77002CB596 /* FPProductViewController.swift in Sources */,
+				E92BF8D624EBBC77002CB596 /* FPCDProductDescriptor+CoreDataClass.swift in Sources */,
+				E92BF8D724EBBC77002CB596 /* FPCustomersViewController.swift in Sources */,
+				E92BF8D824EBBC77002CB596 /* FPProductSupplier.swift in Sources */,
+				E92BF8D924EBBC77002CB596 /* FPInventoryProductHistory.swift in Sources */,
+				E92BF8DA24EBBC77002CB596 /* FPOrder.swift in Sources */,
+				E92BF8DB24EBBC77002CB596 /* FPFarmWorkerLoginViewController.swift in Sources */,
+				E92BF8DC24EBBC77002CB596 /* FPSyncManager.swift in Sources */,
+				E92BF8DD24EBBC77002CB596 /* FPPayNowViewController.swift in Sources */,
+				E92BF8DE24EBBC77002CB596 /* UIView+FirstResponder.swift in Sources */,
+				E92BF8DF24EBBC77002CB596 /* FPCustomLogger.swift in Sources */,
+				E92BF8E024EBBC77002CB596 /* FPCDCustomer+CoreDataClass.swift in Sources */,
+				E92BF8E124EBBC77002CB596 /* FPProduct.swift in Sources */,
+				E92BF8E224EBBC77002CB596 /* FPCreateCreditCardViewController.swift in Sources */,
+				E92BF8E324EBBC77002CB596 /* FPGiftCardOptionsViewController.swift in Sources */,
+				E92BF8E424EBBC77002CB596 /* FPTriggerAlertsViewController.swift in Sources */,
+				E92BF8E524EBBC77002CB596 /* FPGiftCardCell.swift in Sources */,
+				E92BF8E624EBBC77002CB596 /* FPAuthOptionsViewController.swift in Sources */,
+				E92BF8E724EBBC77002CB596 /* FPProductCreateViewController.swift in Sources */,
+				E92BF8E824EBBC77002CB596 /* FPCustomerLoginViewController.swift in Sources */,
+				E92BF8E924EBBC77002CB596 /* FPMeasurement.swift in Sources */,
+				E92BF8EA24EBBC77002CB596 /* FPAddNotesViewController.swift in Sources */,
+				E92BF8EB24EBBC77002CB596 /* Defines.swift in Sources */,
+				E92BF8EC24EBBC77002CB596 /* FPFarmWorker.swift in Sources */,
+				E92BF8ED24EBBC77002CB596 /* FPAppDelegate.swift in Sources */,
+				E92BF8EE24EBBC77002CB596 /* FPCSA.swift in Sources */,
+				E92BF8EF24EBBC77002CB596 /* FPCartViewController.swift in Sources */,
+				E92BF8F024EBBC77002CB596 /* FPCDPurchase+CoreDataProperties.swift in Sources */,
+				E92BF8F124EBBC77002CB596 /* FPPaymentConfirmViewController.swift in Sources */,
+				E92BF8F224EBBC77002CB596 /* FPCartCell.swift in Sources */,
+				E92BF8F324EBBC77002CB596 /* FPCustomerCreateViewController.swift in Sources */,
+				E92BF8F424EBBC77002CB596 /* FPMenuViewController.swift in Sources */,
+				E92BF8F524EBBC77002CB596 /* FPInventoryProductViewController.swift in Sources */,
+				E92BF8F624EBBC77002CB596 /* FPCurrencyFormatter.swift in Sources */,
+				E92BF8F724EBBC77002CB596 /* FPTransactionCell.swift in Sources */,
+				E92BF8F824EBBC77002CB596 /* FPUser.swift in Sources */,
+				E92BF8F924EBBC77002CB596 /* FPReader.m in Sources */,
+				E92BF8FA24EBBC77002CB596 /* FPOrdersViewController.swift in Sources */,
+				E92BF8FB24EBBC77002CB596 /* FPCheckoutTaxItem.swift in Sources */,
+				E92BF8FC24EBBC77002CB596 /* FPProductCategoriesFooterView.swift in Sources */,
+				E92BF8FD24EBBC77002CB596 /* FPProductCartCell.swift in Sources */,
+				E92BF8FE24EBBC77002CB596 /* FPProductCategoryTax.swift in Sources */,
+				E92BF8FF24EBBC77002CB596 /* FPProductCategory.swift in Sources */,
+				E92BF90024EBBC77002CB596 /* FPCartView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		50FB1FFE1980176B00D7106C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 239888C3D9488AD9D9E23A03 /* Pods-FPOS Dev.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "FPOS Dev.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4268HQ9ZMJ;
-				ENABLE_BITCODE = NO;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"DEVBUILD=1",
-					"COCOAPODS=1",
-					"DEBUG=1",
-				);
-				INFOPLIST_FILE = "FarmPOS/FarmPOSDev-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-DDevbuild -DDebug $(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.meadowstonefarm.farmposdev;
-				PRODUCT_NAME = "FPOS Dev";
-				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = FarmPOS/bridge.h;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		81DB7831195C2A870021DE57 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1648,7 +1612,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Farmstand Cart.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.1.0.4;
+				CURRENT_PROJECT_VERSION = 0.0.5.1;
 				DEVELOPMENT_TEAM = 4268HQ9ZMJ;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1658,7 +1622,7 @@
 				INFOPLIST_FILE = "FarmPOS/FarmstandCart-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.0.5;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDebug";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meadowstonefarm.farmpos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1730,13 +1694,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Farmstand Cart.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.1.0.4;
+				CURRENT_PROJECT_VERSION = 0.0.5.1;
 				DEVELOPMENT_TEAM = 4268HQ9ZMJ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "FarmPOS/FarmstandCart-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.0.5;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meadowstonefarm.farmpos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1747,28 +1711,56 @@
 			};
 			name = AppStore;
 		};
-		81FED23A1AA30EDA003AC410 /* AppStore */ = {
+		E92BF93524EBBC77002CB596 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87C9812238DD924549F7CE56 /* Pods-FPOS Dev.appstore.xcconfig */;
+			baseConfigurationReference = 18B0578E21B89A29BFB0613E /* Pods-Farmstand Cart.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDEV;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "FPOS Dev.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Farmstand Cart.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.0.4;
+				DEVELOPMENT_TEAM = 4268HQ9ZMJ;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
-					"DEVBUILD=1",
 					"COCOAPODS=1",
 				);
-				INFOPLIST_FILE = "FarmPOS/FarmPOSDev-Info.plist";
+				INFOPLIST_FILE = "FarmstandCartDEV-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-DDevbuild $(inherited)";
+				MARKETING_VERSION = 0.1.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DDebug -DDevbuild";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meadowstonefarm.farmposdev;
-				PRODUCT_NAME = "FPOS Dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = FarmPOS/bridge.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E92BF93624EBBC77002CB596 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BEC7D13A5B77B3C3C366833 /* Pods-Farmstand Cart.appstore.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDEV;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Farmstand Cart.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.0.4;
+				DEVELOPMENT_TEAM = 4268HQ9ZMJ;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "FarmstandCartDEV-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.1.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DDevbuild";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meadowstonefarm.farmposdev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = FarmPOS/bridge.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1777,15 +1769,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		50FB1FFD1980176B00D7106C /* Build configuration list for PBXNativeTarget "FPOS Dev" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				50FB1FFE1980176B00D7106C /* Debug */,
-				81FED23A1AA30EDA003AC410 /* AppStore */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
 		81DB7817195C2A860021DE57 /* Build configuration list for PBXProject "Farm POS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1800,6 +1783,15 @@
 			buildConfigurations = (
 				81DB7834195C2A870021DE57 /* Debug */,
 				81FED2391AA30EDA003AC410 /* AppStore */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E92BF93424EBBC77002CB596 /* Build configuration list for PBXNativeTarget "Farmstand Cart (DEV)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E92BF93524EBBC77002CB596 /* Debug */,
+				E92BF93624EBBC77002CB596 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
