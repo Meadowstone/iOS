@@ -104,7 +104,7 @@ class FPServer : AFHTTPSessionManager {
         #endif
         let instance = FPServer(baseURL: URL(string: kHost))
         instance?.requestSerializer.timeoutInterval = 60.0
-        instance?.responseSerializer = FPJSONResponseSerializer(readingOptions: .allowFragments)
+        instance?.responseSerializer = AFJSONResponseSerializer(readingOptions: .allowFragments)
         instance?.reachabilityManager.setReachabilityStatusChange { status in
             if status == AFNetworkReachabilityStatus.reachableViaWiFi || status == AFNetworkReachabilityStatus.reachableViaWWAN {
                 instance?.startMonitoringChanges()
