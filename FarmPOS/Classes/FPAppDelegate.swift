@@ -24,6 +24,10 @@ class FPAppDelegate: UIApplication, UIApplicationDelegate, UIAlertViewDelegate {
     
     var window: UIWindow?
     
+    #if Devbuild
+    var devBuildWindow: UIWindow?
+    #endif
+    
     
     class func instance() -> FPAppDelegate {
         return UIApplication.shared.delegate as! FPAppDelegate
@@ -63,6 +67,10 @@ class FPAppDelegate: UIApplication, UIApplicationDelegate, UIAlertViewDelegate {
             user = activeUser
         }
         self.redirectUser(user, withLoginStatus: status)
+        
+        #if Devbuild
+        addDevBuildLabel(to: window!)
+        #endif
         
         return true
     }
@@ -244,5 +252,38 @@ class FPAppDelegate: UIApplication, UIApplicationDelegate, UIAlertViewDelegate {
     //        }
     //    }
     
+    #if Devbuild
+    private func addDevBuildLabel(to window: UIWindow) {
+        let devBuildLabel = UILabel()
+        devBuildLabel.text = "DEV"
+        devBuildLabel.textColor = .red
+        devBuildLabel.alpha = 0.5
+        devBuildLabel.font = UIFont(name: "HelveticaNeue", size: 50)
+        
+        let devBuildViewController = UIViewController()
+        devBuildViewController.view.addSubview(devBuildLabel)
+        devBuildLabel.translatesAutoresizingMaskIntoConstraints = false
+        devBuildViewController.view.addConstraint(NSLayoutConstraint(item: devBuildLabel,
+                                                                     attribute: .centerX,
+                                                                     relatedBy: .equal,
+                                                                     toItem: devBuildLabel.superview,
+                                                                     attribute: .centerX,
+                                                                     multiplier: 1.0,
+                                                                     constant: 0.0))
+        devBuildViewController.view.addConstraint(NSLayoutConstraint(item: devBuildLabel,
+                                                                     attribute: .bottom,
+                                                                     relatedBy: .equal,
+                                                                     toItem: devBuildLabel.superview,
+                                                                     attribute: .bottom,
+                                                                     multiplier: 1.0,
+                                                                     constant: 0.0))
+        
+        devBuildWindow = UIWindow(frame: UIScreen.main.bounds)
+        devBuildWindow?.rootViewController = devBuildViewController
+        devBuildWindow?.windowLevel = .alert
+        devBuildWindow?.isHidden = false
+        devBuildWindow?.isUserInteractionEnabled = false
+    }
+    #endif
 }
 
