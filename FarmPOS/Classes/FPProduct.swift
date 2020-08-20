@@ -40,25 +40,9 @@ class FPProduct: NSObject {
     var imageURL: URL?
     var thumbURL: URL?
     var supplier: FPProductSupplier?
-    var dayDiscounts = [FPProductDiscount]() // for mutability
-    var dayDiscount: FPProductDiscount? {
-        for dd in dayDiscounts {
-            let day = Calendar.current.dateComponents([.weekday], from: Date()).weekday
-            if dd.day == day {
-                return dd
-            }
-        }
-        return nil
-    }
     
     var actualPrice: Double {
-        var p = price
-        if let dd = dayDiscount {
-            p = FPCurrencyFormatter.roundCrrency(p - (dd.discount / 100.00) * p)
-        }
-        if discountPrice < price {
-            p = discountPrice
-        }
+        let p = min(price, discountPrice)
         return FPCurrencyFormatter.roundCrrency(p)
     }
     

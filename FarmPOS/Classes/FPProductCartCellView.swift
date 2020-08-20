@@ -23,7 +23,7 @@ class FPProductCartCellView: UIView {
                     df.dateFormat = "MMM yyyy"
                     availableFromLabel.text = "Avilable from: " + df.string(from: d as Date)
                 }
-                saleImageView.isHidden = (product.availableFrom != nil || product.dayDiscount == nil)
+                saleImageView.isHidden = product.availableFrom != nil
             } else if let ci = object as? NSDictionary {
                 let product = ci["product"] as! FPProduct
                 let name = ci["name"] as! String

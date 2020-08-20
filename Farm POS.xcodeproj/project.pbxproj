@@ -236,8 +236,6 @@
 		81BBEA4D19925F9E006310F7 /* FPOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81BBEA4B19925F9E006310F7 /* FPOrderCell.xib */; };
 		81BC10881992B73F00D8165D /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 811B455A198A52B8000EC090 /* DataModel.xcdatamodeld */; };
 		81C038F7195C70940086D48B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 81C038F6195C70940086D48B /* Podfile */; };
-		81C31C4C19B4C0B300C90E6A /* FPProductDiscount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C31C4B19B4C0B300C90E6A /* FPProductDiscount.swift */; };
-		81C31C4D19B4C0B300C90E6A /* FPProductDiscount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C31C4B19B4C0B300C90E6A /* FPProductDiscount.swift */; };
 		81C31C4F19B5C6CE00C90E6A /* FPJSONResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C31C4E19B5C6CE00C90E6A /* FPJSONResponseSerializer.swift */; };
 		81C31C5019B5C6CE00C90E6A /* FPJSONResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C31C4E19B5C6CE00C90E6A /* FPJSONResponseSerializer.swift */; };
 		81C330F61B17365700D31F1F /* FPProductCategoriesFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ADF3551B172A120092A9FD /* FPProductCategoriesFooterView.swift */; };
@@ -456,7 +454,6 @@
 		81BBEA4B19925F9E006310F7 /* FPOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPOrderCell.xib; sourceTree = "<group>"; };
 		81C038F6195C70940086D48B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		81C2335B1A499EB5003E9239 /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
-		81C31C4B19B4C0B300C90E6A /* FPProductDiscount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPProductDiscount.swift; sourceTree = "<group>"; };
 		81C31C4E19B5C6CE00C90E6A /* FPJSONResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPJSONResponseSerializer.swift; sourceTree = "<group>"; };
 		81CCDB9B1B288B8D0072CEB4 /* FPSelectPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPSelectPriceViewController.swift; sourceTree = "<group>"; };
 		81CD1D9F196A13CA00EEAD8F /* FPProductCartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPProductCartCell.swift; sourceTree = "<group>"; };
@@ -724,7 +721,6 @@
 				81DD91D11977DA340056754B /* FPTransaction.swift */,
 				818FE98119890C6C00B3AF4A /* FPProductDescriptor.swift */,
 				444852ED199246DF00A1F87C /* FPRetailLocation.swift */,
-				81C31C4B19B4C0B300C90E6A /* FPProductDiscount.swift */,
 				818A3A7E1A82938E00C2A12C /* FPFarm.swift */,
 				81B63A271B556455002E795F /* FPProductCategoryTax.swift */,
 				812065501B566E9E00CA180F /* FPCheckoutItem.swift */,
@@ -1338,7 +1334,6 @@
 				818FE98319890C6C00B3AF4A /* FPProductDescriptor.swift in Sources */,
 				81CCDB9D1B288B8D0072CEB4 /* FPSelectPriceViewController.swift in Sources */,
 				50FB1FAE1980176B00D7106C /* FPCheckoutViewController.swift in Sources */,
-				81C31C4D19B4C0B300C90E6A /* FPProductDiscount.swift in Sources */,
 				50FB1FAF1980176B00D7106C /* FPProductCheckoutCell.swift in Sources */,
 				50FB1FB01980176B00D7106C /* FPCreditCard.swift in Sources */,
 				81E95A511B623C9400F95F18 /* FPTriggerAlert.swift in Sources */,
@@ -1457,7 +1452,6 @@
 				818FE98219890C6C00B3AF4A /* FPProductDescriptor.swift in Sources */,
 				81CCDB9C1B288B8D0072CEB4 /* FPSelectPriceViewController.swift in Sources */,
 				81510728197978A000AFC491 /* FPCheckoutViewController.swift in Sources */,
-				81C31C4C19B4C0B300C90E6A /* FPProductDiscount.swift in Sources */,
 				8151073119797B7B00AFC491 /* FPProductCheckoutCell.swift in Sources */,
 				813682D41970455100BE4E90 /* FPCreditCard.swift in Sources */,
 				81E95A501B623C9400F95F18 /* FPTriggerAlert.swift in Sources */,

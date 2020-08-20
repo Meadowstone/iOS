@@ -331,25 +331,6 @@ class FPServer : AFHTTPSessionManager {
         }
         FPProduct.setAllProducts(products)
         
-        // -- Product Discounts for days
-        if let dayDiscounts = r["day_discounts"] as? [NSDictionary] {
-            for discounts in dayDiscounts {
-                let day = (discounts["day"] as! NSNumber).intValue + 1
-                for info in discounts["products"] as! [NSDictionary] {
-                    let infoCopy = info.mutableCopy() as! NSMutableDictionary
-                    infoCopy["day"] = day
-                    let d = FPModelParser.productDiscountWithInfo(infoCopy)
-                    let filteredProducts = FPProduct.products()?.filter({ (product) -> Bool in
-                        return product.id == d.productId
-                    })
-                    if let products = filteredProducts, products.count > 0 {
-                        let product = products[0]
-                        product.dayDiscounts.append(d)
-                    }
-                }
-            }
-        }
-        
         FPProduct.synchronize()
         
         // Customers

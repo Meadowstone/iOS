@@ -278,14 +278,6 @@ class FPModelParser {
             product.supplier = self.productSupplierWithInfo(ps)
         }
         
-        if let dayDiscounts = pi["day_discounts"] as? [NSDictionary] {
-            var dds = [FPProductDiscount]()
-            for dd in dayDiscounts {
-                dds.append(self.productDiscountWithInfo(dd))
-            }
-            product.dayDiscounts = dds
-        }
-        
         return product
     }
     
@@ -349,12 +341,6 @@ class FPModelParser {
         if let ps = p.supplier {
             info["supplier"] = self.infoWithProductSupplier(ps)
         }
-        
-        var dds = [NSDictionary]()
-        for dd in p.dayDiscounts {
-            dds.append(self.infoWithProductDiscount(dd))
-        }
-        info["day_discounts"] = dds
         
         return info as NSDictionary
     }
@@ -476,17 +462,6 @@ class FPModelParser {
         t.paymentDate = df.date(from: info["payment_date"] as! String)
         
         return t
-    }
-    
-    class func productDiscountWithInfo(_ info: NSDictionary) -> FPProductDiscount {
-        let day = info["day"] as! Int
-        let productId = info["product_id"] as! Int
-        let discount = info["discount"] as! Double
-        return FPProductDiscount(day: day, productId: productId, discount: discount)
-    }
-    
-    class func infoWithProductDiscount(_ pd: FPProductDiscount) -> NSDictionary {
-        return ["day": pd.day, "product_id": pd.productId, "discount": pd.discount]
     }
     
     class func farmWithInfo(_ info: NSDictionary) -> FPFarm {

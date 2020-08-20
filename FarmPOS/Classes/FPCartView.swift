@@ -293,14 +293,7 @@ class FPCartView: UIView, UIAlertViewDelegate, UITableViewDelegate, UITableViewD
                 pInfo["tax_amount"] = cp.taxSumRaw
             }
             
-            if let dd = cp.product.dayDiscount {
-                let discount = dd.discount
-                var p = cp.product.price
-                p = FPCurrencyFormatter.roundCrrency(p - (discount / 100.00) * p)
-                if cp.product.discountPrice > p {
-                    pInfo["discount"] = dd.discount
-                }
-            } else if let d = cp.product.orderDiscount {
+            if let d = cp.product.orderDiscount {
                 pInfo["discount"] = d
             }
             
