@@ -58,11 +58,6 @@ class FPModelParser {
         let pd = FPProductDescriptor()
         pd.productId = info["product_id"] as! Int
         pd.discountPrice = info["discount_price"] as? Double
-        var csas = [FPCSA]()
-        for csaInfo in info["csas"] as! [NSDictionary] {
-            csas.append(self.csaWithInfo(csaInfo))
-        }
-        pd.csas = csas
         return pd
     }
     
