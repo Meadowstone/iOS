@@ -32,25 +32,7 @@ extension FPCDCustomer {
     @NSManaged public var state: String?
     @NSManaged public var synchronized: NSNumber
     @NSManaged public var zip: String?
-    @NSManaged public var csas: NSSet
     @NSManaged public var productDescriptors: NSSet
-
-}
-
-// MARK: Generated accessors for csas
-extension FPCDCustomer {
-
-    @objc(addCsasObject:)
-    @NSManaged public func addToCsas(_ value: FPCDCSA)
-
-    @objc(removeCsasObject:)
-    @NSManaged public func removeFromCsas(_ value: FPCDCSA)
-
-    @objc(addCsas:)
-    @NSManaged public func addToCsas(_ values: NSSet)
-
-    @objc(removeCsas:)
-    @NSManaged public func removeFromCsas(_ values: NSSet)
 
 }
 

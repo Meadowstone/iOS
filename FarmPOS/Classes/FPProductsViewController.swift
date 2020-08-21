@@ -56,8 +56,6 @@ class FPProductsViewController: FPRotationViewController, UITableViewDelegate, U
         
         tableView.register(UINib(nibName: "FPProductCell", bundle: nil), forCellReuseIdentifier: "FPProductCell")
         searchBar.becomeFirstResponder()
-        //        resetProducts()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,63 +67,6 @@ class FPProductsViewController: FPRotationViewController, UITableViewDelegate, U
         let actionSheet = UIActionSheet(title: "Choose option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Create New Product", "Scan barcode", "Notifications")
         actionSheet.tag = 1
         actionSheet.show(in: self.view)
-    }
-    
-    func resetProducts() {
-        if let products = FPProduct.products() {
-            var s = [Dictionary<String, AnyObject>]()
-//            if categoryName != nil && categoryName! == "CSA Products" {
-//                for csa in FPCustomer.activeCustomer()!.csas {
-//                    var p = products.filter({
-//                        for aCsa in $0.csas {
-//                            if aCsa.id == csa.id {
-//                                return true
-//                            }
-//                        }
-//                        return false
-//                    })
-//                    if p.count > 0 {
-//                        s.append(["section": csa, "items": sortProducts(p)])
-//                    }
-//                }
-//            } else {
-            
-//                if let ac = FPCustomer.activeCustomer() {
-//                    for csa in ac.csas {
-//                        var p = products.filter({
-//                            [weak self] in
-//                            for aCsa in $0.csas {
-//                                var shouldReturn = false
-//                                if self!.categoryName != nil {
-//                                    shouldReturn = $0.category.name == self!.categoryName && aCsa.id == csa.id
-//                                } else if aCsa.id == csa.id {
-//                                    shouldReturn = true
-//                                }
-//                                return shouldReturn
-//                            }
-//                            return false
-//                            })
-//                        if p.count > 0 {
-//                            s.append(["section": csa, "items": sortProducts(p)])
-//                        }
-//                        
-//                    }
-//                }
-                
-                let p = products.filter({[weak self] in
-                    var shouldReturn = true //$0.csas.count == 0;
-                    if self!.categoryName != nil {
-                        shouldReturn = shouldReturn && $0.category.name == self!.categoryName!
-                    }
-                    return shouldReturn
-                    })
-                if p.count > 0 {
-                    s.append(["section": "" as AnyObject, "items": sortProducts(p) as AnyObject])
-                }
-//            }
-            sections = s
-        }
-        tableView.reloadData()
     }
     
     @objc func editPressed(_ sender: UIBarButtonItem) {
@@ -156,7 +97,7 @@ class FPProductsViewController: FPRotationViewController, UITableViewDelegate, U
     //MARK: UITableView data source
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let height: CGFloat = 0.0
-        if (sections.count > 1 || sections[0]["section"] is FPCSA) {
+        if (sections.count > 1) {
             
             let label = UILabel(frame: CGRect(x: 15.0, y: 0.0, width: tableView.frame.size.width - 30.0, height: 44.0))
             label.backgroundColor = UIColor.clear
@@ -165,12 +106,7 @@ class FPProductsViewController: FPRotationViewController, UITableViewDelegate, U
             label.font = UIFont(name: "HelveticaNeue-Light", size: 25.0)
             label.adjustsFontSizeToFitWidth = true
             
-            if let csa = sections[section]["section"] as? FPCSA {
-                label.text = "\(csa.name)"
-                if csa.type == "2" {
-                    label.text! +=  " - \(FPCartView.sharedCart().creditsAvailableForCSA(csa)) credits left"
-                }
-            } else if let text = sections[section]["section"] as? NSString {
+            if let text = sections[section]["section"] as? NSString {
                 label.text = text as String
             }
             return max(label.sizeThatFits(CGSize(width: label.bounds.size.width, height: CGFloat.greatestFiniteMagnitude)).height, 44.0)
@@ -189,12 +125,7 @@ class FPProductsViewController: FPRotationViewController, UITableViewDelegate, U
         label.font = UIFont(name: "HelveticaNeue-Light", size: 25.0)
         label.adjustsFontSizeToFitWidth = true
         
-        if let csa = sections[section]["section"] as? FPCSA {
-            label.text = "\(csa.name)"
-            if csa.type == "2" {
-                label.text! +=  " - \(FPCartView.sharedCart().creditsAvailableForCSA(csa)) credits left"
-            }
-        } else if let text = sections[section]["section"] as? NSString {
+        if let text = sections[section]["section"] as? NSString {
             label.text = text as String
         }
         label.frame.size.height = max(label.sizeThatFits(CGSize(width: label.bounds.size.width, height: CGFloat.greatestFiniteMagnitude)).height, 44.0)
@@ -236,13 +167,6 @@ class FPProductsViewController: FPRotationViewController, UITableViewDelegate, U
             
             if ed {
                 self.inventoryProductSelected(product)
-//                let vc = FPProductCreateViewController.productCreateViewControllerWithCompletion({
-//                    [weak self] product in
-//                    self!.resetProducts()
-//                    self!.dismissViewControllerAnimated(true, completion: nil)
-//                    }, product: product)
-//                let nc = UINavigationController(rootViewController: vc)
-//                presentViewController(nc, animated: true, completion: nil)
             } else {
                 if product.onSaleNow {
                     var cartProduct = FPCartView.sharedCart().cartProductWithProduct(product)
@@ -251,11 +175,7 @@ class FPProductsViewController: FPRotationViewController, UITableViewDelegate, U
                         updating = false
                         cartProduct = FPCartProduct(product: product)
                     }
-                    var processingCSAId: Int?
-                    if let csa = sections[indexPath.section]["section"] as? FPCSA {
-                        processingCSAId = csa.id
-                    }
-                    let vc = FPProductViewController.productNavigationViewControllerForCartProduct(cartProduct!, processingCSAId: processingCSAId, delegate: self, updating: updating)
+                    let vc = FPProductViewController.productNavigationViewControllerForCartProduct(cartProduct!, delegate: self, updating: updating)
                     present(vc, animated: true, completion: nil)
                 }
             }
@@ -278,24 +198,7 @@ class FPProductsViewController: FPRotationViewController, UITableViewDelegate, U
             
             let products = FPProduct.products()!
             
-//            if let ac = FPCustomer.activeCustomer() {
-//                for csa in ac.csas {
-//                    var p = products.filter({
-//                        for aCsa in $0.csas {
-//                            if aCsa.id == csa.id {
-//                                return true
-//                            }
-//                        }
-//                        return false
-//                    })
-//                    if p.count > 0 {
-//                        s.append(["section": csa, "items": sortProducts(p)])
-//                    }
-//                    
-//                }
-//            }
-            
-            let p = products //.filter({ return $0.csas.count == 0 })
+            let p = products
             if p.count > 0 {
                 s.append(["section": "" as AnyObject, "items": sortProducts(p) as AnyObject])
             }

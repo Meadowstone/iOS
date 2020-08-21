@@ -29,7 +29,6 @@ class FPProduct: NSObject {
     var hidden = false
     var price = 0.0
     var discountPrice = 0.0
-    var isCSA = false
     @objc var name = ""
     var unitsPerCredit = 0.0
     var category: FPProductCategory!
@@ -70,8 +69,7 @@ class FPProduct: NSObject {
         return price > actualPrice
     }
     
-    var csas = [FPCSA]()
-    override var description: String { return "Id: \(id). Name: \(name). csas: \(csas)" }
+    override var description: String { return "Id: \(id). Name: \(name)." }
     
     
     func mergeWithProduct(_ product: FPProduct) {
@@ -175,7 +173,6 @@ class FPProduct: NSObject {
                 }
                 product.orderDiscount = nil
                 product.discountPrice = product.price
-                product.csas = [FPCSA]()
             }
             FPProduct.setAllProducts(products)
         }

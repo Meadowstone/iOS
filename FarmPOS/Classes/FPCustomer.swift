@@ -28,7 +28,6 @@ class FPCustomer : NSObject {
     var hasCreditCard: Bool = false
     var synchronized: Bool = true // indicates that the customer was created and synchronized with the server or created outside of the application. Used to fetch and re-synchronize all customers that were created without active internet connection.
     var zip: String?
-    var csas = [FPCSA]()
     var voidTransactionProducts: [NSDictionary]?
     var productDescriptors = [FPProductDescriptor]()
     override var description: String {
@@ -39,7 +38,7 @@ class FPCustomer : NSObject {
         FPProduct.reloadAllProducts()
         _activeCustomer = customer
         
-        // Add discounts and CSAs
+        // Add discounts
         if let c = customer {
             if let products = FPProduct.allProducts() {
                 for pd in c.productDescriptors {
@@ -49,7 +48,6 @@ class FPCustomer : NSObject {
                         if let discPrice = pd.discountPrice {
                             product.discountPrice = discPrice
                         }
-                        product.csas = pd.csas
                         FPProduct.setAllProducts(products)
                     }
                 }                

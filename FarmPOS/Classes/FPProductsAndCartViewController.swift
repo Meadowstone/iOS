@@ -533,18 +533,6 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
             return name1.lowercased() < name2.lowercased()
         }
         
-        if let ac = FPCustomer.activeCustomer() {
-            if ac.csas.count > 0 {
-                for product in products {
-                    if product.csas.count > 0 {
-                        // Removed CSA category from display
-                        //categories.insert(["name": "CSA Products", "product": product], atIndex: 0)
-                        break;
-                    }
-                }
-            }
-        }
-        
         sections = [["items": categories as AnyObject]]
         
         categoriesFooterView.categories = categories
@@ -570,7 +558,7 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         var height: CGFloat = 0.0
-        if !showingCategories && (sections.count > 1 || sections[0]["section"] is FPCSA) {
+        if !showingCategories && sections.count > 1 {
             height = 44.0
         }
         return height
@@ -589,13 +577,7 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         label.textColor = UIColor.darkGray
         label.font = UIFont(name: "HelveticaNeue-Light", size: 25.0)
         
-        if let csa = sections[section]["section"] as? FPCSA {
-            label.text = "\(csa.name)"
-            if csa.type == "2" {
-                // Farmstand cart Issue #17
-                label.text! +=  " - \(cartView.creditsAvailableForCSA(csa)) credits left"
-            }
-        } else if let text = sections[section]["section"] as? NSString {
+        if let text = sections[section]["section"] as? NSString {
             label.text = text as String
         }
         headerView.addSubview(label)
@@ -656,59 +638,6 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         })
         s.append(["section" : "" as AnyObject, "items" : sortProducts(p) as AnyObject])
         
-//        if category == "CSA Products" {
-//            for csa in FPCustomer.activeCustomer()!.csas {
-//                var p = products.filter({
-//                    for aCsa in $0.csas {
-//                        if aCsa.id == csa.id {
-//                            return true
-//                        }
-//                    }
-//                    return false
-//                })
-//                if p.count > 0 {
-//                    s.append(["section": csa, "items": sortProducts(p)])
-//                }
-//            }
-//        } else {
-//            if let ac = FPCustomer.activeCustomer() {
-//                println("ac csas: \(ac.csas)")
-//                if ac.csas.count > 0 {
-//                    for csa in ac.csas {
-//                        var p = products.filter({
-//                            for aCsa in $0.csas {
-//                                if aCsa.id == csa.id && $0.category.name == category {
-//                                    return true
-//                                }
-//                            }
-//                            return false
-//                        })
-//                        if p.count > 0 {
-//                            s.append(["section": csa, "items": sortProducts(p)])
-//                        }
-//                        
-//                    }
-//                    var p = products.filter({ return $0.csas.count == 0 && $0.category.name == category })
-//                    if p.count > 0 {
-//                        s.append(["section": "Products that are not covered by your CSA subscriptions", "items": sortProducts(p)])
-//                    }
-//                } else {
-//                    var p = products.filter({
-//                        if $0.category.name == category {
-//                            return true
-//                        }
-//                        return false
-//                        })
-//                    s.append(["section" : "", "items" : sortProducts(p)])
-//                }
-//            } else {
-//                var p = products.filter({ return $0.csas.count == 0 && $0.category.name == category })
-//                if p.count > 0 {
-//                    s.append(["section": "Products that are not covered by your CSA subscriptions", "items": sortProducts(p)])
-//                }
-//            }
-//        }
-        
         sections = s
         tableView.reloadData()
     }
@@ -720,9 +649,7 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         if let ci = object as? NSDictionary { // Category selected
             self.selectCategory(ci)
         } else if let product = object as? FPProduct {
-            if product.isCSA && FPCustomer.activeCustomer() == nil {
-                FPAlertManager.showMessage("Anonymous customers cannot buy CSA products. Please log in.", withTitle: "CSA Error")
-            } else if product.onSaleNow {
+            if product.onSaleNow {
                 // Add to cart
 //                var cartProduct = cartView.cartProductWithProduct(product)
 //                var updating = true
@@ -733,12 +660,7 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
                 
                 let cartProduct: FPCartProduct? = FPCartProduct(product: product)
                 let updating = false
-                let indexPath = tableView.indexPath(for: cell)!
-                var processingCSAId: Int?
-                if let csa = sections[indexPath.section]["section"] as? FPCSA {
-                    processingCSAId = csa.id
-                }
-                let vc = FPProductViewController.productNavigationViewControllerForCartProduct(cartProduct!, processingCSAId: processingCSAId, delegate: self, updating: updating)
+                let vc = FPProductViewController.productNavigationViewControllerForCartProduct(cartProduct!, delegate: self, updating: updating)
                 displayPopoverInViewController(vc)
             }
         }
@@ -781,26 +703,9 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
             sections = [Dictionary<String, AnyObject>]()
             
             var s = [Dictionary<String, AnyObject>]()
-//            if let ac = FPCustomer.activeCustomer() {
-//                for csa in ac.csas {
-//                    var p = products.filter({
-//                        for aCsa in $0.csas {
-//                            if aCsa.id == csa.id {
-//                                return true
-//                            }
-//                        }
-//                        return false
-//                    })
-//                    if p.count > 0 {
-//                        s.append(["section": csa, "items": sortProducts(p)])
-//                    }
-//                    
-//                }
-//            }
             
-            let p = products //.filter({ return $0.csas.count == 0 })
+            let p = products
             if p.count > 0 {
-//                s.append(["section": "Products that are not covered by your CSA subscriptions", "items": sortProducts(p)])
                 s.append(["section": "" as AnyObject, "items": sortProducts(p) as AnyObject])
             }
             
@@ -848,7 +753,7 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
     
     func cartViewDidSelectProduct(_ cartView: FPCartView, p: FPCartProduct) {
         self.searchTextField.endEditing(true)
-        let vc = FPProductViewController.productNavigationViewControllerForCartProduct(p, processingCSAId: nil, delegate: self, updating: true)
+        let vc = FPProductViewController.productNavigationViewControllerForCartProduct(p, delegate: self, updating: true)
         displayPopoverInViewController(vc)
     }
     
@@ -977,35 +882,7 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
             sections = [Dictionary<String, AnyObject>]()
             
             var s = [Dictionary<String, AnyObject>]()
-            //@note fix related to removed CSAs
-//            if let ac = FPCustomer.activeCustomer() {
-//                if ac.csas.count > 0 {
-//                    for csa in ac.csas {
-//                        var p = products.filter({
-//                            for aCsa in $0.csas {
-//                                if aCsa.id == csa.id {
-//                                    return true
-//                                }
-//                            }
-//                            return false
-//                        })
-//                        if p.count > 0 {
-//                            s.append(["section": csa, "items": sortProducts(p)])
-//                        }
-//                    }
-//                    var p = products.filter({ return $0.csas.count == 0})
-//                    if p.count > 0 {
-//                        s.append(["section": "Products that are not covered by your CSA subscriptions", "items": sortProducts(p)])
-//                    }
-//                } else {
-                    s.append(["section" : "" as AnyObject, "items" : sortProducts(products) as AnyObject])
-//                }
-//            } else {
-//                var p = products.filter({ return $0.csas.count == 0 })
-//                if p.count > 0 {
-//                    s.append(["section": "Products that are not covered by your CSA subscriptions", "items": sortProducts(p)])
-//                }
-//            }
+            s.append(["section" : "" as AnyObject, "items" : sortProducts(products) as AnyObject])
             
             for sectionInfo in s {
                 var sInfo = sectionInfo

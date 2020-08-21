@@ -15,17 +15,12 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
     var existingCartProduct: FPCartProduct?
     var existingProductLabel: UILabel!
     var pricePerUnitLabel: UILabel!
-    var csaLabel: UILabel!
-    var csaSegmented: UISegmentedControl!
-    var unitsPerCreditLabel: UILabel!
     var totalPriceLabel: UILabel!
     var minusBtn: UIButton!
     var plusBtn: UIButton!
     var quantityLabel: UILabel!
     var cancelBtn: UIButton!
     var addBtn: UIButton!
-    var processingCSAId: Int?
-    var processingCSA: FPCSA?
     var cartProduct: FPCartProduct!
     var cartProductOriginal: FPCartProduct!
     weak var delegate: FPProductViewControllerDelegate?
@@ -43,40 +38,20 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
     }
     
     
-    class func productNavigationViewControllerForCartProduct(_ cartProduct: FPCartProduct, processingCSAId: Int?, delegate: FPProductViewControllerDelegate, updating: Bool) -> UINavigationController {
+    class func productNavigationViewControllerForCartProduct(_ cartProduct: FPCartProduct, delegate: FPProductViewControllerDelegate, updating: Bool) -> UINavigationController {
         
         let vc = FPProductViewController()
         vc.updating = updating
-        vc.processingCSAId = processingCSAId
         vc.delegate = delegate
         vc.cartProductOriginal = cartProduct
         
         let cp = FPCartProduct(product: cartProduct.product)
         cp.quantity = cartProduct.quantity
-        cp.quantityCSA = cartProduct.quantityCSA
         cp.quantityPaid = cartProduct.quantityPaid
-        cp.csaCreditsUsed = cartProduct.csaCreditsUsed
         vc.cartProduct = cp
         
-        if updating {
-            if let ac = FPCustomer.activeCustomer() {
-                for csa in cartProduct.product.csas {
-                    if let customerCsa = ac.csas.filter({ (enumCSA) -> Bool in
-                        return enumCSA.id == csa.id
-                    }).first {
-                        customerCsa.limit += csa.creditsUsed
-                        csa.limit += csa.creditsUsed
-                    }
-                }
-            }
-        } else {
+        if !updating {
             vc.existingCartProduct = FPCartView.sharedCart().cartProductWithProduct(cartProduct.product)
-        }
-        
-        if let csaId = processingCSAId {
-            cartProduct.product.csas.sort(by: { (csa1, csa2) -> Bool in
-                return csa1.id == csaId
-            })
         }
         
         return UINavigationController(rootViewController: vc)
@@ -146,45 +121,6 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
             let r = UITapGestureRecognizer(target: self, action: #selector(FPProductViewController.selectPrice))
             pricePerUnitLabel.addGestureRecognizer(r)
         }
-        
-        csaLabel = UILabel()
-        csaLabel.adjustsFontSizeToFitWidth = true
-        csaLabel.autoresizingMask = .flexibleWidth
-        csaLabel.textAlignment = .center
-        csaLabel.backgroundColor = UIColor.clear
-        csaLabel.font = UIFont(name:"HelveticaNeue-Light", size:24.0)
-        csaLabel.textColor = UIColor.darkGray
-        csaLabel.isHidden = true
-        if cartProduct.product.csas.count > 0 {
-            csaLabel.isHidden = cartProduct.product.csas.last!.type != "2"
-        }
-        //        csaLabel.hidden = cartProduct.product.csas.count == 0
-        view.addSubview(csaLabel)
-        
-        csaSegmented = UISegmentedControl(items:["Use CSA", "Do not use CSA"])
-        csaSegmented.selectedSegmentIndex = 0
-        csaSegmented.tintColor = UIColor.darkGray
-        csaSegmented.isHidden = csaLabel.isHidden
-        csaSegmented.addTarget(self, action: #selector(FPProductViewController.updateProductQuantity(_:)), for: .valueChanged)
-        csaSegmented.setTitleTextAttributes([.font: UIFont(name: "HelveticaNeue", size: 18.0)!], for: .normal)
-        view.addSubview(csaSegmented)
-        
-        unitsPerCreditLabel = UILabel()
-        unitsPerCreditLabel.autoresizingMask = .flexibleWidth
-        unitsPerCreditLabel.textAlignment = .center
-        unitsPerCreditLabel.backgroundColor = UIColor.clear
-        unitsPerCreditLabel.font = UIFont(name:"HelveticaNeue-Light", size:24.0)
-        unitsPerCreditLabel.textColor = UIColor.darkGray
-        unitsPerCreditLabel.isHidden = csaLabel.isHidden
-        unitsPerCreditLabel.text = "Units per CSA credit: \(cartProduct.product.unitsPerCredit)"
-        
-        let csaCreditText = FPCurrencyFormatter.printableCurrency(Double(cartProduct.product.unitsPerCredit))
-        let csaAttrText = NSMutableAttributedString(string: "Units per CSA credit: \(csaCreditText)")
-        let csaRange = (csaAttrText.string as NSString).range(of: "\(csaCreditText)")
-        csaAttrText.addAttributes([.foregroundColor: FPColorGreen, .font: UIFont(name: "HelveticaNeue", size: 30.0)!], range: csaRange)
-        unitsPerCreditLabel.attributedText = csaAttrText
-        
-        view.addSubview(unitsPerCreditLabel)
         
         totalPriceLabel = UILabel()
         totalPriceLabel.adjustsFontSizeToFitWidth = true
@@ -433,12 +369,12 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
         
         var width: CGFloat = popoverWidth
         var xOffset: CGFloat = 20.0
-        var segmentedWidth: CGFloat = 420.0
+        var totalPriceLabelWidth: CGFloat = 420.0
         var buttonWidth: CGFloat = 190.0
         if UIDevice.current.userInterfaceIdiom == .phone {
             width = view.bounds.size.width
             xOffset = 10.0
-            segmentedWidth = 300.0
+            totalPriceLabelWidth = 300.0
             buttonWidth = 130.0
         }
         
@@ -458,15 +394,9 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
             minusBtn.frame.origin.x = minusOffset
             quantityLabel.frame.origin = CGPoint(x: minusBtn.bounds.size.width + minusBtn.frame.origin.x + distance, y: minusBtn.frame.origin.y + (minusBtn.frame.size.height - quantityLabel.frame.size.height) / 2.0)
             plusBtn.frame.origin.x = quantityLabel.bounds.size.width + quantityLabel.frame.origin.x + distance
-            csaSegmented.frame = CGRect(x: (width - segmentedWidth) / 2, y: plusBtn.frame.origin.y + plusBtn.bounds.size.height + 16.0, width: segmentedWidth, height: csaSegmented.bounds.size.height)
-            csaLabel.frame = CGRect(x: xOffset, y: csaSegmented.bounds.size.height + csaSegmented.frame.origin.y, width: width - xOffset * 2.0, height: 33.0)
-            unitsPerCreditLabel.frame = CGRect(x: xOffset, y: csaLabel.bounds.size.height + csaLabel.frame.origin.y, width: width - xOffset * 2.0, height: 33.0)
-            totalPriceLabel.frame = unitsPerCreditLabel.isHidden ? csaSegmented.frame : CGRect(x: xOffset, y: unitsPerCreditLabel.bounds.size.height + unitsPerCreditLabel.frame.origin.y, width: width - xOffset * 2.0, height: 33.0)
+            totalPriceLabel.frame = CGRect(x: (width - totalPriceLabelWidth) / 2, y: plusBtn.frame.origin.y + plusBtn.bounds.size.height + 16.0, width: totalPriceLabelWidth, height: 33.0)
         } else {
-            csaSegmented.frame = CGRect(x: (width - segmentedWidth) / 2, y: pricePerUnitLabel.bounds.size.height + pricePerUnitLabel.frame.origin.y + 8.0, width: segmentedWidth, height: csaSegmented.bounds.size.height)
-            csaLabel.frame = CGRect(x: xOffset, y: csaSegmented.bounds.size.height + csaSegmented.frame.origin.y, width: width - xOffset * 2.0, height: 33.0)
-            unitsPerCreditLabel.frame = CGRect(x: xOffset, y: csaLabel.bounds.size.height + csaLabel.frame.origin.y, width: width - xOffset * 2.0, height: 33.0)
-            totalPriceLabel.frame = unitsPerCreditLabel.isHidden ? pricePerUnitLabel.frame.offsetBy(dx: 0.0, dy: pricePerUnitLabel.bounds.size.height) : CGRect(x: xOffset, y: unitsPerCreditLabel.bounds.size.height + unitsPerCreditLabel.frame.origin.y, width: width - xOffset * 2.0, height: 33.0)
+            totalPriceLabel.frame = pricePerUnitLabel.frame.offsetBy(dx: 0.0, dy: pricePerUnitLabel.bounds.size.height)
             if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
                 numPadView!.frame = CGRect(x: (width - numPadView!.frame.size.width) / 2.0, y: totalPriceLabel.bounds.size.height + totalPriceLabel.frame.origin.y + 8.0, width: numPadView!.bounds.size.width, height: numPadView!.bounds.size.height)
             } else {
@@ -515,49 +445,7 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
             }
         }
         
-        if !csaSegmented.isHidden && csaSegmented.selectedSegmentIndex == 0 {
-            
-            var totalLimit = 0
-            for mCSA in cartProduct.product.csas {
-                if let customerCsa = FPCustomer.activeCustomer()!.csas.filter({ (enumCSA) -> Bool in
-                    return enumCSA.id == mCSA.id
-                }).first {
-                    totalLimit += customerCsa.limit
-                }
-            }
-            
-//            cartProduct.product.csas.map {
-//                totalLimit += $0.limit
-//            }
-            
-            var quantityCSA = 0.0
-            for csa in cartProduct.product.csas {
-                if let customerCsa = FPCustomer.activeCustomer()!.csas.filter({ (enumCSA) -> Bool in
-                    return enumCSA.id == csa.id
-                }).first {
-                    let creditsLeft = min(totalLimit, customerCsa.limit, csa.limit)
-                    quantityCSA += min(cartProduct.quantity - quantityCSA, Double(creditsLeft) * cartProduct.product.unitsPerCredit)
-                    totalLimit -= creditsLeft
-                }
-            }
-            
-            cartProduct.quantityCSA = quantityCSA
-            cartProduct.csaCreditsUsed = Int(ceil(cartProduct.quantityCSA / Double(cartProduct.product.unitsPerCredit)))
-            cartProduct.quantityPaid = cartProduct.quantity - cartProduct.quantityCSA
-        } else {
-            cartProduct.quantityPaid = cartProduct.quantity
-            cartProduct.quantityCSA = 0
-            cartProduct.csaCreditsUsed = 0
-        }
-        
-        let csaText = FPCurrencyFormatter.printableCurrency(cartProduct.quantityCSA)
-        let csaAttrText = NSMutableAttributedString(string: "Bought with CSA: \(csaText)")
-        //if isPound {
-            csaAttrText.append(NSAttributedString(string: " \(cartProduct.product.measurement.longName)(s)"))
-        //}
-        let csaRange = (csaAttrText.string as NSString).range(of: "\(csaText)")
-        csaAttrText.addAttributes([.foregroundColor: FPColorGreen, .font: UIFont(name: "HelveticaNeue", size: 30.0)!], range: csaRange)
-        csaLabel.attributedText = csaAttrText
+        cartProduct.quantityPaid = cartProduct.quantity
         
 //        let priceText = "$" + FPCurrencyFormatter.printableCurrency(cartProduct.sumWithTax)
         let priceText = "$" + FPCurrencyFormatter.printableCurrency(cartProduct.sum)
@@ -575,18 +463,6 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
     }
     
     @objc func cancelPressed() {
-        if updating {
-            if let ac = FPCustomer.activeCustomer() {
-                for csa in cartProduct.product.csas {
-                    if let customerCsa = ac.csas.filter({ (enumCSA) -> Bool in
-                        return enumCSA.id == csa.id
-                    }).first {
-                        customerCsa.limit -= csa.creditsUsed
-                        csa.limit -= csa.creditsUsed
-                    }
-                }
-            }
-        }
         if preprice != nil {
             cartProduct.product.price = preprice
             cartProduct.product.discountPrice = cartProduct.product.price
@@ -614,21 +490,6 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
         //            FPAlertManager.showMessage("Enter price", withTitle: "Error")
         //            return
         //        }
-        if let ac = FPCustomer.activeCustomer() {
-            var creditsLeft = cartProduct.csaCreditsUsed
-            for csa in cartProduct.product.csas {
-                if let customerCsa = ac.csas.filter({ (enumCSA) -> Bool in
-                    return enumCSA.id == csa.id
-                }).first {
-                    let creditsUsed = min(customerCsa.limit, csa.limit, creditsLeft)
-                    customerCsa.limit -= creditsUsed
-                    csa.limit -= creditsUsed
-                    customerCsa.creditsUsed = creditsUsed
-                    csa.creditsUsed = creditsUsed
-                    creditsLeft -= creditsUsed
-                }
-            }
-        }
         
         if let ntf = notesTextField {
             cartProduct.notes = ntf.text!

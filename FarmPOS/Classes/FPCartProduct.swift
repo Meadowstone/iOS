@@ -12,8 +12,6 @@ class FPCartProduct : NSObject {
     
     var product: FPProduct
     var notes = ""
-    var csaCreditsUsed: Int = 0
-    var quantityCSA: Double = 0.0
     var quantityPaid: Double = 0.0
     var quantity: Double = 0.0
     var sum: Double! {

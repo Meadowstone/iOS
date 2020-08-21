@@ -137,19 +137,6 @@ class FPCartView: UIView, UIAlertViewDelegate, UITableViewDelegate, UITableViewD
                     cp.quantity += q
                 }
                 
-                for ci in pi["csa_used"] as! [NSDictionary] {
-                    let quantity = ci["quantity"] as! Double
-                    let creditsUsed = ci["credits_used"] as! Int
-                    cp.quantityCSA += quantity
-                    cp.quantity += quantity
-                    cp.csaCreditsUsed += creditsUsed
-                    
-                    let productCsa = cp.product.csas.filter {
-                        return $0.id == ci["id"] as! Int
-                        }[0]
-                    productCsa.limit += cp.csaCreditsUsed
-                    productCsa.creditsUsed = creditsUsed
-                }
                 self.addCartProduct(cp, updating: false)
             }
         }
@@ -239,11 +226,7 @@ class FPCartView: UIView, UIAlertViewDelegate, UITableViewDelegate, UITableViewD
             let sum = cp.sum
             if cp.quantityPaid > 0.0 {
                 quantity = cp.quantityPaid
-                checkoutItems.append(FPCheckoutProduct(product: product, quantity: quantity, sum: sum!, isCSA: false))
-            }
-            if cp.quantityCSA > 0.0 {
-                quantity = cp.quantityCSA
-                checkoutItems.append(FPCheckoutProduct(product: product, quantity: quantity, sum: 0.0, isCSA: true))
+                checkoutItems.append(FPCheckoutProduct(product: product, quantity: quantity, sum: sum!))
             }
         }
         
@@ -305,13 +288,6 @@ class FPCartView: UIView, UIAlertViewDelegate, UITableViewDelegate, UITableViewD
                 pInfo["notes"] = cp.notes
             }
             
-            var csaUsed = [NSDictionary]()
-            for csa in cp.product.csas {
-                let csaInfo = ["id": csa.id, "credits_used": csa.creditsUsed, "quantity": Double(csa.creditsUsed) * cp.product.unitsPerCredit] as [String : Any]
-                csaUsed.append(csaInfo as NSDictionary)
-            }
-            pInfo["csa_used"] = csaUsed
-            
             paymentProducts.append(pInfo as NSDictionary)
         }
         return paymentProducts
@@ -327,12 +303,6 @@ class FPCartView: UIView, UIAlertViewDelegate, UITableViewDelegate, UITableViewD
         tableView.tableHeaderView = headerView
     }
     
-    func creditsAvailableForCSA(_ csa: FPCSA) -> Int {
-        return FPCustomer.activeCustomer()!.csas.filter {
-            return $0.id == csa.id
-            }[0].limit
-    }
-    
     func resetOrder() {
         FPCustomer.setActiveCustomer(nil)
         FPOrder.setActiveOrder(nil)
@@ -340,17 +310,6 @@ class FPCartView: UIView, UIAlertViewDelegate, UITableViewDelegate, UITableViewD
     }
     
     func resetCart() {
-        if let ac = FPCustomer.activeCustomer() {
-            for cp in cartProducts {
-                for csa in cp.product.csas {
-                    let customerCsa = ac.csas.filter {
-                        return $0.id == csa.id
-                        }[0]
-                    customerCsa.limit += csa.creditsUsed
-                    csa.limit += csa.creditsUsed
-                }
-            }
-        }
         applicableBalance = 0.0
         cartProducts = [FPCartProduct]()
         tableView.reloadData()
@@ -460,15 +419,6 @@ class FPCartView: UIView, UIAlertViewDelegate, UITableViewDelegate, UITableViewD
     }
     
     func deleteCartProduct(_ cp: FPCartProduct, atIndexPath indexPath: IndexPath) {
-        if let ac = FPCustomer.activeCustomer() {
-            for csa in cp.product.csas {
-                let customerCsa = ac.csas.filter {
-                    return $0.id == csa.id
-                    }[0]
-                customerCsa.limit += csa.creditsUsed
-                csa.limit += csa.creditsUsed
-            }
-        }
         cartProducts.remove(at: indexPath.row)
         updateSum()
         tableView.deleteRows(at: [indexPath], with: .fade)

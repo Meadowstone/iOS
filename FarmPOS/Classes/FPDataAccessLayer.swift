@@ -108,15 +108,6 @@ class FPDataAccessLayer : NSObject {
             c.synchronized = synchronized as NSNumber
         }
         
-        let csaWithInfo = { (info: NSDictionary) -> FPCDCSA in
-            let csa = NSEntityDescription.insertNewObject(forEntityName: "FPCDCSA", into: self.managedObjectContext) as! FPCDCSA
-            csa.id = NSNumber(value: info["id"] as! Int)
-            csa.name = info["name"] as! String
-            csa.limit = NSNumber(value: info["limit"] as! Int)
-            csa.type = info["type"] as! String
-            return csa
-        }
-        
 //        CLSLogv("%@", getVaList(["started saving product descriptors "]))
         
         let productDescriptorWithInfo = { (info: NSDictionary) -> FPCDProductDescriptor in
@@ -125,17 +116,6 @@ class FPDataAccessLayer : NSObject {
             if let discountPrice = info["discount_price"] as? Double {
                 pd.discountPrice = discountPrice as NSNumber?
             }
-            var csas = [FPCDCSA]()
-//            CLSLogv("%@", getVaList(["inside CSAs"]))
-            for csaInfo in info["csas"] as! [NSDictionary] {
-                let csa = csaWithInfo(csaInfo)
-                csa.productDescriptor = pd
-                csas.append(csa)
-            }
-            
-//            if csas.count > 0 {
-//                pd.csas = NSSet().adding(csas) as NSSet
-//            }
             return pd
         }
 //        CLSLogv("%@", getVaList(["started saving products"]))
@@ -156,17 +136,6 @@ class FPDataAccessLayer : NSObject {
 //            c.productDescriptors = NSSet().adding(pds) as NSSet
 //        }
         
-//        CLSLogv("%@", getVaList(["started saving active CSA list"]))
-        var csas = [FPCDCSA]()
-        for csaInfo in info["active_csa_list"] as! [NSDictionary] {
-            let csa = csaWithInfo(csaInfo)
-            csa.customer = c
-            csas.append(csa)
-        }
-        
-//        if csas.count > 0 {
-//            c.csas = NSSet().adding(csas) as NSSet
-//        }
         return c
     }
     
@@ -309,21 +278,10 @@ class FPDataAccessLayer : NSObject {
                 if let dp = pd.discountPrice {
                     info["discount_price"] = dp
                 }
-                var csas = [NSDictionary]()
-                for csa in pd.csas.allObjects as! [FPCDCSA] {
-                    csas.append(["name": csa.name, "id": csa.id, "limit": csa.limit, "type": csa.type])
-                }
-                info["csas"] = csas
                 pds.append(FPModelParser.productDescriptorWithInfo(info as NSDictionary))
             }
         }
         c.productDescriptors = pds
-        
-        var csas = [FPCSA]()
-        for csa in cd.csas.allObjects as! [FPCDCSA] {
-            csas.append(FPModelParser.csaWithInfo(["name": csa.name, "id": csa.id, "limit": csa.limit, "type": csa.type]))
-        }
-        c.csas = csas
         
         return c
     }

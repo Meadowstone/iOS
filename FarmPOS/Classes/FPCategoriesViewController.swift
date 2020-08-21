@@ -66,18 +66,6 @@ class FPCategoriesViewController: FPRotationViewController, UITableViewDelegate,
                 let name2 = d2["name"] as! String
                 return name1.lowercased() < name2.lowercased()
             })
-            
-            if let ac = FPCustomer.activeCustomer() {
-                if ac.csas.count > 0 {
-                    for product in products {
-                        if product.csas.count > 0 {
-                            // Removed CSA category
-                            //categories.insert(["name": "CSA Products", "product": product], atIndex: 0)
-                            break
-                        }
-                    }
-                }
-            }
         }
 
         tableView.reloadData()

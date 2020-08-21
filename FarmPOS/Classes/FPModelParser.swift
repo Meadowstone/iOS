@@ -64,11 +64,6 @@ class FPModelParser {
     class func infoWithProductDescriptor(_ pd: FPProductDescriptor) -> NSDictionary {
         var info = [String: Any]()
         info["product_id"] = pd.productId
-        var csasInfo = [NSDictionary]()
-        for csa in pd.csas {
-            csasInfo.append(self.infoWithCsa(csa))
-        }
-        info["csas"] = csasInfo
         if let discPrice = pd.discountPrice {
             info["discount_price"] = discPrice
         }
@@ -103,19 +98,7 @@ class FPModelParser {
             }
         }
         customer.productDescriptors = pds
-        
-        var csas = [FPCSA]()
-        for csaInfo in customerInfo["active_csa_list"] as! [NSDictionary] {
-            csas.append(self.csaWithInfo(csaInfo))
-        }
-        
-        //FIXME: Remove hardcode
-//        let csaInfo = ["id": 9999, "limit": 100, "name": "Fake combined CSA"]
-//        let csa = self.csaWithInfo(csaInfo)
-//        csas.append(csa)
-        
-        customer.csas = csas
-        
+                
         return customer
     }
     
@@ -152,12 +135,6 @@ class FPModelParser {
         if let address = c.address {
             info["address"] = address
         }
-        
-        var csasInfo = [NSDictionary]()
-        for csa in c.csas {
-            csasInfo.append(self.infoWithCsa(csa))
-        }
-        info["active_csa_list"] = csasInfo
         
         return info as NSDictionary
     }
@@ -198,14 +175,6 @@ class FPModelParser {
         return ["id": object.id, "name": object.name, "rate": object.rate]
     }
     
-    class func csaWithInfo(_ ci: NSDictionary) -> FPCSA {
-        return FPCSA(id: ci["id"] as! Int, name: ci["name"] as! String, limit: ci["limit"] as! Int, type: ci["type"] as! String)
-    }
-    
-    class func infoWithCsa(_ csa: FPCSA) -> NSDictionary {
-        return ["id": csa.id, "name": csa.name, "limit": csa.limit, "type": csa.type]
-    }
-    
     class func productWithInfo(_ pi: NSDictionary) -> FPProduct {
         let product = FPProduct()
         product.id = pi["product_id"] as! Int
@@ -215,9 +184,6 @@ class FPModelParser {
         }
         if let forbidAnonymousPurchase = pi["forbid_anonymous_purchase"] as? Bool {
             product.forbidAnonymousPurchase = forbidAnonymousPurchase
-        }
-        if let isCSA = pi["is_csa"] as? Bool {
-            product.isCSA = isCSA
         }
         if let hidden = pi["hidden"] as? Bool {
             product.hidden = hidden
@@ -286,7 +252,6 @@ class FPModelParser {
         info["rental"] = p.rental
         info["wholesale"] = p.wholesale
         info["product_id"] = p.id
-        info["is_csa"] = p.isCSA
         info["price"] = p.price
         info["units_per_credit"] = p.unitsPerCredit
         info["name"] = p.name

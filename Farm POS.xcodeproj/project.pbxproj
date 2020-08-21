@@ -65,7 +65,6 @@
 		50FB1FD41980176B00D7106C /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FFD431966990D00BF652C /* Defines.swift */; };
 		50FB1FD51980176B00D7106C /* FPFarmWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81148ADD1961A05100A40D26 /* FPFarmWorker.swift */; };
 		50FB1FD61980176B00D7106C /* FPAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81199D3B195C313F00BE139D /* FPAppDelegate.swift */; };
-		50FB1FD71980176B00D7106C /* FPCSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC801967763500587E50 /* FPCSA.swift */; };
 		50FB1FD81980176B00D7106C /* FPPaymentConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA292B197E71580024B299 /* FPPaymentConfirmViewController.swift */; };
 		50FB1FD91980176B00D7106C /* FPCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FF080D196C28660046457A /* FPCartCell.swift */; };
 		50FB1FDA1980176B00D7106C /* FPCustomerCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D23F871966B66A00A330E0 /* FPCustomerCreateViewController.swift */; };
@@ -206,7 +205,6 @@
 		81A1CC7B196773CD00587E50 /* FPCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC7A196773CD00587E50 /* FPCartView.swift */; };
 		81A1CC7D1967756F00587E50 /* FPProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC7C1967756F00587E50 /* FPProduct.swift */; };
 		81A1CC7F196775BE00587E50 /* FPProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC7E196775BE00587E50 /* FPProductCategory.swift */; };
-		81A1CC811967763500587E50 /* FPCSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC801967763500587E50 /* FPCSA.swift */; };
 		81A1CC83196778A800587E50 /* FPMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC82196778A800587E50 /* FPMeasurement.swift */; };
 		81A3A847196B73B60006C479 /* FPCartHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3A846196B73B60006C479 /* FPCartHeaderView.swift */; };
 		81A3A849196B73CC0006C479 /* FPCartHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81A3A848196B73CC0006C479 /* FPCartHeaderView.xib */; };
@@ -300,10 +298,6 @@
 		81F4525B1E1161B200A583D3 /* FPCDCustomer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452581E1161B200A583D3 /* FPCDCustomer+CoreDataClass.swift */; };
 		81F4525C1E1161B200A583D3 /* FPCDCustomer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452591E1161B200A583D3 /* FPCDCustomer+CoreDataProperties.swift */; };
 		81F4525D1E1161B200A583D3 /* FPCDCustomer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452591E1161B200A583D3 /* FPCDCustomer+CoreDataProperties.swift */; };
-		81F452601E11628D00A583D3 /* FPCDCSA+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F4525E1E11628D00A583D3 /* FPCDCSA+CoreDataClass.swift */; };
-		81F452611E11628D00A583D3 /* FPCDCSA+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F4525E1E11628D00A583D3 /* FPCDCSA+CoreDataClass.swift */; };
-		81F452621E11628D00A583D3 /* FPCDCSA+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F4525F1E11628D00A583D3 /* FPCDCSA+CoreDataProperties.swift */; };
-		81F452631E11628D00A583D3 /* FPCDCSA+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F4525F1E11628D00A583D3 /* FPCDCSA+CoreDataProperties.swift */; };
 		81F452661E1162D800A583D3 /* FPCDProductDescriptor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452641E1162D800A583D3 /* FPCDProductDescriptor+CoreDataClass.swift */; };
 		81F452671E1162D800A583D3 /* FPCDProductDescriptor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452641E1162D800A583D3 /* FPCDProductDescriptor+CoreDataClass.swift */; };
 		81F452681E1162D800A583D3 /* FPCDProductDescriptor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452651E1162D800A583D3 /* FPCDProductDescriptor+CoreDataProperties.swift */; };
@@ -432,7 +426,6 @@
 		81A1CC7A196773CD00587E50 /* FPCartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCartView.swift; sourceTree = "<group>"; };
 		81A1CC7C1967756F00587E50 /* FPProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPProduct.swift; sourceTree = "<group>"; };
 		81A1CC7E196775BE00587E50 /* FPProductCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPProductCategory.swift; sourceTree = "<group>"; };
-		81A1CC801967763500587E50 /* FPCSA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCSA.swift; sourceTree = "<group>"; };
 		81A1CC82196778A800587E50 /* FPMeasurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPMeasurement.swift; sourceTree = "<group>"; };
 		81A3A846196B73B60006C479 /* FPCartHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCartHeaderView.swift; sourceTree = "<group>"; };
 		81A3A848196B73CC0006C479 /* FPCartHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPCartHeaderView.xib; sourceTree = "<group>"; };
@@ -490,8 +483,6 @@
 		81F4524F1E1079F100A583D3 /* FarmPOSDev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FarmPOSDev-Info.plist"; sourceTree = "<group>"; };
 		81F452581E1161B200A583D3 /* FPCDCustomer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FPCDCustomer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		81F452591E1161B200A583D3 /* FPCDCustomer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FPCDCustomer+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		81F4525E1E11628D00A583D3 /* FPCDCSA+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FPCDCSA+CoreDataClass.swift"; sourceTree = "<group>"; };
-		81F4525F1E11628D00A583D3 /* FPCDCSA+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FPCDCSA+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		81F452641E1162D800A583D3 /* FPCDProductDescriptor+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FPCDProductDescriptor+CoreDataClass.swift"; sourceTree = "<group>"; };
 		81F452651E1162D800A583D3 /* FPCDProductDescriptor+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FPCDProductDescriptor+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		81F452701E11632800A583D3 /* FPCDPurchase+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FPCDPurchase+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -506,6 +497,7 @@
 		9F659EF51C1F24DC005F0FF6 /* FPCustomLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCustomLogger.swift; sourceTree = "<group>"; };
 		9FEC404919B9D62C003AB29A /* FPCardFlightManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCardFlightManager.swift; sourceTree = "<group>"; };
 		B8B7E037757AE290B9EBD116 /* Pods_FPOS_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FPOS_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E92BF93F24F0124A002CB596 /* DataModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DataModel 3.xcdatamodel"; sourceTree = "<group>"; };
 		EFE2C3F086060FC12C04E372 /* Pods_Farmstand_Cart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Farmstand_Cart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -663,8 +655,6 @@
 				81F452711E11632800A583D3 /* FPCDPurchase+CoreDataProperties.swift */,
 				81F452641E1162D800A583D3 /* FPCDProductDescriptor+CoreDataClass.swift */,
 				81F452651E1162D800A583D3 /* FPCDProductDescriptor+CoreDataProperties.swift */,
-				81F4525E1E11628D00A583D3 /* FPCDCSA+CoreDataClass.swift */,
-				81F4525F1E11628D00A583D3 /* FPCDCSA+CoreDataProperties.swift */,
 				81F452581E1161B200A583D3 /* FPCDCustomer+CoreDataClass.swift */,
 				81F452591E1161B200A583D3 /* FPCDCustomer+CoreDataProperties.swift */,
 				811B455A198A52B8000EC090 /* DataModel.xcdatamodeld */,
@@ -712,7 +702,6 @@
 				8104E6EE19653DB700F079F3 /* FPCustomer.swift */,
 				81A1CC7C1967756F00587E50 /* FPProduct.swift */,
 				81A1CC7E196775BE00587E50 /* FPProductCategory.swift */,
-				81A1CC801967763500587E50 /* FPCSA.swift */,
 				81A1CC82196778A800587E50 /* FPMeasurement.swift */,
 				81A3A84A196B7B0B0006C479 /* FPCartProduct.swift */,
 				813682CD196F713900BE4E90 /* FPGiftCard.swift */,
@@ -1313,7 +1302,6 @@
 				444852EF199246DF00A1F87C /* FPRetailLocation.swift in Sources */,
 				50FB1FA41980176B00D7106C /* FPRedeemGiftCardViewController.swift in Sources */,
 				50FB1FA51980176B00D7106C /* FPProductsAndCartViewController.swift in Sources */,
-				81F452631E11628D00A583D3 /* FPCDCSA+CoreDataProperties.swift in Sources */,
 				50FB1FA61980176B00D7106C /* main.swift in Sources */,
 				811B4559198A520A000EC090 /* FPDataAccessLayer.swift in Sources */,
 				50FB1FA81980176B00D7106C /* FPChoiceOverlayView.swift in Sources */,
@@ -1347,7 +1335,6 @@
 				50FB1FB61980176B00D7106C /* FPServer.swift in Sources */,
 				812BEEEA1B2AE31800F01436 /* FPApplyBalanceViewController.swift in Sources */,
 				81E95A3C1B600F0100F95F18 /* FPProductSuppliersViewController.swift in Sources */,
-				81F452611E11628D00A583D3 /* FPCDCSA+CoreDataClass.swift in Sources */,
 				81DC1D4C1B6674E1002029C8 /* FPCreateProductViewController.swift in Sources */,
 				50FB1FB71980176B00D7106C /* FPBuyGiftCardViewController.swift in Sources */,
 				50FB1FB81980176B00D7106C /* FPCartProduct.swift in Sources */,
@@ -1400,7 +1387,6 @@
 				81E95A4D1B61461C00F95F18 /* FPAddNotesViewController.swift in Sources */,
 				50FB1FD51980176B00D7106C /* FPFarmWorker.swift in Sources */,
 				50FB1FD61980176B00D7106C /* FPAppDelegate.swift in Sources */,
-				50FB1FD71980176B00D7106C /* FPCSA.swift in Sources */,
 				81BB47EC198FB327003A3DEE /* FPCartViewController.swift in Sources */,
 				50FB1FD81980176B00D7106C /* FPPaymentConfirmViewController.swift in Sources */,
 				81F452751E11632800A583D3 /* FPCDPurchase+CoreDataProperties.swift in Sources */,
@@ -1431,7 +1417,6 @@
 				444852EE199246DF00A1F87C /* FPRetailLocation.swift in Sources */,
 				8141E4441971F2540037FCD0 /* FPRedeemGiftCardViewController.swift in Sources */,
 				814A71FB19622CFB00F2A689 /* FPProductsAndCartViewController.swift in Sources */,
-				81F452621E11628D00A583D3 /* FPCDCSA+CoreDataProperties.swift in Sources */,
 				8157106719781C3300F184D0 /* main.swift in Sources */,
 				811B4558198A520A000EC090 /* FPDataAccessLayer.swift in Sources */,
 				814F463D1966DF75007A009E /* FPChoiceOverlayView.swift in Sources */,
@@ -1465,7 +1450,6 @@
 				81199D49195C3B0400BE139D /* FPServer.swift in Sources */,
 				812BEEE91B2AE31800F01436 /* FPApplyBalanceViewController.swift in Sources */,
 				81E95A3B1B600F0100F95F18 /* FPProductSuppliersViewController.swift in Sources */,
-				81F452601E11628D00A583D3 /* FPCDCSA+CoreDataClass.swift in Sources */,
 				81DC1D4B1B6674E1002029C8 /* FPCreateProductViewController.swift in Sources */,
 				813682D01970153B00BE4E90 /* FPBuyGiftCardViewController.swift in Sources */,
 				81A3A84B196B7B0B0006C479 /* FPCartProduct.swift in Sources */,
@@ -1519,7 +1503,6 @@
 				810FFD441966990D00BF652C /* Defines.swift in Sources */,
 				81148ADE1961A05100A40D26 /* FPFarmWorker.swift in Sources */,
 				81199D3D195C313F00BE139D /* FPAppDelegate.swift in Sources */,
-				81A1CC811967763500587E50 /* FPCSA.swift in Sources */,
 				81BB47EB198FB327003A3DEE /* FPCartViewController.swift in Sources */,
 				81F452741E11632800A583D3 /* FPCDPurchase+CoreDataProperties.swift in Sources */,
 				50EA292C197E71580024B299 /* FPPaymentConfirmViewController.swift in Sources */,
@@ -1804,10 +1787,11 @@
 		811B455A198A52B8000EC090 /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				E92BF93F24F0124A002CB596 /* DataModel 3.xcdatamodel */,
 				81AF3CDD1AC1C6E500FA0A0E /* DataModel 2.xcdatamodel */,
 				811B455B198A52B8000EC090 /* DataModel.xcdatamodel */,
 			);
-			currentVersion = 81AF3CDD1AC1C6E500FA0A0E /* DataModel 2.xcdatamodel */;
+			currentVersion = E92BF93F24F0124A002CB596 /* DataModel 3.xcdatamodel */;
 			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

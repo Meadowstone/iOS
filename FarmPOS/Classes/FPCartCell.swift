@@ -40,13 +40,6 @@ class FPCartCell: UITableViewCell {
                 contentAttrText.append(sumAttrText)
             }
             
-            if cartProduct.quantityCSA > 0.0 {
-                let csaAttrText = NSMutableAttributedString(string: "\n\(nf!.string(from: NSNumber(value: cartProduct.quantityCSA))!)  X  $0.00 = $0.00 (CSA)", attributes: [.font: UIFont(name: "HelveticaNeue-Light", size: 16.0)!, .foregroundColor: UIColor.darkGray])
-                csaAttrText.addAttribute(.foregroundColor, value: FPColorRed, range: (csaAttrText.string as NSString).range(of: "$0.00", options: .backwards))
-                csaAttrText.addAttribute(.foregroundColor, value: FPColorRed, range: (csaAttrText.string as NSString).range(of: "(CSA)"))
-                contentAttrText.append(csaAttrText)
-            }
-            
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.alignment = .left
             paragraphStyle.lineSpacing = 2.0

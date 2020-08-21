@@ -1,9 +1,8 @@
 - Wire usable interface to Products and Cart -> Search - Done
 - Implement cart view - Done
 - Implement product view controller - Done
-- Add binding logic to refreh products (discount prices, csa) - Done
+- Add binding logic to refreh products (discount prices) - Done
 - Add category headers - Done
-- Add CSA limit calculations - Done
 - Complete Credit Cards controller - Done
 - Add session management - Done
 - Implement auxiliary controllers:
@@ -39,7 +38,6 @@
         - Complete Customers branch: - Done
             - Complete Credit Card branch - Done
             - Complete Transactions branch - Done
-        - Add CSA headers - Done
         - Create view controller to add new products (Advanced)
     - Create Checkout screen:
         - Implement payment controllers - Done

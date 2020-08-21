@@ -47,24 +47,17 @@ class FPProductCheckoutCell: UITableViewCell {
                 }
             } else if let cp = checkoutItem as? FPCheckoutProduct {
                 
-                var hasDiscount = cp.product.hasDiscount
-                var discountPrice = cp.product.actualPrice
+                let hasDiscount = cp.product.hasDiscount
+                let discountPrice = cp.product.actualPrice
                 
                 if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
                     nameLabel.font = UIFont(name: "HelveticaNeue-Light", size: 21.0)
                     nameLabel.text = cp.product.name
                     quantityLabel.text = nf.string(from: NSNumber(value: cp.quantity))!
+                    totalLabel.text = "$\(FPCurrencyFormatter.printableCurrency(cp.sum))"
+                    
                     let priceText = FPCurrencyFormatter.printableCurrency(cp.product.price)
                     let priceAttrText = NSMutableAttributedString(string: priceText)
-                    
-                    if cp.isCSA {
-                        nameLabel.text = nameLabel.text! + " (CSA Purchase)"
-                        totalLabel.text = "$0.00"
-                        discountPrice = 0.00
-                        hasDiscount = true
-                    } else {
-                        totalLabel.text = "$\(FPCurrencyFormatter.printableCurrency(cp.sum))"
-                    }
                     
                     if hasDiscount {
                         let discountText = FPCurrencyFormatter.printableCurrency(discountPrice)
@@ -75,17 +68,11 @@ class FPProductCheckoutCell: UITableViewCell {
                 } else {
                     let contentAttrText = NSMutableAttributedString()
                     
-                    var productText = cp.product.name
+                    let productText = cp.product.name
                     let priceText = "$" + FPCurrencyFormatter.printableCurrency(cp.product.price)
                     let quantityText = nf.string(from: NSNumber(value:
                         cp.quantity))!
-                    var totalText = "$" + (FPCurrencyFormatter.printableCurrency(cp.sum))
-                    if cp.isCSA {
-                        productText = productText + " (CSA Purchase)"
-                        totalText = "$0.00"
-                        discountPrice = 0.00
-                        hasDiscount = true
-                    }
+                    let totalText = "$" + (FPCurrencyFormatter.printableCurrency(cp.sum))
                     
                     // Product name
                     let productAttrText = NSMutableAttributedString(string: "Product: " + productText)

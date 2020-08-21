@@ -12,12 +12,10 @@ class FPCheckoutProduct: FPCheckoutItem {
     
     var product: FPProduct
     var quantity: Double
-    var isCSA: Bool
     
-    init(product: FPProduct, quantity: Double, sum: Double, isCSA: Bool) {
+    init(product: FPProduct, quantity: Double, sum: Double) {
         self.product = product
         self.quantity = quantity
-        self.isCSA = isCSA
         super.init(sum: sum)
     }
     

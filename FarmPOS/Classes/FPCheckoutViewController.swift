@@ -78,7 +78,7 @@ class FPCheckoutViewController: FPRotationViewController, UITableViewDelegate, U
         var hasDiscounts = false
         for ci in checkoutItems {
             if let p = ci as? FPCheckoutProduct {
-                if p.product.hasDiscount || p.isCSA {
+                if p.product.hasDiscount {
                     hasDiscounts = true
                     break
                 }
@@ -342,13 +342,6 @@ class FPCheckoutViewController: FPRotationViewController, UITableViewDelegate, U
             }
             
             if let ac = FPCustomer.activeCustomer() {
-                for cp in FPCartView.sharedCart().cartProducts {
-                    for pd in ac.productDescriptors {
-                        if cp.product.id == pd.productId {
-                            pd.csas = cp.product.csas
-                        }
-                    }
-                }
                 FPDataAccessLayer.sharedInstance.saveCustomer(ac)
             }
             

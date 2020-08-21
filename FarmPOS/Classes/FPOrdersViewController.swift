@@ -20,8 +20,7 @@ class FPOrdersViewController: FPRotationViewController, UITableViewDelegate, UIT
     var orders = [FPOrder]()
     var tableView: UITableView!
     
-    // When FPOrder is selected two actions have to be performed: 1) order.customer must be set to active
-    // 2) order.productsInfo must be processed to repopulate current products CSA information and limits.
+    // When FPOrder is selected, order.customer must be set to active
     class func ordersViewControllerWithOrderSelectedHandler(_ osh: @escaping (FPOrder) -> Void) -> FPOrdersViewController {
         let vc = FPOrdersViewController()
         vc.orderSelectedHandler = osh

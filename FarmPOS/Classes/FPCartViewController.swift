@@ -60,7 +60,7 @@ class FPCartViewController: FPRotationViewController, FPCartViewDelegate, FPProd
     }
     
     func cartViewDidSelectProduct(_ cartView: FPCartView, p: FPCartProduct) {
-        let vc = FPProductViewController.productNavigationViewControllerForCartProduct(p, processingCSAId: nil, delegate: self, updating: true)
+        let vc = FPProductViewController.productNavigationViewControllerForCartProduct(p, delegate: self, updating: true)
         present(vc, animated: true, completion: nil)
     }
     

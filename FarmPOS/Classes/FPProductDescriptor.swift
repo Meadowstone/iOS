@@ -12,9 +12,9 @@ class FPProductDescriptor: NSObject {
     
     var productId = -1
     var discountPrice: Double?
-    var csas = [FPCSA]()
+
     override var description: String {
-        return "productId: \(productId), csas: \(csas)"
+        return "productId: \(productId)"
     }
 
 }
