@@ -23,14 +23,12 @@ class FPProductCartCellView: UIView {
                     df.dateFormat = "MMM yyyy"
                     availableFromLabel.text = "Avilable from: " + df.string(from: d as Date)
                 }
-                saleImageView.isHidden = product.availableFrom != nil
             } else if let ci = object as? NSDictionary {
                 let product = ci["product"] as! FPProduct
                 let name = ci["name"] as! String
                 imageView.sd_setImage(with: product.imageURL, placeholderImage: UIImage(named: "category_placeholder"), options: [.refreshCached, .retryFailed])
                 availableFromView.isHidden = true
                 productNameLabel.text = name
-                saleImageView.isHidden = true
             }
         }
     }
@@ -39,7 +37,6 @@ class FPProductCartCellView: UIView {
     @IBOutlet weak var availableFromView: UIView!
     @IBOutlet weak var availableFromLabel: UILabel!
     @IBOutlet weak var productNameLabel: UILabel!
-    @IBOutlet weak var saleImageView: UIImageView!
     
     @IBAction func btnPressed(_ sender: AnyObject) {
         delegate?.productCartCellViewDidPress(self)
