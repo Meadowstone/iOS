@@ -108,8 +108,6 @@ class FPDataAccessLayer : NSObject {
             c.synchronized = synchronized as NSNumber
         }
         
-//        CLSLogv("%@", getVaList(["started saving CSA info"]))
-        
         let csaWithInfo = { (info: NSDictionary) -> FPCDCSA in
             let csa = NSEntityDescription.insertNewObject(forEntityName: "FPCDCSA", into: self.managedObjectContext) as! FPCDCSA
             csa.id = NSNumber(value: info["id"] as! Int)
