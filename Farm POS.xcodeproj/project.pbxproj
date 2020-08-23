@@ -14,83 +14,6 @@
 		503EB713197D67C300B86869 /* FPPayNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EB712197D67C300B86869 /* FPPayNowViewController.swift */; };
 		50EA292A197E5A6F0024B299 /* FPCashCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA2929197E5A6F0024B299 /* FPCashCheckViewController.swift */; };
 		50EA292C197E71580024B299 /* FPPaymentConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA292B197E71580024B299 /* FPPaymentConfirmViewController.swift */; };
-		50FB1FA41980176B00D7106C /* FPRedeemGiftCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E4431971F2540037FCD0 /* FPRedeemGiftCardViewController.swift */; };
-		50FB1FA51980176B00D7106C /* FPProductsAndCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814A71FA19622CFB00F2A689 /* FPProductsAndCartViewController.swift */; };
-		50FB1FA61980176B00D7106C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157106619781C3300F184D0 /* main.swift */; };
-		50FB1FA81980176B00D7106C /* FPChoiceOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F463C1966DF75007A009E /* FPChoiceOverlayView.swift */; };
-		50FB1FA91980176B00D7106C /* FPCheckoutHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81510736197988E200AFC491 /* FPCheckoutHeaderView.swift */; };
-		50FB1FAA1980176B00D7106C /* FPPaymentOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EB710197D66E800B86869 /* FPPaymentOptionsViewController.swift */; };
-		50FB1FAB1980176B00D7106C /* FPAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F3DD3195C76D100005F14 /* FPAlertManager.swift */; };
-		50FB1FAC1980176B00D7106C /* FPCustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157106B1978238600F184D0 /* FPCustomerCell.swift */; };
-		50FB1FAD1980176B00D7106C /* FPCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8104E6EE19653DB700F079F3 /* FPCustomer.swift */; };
-		50FB1FAE1980176B00D7106C /* FPCheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81510727197978A000AFC491 /* FPCheckoutViewController.swift */; };
-		50FB1FAF1980176B00D7106C /* FPProductCheckoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151072F19797B7B00AFC491 /* FPProductCheckoutCell.swift */; };
-		50FB1FB01980176B00D7106C /* FPCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682D31970455100BE4E90 /* FPCreditCard.swift */; };
-		50FB1FB11980176B00D7106C /* FPTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DD91CE1977D5640056754B /* FPTransactionsViewController.swift */; };
-		50FB1FB21980176B00D7106C /* FPChoiceInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8128CDD119615B7E009D92EE /* FPChoiceInputView.swift */; };
-		50FB1FB31980176B00D7106C /* FPProductCartCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD1DA1196A185D00EEAD8F /* FPProductCartCellView.swift */; };
-		50FB1FB51980176B00D7106C /* FPCheckoutProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151073319797C0400AFC491 /* FPCheckoutProduct.swift */; };
-		50FB1FB61980176B00D7106C /* FPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81199D48195C3B0400BE139D /* FPServer.swift */; };
-		50FB1FB71980176B00D7106C /* FPBuyGiftCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682CF1970153B00BE4E90 /* FPBuyGiftCardViewController.swift */; };
-		50FB1FB81980176B00D7106C /* FPCartProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3A84A196B7B0B0006C479 /* FPCartProduct.swift */; };
-		50FB1FB91980176B00D7106C /* FPOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E462197676110037FCD0 /* FPOrderCell.swift */; };
-		50FB1FBA1980176B00D7106C /* FPCashCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA2929197E5A6F0024B299 /* FPCashCheckViewController.swift */; };
-		50FB1FBB1980176B00D7106C /* FPStoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8115CDE7195D90E800C51C83 /* FPStoryboardManager.swift */; };
-		50FB1FBC1980176B00D7106C /* FPGiftCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682CD196F713900BE4E90 /* FPGiftCard.swift */; };
-		50FB1FBD1980176B00D7106C /* FPGiftCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682CB196F6C4500BE4E90 /* FPGiftCardsViewController.swift */; };
-		50FB1FBE1980176B00D7106C /* FPScanQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E4451971FF930037FCD0 /* FPScanQRCodeViewController.swift */; };
-		50FB1FBF1980176B00D7106C /* FPCartHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3A846196B73B60006C479 /* FPCartHeaderView.swift */; };
-		50FB1FC01980176B00D7106C /* FPManageBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E45B197557CB0037FCD0 /* FPManageBalanceViewController.swift */; };
-		50FB1FC11980176B00D7106C /* FPCheckoutFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151073B197BB31700AFC491 /* FPCheckoutFooterView.swift */; };
-		50FB1FC21980176B00D7106C /* FPModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812ED2B5195CF354008F178C /* FPModelParser.swift */; };
-		50FB1FC31980176B00D7106C /* FPTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DD91D11977DA340056754B /* FPTransaction.swift */; };
-		50FB1FC41980176B00D7106C /* FPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81199D46195C333100BE139D /* FPLoginViewController.swift */; };
-		50FB1FC51980176B00D7106C /* FPNumPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81018279196EA95F009C9E98 /* FPNumPadView.swift */; };
-		50FB1FC61980176B00D7106C /* FPAccountSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FFD411965997900BF652C /* FPAccountSetupViewController.swift */; };
-		50FB1FC71980176B00D7106C /* FPProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81363E86196C705100A0F0DC /* FPProductViewController.swift */; };
-		50FB1FC81980176B00D7106C /* FPCustomersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157106819781F2300F184D0 /* FPCustomersViewController.swift */; };
-		50FB1FC91980176B00D7106C /* FPOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E45F1975E36A0037FCD0 /* FPOrder.swift */; };
-		50FB1FCA1980176B00D7106C /* FPFarmWorkerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E914371960E62C00865AFC /* FPFarmWorkerLoginViewController.swift */; };
-		50FB1FCB1980176B00D7106C /* FPPayNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EB712197D67C300B86869 /* FPPayNowViewController.swift */; };
-		50FB1FCC1980176B00D7106C /* UIView+FirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813237FD19617DE300461B74 /* UIView+FirstResponder.swift */; };
-		50FB1FCD1980176B00D7106C /* FPProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC7C1967756F00587E50 /* FPProduct.swift */; };
-		50FB1FCE1980176B00D7106C /* FPCreateCreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682D11970266300BE4E90 /* FPCreateCreditCardViewController.swift */; };
-		50FB1FCF1980176B00D7106C /* FPGiftCardOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682C0196F575B00BE4E90 /* FPGiftCardOptionsViewController.swift */; };
-		50FB1FD01980176B00D7106C /* FPGiftCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682C7196F69FB00BE4E90 /* FPGiftCardCell.swift */; };
-		50FB1FD11980176B00D7106C /* FPAuthOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8111A98E195DB15F00F1928E /* FPAuthOptionsViewController.swift */; };
-		50FB1FD21980176B00D7106C /* FPCustomerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814A71FE19622EF000F2A689 /* FPCustomerLoginViewController.swift */; };
-		50FB1FD31980176B00D7106C /* FPMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC82196778A800587E50 /* FPMeasurement.swift */; };
-		50FB1FD41980176B00D7106C /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FFD431966990D00BF652C /* Defines.swift */; };
-		50FB1FD51980176B00D7106C /* FPFarmWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81148ADD1961A05100A40D26 /* FPFarmWorker.swift */; };
-		50FB1FD61980176B00D7106C /* FPAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81199D3B195C313F00BE139D /* FPAppDelegate.swift */; };
-		50FB1FD81980176B00D7106C /* FPPaymentConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA292B197E71580024B299 /* FPPaymentConfirmViewController.swift */; };
-		50FB1FD91980176B00D7106C /* FPCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FF080D196C28660046457A /* FPCartCell.swift */; };
-		50FB1FDA1980176B00D7106C /* FPCustomerCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D23F871966B66A00A330E0 /* FPCustomerCreateViewController.swift */; };
-		50FB1FDB1980176B00D7106C /* FPCurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3A84D196BF99B0006C479 /* FPCurrencyFormatter.swift */; };
-		50FB1FDC1980176B00D7106C /* FPTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DD91D41977DC810056754B /* FPTransactionCell.swift */; };
-		50FB1FDD1980176B00D7106C /* FPUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812ED2B3195CEFEC008F178C /* FPUser.swift */; };
-		50FB1FDF1980176B00D7106C /* FPOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E45D1975DC470037FCD0 /* FPOrdersViewController.swift */; };
-		50FB1FE01980176B00D7106C /* FPProductCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD1D9F196A13CA00EEAD8F /* FPProductCartCell.swift */; };
-		50FB1FE11980176B00D7106C /* FPProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC7E196775BE00587E50 /* FPProductCategory.swift */; };
-		50FB1FE21980176B00D7106C /* FPCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC7A196773CD00587E50 /* FPCartView.swift */; };
-		50FB1FE91980176B00D7106C /* FPProductCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81CD1DA6196A90D300EEAD8F /* FPProductCartCell.xib */; };
-		50FB1FEA1980176B00D7106C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8111A98A195DA56800F1928E /* Login.storyboard */; };
-		50FB1FEB1980176B00D7106C /* FPProductCheckoutCell-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8151073019797B7B00AFC491 /* FPProductCheckoutCell-iPad.xib */; };
-		50FB1FEC1980176B00D7106C /* FPTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81DD91D51977DC810056754B /* FPTransactionCell.xib */; };
-		50FB1FED1980176B00D7106C /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 81210F86196B5AE200F14458 /* TODO */; };
-		50FB1FEE1980176B00D7106C /* gift_card_FAQ.html in Resources */ = {isa = PBXBuildFile; fileRef = 813682C2196F5BD900BE4E90 /* gift_card_FAQ.html */; };
-		50FB1FF01980176B00D7106C /* FPNumPadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101827D196EAB4A009C9E98 /* FPNumPadView.xib */; };
-		50FB1FF11980176B00D7106C /* FPCheckoutFooterView-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8151073D197BB32F00AFC491 /* FPCheckoutFooterView-iPad.xib */; };
-		50FB1FF21980176B00D7106C /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 81C038F6195C70940086D48B /* Podfile */; };
-		50FB1FF31980176B00D7106C /* FPCheckoutHeaderView-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 815107381979892000AFC491 /* FPCheckoutHeaderView-iPad.xib */; };
-		50FB1FF41980176B00D7106C /* Login-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81199D3C195C313F00BE139D /* Login-iPad.storyboard */; };
-		50FB1FF51980176B00D7106C /* FPGiftCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813682C8196F69FB00BE4E90 /* FPGiftCardCell.xib */; };
-		50FB1FF61980176B00D7106C /* ProductsAndCart-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81A1CC78196771AD00587E50 /* ProductsAndCart-iPad.storyboard */; };
-		50FB1FF71980176B00D7106C /* FPCustomerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8157106C1978238600F184D0 /* FPCustomerCell.xib */; };
-		50FB1FF81980176B00D7106C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503EB714197D735D00B86869 /* Images.xcassets */; };
-		50FB1FF91980176B00D7106C /* FPProductCartCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81CD1DA3196A190400EEAD8F /* FPProductCartCellView.xib */; };
-		50FB1FFA1980176B00D7106C /* FPCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81FF080F196C28830046457A /* FPCartCell.xib */; };
-		50FB1FFB1980176B00D7106C /* FPCartHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81A3A848196B73CC0006C479 /* FPCartHeaderView.xib */; };
 		8101827A196EA95F009C9E98 /* FPNumPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81018279196EA95F009C9E98 /* FPNumPadView.swift */; };
 		8101827E196EAB4A009C9E98 /* FPNumPadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101827D196EAB4A009C9E98 /* FPNumPadView.xib */; };
 		8101EE8E19927EAC0042FBB6 /* FPCheckoutHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101EE8D19927EAC0042FBB6 /* FPCheckoutHeaderView.xib */; };
@@ -196,10 +119,6 @@
 		81BB47F81990F803003A3DEE /* FPInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB47F71990F803003A3DEE /* FPInputValidator.swift */; };
 		81BBEA4C19925F9E006310F7 /* FPOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81BBEA4B19925F9E006310F7 /* FPOrderCell.xib */; };
 		81C038F7195C70940086D48B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 81C038F6195C70940086D48B /* Podfile */; };
-		81C31C4F19B5C6CE00C90E6A /* FPJSONResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C31C4E19B5C6CE00C90E6A /* FPJSONResponseSerializer.swift */; };
-		81C31C5019B5C6CE00C90E6A /* FPJSONResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C31C4E19B5C6CE00C90E6A /* FPJSONResponseSerializer.swift */; };
-		81C330F61B17365700D31F1F /* FPProductCategoriesFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ADF3551B172A120092A9FD /* FPProductCategoriesFooterView.swift */; };
-		81C31C4C19B4C0B300C90E6A /* FPProductDiscount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C31C4B19B4C0B300C90E6A /* FPProductDiscount.swift */; };
 		81C330F71B17365700D31F1F /* FPProductCategoriesFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ADF3551B172A120092A9FD /* FPProductCategoriesFooterView.swift */; };
 		81CCDB9C1B288B8D0072CEB4 /* FPSelectPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCDB9B1B288B8D0072CEB4 /* FPSelectPriceViewController.swift */; };
 		81CD1DA0196A13CA00EEAD8F /* FPProductCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD1D9F196A13CA00EEAD8F /* FPProductCartCell.swift */; };
@@ -230,7 +149,6 @@
 		81F14B081B1731680068372B /* FPProductCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81F14B051B1731680068372B /* FPProductCategoryCollectionViewCell.xib */; };
 		81F4525A1E1161B200A583D3 /* FPCDCustomer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452581E1161B200A583D3 /* FPCDCustomer+CoreDataClass.swift */; };
 		81F4525C1E1161B200A583D3 /* FPCDCustomer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452591E1161B200A583D3 /* FPCDCustomer+CoreDataProperties.swift */; };
-		81F4525D1E1161B200A583D3 /* FPCDCustomer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452591E1161B200A583D3 /* FPCDCustomer+CoreDataProperties.swift */; };
 		81F452661E1162D800A583D3 /* FPCDProductDescriptor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452641E1162D800A583D3 /* FPCDProductDescriptor+CoreDataClass.swift */; };
 		81F452681E1162D800A583D3 /* FPCDProductDescriptor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452651E1162D800A583D3 /* FPCDProductDescriptor+CoreDataProperties.swift */; };
 		81F452721E11632800A583D3 /* FPCDPurchase+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452701E11632800A583D3 /* FPCDPurchase+CoreDataClass.swift */; };
@@ -247,7 +165,6 @@
 		E92BF89224EBBC77002CB596 /* FPRetailLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444852ED199246DF00A1F87C /* FPRetailLocation.swift */; };
 		E92BF89324EBBC77002CB596 /* FPRedeemGiftCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E4431971F2540037FCD0 /* FPRedeemGiftCardViewController.swift */; };
 		E92BF89424EBBC77002CB596 /* FPProductsAndCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814A71FA19622CFB00F2A689 /* FPProductsAndCartViewController.swift */; };
-		E92BF89524EBBC77002CB596 /* FPCDCSA+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F4525F1E11628D00A583D3 /* FPCDCSA+CoreDataProperties.swift */; };
 		E92BF89624EBBC77002CB596 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157106619781C3300F184D0 /* main.swift */; };
 		E92BF89724EBBC77002CB596 /* FPDataAccessLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811B4557198A520A000EC090 /* FPDataAccessLayer.swift */; };
 		E92BF89824EBBC77002CB596 /* FPChoiceOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F463C1966DF75007A009E /* FPChoiceOverlayView.swift */; };
@@ -267,7 +184,6 @@
 		E92BF8A724EBBC77002CB596 /* FPProductDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE98119890C6C00B3AF4A /* FPProductDescriptor.swift */; };
 		E92BF8A824EBBC77002CB596 /* FPSelectPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCDB9B1B288B8D0072CEB4 /* FPSelectPriceViewController.swift */; };
 		E92BF8A924EBBC77002CB596 /* FPCheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81510727197978A000AFC491 /* FPCheckoutViewController.swift */; };
-		E92BF8AA24EBBC77002CB596 /* FPProductDiscount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C31C4B19B4C0B300C90E6A /* FPProductDiscount.swift */; };
 		E92BF8AB24EBBC77002CB596 /* FPProductCheckoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8151072F19797B7B00AFC491 /* FPProductCheckoutCell.swift */; };
 		E92BF8AC24EBBC77002CB596 /* FPCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682D31970455100BE4E90 /* FPCreditCard.swift */; };
 		E92BF8AD24EBBC77002CB596 /* FPTriggerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A4F1B623C9400F95F18 /* FPTriggerAlert.swift */; };
@@ -281,7 +197,6 @@
 		E92BF8B524EBBC77002CB596 /* FPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81199D48195C3B0400BE139D /* FPServer.swift */; };
 		E92BF8B624EBBC77002CB596 /* FPApplyBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812BEEE81B2AE31800F01436 /* FPApplyBalanceViewController.swift */; };
 		E92BF8B724EBBC77002CB596 /* FPProductSuppliersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A3A1B600F0100F95F18 /* FPProductSuppliersViewController.swift */; };
-		E92BF8B824EBBC77002CB596 /* FPCDCSA+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F4525E1E11628D00A583D3 /* FPCDCSA+CoreDataClass.swift */; };
 		E92BF8B924EBBC77002CB596 /* FPCreateProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC1D4A1B6674E1002029C8 /* FPCreateProductViewController.swift */; };
 		E92BF8BA24EBBC77002CB596 /* FPBuyGiftCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682CF1970153B00BE4E90 /* FPBuyGiftCardViewController.swift */; };
 		E92BF8BB24EBBC77002CB596 /* FPCartProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3A84A196B7B0B0006C479 /* FPCartProduct.swift */; };
@@ -335,7 +250,6 @@
 		E92BF8EB24EBBC77002CB596 /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FFD431966990D00BF652C /* Defines.swift */; };
 		E92BF8EC24EBBC77002CB596 /* FPFarmWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81148ADD1961A05100A40D26 /* FPFarmWorker.swift */; };
 		E92BF8ED24EBBC77002CB596 /* FPAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81199D3B195C313F00BE139D /* FPAppDelegate.swift */; };
-		E92BF8EE24EBBC77002CB596 /* FPCSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC801967763500587E50 /* FPCSA.swift */; };
 		E92BF8EF24EBBC77002CB596 /* FPCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB47EA198FB327003A3DEE /* FPCartViewController.swift */; };
 		E92BF8F024EBBC77002CB596 /* FPCDPurchase+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452711E11632800A583D3 /* FPCDPurchase+CoreDataProperties.swift */; };
 		E92BF8F124EBBC77002CB596 /* FPPaymentConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA292B197E71580024B299 /* FPPaymentConfirmViewController.swift */; };
@@ -530,7 +444,6 @@
 		81BBEA4B19925F9E006310F7 /* FPOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPOrderCell.xib; sourceTree = "<group>"; };
 		81C038F6195C70940086D48B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		81C2335B1A499EB5003E9239 /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
-		81C31C4E19B5C6CE00C90E6A /* FPJSONResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPJSONResponseSerializer.swift; sourceTree = "<group>"; };
 		81CCDB9B1B288B8D0072CEB4 /* FPSelectPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPSelectPriceViewController.swift; sourceTree = "<group>"; };
 		81CD1D9F196A13CA00EEAD8F /* FPProductCartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPProductCartCell.swift; sourceTree = "<group>"; };
 		81CD1DA1196A185D00EEAD8F /* FPProductCartCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPProductCartCellView.swift; sourceTree = "<group>"; };
@@ -579,9 +492,9 @@
 		9F659EF51C1F24DC005F0FF6 /* FPCustomLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCustomLogger.swift; sourceTree = "<group>"; };
 		9FEC404919B9D62C003AB29A /* FPCardFlightManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCardFlightManager.swift; sourceTree = "<group>"; };
 		B8B7E037757AE290B9EBD116 /* Pods_FPOS_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FPOS_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E92BF93F24F0124A002CB596 /* DataModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DataModel 3.xcdatamodel"; sourceTree = "<group>"; };
 		E92BF93724EBBC77002CB596 /* Farmstand Cart (DEV).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmstand Cart (DEV).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92BF93824EBBC78002CB596 /* FarmstandCartDEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FarmstandCartDEV-Info.plist"; path = "/Users/denismendica/Projects/toptal/Meadowstone Farm/FarmPOS-MobileApp/FarmstandCartDEV-Info.plist"; sourceTree = "<absolute>"; };
+		E92BF93F24F0124A002CB596 /* DataModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DataModel 3.xcdatamodel"; sourceTree = "<group>"; };
 		EFE2C3F086060FC12C04E372 /* Pods_Farmstand_Cart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Farmstand_Cart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1371,121 +1284,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		50FB1FA31980176B00D7106C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				81BB47EF198FC673003A3DEE /* FPProductsViewController.swift in Sources */,
-				444852EF199246DF00A1F87C /* FPRetailLocation.swift in Sources */,
-				50FB1FA41980176B00D7106C /* FPRedeemGiftCardViewController.swift in Sources */,
-				50FB1FA51980176B00D7106C /* FPProductsAndCartViewController.swift in Sources */,
-				50FB1FA61980176B00D7106C /* main.swift in Sources */,
-				811B4559198A520A000EC090 /* FPDataAccessLayer.swift in Sources */,
-				50FB1FA81980176B00D7106C /* FPChoiceOverlayView.swift in Sources */,
-				81BB47F91990F803003A3DEE /* FPInputValidator.swift in Sources */,
-				50FB1FA91980176B00D7106C /* FPCheckoutHeaderView.swift in Sources */,
-				9FEC404B19B9D62C003AB29A /* FPCardFlightManager.swift in Sources */,
-				81C31C5019B5C6CE00C90E6A /* FPJSONResponseSerializer.swift in Sources */,
-				50FB1FAA1980176B00D7106C /* FPPaymentOptionsViewController.swift in Sources */,
-				50FB1FAB1980176B00D7106C /* FPAlertManager.swift in Sources */,
-				50FB1FAC1980176B00D7106C /* FPCustomerCell.swift in Sources */,
-				81A0FEBB1998C6820022D31D /* FPProductCategoriesViewController.swift in Sources */,
-				812065521B566E9E00CA180F /* FPCheckoutItem.swift in Sources */,
-				81E9AC211B6A536100DF81AA /* FPInventoryProductHistoryViewController.swift in Sources */,
-				8108AF4219ACF8E000869B86 /* FPUnsyncedPurchaseCell.swift in Sources */,
-				8108AF3E19ACEE3800869B86 /* FPUnsyncedItemsTableViewController.swift in Sources */,
-				50FB1FAD1980176B00D7106C /* FPCustomer.swift in Sources */,
-				81BB47F4198FD1C8003A3DEE /* FPProductCell.swift in Sources */,
-				818FE98319890C6C00B3AF4A /* FPProductDescriptor.swift in Sources */,
-				81CCDB9D1B288B8D0072CEB4 /* FPSelectPriceViewController.swift in Sources */,
-				50FB1FAE1980176B00D7106C /* FPCheckoutViewController.swift in Sources */,
-				50FB1FAF1980176B00D7106C /* FPProductCheckoutCell.swift in Sources */,
-				50FB1FB01980176B00D7106C /* FPCreditCard.swift in Sources */,
-				81E95A511B623C9400F95F18 /* FPTriggerAlert.swift in Sources */,
-				50FB1FB11980176B00D7106C /* FPTransactionsViewController.swift in Sources */,
-				8179D443198F9EE400B49FC3 /* FPCategoryCell.swift in Sources */,
-				81F452691E1162D800A583D3 /* FPCDProductDescriptor+CoreDataProperties.swift in Sources */,
-				50FB1FB21980176B00D7106C /* FPChoiceInputView.swift in Sources */,
-				50FB1FB31980176B00D7106C /* FPProductCartCellView.swift in Sources */,
-				81B63A251B53AA79002E795F /* FPCustomerEditViewController.swift in Sources */,
-				50FB1FB51980176B00D7106C /* FPCheckoutProduct.swift in Sources */,
-				50FB1FB61980176B00D7106C /* FPServer.swift in Sources */,
-				812BEEEA1B2AE31800F01436 /* FPApplyBalanceViewController.swift in Sources */,
-				81E95A3C1B600F0100F95F18 /* FPProductSuppliersViewController.swift in Sources */,
-				81DC1D4C1B6674E1002029C8 /* FPCreateProductViewController.swift in Sources */,
-				50FB1FB71980176B00D7106C /* FPBuyGiftCardViewController.swift in Sources */,
-				50FB1FB81980176B00D7106C /* FPCartProduct.swift in Sources */,
-				50FB1FB91980176B00D7106C /* FPOrderCell.swift in Sources */,
-				50FB1FBA1980176B00D7106C /* FPCashCheckViewController.swift in Sources */,
-				50FB1FBB1980176B00D7106C /* FPStoryboardManager.swift in Sources */,
-				81FA71851B3998C000C0CD7D /* FPCashCheckSummaryViewController.swift in Sources */,
-				81F14B071B1731680068372B /* FPProductCategoryCollectionViewCell.swift in Sources */,
-				81E95A4A1B612CC500F95F18 /* FPInventoryProductNote.swift in Sources */,
-				50FB1FBC1980176B00D7106C /* FPGiftCard.swift in Sources */,
-				50FB1FBD1980176B00D7106C /* FPGiftCardsViewController.swift in Sources */,
-				50FB1FBE1980176B00D7106C /* FPScanQRCodeViewController.swift in Sources */,
-				50FB1FBF1980176B00D7106C /* FPCartHeaderView.swift in Sources */,
-				81DC1D801B66DE27002029C8 /* FPNamable.swift in Sources */,
-				50FB1FC01980176B00D7106C /* FPManageBalanceViewController.swift in Sources */,
-				81DC1D831B66E048002029C8 /* FPSelectNamableViewController.swift in Sources */,
-				50FB1FC11980176B00D7106C /* FPCheckoutFooterView.swift in Sources */,
-				50FB1FC21980176B00D7106C /* FPModelParser.swift in Sources */,
-				818A3A801A82938E00C2A12C /* FPFarm.swift in Sources */,
-				8179D43E198F969800B49FC3 /* FPCategoriesViewController.swift in Sources */,
-				50FB1FC31980176B00D7106C /* FPTransaction.swift in Sources */,
-				81F452731E11632800A583D3 /* FPCDPurchase+CoreDataClass.swift in Sources */,
-				81F4525D1E1161B200A583D3 /* FPCDCustomer+CoreDataProperties.swift in Sources */,
-				50FB1FC41980176B00D7106C /* FPLoginViewController.swift in Sources */,
-				50FB1FC51980176B00D7106C /* FPNumPadView.swift in Sources */,
-				50FB1FC61980176B00D7106C /* FPAccountSetupViewController.swift in Sources */,
-				50FB1FC71980176B00D7106C /* FPProductViewController.swift in Sources */,
-				81A9F1041B8CBEA700CA548C /* FPRotationViewController.swift in Sources */,
-				50FB1FC81980176B00D7106C /* FPCustomersViewController.swift in Sources */,
-				81F452671E1162D800A583D3 /* FPCDProductDescriptor+CoreDataClass.swift in Sources */,
-				50FB1FC91980176B00D7106C /* FPOrder.swift in Sources */,
-				81E5B7DD1B5FFA420061E377 /* FPProductSupplier.swift in Sources */,
-				81E9AC1E1B6A4FAD00DF81AA /* FPInventoryProductHistory.swift in Sources */,
-				50FB1FCA1980176B00D7106C /* FPFarmWorkerLoginViewController.swift in Sources */,
-				8179D43B198F8B2C00B49FC3 /* FPSyncManager.swift in Sources */,
-				50FB1FCB1980176B00D7106C /* FPPayNowViewController.swift in Sources */,
-				50FB1FCC1980176B00D7106C /* UIView+FirstResponder.swift in Sources */,
-				50FB1FCD1980176B00D7106C /* FPProduct.swift in Sources */,
-				817D9AFE1C20415700DDB28B /* FPCustomLogger.swift in Sources */,
-				81F4525B1E1161B200A583D3 /* FPCDCustomer+CoreDataClass.swift in Sources */,
-				50FB1FCE1980176B00D7106C /* FPCreateCreditCardViewController.swift in Sources */,
-				50FB1FCF1980176B00D7106C /* FPGiftCardOptionsViewController.swift in Sources */,
-				50FB1FD01980176B00D7106C /* FPGiftCardCell.swift in Sources */,
-				81E95A541B623E6A00F95F18 /* FPTriggerAlertsViewController.swift in Sources */,
-				50FB1FD11980176B00D7106C /* FPAuthOptionsViewController.swift in Sources */,
-				50FB1FD21980176B00D7106C /* FPCustomerLoginViewController.swift in Sources */,
-				81CFDDB419CAFB37003BB974 /* FPProductCreateViewController.swift in Sources */,
-				50FB1FD31980176B00D7106C /* FPMeasurement.swift in Sources */,
-				50FB1FD41980176B00D7106C /* Defines.swift in Sources */,
-				81E95A4D1B61461C00F95F18 /* FPAddNotesViewController.swift in Sources */,
-				50FB1FD51980176B00D7106C /* FPFarmWorker.swift in Sources */,
-				50FB1FD61980176B00D7106C /* FPAppDelegate.swift in Sources */,
-				81BB47EC198FB327003A3DEE /* FPCartViewController.swift in Sources */,
-				50FB1FD81980176B00D7106C /* FPPaymentConfirmViewController.swift in Sources */,
-				81F452751E11632800A583D3 /* FPCDPurchase+CoreDataProperties.swift in Sources */,
-				50FB1FD91980176B00D7106C /* FPCartCell.swift in Sources */,
-				50FB1FDA1980176B00D7106C /* FPCustomerCreateViewController.swift in Sources */,
-				81FB196A198BA4FB00FF6815 /* FPMenuViewController.swift in Sources */,
-				50FB1FDB1980176B00D7106C /* FPCurrencyFormatter.swift in Sources */,
-				81E95A471B612AFE00F95F18 /* FPInventoryProductViewController.swift in Sources */,
-				50FB1FDC1980176B00D7106C /* FPTransactionCell.swift in Sources */,
-				50FB1FDD1980176B00D7106C /* FPUser.swift in Sources */,
-				81A9FC4519AFB95400CCAD37 /* FPReader.m in Sources */,
-				50FB1FDF1980176B00D7106C /* FPOrdersViewController.swift in Sources */,
-				50FB1FE01980176B00D7106C /* FPProductCartCell.swift in Sources */,
-				812065551B566FAE00CA180F /* FPCheckoutTaxItem.swift in Sources */,
-				81C330F61B17365700D31F1F /* FPProductCategoriesFooterView.swift in Sources */,
-				81BC10881992B73F00D8165D /* DataModel.xcdatamodeld in Sources */,
-				81B63A291B556455002E795F /* FPProductCategoryTax.swift in Sources */,
-				50FB1FE11980176B00D7106C /* FPProductCategory.swift in Sources */,
-				50FB1FE21980176B00D7106C /* FPCartView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		81DB7818195C2A860021DE57 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1608,7 +1406,6 @@
 				E92BF89224EBBC77002CB596 /* FPRetailLocation.swift in Sources */,
 				E92BF89324EBBC77002CB596 /* FPRedeemGiftCardViewController.swift in Sources */,
 				E92BF89424EBBC77002CB596 /* FPProductsAndCartViewController.swift in Sources */,
-				E92BF89524EBBC77002CB596 /* FPCDCSA+CoreDataProperties.swift in Sources */,
 				E92BF89624EBBC77002CB596 /* main.swift in Sources */,
 				E92BF89724EBBC77002CB596 /* FPDataAccessLayer.swift in Sources */,
 				E92BF89824EBBC77002CB596 /* FPChoiceOverlayView.swift in Sources */,
@@ -1628,7 +1425,6 @@
 				E92BF8A724EBBC77002CB596 /* FPProductDescriptor.swift in Sources */,
 				E92BF8A824EBBC77002CB596 /* FPSelectPriceViewController.swift in Sources */,
 				E92BF8A924EBBC77002CB596 /* FPCheckoutViewController.swift in Sources */,
-				E92BF8AA24EBBC77002CB596 /* FPProductDiscount.swift in Sources */,
 				E92BF8AB24EBBC77002CB596 /* FPProductCheckoutCell.swift in Sources */,
 				E92BF8AC24EBBC77002CB596 /* FPCreditCard.swift in Sources */,
 				E92BF8AD24EBBC77002CB596 /* FPTriggerAlert.swift in Sources */,
@@ -1642,7 +1438,6 @@
 				E92BF8B524EBBC77002CB596 /* FPServer.swift in Sources */,
 				E92BF8B624EBBC77002CB596 /* FPApplyBalanceViewController.swift in Sources */,
 				E92BF8B724EBBC77002CB596 /* FPProductSuppliersViewController.swift in Sources */,
-				E92BF8B824EBBC77002CB596 /* FPCDCSA+CoreDataClass.swift in Sources */,
 				E92BF8B924EBBC77002CB596 /* FPCreateProductViewController.swift in Sources */,
 				E92BF8BA24EBBC77002CB596 /* FPBuyGiftCardViewController.swift in Sources */,
 				E92BF8BB24EBBC77002CB596 /* FPCartProduct.swift in Sources */,
@@ -1696,7 +1491,6 @@
 				E92BF8EB24EBBC77002CB596 /* Defines.swift in Sources */,
 				E92BF8EC24EBBC77002CB596 /* FPFarmWorker.swift in Sources */,
 				E92BF8ED24EBBC77002CB596 /* FPAppDelegate.swift in Sources */,
-				E92BF8EE24EBBC77002CB596 /* FPCSA.swift in Sources */,
 				E92BF8EF24EBBC77002CB596 /* FPCartViewController.swift in Sources */,
 				E92BF8F024EBBC77002CB596 /* FPCDPurchase+CoreDataProperties.swift in Sources */,
 				E92BF8F124EBBC77002CB596 /* FPPaymentConfirmViewController.swift in Sources */,
@@ -1896,7 +1690,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Farmstand Cart.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.1.0.4;
+				CURRENT_PROJECT_VERSION = 0.1.0.5;
 				DEVELOPMENT_TEAM = 4268HQ9ZMJ;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1926,7 +1720,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Farmstand Cart.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.1.0.4;
+				CURRENT_PROJECT_VERSION = 0.1.0.5;
 				DEVELOPMENT_TEAM = 4268HQ9ZMJ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "FarmstandCartDEV-Info.plist";
