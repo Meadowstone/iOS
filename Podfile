@@ -15,6 +15,6 @@ target 'Farmstand Cart' do
     pods_to_add
 end
 
-target 'FPOS Dev' do
+target 'Farmstand Cart (DEV)' do
     pods_to_add
 end

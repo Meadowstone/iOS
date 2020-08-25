@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2AB368113D911F7177EA950F /* Pods_Farmstand_Cart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFE2C3F086060FC12C04E372 /* Pods_Farmstand_Cart.framework */; };
 		444852EE199246DF00A1F87C /* FPRetailLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444852ED199246DF00A1F87C /* FPRetailLocation.swift */; };
 		503EB70F197D635A00B86869 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503EB70E197D635A00B86869 /* UIKit.framework */; };
 		503EB711197D66E800B86869 /* FPPaymentOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EB710197D66E800B86869 /* FPPaymentOptionsViewController.swift */; };
 		503EB713197D67C300B86869 /* FPPayNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EB712197D67C300B86869 /* FPPayNowViewController.swift */; };
 		50EA292A197E5A6F0024B299 /* FPCashCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA2929197E5A6F0024B299 /* FPCashCheckViewController.swift */; };
 		50EA292C197E71580024B299 /* FPPaymentConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA292B197E71580024B299 /* FPPaymentConfirmViewController.swift */; };
+		76714538DDF83DDAC8077DB9 /* Pods_Farmstand_Cart__DEV_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FFE7360999CFFC89FF6E61 /* Pods_Farmstand_Cart__DEV_.framework */; };
 		8101827A196EA95F009C9E98 /* FPNumPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81018279196EA95F009C9E98 /* FPNumPadView.swift */; };
 		8101827E196EAB4A009C9E98 /* FPNumPadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101827D196EAB4A009C9E98 /* FPNumPadView.xib */; };
 		8101EE8E19927EAC0042FBB6 /* FPCheckoutHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101EE8D19927EAC0042FBB6 /* FPCheckoutHeaderView.xib */; };
@@ -159,6 +159,7 @@
 		81FB1969198BA4FB00FF6815 /* FPMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FB1968198BA4FB00FF6815 /* FPMenuViewController.swift */; };
 		81FF080E196C28660046457A /* FPCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FF080D196C28660046457A /* FPCartCell.swift */; };
 		81FF0810196C28830046457A /* FPCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81FF080F196C28830046457A /* FPCartCell.xib */; };
+		9ED4662D84EEE722658BBC3A /* Pods_Farmstand_Cart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C888CEE0E0B0F6CFC0EE4BC /* Pods_Farmstand_Cart.framework */; };
 		9F659EF61C1F24DC005F0FF6 /* FPCustomLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F659EF51C1F24DC005F0FF6 /* FPCustomLogger.swift */; };
 		9FEC404A19B9D62C003AB29A /* FPCardFlightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC404919B9D62C003AB29A /* FPCardFlightManager.swift */; };
 		E92BF89124EBBC77002CB596 /* FPProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB47ED198FC673003A3DEE /* FPProductsViewController.swift */; };
@@ -280,7 +281,6 @@
 		E92BF90B24EBBC77002CB596 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503EB70E197D635A00B86869 /* UIKit.framework */; };
 		E92BF90C24EBBC77002CB596 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810FFD4619669F0400BF652C /* Foundation.framework */; };
 		E92BF90D24EBBC77002CB596 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810FFD4819669F0B00BF652C /* CFNetwork.framework */; };
-		E92BF90E24EBBC77002CB596 /* Pods_Farmstand_Cart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFE2C3F086060FC12C04E372 /* Pods_Farmstand_Cart.framework */; };
 		E92BF90F24EBBC77002CB596 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEBB1E0AC11C00DE1777 /* AFNetworking.framework */; };
 		E92BF91024EBBC77002CB596 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEBD1E0AC11C00DE1777 /* MBProgressHUD.framework */; };
 		E92BF91124EBBC77002CB596 /* MMDrawerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEBE1E0AC11C00DE1777 /* MMDrawerController.framework */; };
@@ -320,9 +320,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		18B0578E21B89A29BFB0613E /* Pods-Farmstand Cart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Farmstand Cart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Farmstand Cart/Pods-Farmstand Cart.debug.xcconfig"; sourceTree = "<group>"; };
-		1BEC7D13A5B77B3C3C366833 /* Pods-Farmstand Cart.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Farmstand Cart.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Farmstand Cart/Pods-Farmstand Cart.appstore.xcconfig"; sourceTree = "<group>"; };
-		239888C3D9488AD9D9E23A03 /* Pods-FPOS Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPOS Dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FPOS Dev/Pods-FPOS Dev.debug.xcconfig"; sourceTree = "<group>"; };
+		07C21F483BE85534741FD66B /* Pods-Farmstand Cart.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Farmstand Cart.appstore.xcconfig"; path = "Target Support Files/Pods-Farmstand Cart/Pods-Farmstand Cart.appstore.xcconfig"; sourceTree = "<group>"; };
+		1C888CEE0E0B0F6CFC0EE4BC /* Pods_Farmstand_Cart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Farmstand_Cart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2298F6725189D509763AAA39 /* Pods-Farmstand Cart (DEV).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Farmstand Cart (DEV).debug.xcconfig"; path = "Target Support Files/Pods-Farmstand Cart (DEV)/Pods-Farmstand Cart (DEV).debug.xcconfig"; sourceTree = "<group>"; };
+		31FFE7360999CFFC89FF6E61 /* Pods_Farmstand_Cart__DEV_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Farmstand_Cart__DEV_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		444852ED199246DF00A1F87C /* FPRetailLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPRetailLocation.swift; sourceTree = "<group>"; };
 		503EB70E197D635A00B86869 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		503EB710197D66E800B86869 /* FPPaymentOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPPaymentOptionsViewController.swift; sourceTree = "<group>"; };
@@ -330,6 +331,8 @@
 		503EB714197D735D00B86869 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		50EA2929197E5A6F0024B299 /* FPCashCheckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCashCheckViewController.swift; sourceTree = "<group>"; };
 		50EA292B197E71580024B299 /* FPPaymentConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPPaymentConfirmViewController.swift; sourceTree = "<group>"; };
+		67B08AFBD1944595B139EC08 /* Pods-Farmstand Cart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Farmstand Cart.debug.xcconfig"; path = "Target Support Files/Pods-Farmstand Cart/Pods-Farmstand Cart.debug.xcconfig"; sourceTree = "<group>"; };
+		71D0D20CFEF96014EB585C25 /* Pods-Farmstand Cart (DEV).appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Farmstand Cart (DEV).appstore.xcconfig"; path = "Target Support Files/Pods-Farmstand Cart (DEV)/Pods-Farmstand Cart (DEV).appstore.xcconfig"; sourceTree = "<group>"; };
 		81018279196EA95F009C9E98 /* FPNumPadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNumPadView.swift; sourceTree = "<group>"; };
 		8101827D196EAB4A009C9E98 /* FPNumPadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPNumPadView.xib; sourceTree = "<group>"; };
 		8101EE8D19927EAC0042FBB6 /* FPCheckoutHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPCheckoutHeaderView.xib; sourceTree = "<group>"; };
@@ -488,14 +491,11 @@
 		81FB1968198BA4FB00FF6815 /* FPMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPMenuViewController.swift; sourceTree = "<group>"; };
 		81FF080D196C28660046457A /* FPCartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCartCell.swift; sourceTree = "<group>"; };
 		81FF080F196C28830046457A /* FPCartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPCartCell.xib; sourceTree = "<group>"; };
-		87C9812238DD924549F7CE56 /* Pods-FPOS Dev.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPOS Dev.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-FPOS Dev/Pods-FPOS Dev.appstore.xcconfig"; sourceTree = "<group>"; };
 		9F659EF51C1F24DC005F0FF6 /* FPCustomLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCustomLogger.swift; sourceTree = "<group>"; };
 		9FEC404919B9D62C003AB29A /* FPCardFlightManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCardFlightManager.swift; sourceTree = "<group>"; };
-		B8B7E037757AE290B9EBD116 /* Pods_FPOS_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FPOS_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92BF93724EBBC77002CB596 /* Farmstand Cart (DEV).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmstand Cart (DEV).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92BF93824EBBC78002CB596 /* FarmstandCartDEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FarmstandCartDEV-Info.plist"; path = "/Users/denismendica/Projects/toptal/Meadowstone Farm/FarmPOS-MobileApp/FarmstandCartDEV-Info.plist"; sourceTree = "<absolute>"; };
 		E92BF93F24F0124A002CB596 /* DataModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DataModel 3.xcdatamodel"; sourceTree = "<group>"; };
-		EFE2C3F086060FC12C04E372 /* Pods_Farmstand_Cart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Farmstand_Cart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -515,12 +515,12 @@
 				503EB70F197D635A00B86869 /* UIKit.framework in Frameworks */,
 				810FFD4719669F0400BF652C /* Foundation.framework in Frameworks */,
 				810FFD4919669F0B00BF652C /* CFNetwork.framework in Frameworks */,
-				2AB368113D911F7177EA950F /* Pods_Farmstand_Cart.framework in Frameworks */,
 				812DDEC21E0AC11C00DE1777 /* AFNetworking.framework in Frameworks */,
 				812DDEC41E0AC11C00DE1777 /* MBProgressHUD.framework in Frameworks */,
 				812DDEC51E0AC11C00DE1777 /* MMDrawerController.framework in Frameworks */,
 				812DDEC71E0AC11C00DE1777 /* SDWebImage.framework in Frameworks */,
 				812DDEC81E0AC11C00DE1777 /* SVPullToRefresh.framework in Frameworks */,
+				9ED4662D84EEE722658BBC3A /* Pods_Farmstand_Cart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,27 +540,28 @@
 				E92BF90B24EBBC77002CB596 /* UIKit.framework in Frameworks */,
 				E92BF90C24EBBC77002CB596 /* Foundation.framework in Frameworks */,
 				E92BF90D24EBBC77002CB596 /* CFNetwork.framework in Frameworks */,
-				E92BF90E24EBBC77002CB596 /* Pods_Farmstand_Cart.framework in Frameworks */,
 				E92BF90F24EBBC77002CB596 /* AFNetworking.framework in Frameworks */,
 				E92BF91024EBBC77002CB596 /* MBProgressHUD.framework in Frameworks */,
 				E92BF91124EBBC77002CB596 /* MMDrawerController.framework in Frameworks */,
 				E92BF91224EBBC77002CB596 /* SDWebImage.framework in Frameworks */,
 				E92BF91324EBBC77002CB596 /* SVPullToRefresh.framework in Frameworks */,
+				76714538DDF83DDAC8077DB9 /* Pods_Farmstand_Cart__DEV_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2FC9AE107166021C533C516E /* Pods */ = {
+		06B4E5AB3E349F695BC08531 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				239888C3D9488AD9D9E23A03 /* Pods-FPOS Dev.debug.xcconfig */,
-				87C9812238DD924549F7CE56 /* Pods-FPOS Dev.appstore.xcconfig */,
-				18B0578E21B89A29BFB0613E /* Pods-Farmstand Cart.debug.xcconfig */,
-				1BEC7D13A5B77B3C3C366833 /* Pods-Farmstand Cart.appstore.xcconfig */,
+				67B08AFBD1944595B139EC08 /* Pods-Farmstand Cart.debug.xcconfig */,
+				07C21F483BE85534741FD66B /* Pods-Farmstand Cart.appstore.xcconfig */,
+				2298F6725189D509763AAA39 /* Pods-Farmstand Cart (DEV).debug.xcconfig */,
+				71D0D20CFEF96014EB585C25 /* Pods-Farmstand Cart (DEV).appstore.xcconfig */,
 			);
 			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		8101827C196EAB35009C9E98 /* NumPadView */ = {
@@ -931,7 +932,7 @@
 				81DB781E195C2A860021DE57 /* FarmPOS */,
 				81DB781D195C2A860021DE57 /* Products */,
 				FA8984440C7D47E3A2C8AFD2 /* Frameworks */,
-				2FC9AE107166021C533C516E /* Pods */,
+				06B4E5AB3E349F695BC08531 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1022,8 +1023,8 @@
 				503EB70E197D635A00B86869 /* UIKit.framework */,
 				810FFD4819669F0B00BF652C /* CFNetwork.framework */,
 				810FFD4619669F0400BF652C /* Foundation.framework */,
-				B8B7E037757AE290B9EBD116 /* Pods_FPOS_Dev.framework */,
-				EFE2C3F086060FC12C04E372 /* Pods_Farmstand_Cart.framework */,
+				1C888CEE0E0B0F6CFC0EE4BC /* Pods_Farmstand_Cart.framework */,
+				31FFE7360999CFFC89FF6E61 /* Pods_Farmstand_Cart__DEV_.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1035,11 +1036,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 81DB7833195C2A870021DE57 /* Build configuration list for PBXNativeTarget "Farmstand Cart" */;
 			buildPhases = (
-				FCFBC493F2A915347827D892 /* [CP] Check Pods Manifest.lock */,
+				139A025C4431CF02A8728265 /* [CP] Check Pods Manifest.lock */,
 				81DB7818195C2A860021DE57 /* Sources */,
 				81DB7819195C2A860021DE57 /* Frameworks */,
 				81DB781A195C2A860021DE57 /* Resources */,
-				C091B34384FDBFA6DE982B98 /* [CP] Embed Pods Frameworks */,
+				C64F2A0DC9DDF72E9025F25B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1054,11 +1055,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E92BF93424EBBC77002CB596 /* Build configuration list for PBXNativeTarget "Farmstand Cart (DEV)" */;
 			buildPhases = (
-				E92BF88F24EBBC77002CB596 /* [CP] Check Pods Manifest.lock */,
+				C9D5FD6E874609D08B2CCDC8 /* [CP] Check Pods Manifest.lock */,
 				E92BF89024EBBC77002CB596 /* Sources */,
 				E92BF90124EBBC77002CB596 /* Frameworks */,
 				E92BF91424EBBC77002CB596 /* Resources */,
-				E92BF93324EBBC77002CB596 /* [CP] Embed Pods Frameworks */,
+				8B33FAE4C9FB3E964DDCD2DC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1193,42 +1194,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C091B34384FDBFA6DE982B98 /* [CP] Embed Pods Frameworks */ = {
+		139A025C4431CF02A8728265 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Farmstand Cart/Pods-Farmstand Cart-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/MMDrawerController/MMDrawerController.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SVPullToRefresh/SVPullToRefresh.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMDrawerController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPullToRefresh.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Farmstand Cart/Pods-Farmstand Cart-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E92BF88F24EBBC77002CB596 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Farmstand Cart-checkManifestLockResult.txt",
 			);
@@ -1237,7 +1216,33 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E92BF93324EBBC77002CB596 /* [CP] Embed Pods Frameworks */ = {
+		8B33FAE4C9FB3E964DDCD2DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Farmstand Cart (DEV)/Pods-Farmstand Cart (DEV)-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MMDrawerController/MMDrawerController.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVPullToRefresh/SVPullToRefresh.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMDrawerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPullToRefresh.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Farmstand Cart (DEV)/Pods-Farmstand Cart (DEV)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C64F2A0DC9DDF72E9025F25B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1263,18 +1268,22 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Farmstand Cart/Pods-Farmstand Cart-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FCFBC493F2A915347827D892 /* [CP] Check Pods Manifest.lock */ = {
+		C9D5FD6E874609D08B2CCDC8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Farmstand Cart-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Farmstand Cart (DEV)-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1577,7 +1586,7 @@
 		};
 		81DB7834195C2A870021DE57 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18B0578E21B89A29BFB0613E /* Pods-Farmstand Cart.debug.xcconfig */;
+			baseConfigurationReference = 67B08AFBD1944595B139EC08 /* Pods-Farmstand Cart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1659,7 +1668,7 @@
 		};
 		81FED2391AA30EDA003AC410 /* AppStore */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1BEC7D13A5B77B3C3C366833 /* Pods-Farmstand Cart.appstore.xcconfig */;
+			baseConfigurationReference = 07C21F483BE85534741FD66B /* Pods-Farmstand Cart.appstore.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1684,7 +1693,7 @@
 		};
 		E92BF93524EBBC77002CB596 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18B0578E21B89A29BFB0613E /* Pods-Farmstand Cart.debug.xcconfig */;
+			baseConfigurationReference = 2298F6725189D509763AAA39 /* Pods-Farmstand Cart (DEV).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDEV;
 				CLANG_ENABLE_MODULES = YES;
@@ -1714,7 +1723,7 @@
 		};
 		E92BF93624EBBC77002CB596 /* AppStore */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1BEC7D13A5B77B3C3C366833 /* Pods-Farmstand Cart.appstore.xcconfig */;
+			baseConfigurationReference = 71D0D20CFEF96014EB585C25 /* Pods-Farmstand Cart (DEV).appstore.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDEV;
 				CLANG_ENABLE_MODULES = YES;
