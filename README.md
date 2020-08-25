@@ -7,9 +7,9 @@ iOS front end app
 
 If you want to be sure you'll be able run the app locally, follow these steps. If you don't like this setup (e.g. you want to use a different Xcode version), you can try experimenting with that as well.
 
-1. Install Xcode 11.0
+1. Install Xcode 11.6
 2. Add `libstdc++.6.0.9.tdb` library to Xcode's iPhoneOS and iPhoneSimulator SDKs
-    * `libstdc++.6.0.9.tdb` was removed from Xcode in the Xcode 10 release. That's why you need to add it manually. In order to do that, you can download Xcode 9.4.1 and copy these files into the same locations of Xcode 11.0:
+    * `libstdc++.6.0.9.tdb` was removed from Xcode in the Xcode 10 release. That's why you need to add it manually. In order to do that, you can download Xcode 9.4.1 and copy these files into the same locations of Xcode 11.6:
       * `<path_to_xcode_9.4.1>/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libstdc++.6.0.9.tdb`
       * `<path_to_xcode_9.4.1>/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/lib/libstdc++.6.0.9.tdb`
 3. Install pods
