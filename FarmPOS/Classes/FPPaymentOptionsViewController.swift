@@ -318,8 +318,13 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             vc.balanceSum = balanceSum
             navigationController!.pushViewController(vc, animated: true)
         case 5:
-            // Same as pay later?
-            NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification), object: ["method": 4])
+            // Pay With Balance
+            let notificationParams: [String : Any] = [
+                "method": FPPaymentMethod.balance.rawValue,
+                "sumPaid": FPCartView.sharedCart().checkoutSum
+            ]
+            NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification),
+                                            object: notificationParams)
         case 6:
             // Pay later
             NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification), object: ["method": 4])

@@ -21,6 +21,7 @@ enum FPPaymentMethod : Int {
     case payLater
     case giftCard
     case cancelled
+    case balance
     
     func toString() -> String {
         switch self {
