@@ -64,7 +64,7 @@ class FPProductsViewController: FPRotationViewController, UITableViewDelegate, U
     }
     
     @objc func optionsPressed() {
-        let actionSheet = UIActionSheet(title: "Choose option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Create New Product", "Scan barcode", "Notifications")
+        let actionSheet = UIActionSheet(title: "Choose option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Create New Product", "Scan barcode")
         actionSheet.tag = 1
         actionSheet.show(in: self.view)
     }
@@ -262,9 +262,6 @@ class FPProductsViewController: FPRotationViewController, UITableViewDelegate, U
                     _ = self.navigationController?.popViewController(animated: true)
                 }
             })
-            self.navigationController?.pushViewController(vc, animated: true)
-        } else if title == "notifications" {
-            let vc = FPTriggerAlertsViewController.triggerAlertsViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         } else if title == "create new product" {
             self.view.endEditing(true)

@@ -52,7 +52,6 @@ let kNotesAdd           = "product_note_create/"
 let kNotesDelete        = "product_note_delete/"
 let kProductNotes       = "product_note_display/"
 let kInventoryAdd       = "product_inventory_add/"
-let kTriggerAlerts      = "trigger_alerts/"
 var kInventoryHistory   = "inventory_history/"
 var kInventoryHistoryDelete   = "inventory_history_delete/"
 
@@ -1634,37 +1633,6 @@ class FPServer : AFHTTPSessionManager {
         }
         
         self.post(kInventoryAdd, parameters: params, success: success, failure: failure)
-    }
-    
-    func triggerAlertsForPage(_ page: Int, completion: @escaping (_ errMsg: String?, _ alerts: [FPTriggerAlert]?, _ nextPage: Int?) -> Void) {
-        
-        let params = ["page": page]
-        
-        let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
-            
-            var errors: String? = kInternalError
-            var nextPage: Int?
-            var triggerAlerts = [FPTriggerAlert]()
-            
-            if let r = responseObject as? NSDictionary {
-                if r["status"] as! Bool {
-                    for info in r["trigger_alerts"] as! Array<NSDictionary> {
-                        triggerAlerts.append(FPModelParser.triggerAlertWithInfo(info))
-                    }
-                    nextPage = r["next_page"] as? Int
-                }
-                errors = self.errors(r["errors"])
-            }
-            
-            completion(errors, triggerAlerts, nextPage)
-        }
-        
-        let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
-            let errors = self.errors(error)
-            completion(errors, nil, nil)
-        }
-        
-        self.get(kTriggerAlerts, parameters: params, success: success, failure: failure)
     }
     
     func inventoryProductHistoryItemsForPage(_ page: Int, product: FPProduct, completion: @escaping (_ errMsg: String?, _ historyItems: [FPInventoryProductHistory]?, _ nextPage: Int?) -> Void) {

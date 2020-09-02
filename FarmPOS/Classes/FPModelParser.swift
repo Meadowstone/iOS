@@ -310,25 +310,6 @@ class FPModelParser {
         return info as NSDictionary
     }
     
-    class func triggerAlertWithInfo(_ info: NSDictionary) -> FPTriggerAlert {
-        let id = info["id"] as! Int
-        let triggerAmount = info["trigger_amount"] as! Double
-        let dateString = info["date"] as! String
-        
-        let df = DateFormatter()
-        df.timeZone = TimeZone(abbreviation: "UTC")
-        df.dateFormat = "dd-MM-yyyy'T'HH:mm:ss"
-        
-        let date = df.date(from: dateString)!
-        
-//        var products = FPProduct.allProducts()!.filter({ $0.id == info["product_id"] as! Int})
-//        let product = products[0]
-        
-        let product = self.productWithInfo(info["product"] as! NSDictionary)
-        
-        return FPTriggerAlert(id: id, date: date, triggerAmount: triggerAmount, product: product)
-    }
-    
     class func inventoryProductHistoryWithInfo(_ info: NSDictionary) -> FPInventoryProductHistory {
         let id = info["id"] as! Int
         let amount = info["amount"] as! Double
