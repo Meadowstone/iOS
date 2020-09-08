@@ -11,6 +11,7 @@ import Stripe
 
 class CreditCardProcessor {
     static let shared = CreditCardProcessor()
+    private var customerContext: STPCustomerContext?
     
     func initialize() {
         #if Devbuild
@@ -18,5 +19,9 @@ class CreditCardProcessor {
         #else
         Stripe.setDefaultPublishableKey("pk_live_kiMVjsyb2V1IyM9br7Ylnj5b")
         #endif
+    }
+    
+    func customerLoggedIn() {
+        customerContext = STPCustomerContext(keyProvider: FPServer.sharedInstance)
     }
 }

@@ -1788,7 +1788,7 @@ extension FPServer: STPCustomerEphemeralKeyProvider {
         let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
             completion(nil, error)
         }
-        
+        // STRIPE TODO: check if any means of identification is sent along this request (session id, token, user id...)
         self.post(kCreateCustomerEphemeralKey, parameters: params, success: success, failure: failure)
     }
     

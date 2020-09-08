@@ -113,6 +113,7 @@ class FPCustomerLoginViewController: FPRotationViewController, UIPopoverControll
     
     func customerAuthenticated(_ customer: FPCustomer?) {
         FPCustomer.setActiveCustomer(customer)
+        CreditCardProcessor.shared.customerLoggedIn()
         let vc = FPProductsAndCartViewController.productsAndCartViewController()
         let nc = UINavigationController(rootViewController: vc)
         FPAppDelegate.instance().window!.rootViewController = nc
