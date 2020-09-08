@@ -17,10 +17,12 @@ class FPInventoryProductHistoryViewController: FPRotationViewController, UITable
     var historyItems = [FPInventoryProductHistory]()
     var dateFormatter: DateFormatter!
     var product: FPProduct!
+    var historyUpdated: (() -> Void)!
     
-    class func inventoryProductHistoryViewControllerForProduct(_ product: FPProduct) -> FPInventoryProductHistoryViewController {
+    class func inventoryProductHistoryViewControllerForProduct(_ product: FPProduct, historyUpdated: @escaping () -> Void) -> FPInventoryProductHistoryViewController {
         let vc = FPInventoryProductHistoryViewController()
         vc.product = product
+        vc.historyUpdated = historyUpdated
         return vc
     }
     
@@ -77,6 +79,7 @@ class FPInventoryProductHistoryViewController: FPRotationViewController, UITable
                     }
                     self.historyItems.removeAll(keepingCapacity: false)
                     self.tableView.reloadData()
+                    self.historyUpdated()
                     _ = self.navigationController?.popViewController(animated: true)
                 }
             })
@@ -136,6 +139,7 @@ class FPInventoryProductHistoryViewController: FPRotationViewController, UITable
                     }
                     self.historyItems.remove(at: indexPath.row)
                     self.tableView.reloadData()
+                    self.historyUpdated()
                 }
             })
         }
