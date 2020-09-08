@@ -37,15 +37,8 @@ class FPAppDelegate: UIApplication, UIApplicationDelegate, UIAlertViewDelegate {
         
         print("Hello".count)
         
-        if #available(iOS 10.0, *) {
-            let center = UNUserNotificationCenter.current()
-            center.requestAuthorization(options:[.badge, .alert]) { (granted, error) in
-                
-            }
-        } else {
-            let settings = UIUserNotificationSettings(types: [.sound, .alert], categories: nil)
-            application.registerUserNotificationSettings(settings)
-        }
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options:[.badge, .alert]) { _, _ in }
         application.registerForRemoteNotifications()
         
         _ = FPCardFlightManager.sharedInstance
