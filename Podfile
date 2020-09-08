@@ -1,4 +1,4 @@
-platform :ios, '8.0'
+platform :ios, '10.0'
 use_frameworks!
 inhibit_all_warnings!
 
@@ -9,6 +9,7 @@ def pods_to_add
     pod 'SDWebImage', '3.7.3'
     pod 'SVPullToRefresh', '0.4.1'
     pod 'CardFlight', '2.0.6'
+    pod 'Stripe'
 end
 
 target 'Farmstand Cart' do
