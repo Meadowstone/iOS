@@ -8,6 +8,7 @@
 
 import Foundation
 import AFNetworking
+import Stripe
 
 let kInternalError = "Internal server error"
 
@@ -68,6 +69,8 @@ let kCardflightLogin       = "cardflight_login/"
 let kCashCheckSummary = "cash_check_summary/"
 let kCashCheckSummarySet = "cash_check_summary_set/"
 
+// Credit card processing
+let kCreateCustomerEphemeralKey = "ephemeral_keys" // STRIPE TODO: change to real value when implemented on backend
 
 class FPServer : AFHTTPSessionManager {
     
@@ -1768,6 +1771,25 @@ class FPServer : AFHTTPSessionManager {
             completion(errors)
         }
         self.post(kCashCheckSummarySet, parameters: params, success: success, failure: failure)
+    }
+    
+}
+
+extension FPServer: STPCustomerEphemeralKeyProvider {
+    
+    func createCustomerKey(withAPIVersion apiVersion: String, completion: @escaping STPJSONResponseCompletionBlock) {
+        var params = [String : Any]()
+        params["api_version"] = apiVersion
+        
+        let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
+            completion(responseObject as? [AnyHashable : Any], nil)
+        }
+        
+        let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
+            completion(nil, error)
+        }
+        
+        self.post(kCreateCustomerEphemeralKey, parameters: params, success: success, failure: failure)
     }
     
 }
