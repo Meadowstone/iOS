@@ -39,6 +39,7 @@ class FPAppDelegate: UIApplication, UIApplicationDelegate, UIAlertViewDelegate {
         application.registerForRemoteNotifications()
         
         _ = FPCardFlightManager.sharedInstance
+        CreditCardProcessor.shared.initialize()
         FPCustomLogger.startLogWrite("===== session started")
         
         // Setup
