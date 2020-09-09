@@ -6,12 +6,14 @@
 //  Copyright © 2020 Eugene Reshetov. All rights reserved.
 //
 
-import Foundation
+import UIKit // STRIPE TODO: ok to use UIKit in this layer?
 import Stripe
 
-class CreditCardProcessor {
+class CreditCardProcessor: NSObject {
+    
     static let shared = CreditCardProcessor()
     private var customerContext: STPCustomerContext?
+    private var paymentContext: STPPaymentContext?
     
     func initialize() {
         #if Devbuild
@@ -21,7 +23,41 @@ class CreditCardProcessor {
         #endif
     }
     
-    func customerLoggedIn() {
+    func customerDidLogIn() {
         customerContext = STPCustomerContext(keyProvider: FPServer.sharedInstance)
     }
+    
+    // STRIPE TODO: ok to pass UIKit class into this layer? 
+    func customerDidTapBuyWithCreditCard(from viewController: UIViewController) {
+        guard let customerContext = customerContext else { return }
+        paymentContext = STPPaymentContext(customerContext: customerContext)
+        paymentContext?.delegate = self
+        paymentContext?.hostViewController = viewController
+        // STRIPE TODO: use Apple Pay? then also set paymentAmount. 
+    }
+    
+}
+
+extension CreditCardProcessor: STPPaymentContextDelegate {
+    
+    // STRIPE TODO: figure out what to do here
+    func paymentContextDidChange(_ paymentContext: STPPaymentContext) {
+        
+    }
+    
+    // STRIPE TODO: figure out what to do here
+    func paymentContext(_ paymentContext: STPPaymentContext, didFailToLoadWithError error: Error) {
+        
+    }
+    
+    // STRIPE TODO: figure out what to do here
+    func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPPaymentStatusBlock) {
+        
+    }
+    
+    // STRIPE TODO: figure out what to do here
+    func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
+        
+    }
+    
 }
