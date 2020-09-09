@@ -24,16 +24,17 @@ class CreditCardProcessor: NSObject {
     }
     
     func customerDidLogIn() {
-        customerContext = STPCustomerContext(keyProvider: FPServer.sharedInstance)
+        //customerContext = STPCustomerContext(keyProvider: FPServer.shared) // STRIPE TODO: save credit cards? then use this.
     }
     
     // STRIPE TODO: ok to pass UIKit class into this layer? 
-    func customerDidTapBuyWithCreditCard(from viewController: UIViewController) {
+    func customerDidTapPayWithCreditCard(from viewController: UIViewController) {
         guard let customerContext = customerContext else { return }
         paymentContext = STPPaymentContext(customerContext: customerContext)
         paymentContext?.delegate = self
         paymentContext?.hostViewController = viewController
-        // STRIPE TODO: use Apple Pay? then also set paymentAmount. 
+        // STRIPE TODO: use Apple Pay? then also set paymentAmount.
+        paymentContext?.presentPaymentOptionsViewController() // STRIPE TODO: ok to directly modify UI from this layer?
     }
     
 }
