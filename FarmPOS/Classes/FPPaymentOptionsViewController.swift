@@ -218,7 +218,7 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             if let ac = FPCustomer.activeCustomer() {
                 if FPCurrencyFormatter.intCurrencyRepresentation(FPCartView.sharedCart().sumWithTax) <= FPCurrencyFormatter.intCurrencyRepresentation(ac.balance) {
                     // Balance covers payment entirely
-                    button3.setTitle("Pay With Balance", for: .normal)
+                    button3.setTitle("Pay with Balance", for: .normal)
                     button3.tag = 5
                     button4.isHidden = true
                     button5.isHidden = true
