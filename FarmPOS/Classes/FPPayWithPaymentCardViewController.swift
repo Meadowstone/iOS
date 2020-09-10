@@ -38,9 +38,15 @@ class FPPayWithPaymentCardViewController: UIViewController {
         
         payButton = UIButton()
         payButton.setTitle("Pay", for: .normal)
-        payButton.backgroundColor = .green
+        payButton.backgroundColor = .blue
         payButton.addTarget(self, action: #selector(payTapped), for: .touchUpInside)
         stackView.addArrangedSubview(payButton)
+        
+        let cancelButton = UIButton()
+        cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.backgroundColor = .red
+        cancelButton.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
+        stackView.addArrangedSubview(cancelButton) 
     }
     
     override func viewDidLoad() {
@@ -83,7 +89,11 @@ class FPPayWithPaymentCardViewController: UIViewController {
                 break
             }
         }
-    } 
+    }
+    
+    @objc func cancelTapped() {
+        presentingViewController?.dismiss(animated: true)
+    }
 
 }
 
