@@ -57,6 +57,8 @@ class FPPaymentOptionsViewController: FPRotationViewController {
     var hasCards = false
     var balanceSum : Double = 0.0
     
+    var stripePaymentIntentClientSecret: String? // STRIPE TODO: should this be here or somewhere else?
+    
     @IBAction func payNowPressed(_ sender: AnyObject?) {
         let vc = FPCashCheckViewController.cashCheckViewControllerShowCancel(false)
         navigationController!.pushViewController(vc, animated: true)
@@ -334,6 +336,13 @@ class FPPaymentOptionsViewController: FPRotationViewController {
         case 7:
             // Pay with Payment Card
             //CreditCardProcessor.shared.customerDidTapPayWithCreditCard(from: self) // STRIPE TODO: save cards? then use this
+            
+            // STRIPE TODO: call from here or extract somewhere else?
+            FPServer.sharedInstance.createStripePaymentIntent { [weak self] error, clientSecret in
+                // STRIPE TODO: handle error
+                self?.stripePaymentIntentClientSecret = clientSecret
+            }
+            
             let paymentCardDetailsViewController = FPPaymentCardDetailsViewController()
             present(paymentCardDetailsViewController, animated: true)
         default:

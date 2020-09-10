@@ -69,8 +69,9 @@ let kCardflightLogin       = "cardflight_login/"
 let kCashCheckSummary = "cash_check_summary/"
 let kCashCheckSummarySet = "cash_check_summary_set/"
 
-// Credit card processing
-let kCreateCustomerEphemeralKey = "ephemeral_keys" // STRIPE TODO: change to real value when implemented on backend
+// Payment card processing
+let kCreateCustomerEphemeralKey = "ephemeral_keys" // STRIPE TODO: remove
+let kCreateStripePaymentIntent = "payment_intent/" // STRIPE TODO: change to real value when implemented on backend
 
 class FPServer : AFHTTPSessionManager {
     
@@ -1773,8 +1774,16 @@ class FPServer : AFHTTPSessionManager {
         self.post(kCashCheckSummarySet, parameters: params, success: success, failure: failure)
     }
     
+    // STRIPE TODO: implement correctly when done on backend  
+    func createStripePaymentIntent(completion: @escaping (_ error: Error?, _ clientSecret: String?) -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            completion(nil, "bla")
+        }
+    }
+    
 }
 
+// STRIPE TODO: remove
 extension FPServer: STPCustomerEphemeralKeyProvider {
     
     func createCustomerKey(withAPIVersion apiVersion: String, completion: @escaping STPJSONResponseCompletionBlock) {
