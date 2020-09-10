@@ -56,7 +56,7 @@ class FPPayWithPaymentCardViewController: UIViewController {
     private func createPaymentIntent() {
         // STRIPE TODO: call from here or extract somewhere else?
         let checkoutSum = FPCartView.sharedCart().checkoutSum
-        FPServer.sharedInstance.createStripePaymentIntent(forAmount: checkoutSum) { [weak self] clientSecret in
+        FPServer.sharedInstance.createStripePaymentIntent(forAmount: checkoutSum * 100) { [weak self] clientSecret in
             guard let clientSecret = clientSecret else {
                 self?.unableToStartPayment?()
                 return
