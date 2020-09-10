@@ -226,7 +226,7 @@ class FPPaymentOptionsViewController: FPRotationViewController {
                         button3.setTitle("Pay Later", for: .normal)
                         button3.tag = 6
                     }
-                    button4.setTitle("Pay with Credit Card", for: .normal)
+                    button4.setTitle("Pay with Credit/Debit Card", for: .normal)
                     button4.tag = 7
                     button5.isHidden = true
                 } else {
@@ -332,15 +332,10 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             // Pay later
             NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification), object: ["method": 4])
         case 7:
-            // Pay with Credit Card
+            // Pay with Payment Card
             //CreditCardProcessor.shared.customerDidTapPayWithCreditCard(from: self) // STRIPE TODO: save cards? then use this
-            let enterCreditCardViewController = STPAddCardViewController()
-            enterCreditCardViewController.delegate = self
-            // STRIPE TODO: fix "Cancel" and "Done" colors, remove ZIP code from input fields
-            
-            let navigationController = UINavigationController()
-            navigationController.viewControllers = [enterCreditCardViewController]
-            present(navigationController, animated: true)
+            let paymentCardDetailsViewController = FPPaymentCardDetailsViewController()
+            present(paymentCardDetailsViewController, animated: true)
         default:
             ()
         }
@@ -486,17 +481,4 @@ extension FPPaymentOptionsViewController : MFMailComposeViewControllerDelegate {
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         self.dismiss(animated: true, completion: nil)
     }
-}
-
-extension FPPaymentOptionsViewController: STPAddCardViewControllerDelegate {
-    
-    func addCardViewControllerDidCancel(_ addCardViewController: STPAddCardViewController) {
-        dismiss(animated: true)
-    }
-    
-    // STRIPE TODO: figure out what to do here
-    func addCardViewController(_ addCardViewController: STPAddCardViewController, didCreatePaymentMethod paymentMethod: STPPaymentMethod, completion: @escaping STPErrorBlock) {
-        
-    }
-    
 }

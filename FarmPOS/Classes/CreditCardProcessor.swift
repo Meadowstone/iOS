@@ -9,6 +9,7 @@
 import UIKit // STRIPE TODO: ok to use UIKit in this layer?
 import Stripe
 
+// STRIPE TODO: rename to PaymentCardProcessor?
 class CreditCardProcessor: NSObject {
     
     static let shared = CreditCardProcessor()

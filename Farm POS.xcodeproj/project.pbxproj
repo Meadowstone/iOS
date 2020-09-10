@@ -315,6 +315,8 @@
 		E92BF93E24EBC81F002CB596 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503EB714197D735D00B86869 /* Images.xcassets */; };
 		E972DD4425079213008E0652 /* CreditCardProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD4325079213008E0652 /* CreditCardProcessor.swift */; };
 		E972DD452507944C008E0652 /* CreditCardProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD4325079213008E0652 /* CreditCardProcessor.swift */; };
+		E972DD47250A2CEC008E0652 /* FPPaymentCardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD46250A2CEC008E0652 /* FPPaymentCardDetailsViewController.swift */; };
+		E972DD48250A2F1F008E0652 /* FPPaymentCardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD46250A2CEC008E0652 /* FPPaymentCardDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -493,6 +495,7 @@
 		E92BF93824EBBC78002CB596 /* FarmstandCartDEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FarmstandCartDEV-Info.plist"; path = "/Users/denismendica/Projects/toptal/Meadowstone Farm/FarmPOS-MobileApp/FarmstandCartDEV-Info.plist"; sourceTree = "<absolute>"; };
 		E92BF93F24F0124A002CB596 /* DataModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DataModel 3.xcdatamodel"; sourceTree = "<group>"; };
 		E972DD4325079213008E0652 /* CreditCardProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardProcessor.swift; sourceTree = "<group>"; };
+		E972DD46250A2CEC008E0652 /* FPPaymentCardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPPaymentCardDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -784,6 +787,7 @@
 				81CCDB9B1B288B8D0072CEB4 /* FPSelectPriceViewController.swift */,
 				81FA71831B3998C000C0CD7D /* FPCashCheckSummaryViewController.swift */,
 				81B63A231B53AA79002E795F /* FPCustomerEditViewController.swift */,
+				E972DD46250A2CEC008E0652 /* FPPaymentCardDetailsViewController.swift */,
 			);
 			name = ProductsAndCart;
 			sourceTree = "<group>";
@@ -1342,6 +1346,7 @@
 				81E95A491B612CC500F95F18 /* FPInventoryProductNote.swift in Sources */,
 				813682CE196F713900BE4E90 /* FPGiftCard.swift in Sources */,
 				813682CC196F6C4500BE4E90 /* FPGiftCardsViewController.swift in Sources */,
+				E972DD47250A2CEC008E0652 /* FPPaymentCardDetailsViewController.swift in Sources */,
 				8141E4461971FF930037FCD0 /* FPScanQRCodeViewController.swift in Sources */,
 				81A3A847196B73B60006C479 /* FPCartHeaderView.swift in Sources */,
 				81DC1D7F1B66DE27002029C8 /* FPNamable.swift in Sources */,
@@ -1455,6 +1460,7 @@
 				E92BF8C124EBBC77002CB596 /* FPInventoryProductNote.swift in Sources */,
 				E92BF8C224EBBC77002CB596 /* FPGiftCard.swift in Sources */,
 				E92BF8C324EBBC77002CB596 /* FPGiftCardsViewController.swift in Sources */,
+				E972DD48250A2F1F008E0652 /* FPPaymentCardDetailsViewController.swift in Sources */,
 				E92BF8C424EBBC77002CB596 /* FPScanQRCodeViewController.swift in Sources */,
 				E92BF8C524EBBC77002CB596 /* FPCartHeaderView.swift in Sources */,
 				E92BF8C624EBBC77002CB596 /* FPNamable.swift in Sources */,
