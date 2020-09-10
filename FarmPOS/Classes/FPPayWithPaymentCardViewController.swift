@@ -8,6 +8,7 @@
 
 import UIKit
 import Stripe
+import MBProgressHUD
 
 class FPPayWithPaymentCardViewController: UIViewController {
     
@@ -73,7 +74,12 @@ class FPPayWithPaymentCardViewController: UIViewController {
         let paymentIntentParams = STPPaymentIntentParams(clientSecret: paymentIntentClientSecret)
         paymentIntentParams.paymentMethodParams = paymentMethodParams
         
+        let progressHud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
+        progressHud?.removeFromSuperViewOnHide = true
+        progressHud?.labelText = "Performing payment..."
+        
         STPPaymentHandler.shared().confirmPayment(withParams: paymentIntentParams, authenticationContext: self) { [weak self] status, paymentIntent, error in
+            progressHud?.hide(false)
             // STRIPE TODO: check if this status handling is ok
             switch status {
             case .failed:
