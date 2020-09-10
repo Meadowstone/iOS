@@ -17,6 +17,8 @@ class FPPayWithPaymentCardViewController: UIViewController {
     
     private var paymentIntentClientSecret: String? // STRIPE TODO: should this be here or somewhere else?
     
+    var paymentSucceeded: (() -> Void)?
+    
     override func loadView() {
         view = UIView()
         view.backgroundColor = .white
@@ -60,7 +62,7 @@ class FPPayWithPaymentCardViewController: UIViewController {
         let paymentIntentParams = STPPaymentIntentParams(clientSecret: paymentIntentClientSecret)
         paymentIntentParams.paymentMethodParams = paymentMethodParams
         
-        STPPaymentHandler.shared().confirmPayment(withParams: paymentIntentParams, authenticationContext: self) { status, paymentIntent, error in
+        STPPaymentHandler.shared().confirmPayment(withParams: paymentIntentParams, authenticationContext: self) { [weak self] status, paymentIntent, error in
             // STRIPE TODO: check if this status handling is ok
             switch status {
             case .failed:
@@ -68,7 +70,9 @@ class FPPayWithPaymentCardViewController: UIViewController {
             case .canceled:
                 FPAlertManager.showMessage(error?.localizedDescription ?? "", withTitle: "Payment canceled")
             case .succeeded:
-                FPAlertManager.showMessage(paymentIntent?.description ?? "", withTitle: "Payment succeeded")
+                //STRIPE TODO: remove this?
+                //FPAlertManager.showMessage(paymentIntent?.description ?? "", withTitle: "Payment succeeded")
+                self?.paymentSucceeded?()
             @unknown default:
                 // STRIPE TODO: decide what to do here
                 break

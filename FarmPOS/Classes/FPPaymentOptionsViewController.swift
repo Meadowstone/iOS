@@ -335,6 +335,15 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             // Pay with Payment Card
             //CreditCardProcessor.shared.customerDidTapPayWithCreditCard(from: self) // STRIPE TODO: save cards? then use this
             let payWithPaymentCardViewController = FPPayWithPaymentCardViewController()
+            payWithPaymentCardViewController.paymentSucceeded = {
+                payWithPaymentCardViewController.dismiss(animated: true)
+                let notificationParams: [String : Any] = [
+                    "method": FPPaymentMethod.paymentCard.rawValue,
+                    "sumPaid": FPCartView.sharedCart().checkoutSum
+                ]
+                NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification),
+                                                object: notificationParams)
+            }
             present(payWithPaymentCardViewController, animated: true)
         default:
             ()

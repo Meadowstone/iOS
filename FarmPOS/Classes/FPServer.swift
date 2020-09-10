@@ -1250,6 +1250,8 @@ class FPServer : AFHTTPSessionManager {
             m = 4
         case .balance:
             m = 5
+        case .paymentCard:
+            m = 14
         default:
             m = 0
         }
