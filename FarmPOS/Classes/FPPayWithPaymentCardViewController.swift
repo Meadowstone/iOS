@@ -18,6 +18,7 @@ class FPPayWithPaymentCardViewController: UIViewController {
     private var paymentIntentClientSecret: String? // STRIPE TODO: should this be here or somewhere else?
     
     var paymentSucceeded: (() -> Void)?
+    var unableToStartPayment: (() -> Void)?
     
     override func loadView() {
         view = UIView()
@@ -48,8 +49,12 @@ class FPPayWithPaymentCardViewController: UIViewController {
     
     private func createPaymentIntent() {
         // STRIPE TODO: call from here or extract somewhere else?
-        FPServer.sharedInstance.createStripePaymentIntent { [weak self] error, clientSecret in
-        // STRIPE TODO: handle error
+        let checkoutSum = FPCartView.sharedCart().checkoutSum
+        FPServer.sharedInstance.createStripePaymentIntent(forAmount: checkoutSum) { [weak self] clientSecret in
+            guard let clientSecret = clientSecret else {
+                self?.unableToStartPayment?()
+                return
+            }
             self?.paymentIntentClientSecret = clientSecret
         }
     }

@@ -335,8 +335,14 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             // Pay with Payment Card
             //CreditCardProcessor.shared.customerDidTapPayWithCreditCard(from: self) // STRIPE TODO: save cards? then use this
             let payWithPaymentCardViewController = FPPayWithPaymentCardViewController()
-            payWithPaymentCardViewController.paymentSucceeded = {
-                payWithPaymentCardViewController.dismiss(animated: true)
+            
+            payWithPaymentCardViewController.unableToStartPayment = { [weak self] in
+                self?.dismiss(animated: true)
+                FPAlertManager.showMessage("Please try again later.", withTitle: "Unable to make card payments at the moment")
+            }
+            
+            payWithPaymentCardViewController.paymentSucceeded = { [weak self] in
+                self?.dismiss(animated: true)
                 let notificationParams: [String : Any] = [
                     "method": FPPaymentMethod.paymentCard.rawValue,
                     "sumPaid": FPCartView.sharedCart().checkoutSum
