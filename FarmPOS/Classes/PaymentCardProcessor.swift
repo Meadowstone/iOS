@@ -51,7 +51,6 @@ class PaymentCardProcessor: NSObject {
         paymentIntentParams.paymentMethodParams = paymentMethodParams
         
         STPPaymentHandler.shared().confirmPayment(withParams: paymentIntentParams, authenticationContext: context) { status, paymentIntent, error in
-            // STRIPE TODO: check if this status handling is ok
             switch status {
             case .failed:
                 completion(.error(message: error?.localizedDescription))
