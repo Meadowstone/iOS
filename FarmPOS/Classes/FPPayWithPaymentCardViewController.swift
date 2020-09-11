@@ -32,7 +32,7 @@ class FPPayWithPaymentCardViewController: UIViewController {
         stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
         paymentCardDetailsField = STPPaymentCardTextField()
-        // STRIPE TODO: remove ZIP field?
+        paymentCardDetailsField.postalCodeEntryEnabled = false
         stackView.addArrangedSubview(paymentCardDetailsField)
         
         payButton = UIButton()
