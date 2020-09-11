@@ -43,7 +43,7 @@ class PaymentCardProcessor: NSObject {
         in context: STPAuthenticationContext,
         completion: @escaping ((PaymentResult) -> Void))
     {
-        guard let paymentIntentClientSecret = paymentIntentClientSecret else { return /* STRIPE TODO: decide what to do here */ }
+        guard let paymentIntentClientSecret = paymentIntentClientSecret else { return }
         
         let paymentMethodParams = STPPaymentMethodParams(card: cardParams, billingDetails: nil, metadata: nil)
         let paymentIntentParams = STPPaymentIntentParams(clientSecret: paymentIntentClientSecret)

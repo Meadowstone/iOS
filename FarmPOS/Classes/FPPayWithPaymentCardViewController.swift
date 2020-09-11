@@ -65,8 +65,6 @@ class FPPayWithPaymentCardViewController: UIViewController {
             progressHud?.hide(false)
             switch paymentResult {
             case .success:
-                //STRIPE TODO: remove this?
-                //FPAlertManager.showMessage(paymentIntent?.description ?? "", withTitle: "Payment succeeded")
                 self?.paymentSucceeded?()
             case .error(message: let message):
                 FPAlertManager.showMessage(message ?? "Unknown error occurred", withTitle: "Payment failed")
