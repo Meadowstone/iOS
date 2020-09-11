@@ -64,10 +64,12 @@ class FPPayWithPaymentCardViewController: UIViewController {
         PaymentCardProcessor.shared.performPayment(with: paymentCardDetailsField.cardParams, in: self) { [weak self] paymentResult in
             progressHud?.hide(false)
             switch paymentResult {
+            case .error(message: let message):
+                FPAlertManager.showMessage(message ?? "Unknown error occurred.", withTitle: "Unable to make payment")
+            case .canceled:
+                break
             case .success:
                 self?.paymentSucceeded?()
-            case .error(message: let message):
-                FPAlertManager.showMessage(message ?? "Unknown error occurred", withTitle: "Payment failed")
             }
         }
     }

@@ -12,6 +12,7 @@ class PaymentCardProcessor: NSObject {
     
     enum PaymentResult {
         case success
+        case canceled
         case error(message: String?)
     }
     
@@ -55,12 +56,10 @@ class PaymentCardProcessor: NSObject {
             case .failed:
                 completion(.error(message: error?.localizedDescription))
             case .canceled:
-//                FPAlertManager.showMessage(error?.localizedDescription ?? "", withTitle: "Payment canceled")
-                break
+                completion(.canceled)
             case .succeeded:
                 completion(.success)
             @unknown default:
-                // STRIPE TODO: decide what to do here
                 break
             }
         }
