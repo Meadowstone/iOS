@@ -51,48 +51,27 @@ class FPPayWithPaymentCardViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        createPaymentIntent()
-    }
-    
-    private func createPaymentIntent() {
-        // STRIPE TODO: call from here or extract somewhere else?
-        let checkoutSum = FPCartView.sharedCart().checkoutSum
-        FPServer.sharedInstance.createStripePaymentIntent(forAmount: checkoutSum * 100) { [weak self] clientSecret in
-            guard let clientSecret = clientSecret else {
+        CreditCardProcessor.shared.createPaymentIntent { [weak self] didSucceed in
+            if !didSucceed {
                 self?.unableToStartPayment?()
-                return
             }
-            self?.paymentIntentClientSecret = clientSecret
         }
     }
     
     @objc func payTapped() {
-        guard let paymentIntentClientSecret = paymentIntentClientSecret else { return /* STRIPE TODO: decide what to do here */ }
-        
-        // STRIPE TODO: should this be done here or somewhere else?
-        let paymentMethodParams = STPPaymentMethodParams(card: paymentCardDetailsField.cardParams, billingDetails: nil, metadata: nil)
-        let paymentIntentParams = STPPaymentIntentParams(clientSecret: paymentIntentClientSecret)
-        paymentIntentParams.paymentMethodParams = paymentMethodParams
-        
         let progressHud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
         progressHud?.removeFromSuperViewOnHide = true
         progressHud?.labelText = "Performing payment..."
         
-        STPPaymentHandler.shared().confirmPayment(withParams: paymentIntentParams, authenticationContext: self) { [weak self] status, paymentIntent, error in
+        CreditCardProcessor.shared.performPayment(with: paymentCardDetailsField.cardParams, in: self) { [weak self] paymentResult in
             progressHud?.hide(false)
-            // STRIPE TODO: check if this status handling is ok
-            switch status {
-            case .failed:
-                FPAlertManager.showMessage(error?.localizedDescription ?? "", withTitle: "Payment failed")
-            case .canceled:
-                FPAlertManager.showMessage(error?.localizedDescription ?? "", withTitle: "Payment canceled")
-            case .succeeded:
+            switch paymentResult {
+            case .success:
                 //STRIPE TODO: remove this?
                 //FPAlertManager.showMessage(paymentIntent?.description ?? "", withTitle: "Payment succeeded")
                 self?.paymentSucceeded?()
-            @unknown default:
-                // STRIPE TODO: decide what to do here
-                break
+            case .error(message: let message):
+                FPAlertManager.showMessage(message ?? "Unknown error occurred", withTitle: "Payment failed")
             }
         }
     }
