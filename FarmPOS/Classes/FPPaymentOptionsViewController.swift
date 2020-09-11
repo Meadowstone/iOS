@@ -131,7 +131,14 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             view.backgroundColor = UIColor.white
         }
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(FPPaymentOptionsViewController.cancelPressed))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "Cancel",
+            style: .plain,
+            target: self,
+            action: #selector(FPPaymentOptionsViewController.cancelPressed)
+        )
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         
         navigationController!.navigationBar.barStyle = .black
         navigationController!.navigationBar.isTranslucent = false
@@ -335,12 +342,12 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             let payWithPaymentCardViewController = FPPayWithPaymentCardViewController()
             
             payWithPaymentCardViewController.unableToStartPayment = { [weak self] in
-                self?.dismiss(animated: true)
+                self?.navigationController?.popViewController(animated: true)
                 FPAlertManager.showMessage("Please try again later.", withTitle: "Unable to make card payments at the moment")
             }
             
             payWithPaymentCardViewController.paymentSucceeded = { [weak self] in
-                self?.dismiss(animated: true)
+                self?.navigationController?.popViewController(animated: true)
                 let notificationParams: [String : Any] = [
                     "method": FPPaymentMethod.paymentCard.rawValue,
                     "sumPaid": FPCartView.sharedCart().checkoutSum
@@ -349,7 +356,7 @@ class FPPaymentOptionsViewController: FPRotationViewController {
                                                 object: notificationParams)
             }
             
-            present(payWithPaymentCardViewController, animated: true)
+            navigationController?.pushViewController(payWithPaymentCardViewController, animated: true)
         default:
             ()
         }

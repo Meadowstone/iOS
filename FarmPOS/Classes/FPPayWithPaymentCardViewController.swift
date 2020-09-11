@@ -21,34 +21,38 @@ class FPPayWithPaymentCardViewController: UIViewController {
     
     override func loadView() {
         view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = FPColorPaymentFlowBackground
         
         stackView = UIStackView()
         stackView.axis = .vertical
+        stackView.spacing = 14
         view.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
         
         paymentCardDetailsField = STPPaymentCardTextField()
         paymentCardDetailsField.postalCodeEntryEnabled = false
         stackView.addArrangedSubview(paymentCardDetailsField)
         
         payButton = UIButton()
+        payButton.setBackgroundImage(UIImage(named: "green_btn"), for: .normal)
         payButton.setTitle("Pay", for: .normal)
-        payButton.backgroundColor = .blue
+        payButton.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 20.0)
         payButton.addTarget(self, action: #selector(payTapped), for: .touchUpInside)
         stackView.addArrangedSubview(payButton)
-        
-        let cancelButton = UIButton()
-        cancelButton.setTitle("Cancel", for: .normal)
-        cancelButton.backgroundColor = .red
-        cancelButton.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
-        stackView.addArrangedSubview(cancelButton) 
+        payButton.translatesAutoresizingMaskIntoConstraints = false
+        payButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
     
     override func viewDidLoad() {
+        title = "Enter card details"
+        paymentCardDetailsField.becomeFirstResponder()
+        createPaymentIntent()
+    }
+    
+    private func createPaymentIntent() {
         PaymentCardProcessor.shared.createPaymentIntent { [weak self] didSucceed in
             if !didSucceed {
                 self?.unableToStartPayment?()
@@ -57,7 +61,7 @@ class FPPayWithPaymentCardViewController: UIViewController {
     }
     
     @objc func payTapped() {
-        let progressHud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
+        let progressHud = MBProgressHUD.showAdded(to: view, animated: false)
         progressHud?.removeFromSuperViewOnHide = true
         progressHud?.labelText = "Performing payment..."
         
@@ -72,10 +76,6 @@ class FPPayWithPaymentCardViewController: UIViewController {
                 self?.paymentSucceeded?()
             }
         }
-    }
-    
-    @objc func cancelTapped() {
-        presentingViewController?.dismiss(animated: true)
     }
 
 }
