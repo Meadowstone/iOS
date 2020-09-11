@@ -8,7 +8,6 @@
 
 import Foundation
 import AFNetworking
-import Stripe
 
 let kInternalError = "Internal server error"
 
@@ -70,7 +69,6 @@ let kCashCheckSummary = "cash_check_summary/"
 let kCashCheckSummarySet = "cash_check_summary_set/"
 
 // Payment card processing
-let kCreateCustomerEphemeralKey = "ephemeral_keys" // STRIPE TODO: remove
 let kCreateStripePaymentIntent = "stripe_create_payment_intent/"
 
 class FPServer : AFHTTPSessionManager {
@@ -1227,6 +1225,23 @@ class FPServer : AFHTTPSessionManager {
         operation?.start()
     }
     
+    func createStripePaymentIntent(forAmount amount: Double, completion: @escaping (_ clientSecret: String?) -> Void) {
+        var params = [String : Any]()
+        params["amount"] = amount
+        params["currency"] = "usd"
+        
+        let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
+            let jsonResponse = responseObject as? [AnyHashable : Any]
+            let clientSecret = jsonResponse?["client_secret"] as? String
+            completion(clientSecret)
+        }
+        
+        let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
+            completion(nil)
+        }
+        self.post(kCreateStripePaymentIntent, parameters: params, success: success, failure: failure)
+    }
+    
     func paymentProcessWithSum(_ sum: Double?, method: FPPaymentMethod, checkNumber: String?, creditCard: FPCreditCard?, transactionToken : String?, last4: String?, completion:@escaping (_ errMsg: String?, _ didSaveOffline: Bool) -> Void) {
         
         var params = Dictionary<String, Any>()
@@ -1774,43 +1789,6 @@ class FPServer : AFHTTPSessionManager {
             completion(errors)
         }
         self.post(kCashCheckSummarySet, parameters: params, success: success, failure: failure)
-    }
-      
-    func createStripePaymentIntent(forAmount amount: Double, completion: @escaping (_ clientSecret: String?) -> Void) {
-        var params = [String : Any]()
-        params["amount"] = amount
-        params["currency"] = "usd"
-        
-        let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
-            let jsonResponse = responseObject as? [AnyHashable : Any]
-            let clientSecret = jsonResponse?["client_secret"] as? String
-            completion(clientSecret)
-        }
-        
-        let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
-            completion(nil)
-        }
-        self.post(kCreateStripePaymentIntent, parameters: params, success: success, failure: failure)
-    }
-    
-}
-
-// STRIPE TODO: remove
-extension FPServer: STPCustomerEphemeralKeyProvider {
-    
-    func createCustomerKey(withAPIVersion apiVersion: String, completion: @escaping STPJSONResponseCompletionBlock) {
-        var params = [String : Any]()
-        params["api_version"] = apiVersion
-        
-        let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
-            completion(responseObject as? [AnyHashable : Any], nil)
-        }
-        
-        let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
-            completion(nil, error)
-        }
-        // STRIPE TODO: check if any means of identification is sent along this request (session id, token, user id...)
-        self.post(kCreateCustomerEphemeralKey, parameters: params, success: success, failure: failure)
     }
     
 }

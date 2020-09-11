@@ -16,8 +16,6 @@ class FPPayWithPaymentCardViewController: UIViewController {
     private var paymentCardDetailsField: STPPaymentCardTextField!
     private var payButton: UIButton!
     
-    private var paymentIntentClientSecret: String? // STRIPE TODO: should this be here or somewhere else?
-    
     var paymentSucceeded: (() -> Void)?
     var unableToStartPayment: (() -> Void)?
     
@@ -51,7 +49,7 @@ class FPPayWithPaymentCardViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        CreditCardProcessor.shared.createPaymentIntent { [weak self] didSucceed in
+        PaymentCardProcessor.shared.createPaymentIntent { [weak self] didSucceed in
             if !didSucceed {
                 self?.unableToStartPayment?()
             }
@@ -63,7 +61,7 @@ class FPPayWithPaymentCardViewController: UIViewController {
         progressHud?.removeFromSuperViewOnHide = true
         progressHud?.labelText = "Performing payment..."
         
-        CreditCardProcessor.shared.performPayment(with: paymentCardDetailsField.cardParams, in: self) { [weak self] paymentResult in
+        PaymentCardProcessor.shared.performPayment(with: paymentCardDetailsField.cardParams, in: self) { [weak self] paymentResult in
             progressHud?.hide(false)
             switch paymentResult {
             case .success:

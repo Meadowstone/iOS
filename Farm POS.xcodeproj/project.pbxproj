@@ -313,8 +313,8 @@
 		E92BF93224EBBC77002CB596 /* FPProductCheckoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101EE90199280280042FBB6 /* FPProductCheckoutCell.xib */; };
 		E92BF93C24EBC641002CB596 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503EB714197D735D00B86869 /* Images.xcassets */; };
 		E92BF93E24EBC81F002CB596 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503EB714197D735D00B86869 /* Images.xcassets */; };
-		E972DD4425079213008E0652 /* CreditCardProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD4325079213008E0652 /* CreditCardProcessor.swift */; };
-		E972DD452507944C008E0652 /* CreditCardProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD4325079213008E0652 /* CreditCardProcessor.swift */; };
+		E972DD4425079213008E0652 /* PaymentCardProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD4325079213008E0652 /* PaymentCardProcessor.swift */; };
+		E972DD452507944C008E0652 /* PaymentCardProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD4325079213008E0652 /* PaymentCardProcessor.swift */; };
 		E972DD47250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD46250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift */; };
 		E972DD48250A2F1F008E0652 /* FPPayWithPaymentCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD46250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift */; };
 /* End PBXBuildFile section */
@@ -494,7 +494,7 @@
 		E92BF93724EBBC77002CB596 /* Farmstand Cart (DEV).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmstand Cart (DEV).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92BF93824EBBC78002CB596 /* FarmstandCartDEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FarmstandCartDEV-Info.plist"; path = "/Users/denismendica/Projects/toptal/Meadowstone Farm/FarmPOS-MobileApp/FarmstandCartDEV-Info.plist"; sourceTree = "<absolute>"; };
 		E92BF93F24F0124A002CB596 /* DataModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DataModel 3.xcdatamodel"; sourceTree = "<group>"; };
-		E972DD4325079213008E0652 /* CreditCardProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardProcessor.swift; sourceTree = "<group>"; };
+		E972DD4325079213008E0652 /* PaymentCardProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardProcessor.swift; sourceTree = "<group>"; };
 		E972DD46250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPPayWithPaymentCardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -614,7 +614,7 @@
 				81199D48195C3B0400BE139D /* FPServer.swift */,
 				8157106619781C3300F184D0 /* main.swift */,
 				9FEC404919B9D62C003AB29A /* FPCardFlightManager.swift */,
-				E972DD4325079213008E0652 /* CreditCardProcessor.swift */,
+				E972DD4325079213008E0652 /* PaymentCardProcessor.swift */,
 			);
 			name = Singletons;
 			sourceTree = "<group>";
@@ -1390,7 +1390,7 @@
 				81199D3D195C313F00BE139D /* FPAppDelegate.swift in Sources */,
 				81BB47EB198FB327003A3DEE /* FPCartViewController.swift in Sources */,
 				81F452741E11632800A583D3 /* FPCDPurchase+CoreDataProperties.swift in Sources */,
-				E972DD4425079213008E0652 /* CreditCardProcessor.swift in Sources */,
+				E972DD4425079213008E0652 /* PaymentCardProcessor.swift in Sources */,
 				50EA292C197E71580024B299 /* FPPaymentConfirmViewController.swift in Sources */,
 				81FF080E196C28660046457A /* FPCartCell.swift in Sources */,
 				81D23F881966B66A00A330E0 /* FPCustomerCreateViewController.swift in Sources */,
@@ -1504,7 +1504,7 @@
 				E92BF8ED24EBBC77002CB596 /* FPAppDelegate.swift in Sources */,
 				E92BF8EF24EBBC77002CB596 /* FPCartViewController.swift in Sources */,
 				E92BF8F024EBBC77002CB596 /* FPCDPurchase+CoreDataProperties.swift in Sources */,
-				E972DD452507944C008E0652 /* CreditCardProcessor.swift in Sources */,
+				E972DD452507944C008E0652 /* PaymentCardProcessor.swift in Sources */,
 				E92BF8F124EBBC77002CB596 /* FPPaymentConfirmViewController.swift in Sources */,
 				E92BF8F224EBBC77002CB596 /* FPCartCell.swift in Sources */,
 				E92BF8F324EBBC77002CB596 /* FPCustomerCreateViewController.swift in Sources */,

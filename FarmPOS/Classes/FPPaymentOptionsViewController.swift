@@ -9,7 +9,6 @@
 import UIKit
 import MessageUI
 import MBProgressHUD
-import Stripe // STRIPE TODO: is this still needed?
 
 // FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
 // Consider refactoring the code to use the non-optional operators.
@@ -333,7 +332,6 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification), object: ["method": 4])
         case 7:
             // Pay with Payment Card
-            //CreditCardProcessor.shared.customerDidTapPayWithCreditCard(from: self) // STRIPE TODO: save cards? then use this
             let payWithPaymentCardViewController = FPPayWithPaymentCardViewController()
             
             payWithPaymentCardViewController.unableToStartPayment = { [weak self] in
@@ -350,6 +348,7 @@ class FPPaymentOptionsViewController: FPRotationViewController {
                 NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification),
                                                 object: notificationParams)
             }
+            
             present(payWithPaymentCardViewController, animated: true)
         default:
             ()
