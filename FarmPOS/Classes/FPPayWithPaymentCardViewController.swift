@@ -80,7 +80,7 @@ class FPPayWithPaymentCardViewController: UIViewController {
             progressHud?.hide(false)
             switch paymentResult {
             case .canceled:
-                break
+                FPAlertManager.showMessage("Your card was not charged.", withTitle: "Payment canceled")
             case .error(message: let message):
                 FPAlertManager.showMessage(message ?? "Unknown error occurred.", withTitle: "Unable to make payment")
             case .success:
