@@ -1,5 +1,5 @@
 //
-//  FPPaymentCardDetailsViewController.swift
+//  FPPayWithPaymentCardViewController.swift
 //  Farmstand Cart
 //
 //  Created by Denis Mendica on 10/09/2020.
@@ -16,13 +16,19 @@ class FPPayWithPaymentCardViewController: UIViewController {
     private var paymentCardDetailsField: STPPaymentCardTextField!
     private var payButton: UIButton!
     
-    var paymentSucceeded: (() -> Void)?
     var unableToStartPayment: (() -> Void)?
+    var paymentSucceeded: (() -> Void)?
     
     override func loadView() {
         view = UIView()
         view.backgroundColor = FPColorPaymentFlowBackground
         
+        createStackView()
+        createPaymentCardDetailsField()
+        createPayButton()
+    }
+    
+    private func createStackView() {
         stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 14
@@ -31,11 +37,15 @@ class FPPayWithPaymentCardViewController: UIViewController {
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-        
+    }
+    
+    private func createPaymentCardDetailsField() {
         paymentCardDetailsField = STPPaymentCardTextField()
         paymentCardDetailsField.postalCodeEntryEnabled = false
         stackView.addArrangedSubview(paymentCardDetailsField)
-        
+    }
+    
+    private func createPayButton() {
         payButton = UIButton()
         payButton.setBackgroundImage(UIImage(named: "green_btn"), for: .normal)
         payButton.setTitle("Pay", for: .normal)
@@ -53,14 +63,15 @@ class FPPayWithPaymentCardViewController: UIViewController {
     }
     
     private func createPaymentIntent() {
-        PaymentCardProcessor.shared.createPaymentIntent { [weak self] didSucceed in
+        let checkoutSum = FPCartView.sharedCart().checkoutSum
+        PaymentCardProcessor.shared.createPaymentIntent(forCheckoutSum: checkoutSum) { [weak self] didSucceed in
             if !didSucceed {
                 self?.unableToStartPayment?()
             }
         }
     }
     
-    @objc func payTapped() {
+    @objc private func payTapped() {
         let progressHud = MBProgressHUD.showAdded(to: view, animated: false)
         progressHud?.removeFromSuperViewOnHide = true
         progressHud?.labelText = "Performing payment..."
@@ -68,10 +79,10 @@ class FPPayWithPaymentCardViewController: UIViewController {
         PaymentCardProcessor.shared.performPayment(with: paymentCardDetailsField.cardParams, in: self) { [weak self] paymentResult in
             progressHud?.hide(false)
             switch paymentResult {
-            case .error(message: let message):
-                FPAlertManager.showMessage(message ?? "Unknown error occurred.", withTitle: "Unable to make payment")
             case .canceled:
                 break
+            case .error(message: let message):
+                FPAlertManager.showMessage(message ?? "Unknown error occurred.", withTitle: "Unable to make payment")
             case .success:
                 self?.paymentSucceeded?()
             }

@@ -1239,6 +1239,7 @@ class FPServer : AFHTTPSessionManager {
         let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
             completion(nil)
         }
+        
         self.post(kCreateStripePaymentIntent, parameters: params, success: success, failure: failure)
     }
     
