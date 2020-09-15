@@ -12,7 +12,6 @@ import MBProgressHUD
 
 class FPPayWithPaymentCardViewController: UIViewController {
     
-    private var stackView: UIStackView!
     private var paymentCardDetailsField: STPPaymentCardTextField!
     private var payButton: UIButton!
     
@@ -23,26 +22,18 @@ class FPPayWithPaymentCardViewController: UIViewController {
         view = UIView()
         view.backgroundColor = FPColorPaymentFlowBackground
         
-        createStackView()
         createPaymentCardDetailsField()
         createPayButton()
-    }
-    
-    private func createStackView() {
-        stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 14
-        view.addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
     }
     
     private func createPaymentCardDetailsField() {
         paymentCardDetailsField = STPPaymentCardTextField()
         paymentCardDetailsField.postalCodeEntryEnabled = false
-        stackView.addArrangedSubview(paymentCardDetailsField)
+        view.addSubview(paymentCardDetailsField)
+        paymentCardDetailsField.translatesAutoresizingMaskIntoConstraints = false
+        paymentCardDetailsField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        paymentCardDetailsField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        paymentCardDetailsField.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
     }
     
     private func createPayButton() {
@@ -51,8 +42,11 @@ class FPPayWithPaymentCardViewController: UIViewController {
         payButton.setTitle("Pay", for: .normal)
         payButton.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 20.0)
         payButton.addTarget(self, action: #selector(payTapped), for: .touchUpInside)
-        stackView.addArrangedSubview(payButton)
+        view.addSubview(payButton)
         payButton.translatesAutoresizingMaskIntoConstraints = false
+        payButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        payButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        payButton.topAnchor.constraint(equalTo: paymentCardDetailsField.bottomAnchor, constant: 14).isActive = true
         payButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
     
