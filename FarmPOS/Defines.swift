@@ -12,6 +12,7 @@ let FPColorGreen                    = UIColor(red: 98.0 / 255.0, green: 125.0 / 
 let FPColorDarkGray                 = UIColor(red: 71.0 / 255.0, green: 71.0 / 255.0, blue: 71.0 / 255.0, alpha: 1)
 let FPColorRed                      = UIColor(red: 204.0 / 255.0, green: 55.0 / 255.0, blue: 55.0 / 255.0, alpha: 1)
 let FPColorPaymentFlowBackground    = UIColor(red: 233.0/255.0, green: 235.0/255.0, blue: 229.0/255.0, alpha: 1)
+let FPColorPaymentFlowMessage       = UIColor(red: 71.0/255.0, green: 71.0/255.0, blue: 71.0/255.0, alpha: 1)
 
 let popoverWidth: CGFloat = 640.0
 

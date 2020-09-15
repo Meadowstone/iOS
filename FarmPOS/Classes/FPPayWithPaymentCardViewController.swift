@@ -14,6 +14,7 @@ class FPPayWithPaymentCardViewController: UIViewController {
     
     private var paymentCardDetailsField: STPPaymentCardTextField!
     private var payButton: UIButton!
+    private var processedByStripeLabel: UILabel!
     
     var unableToStartPayment: (() -> Void)?
     var paymentSucceeded: (() -> Void)?
@@ -24,6 +25,7 @@ class FPPayWithPaymentCardViewController: UIViewController {
         
         createPaymentCardDetailsField()
         createPayButton()
+        createProcessedByStripeLabel()
     }
     
     private func createPaymentCardDetailsField() {
@@ -48,6 +50,18 @@ class FPPayWithPaymentCardViewController: UIViewController {
         payButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         payButton.topAnchor.constraint(equalTo: paymentCardDetailsField.bottomAnchor, constant: 14).isActive = true
         payButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+    }
+    
+    private func createProcessedByStripeLabel() {
+        processedByStripeLabel = UILabel()
+        processedByStripeLabel.text = "Your card details will be processed by Stripe."
+        processedByStripeLabel.font = UIFont(name: "HelveticaNeue-Light", size: 22.0)
+        processedByStripeLabel.textColor = FPColorPaymentFlowMessage
+        view.addSubview(processedByStripeLabel)
+        processedByStripeLabel.translatesAutoresizingMaskIntoConstraints = false
+        processedByStripeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        processedByStripeLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        processedByStripeLabel.topAnchor.constraint(equalTo: payButton.bottomAnchor, constant: 14).isActive = true
     }
     
     override func viewDidLoad() {
