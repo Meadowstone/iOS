@@ -45,9 +45,6 @@ let FPUserLoginStatusChanged = "FPUserLoginStatusChanged"
 let FPTransactionOrOrderProcessingNotification = "FPTransactionOrOrderProcessingNotification"
 let FPCustomerAuthenticatedNotification = "FPCustomerAuthenticatedNotification"
 
-// Cardflight-related
-let FPReaderStatusChangedNotification = "FPReaderStatusChangedNotification"
-
 //MARK: User Defaults
 let FPDatabaseSyncDateUserDefaultsKey = "FPDatabaseSyncDateUserDefaultsKey"
 let FPDatabaseSyncDateStringUserDefaultsKey = "FPDatabaseSyncDateStringUserDefaultsKey"

@@ -222,11 +222,6 @@ class FPPaymentOptionsViewController: FPRotationViewController {
         }
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: FPReaderStatusChangedNotification), object: nil)
-        super.viewDidDisappear(animated)
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if !self.balancePayment {
