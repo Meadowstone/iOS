@@ -156,7 +156,6 @@
 		81FF080E196C28660046457A /* FPCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FF080D196C28660046457A /* FPCartCell.swift */; };
 		81FF0810196C28830046457A /* FPCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81FF080F196C28830046457A /* FPCartCell.xib */; };
 		9ED4662D84EEE722658BBC3A /* Pods_Farmstand_Cart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C888CEE0E0B0F6CFC0EE4BC /* Pods_Farmstand_Cart.framework */; };
-		9F659EF61C1F24DC005F0FF6 /* FPCustomLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F659EF51C1F24DC005F0FF6 /* FPCustomLogger.swift */; };
 		E92BF89124EBBC77002CB596 /* FPProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB47ED198FC673003A3DEE /* FPProductsViewController.swift */; };
 		E92BF89224EBBC77002CB596 /* FPRetailLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444852ED199246DF00A1F87C /* FPRetailLocation.swift */; };
 		E92BF89324EBBC77002CB596 /* FPRedeemGiftCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E4431971F2540037FCD0 /* FPRedeemGiftCardViewController.swift */; };
@@ -229,7 +228,6 @@
 		E92BF8DC24EBBC77002CB596 /* FPSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179D439198F8B2C00B49FC3 /* FPSyncManager.swift */; };
 		E92BF8DD24EBBC77002CB596 /* FPPayNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EB712197D67C300B86869 /* FPPayNowViewController.swift */; };
 		E92BF8DE24EBBC77002CB596 /* UIView+FirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813237FD19617DE300461B74 /* UIView+FirstResponder.swift */; };
-		E92BF8DF24EBBC77002CB596 /* FPCustomLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F659EF51C1F24DC005F0FF6 /* FPCustomLogger.swift */; };
 		E92BF8E024EBBC77002CB596 /* FPCDCustomer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F452581E1161B200A583D3 /* FPCDCustomer+CoreDataClass.swift */; };
 		E92BF8E124EBBC77002CB596 /* FPProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC7C1967756F00587E50 /* FPProduct.swift */; };
 		E92BF8E324EBBC77002CB596 /* FPGiftCardOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682C0196F575B00BE4E90 /* FPGiftCardOptionsViewController.swift */; };
@@ -480,7 +478,6 @@
 		81FB1968198BA4FB00FF6815 /* FPMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPMenuViewController.swift; sourceTree = "<group>"; };
 		81FF080D196C28660046457A /* FPCartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCartCell.swift; sourceTree = "<group>"; };
 		81FF080F196C28830046457A /* FPCartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPCartCell.xib; sourceTree = "<group>"; };
-		9F659EF51C1F24DC005F0FF6 /* FPCustomLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCustomLogger.swift; sourceTree = "<group>"; };
 		E92BF93724EBBC77002CB596 /* Farmstand Cart (DEV).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmstand Cart (DEV).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92BF93824EBBC78002CB596 /* FarmstandCartDEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FarmstandCartDEV-Info.plist"; path = "/Users/denismendica/Projects/toptal/Meadowstone Farm/FarmPOS-MobileApp/FarmstandCartDEV-Info.plist"; sourceTree = "<absolute>"; };
 		E92BF93F24F0124A002CB596 /* DataModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DataModel 3.xcdatamodel"; sourceTree = "<group>"; };
@@ -822,7 +819,6 @@
 		816F3DD2195C76B800005F14 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				9F659EF51C1F24DC005F0FF6 /* FPCustomLogger.swift */,
 				8115CDE7195D90E800C51C83 /* FPStoryboardManager.swift */,
 				816F3DD3195C76D100005F14 /* FPAlertManager.swift */,
 				81A3A84D196BF99B0006C479 /* FPCurrencyFormatter.swift */,
@@ -1359,7 +1355,6 @@
 				8179D43A198F8B2C00B49FC3 /* FPSyncManager.swift in Sources */,
 				503EB713197D67C300B86869 /* FPPayNowViewController.swift in Sources */,
 				813237FE19617DE300461B74 /* UIView+FirstResponder.swift in Sources */,
-				9F659EF61C1F24DC005F0FF6 /* FPCustomLogger.swift in Sources */,
 				81F4525A1E1161B200A583D3 /* FPCDCustomer+CoreDataClass.swift in Sources */,
 				81A1CC7D1967756F00587E50 /* FPProduct.swift in Sources */,
 				813682C1196F575B00BE4E90 /* FPGiftCardOptionsViewController.swift in Sources */,
@@ -1470,7 +1465,6 @@
 				E92BF8DC24EBBC77002CB596 /* FPSyncManager.swift in Sources */,
 				E92BF8DD24EBBC77002CB596 /* FPPayNowViewController.swift in Sources */,
 				E92BF8DE24EBBC77002CB596 /* UIView+FirstResponder.swift in Sources */,
-				E92BF8DF24EBBC77002CB596 /* FPCustomLogger.swift in Sources */,
 				E92BF8E024EBBC77002CB596 /* FPCDCustomer+CoreDataClass.swift in Sources */,
 				E92BF8E124EBBC77002CB596 /* FPProduct.swift in Sources */,
 				E92BF8E324EBBC77002CB596 /* FPGiftCardOptionsViewController.swift in Sources */,

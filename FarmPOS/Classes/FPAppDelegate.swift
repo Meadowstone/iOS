@@ -39,7 +39,6 @@ class FPAppDelegate: UIApplication, UIApplicationDelegate, UIAlertViewDelegate {
         application.registerForRemoteNotifications()
         
         PaymentCardProcessor.shared.initialize()
-        FPCustomLogger.startLogWrite("===== session started")
         
         // Setup
         application.isIdleTimerDisabled = true
