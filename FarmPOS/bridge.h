@@ -17,7 +17,5 @@
 //#import <SDWebImage/SDWebImageManager.h>
 //#import <MMDrawerController/MMDrawerController.h>
 //#import <MMDrawerController/MMDrawerBarButtonItem.h>
-//#import <CardFlight/CardFlight.h>
-#import "FPReader.h"
 
 #endif

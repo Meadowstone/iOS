@@ -107,7 +107,6 @@
 		81A3A84B196B7B0B0006C479 /* FPCartProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3A84A196B7B0B0006C479 /* FPCartProduct.swift */; };
 		81A3A84E196BF99B0006C479 /* FPCurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3A84D196BF99B0006C479 /* FPCurrencyFormatter.swift */; };
 		81A9F1031B8CBEA700CA548C /* FPRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A9F1021B8CBEA700CA548C /* FPRotationViewController.swift */; };
-		81A9FC4419AFB95400CCAD37 /* FPReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A9FC4319AFB95400CCAD37 /* FPReader.m */; };
 		81ADF35A1B172A360092A9FD /* FPProductCategoriesFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81ADF3591B172A360092A9FD /* FPProductCategoriesFooterView.xib */; };
 		81B63A241B53AA79002E795F /* FPCustomerEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B63A231B53AA79002E795F /* FPCustomerEditViewController.swift */; };
 		81B63A281B556455002E795F /* FPProductCategoryTax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B63A271B556455002E795F /* FPProductCategoryTax.swift */; };
@@ -158,7 +157,6 @@
 		81FF0810196C28830046457A /* FPCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81FF080F196C28830046457A /* FPCartCell.xib */; };
 		9ED4662D84EEE722658BBC3A /* Pods_Farmstand_Cart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C888CEE0E0B0F6CFC0EE4BC /* Pods_Farmstand_Cart.framework */; };
 		9F659EF61C1F24DC005F0FF6 /* FPCustomLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F659EF51C1F24DC005F0FF6 /* FPCustomLogger.swift */; };
-		9FEC404A19B9D62C003AB29A /* FPCardFlightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC404919B9D62C003AB29A /* FPCardFlightManager.swift */; };
 		E92BF89124EBBC77002CB596 /* FPProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB47ED198FC673003A3DEE /* FPProductsViewController.swift */; };
 		E92BF89224EBBC77002CB596 /* FPRetailLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444852ED199246DF00A1F87C /* FPRetailLocation.swift */; };
 		E92BF89324EBBC77002CB596 /* FPRedeemGiftCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E4431971F2540037FCD0 /* FPRedeemGiftCardViewController.swift */; };
@@ -168,7 +166,6 @@
 		E92BF89824EBBC77002CB596 /* FPChoiceOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F463C1966DF75007A009E /* FPChoiceOverlayView.swift */; };
 		E92BF89924EBBC77002CB596 /* FPInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB47F71990F803003A3DEE /* FPInputValidator.swift */; };
 		E92BF89A24EBBC77002CB596 /* FPCheckoutHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81510736197988E200AFC491 /* FPCheckoutHeaderView.swift */; };
-		E92BF89B24EBBC77002CB596 /* FPCardFlightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC404919B9D62C003AB29A /* FPCardFlightManager.swift */; };
 		E92BF89D24EBBC77002CB596 /* FPPaymentOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EB710197D66E800B86869 /* FPPaymentOptionsViewController.swift */; };
 		E92BF89E24EBBC77002CB596 /* FPAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F3DD3195C76D100005F14 /* FPAlertManager.swift */; };
 		E92BF89F24EBBC77002CB596 /* FPCustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157106B1978238600F184D0 /* FPCustomerCell.swift */; };
@@ -255,7 +252,6 @@
 		E92BF8F624EBBC77002CB596 /* FPCurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3A84D196BF99B0006C479 /* FPCurrencyFormatter.swift */; };
 		E92BF8F724EBBC77002CB596 /* FPTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DD91D41977DC810056754B /* FPTransactionCell.swift */; };
 		E92BF8F824EBBC77002CB596 /* FPUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812ED2B3195CEFEC008F178C /* FPUser.swift */; };
-		E92BF8F924EBBC77002CB596 /* FPReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A9FC4319AFB95400CCAD37 /* FPReader.m */; };
 		E92BF8FA24EBBC77002CB596 /* FPOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E45D1975DC470037FCD0 /* FPOrdersViewController.swift */; };
 		E92BF8FB24EBBC77002CB596 /* FPCheckoutTaxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812065531B566FAE00CA180F /* FPCheckoutTaxItem.swift */; };
 		E92BF8FC24EBBC77002CB596 /* FPProductCategoriesFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ADF3551B172A120092A9FD /* FPProductCategoriesFooterView.swift */; };
@@ -429,8 +425,6 @@
 		81A3A84A196B7B0B0006C479 /* FPCartProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCartProduct.swift; sourceTree = "<group>"; };
 		81A3A84D196BF99B0006C479 /* FPCurrencyFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCurrencyFormatter.swift; sourceTree = "<group>"; };
 		81A9F1021B8CBEA700CA548C /* FPRotationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPRotationViewController.swift; sourceTree = "<group>"; };
-		81A9FC4219AFB95400CCAD37 /* FPReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPReader.h; path = Classes/FPReader.h; sourceTree = "<group>"; };
-		81A9FC4319AFB95400CCAD37 /* FPReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPReader.m; path = Classes/FPReader.m; sourceTree = "<group>"; };
 		81ADF3551B172A120092A9FD /* FPProductCategoriesFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPProductCategoriesFooterView.swift; sourceTree = "<group>"; };
 		81ADF3591B172A360092A9FD /* FPProductCategoriesFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPProductCategoriesFooterView.xib; sourceTree = "<group>"; };
 		81AF3CDD1AC1C6E500FA0A0E /* DataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DataModel 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -487,7 +481,6 @@
 		81FF080D196C28660046457A /* FPCartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCartCell.swift; sourceTree = "<group>"; };
 		81FF080F196C28830046457A /* FPCartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPCartCell.xib; sourceTree = "<group>"; };
 		9F659EF51C1F24DC005F0FF6 /* FPCustomLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCustomLogger.swift; sourceTree = "<group>"; };
-		9FEC404919B9D62C003AB29A /* FPCardFlightManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCardFlightManager.swift; sourceTree = "<group>"; };
 		E92BF93724EBBC77002CB596 /* Farmstand Cart (DEV).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmstand Cart (DEV).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92BF93824EBBC78002CB596 /* FarmstandCartDEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FarmstandCartDEV-Info.plist"; path = "/Users/denismendica/Projects/toptal/Meadowstone Farm/FarmPOS-MobileApp/FarmstandCartDEV-Info.plist"; sourceTree = "<absolute>"; };
 		E92BF93F24F0124A002CB596 /* DataModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DataModel 3.xcdatamodel"; sourceTree = "<group>"; };
@@ -610,7 +603,6 @@
 				81199D3B195C313F00BE139D /* FPAppDelegate.swift */,
 				81199D48195C3B0400BE139D /* FPServer.swift */,
 				8157106619781C3300F184D0 /* main.swift */,
-				9FEC404919B9D62C003AB29A /* FPCardFlightManager.swift */,
 				E972DD4325079213008E0652 /* PaymentCardProcessor.swift */,
 			);
 			name = Singletons;
@@ -946,8 +938,6 @@
 				503EB714197D735D00B86869 /* Images.xcassets */,
 				81199D3A195C313F00BE139D /* Classes */,
 				81DB781F195C2A860021DE57 /* Supporting Files */,
-				81A9FC4219AFB95400CCAD37 /* FPReader.h */,
-				81A9FC4319AFB95400CCAD37 /* FPReader.m */,
 			);
 			path = FarmPOS;
 			sourceTree = "<group>";
@@ -1305,7 +1295,6 @@
 				814F463D1966DF75007A009E /* FPChoiceOverlayView.swift in Sources */,
 				81BB47F81990F803003A3DEE /* FPInputValidator.swift in Sources */,
 				81510737197988E200AFC491 /* FPCheckoutHeaderView.swift in Sources */,
-				9FEC404A19B9D62C003AB29A /* FPCardFlightManager.swift in Sources */,
 				503EB711197D66E800B86869 /* FPPaymentOptionsViewController.swift in Sources */,
 				816F3DD4195C76D100005F14 /* FPAlertManager.swift in Sources */,
 				8157106D1978238600F184D0 /* FPCustomerCell.swift in Sources */,
@@ -1394,7 +1383,6 @@
 				81A3A84E196BF99B0006C479 /* FPCurrencyFormatter.swift in Sources */,
 				81DD91D61977DC810056754B /* FPTransactionCell.swift in Sources */,
 				812ED2B4195CEFEC008F178C /* FPUser.swift in Sources */,
-				81A9FC4419AFB95400CCAD37 /* FPReader.m in Sources */,
 				8141E45E1975DC470037FCD0 /* FPOrdersViewController.swift in Sources */,
 				812065541B566FAE00CA180F /* FPCheckoutTaxItem.swift in Sources */,
 				81C330F71B17365700D31F1F /* FPProductCategoriesFooterView.swift in Sources */,
@@ -1418,7 +1406,6 @@
 				E92BF89824EBBC77002CB596 /* FPChoiceOverlayView.swift in Sources */,
 				E92BF89924EBBC77002CB596 /* FPInputValidator.swift in Sources */,
 				E92BF89A24EBBC77002CB596 /* FPCheckoutHeaderView.swift in Sources */,
-				E92BF89B24EBBC77002CB596 /* FPCardFlightManager.swift in Sources */,
 				E92BF89D24EBBC77002CB596 /* FPPaymentOptionsViewController.swift in Sources */,
 				E92BF89E24EBBC77002CB596 /* FPAlertManager.swift in Sources */,
 				E92BF89F24EBBC77002CB596 /* FPCustomerCell.swift in Sources */,
@@ -1507,7 +1494,6 @@
 				E92BF8F624EBBC77002CB596 /* FPCurrencyFormatter.swift in Sources */,
 				E92BF8F724EBBC77002CB596 /* FPTransactionCell.swift in Sources */,
 				E92BF8F824EBBC77002CB596 /* FPUser.swift in Sources */,
-				E92BF8F924EBBC77002CB596 /* FPReader.m in Sources */,
 				E92BF8FA24EBBC77002CB596 /* FPOrdersViewController.swift in Sources */,
 				E92BF8FB24EBBC77002CB596 /* FPCheckoutTaxItem.swift in Sources */,
 				E92BF8FC24EBBC77002CB596 /* FPProductCategoriesFooterView.swift in Sources */,

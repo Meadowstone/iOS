@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Eugene Reshetov. All rights reserved.
 //
 
+import UIKit
+
 class FPAccountSetupViewController: FPRotationViewController {
     
     var completion: ((FPCustomer?) -> Void)!
