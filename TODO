@@ -63,7 +63,6 @@ Changelog:
 
 Changelog:
 - Improved the logics behind app showing whether there are any updates available or not. Rebound the update date from local device date to server date which should remove the case where "update available" indication is lit right after syncing the data.
-- CardFlight purchases are now properly processed in regards to customer's active balance and farm bucks
 - FI-61. Now searching through all product categories insetad of latest selected
 - Products that don't have a default price set will now initially redirect to a new controller used to set price
 
