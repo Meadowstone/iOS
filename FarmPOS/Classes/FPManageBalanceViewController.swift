@@ -9,7 +9,7 @@
 import UIKit
 import MBProgressHUD
 
-class FPManageBalanceViewController: FPRotationViewController, UIAlertViewDelegate, UIActionSheetDelegate {
+class FPManageBalanceViewController: FPRotationViewController, UIAlertViewDelegate {
     
     var completionHandler: (() -> Void)!
     var numPadView: FPNumPadView!
@@ -31,24 +31,6 @@ class FPManageBalanceViewController: FPRotationViewController, UIAlertViewDelega
         // Pass completion handler
         vc.balanceCompletionHandler = completionHandler
         self.navigationController?.pushViewController(vc, animated: true)
-        return
-        
-        //////////
-        
-//        let actionSheet = UIActionSheet()
-//        actionSheet.title = "Choose payment method"
-//        actionSheet.delegate = self
-//        actionSheet.addButton(withTitle: "Pay With Cash")
-//        actionSheet.addButton(withTitle: "Pay With Check")
-//        if FPCardFlightManager.sharedInstance.statusCode != StatusCode.readerDisconnected {
-//            actionSheet.addButton(withTitle: "Swipe Credit Card")
-//            actionSheet.addButton(withTitle: "Enter Card / Use Saved")
-//        } else {
-//            actionSheet.addButton(withTitle: "Pay With Credit Card")
-//        }
-//        actionSheet.addButton(withTitle: "Cancel")
-//        actionSheet.cancelButtonIndex = 3
-//        actionSheet.show(in: self.view)
     }
     
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {
@@ -162,36 +144,6 @@ class FPManageBalanceViewController: FPRotationViewController, UIAlertViewDelega
         } else if alertView.tag == 2 && buttonIndex == 1 {
             let text = alertView.textField(at: 0)!.text
             depositSumPayWithCheck(true, creditCard: false, checkNumber: text, transactionToken: nil, last4: nil)
-        }
-    }
-    
-    // UIActionsheetDelegate
-    func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
-        let title = actionSheet.buttonTitle(at: buttonIndex)
-        if buttonIndex == 0 {
-            depositSumPayWithCheck(false, creditCard: false, checkNumber: nil, transactionToken: nil, last4: nil)
-        } else if buttonIndex == 1 {
-            let alert = UIAlertView()
-            alert.alertViewStyle = .plainTextInput
-            alert.tag = 2
-            alert.message = "Check number"
-            alert.delegate = self
-            alert.addButton(withTitle: "Cancel")
-            alert.addButton(withTitle: "Submit")
-            alert.show()
-        } else if title == "Pay With Credit Card" || title == "Enter Card / Use Saved" || title == "Swipe Credit Card" {
-            if !FPUser.activeUser()!.farm!.canUseCreditCard {
-                FPAlertManager.showMessage("This farm is not configured to use credit cards.", withTitle: "Error")
-                return
-            }
-            let vc = FPCreateCreditCardViewController.createCreditCardViewControllerWithCardSelectedHandler({[weak self] creditCard, transactionToken, last4 in
-                self!.navigationController!.popViewController(animated: true)
-                self!.depositSumPayWithCheck(false, creditCard: true, checkNumber: nil, transactionToken: transactionToken, last4: last4)
-            })
-            vc.useCardFlightIfPossible = title == "Swipe Credit Card"
-            vc.balancePayment = true
-            vc.balanceSum = sum
-            navigationController!.pushViewController(vc, animated: true)
         }
     }
     
