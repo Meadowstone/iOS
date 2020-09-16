@@ -38,7 +38,6 @@ class FPAppDelegate: UIApplication, UIApplicationDelegate, UIAlertViewDelegate {
         center.requestAuthorization(options:[.badge, .alert]) { _, _ in }
         application.registerForRemoteNotifications()
         
-        _ = FPCardFlightManager.sharedInstance
         PaymentCardProcessor.shared.initialize()
         FPCustomLogger.startLogWrite("===== session started")
         
@@ -115,7 +114,6 @@ class FPAppDelegate: UIApplication, UIApplicationDelegate, UIAlertViewDelegate {
             }
             
         case .loggedOut:
-            FPCardFlightManager.sharedInstance.cardFlightCard = nil
             if user is FPUser {
                 FPRetailLocation.removeDefault()
                 UserDefaults.standard.removeObject(forKey: FPDatabaseSyncDateStringUserDefaultsKey)
@@ -142,8 +140,6 @@ class FPAppDelegate: UIApplication, UIApplicationDelegate, UIAlertViewDelegate {
     }
     
     func customerLoggedOut() {
-        // @Cardflight card drop
-        FPCardFlightManager.sharedInstance.cardFlightCard = nil
         FPCustomer.setActiveCustomer(nil)
         let vc = FPAuthOptionsViewController.authOptionsViewController()
         let nc = UINavigationController(rootViewController: vc)
