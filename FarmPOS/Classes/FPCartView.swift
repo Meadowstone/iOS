@@ -17,14 +17,10 @@ class FPCartView: UIView, UIAlertViewDelegate, UITableViewDelegate, UITableViewD
     var headerView: FPCartHeaderView!
     var applicableBalance = 0.0
     var sum = 0.0
-    var includeOutstandingBalance = false
     var checkoutSum: Double {
         var s = sum
-        if let ac = FPCustomer.activeCustomer() {
+        if FPCustomer.activeCustomer() != nil {
             s -= applicableBalance
-            if includeOutstandingBalance {
-                s += abs(ac.balance)
-            }
         }
         s += self.totalTaxSum()
         return s
