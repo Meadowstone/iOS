@@ -61,14 +61,6 @@ class FPAuthOptionsViewController: FPRotationViewController {
         }
         
         updateUI()
-        
-        /*
-         FPServer.sharedInstance.createCardflightToken("", forClientId: "302") { (errMsg) -> Void in
-         
-         }
-         */
-        //FPServer.sharedInstance.cardflightLogin("test_302", completion: { (errMsg) -> Void in
-        //})
     }
     
     override func viewDidAppear(_ animated: Bool) {
