@@ -60,10 +60,6 @@ let kGiftCards        = "gift_cards_info/"
 let kGiftCardPurchase = "gift_card_purchase/"
 let kGiftCardRedeem   = "gift_card_redeem/"
 
-// Cardflight
-let kCreateCardFlightToken = "create_cardflight_token/"
-let kCardflightLogin       = "cardflight_login/"
-
 // Farm
 let kCashCheckSummary = "cash_check_summary/"
 let kCashCheckSummarySet = "cash_check_summary_set/"
@@ -482,7 +478,6 @@ class FPServer : AFHTTPSessionManager {
     }
     
     func customerAuthenticateWithPhone(_ phone: String, pin: String, completion:@escaping (_ errMsg: String?, _ customer: FPCustomer?) -> Void) {
-        FPCardFlightManager.sharedInstance.cardFlightCard = nil
         if self.reachabilityManager.isReachable {
             var errMsg: String?
             if FPDataAccessLayer.sharedInstance.hasUnsyncedCustomers() {
@@ -783,12 +778,10 @@ class FPServer : AFHTTPSessionManager {
                     FPCustomer.activeCustomer()!.balance += sum
                 }
             }
-            FPCardFlightManager.sharedInstance.cardFlightCard = nil
             completion(errors)
         }
         
         let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
-            FPCardFlightManager.sharedInstance.cardFlightCard = nil
             let errors = self.errors(error)
             completion(errors)
         }
@@ -1350,7 +1343,6 @@ class FPServer : AFHTTPSessionManager {
                         FPDataAccessLayer.sharedInstance.saveCustomer(ac)
                     }
                 }
-                FPCardFlightManager.sharedInstance.cardFlightCard = nil
                 errors = self.errors(r["errors"])
             }
             
@@ -1358,7 +1350,6 @@ class FPServer : AFHTTPSessionManager {
         }
         
         let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
-            FPCardFlightManager.sharedInstance.cardFlightCard = nil
             // Store failed purchase locally
             var timedOut = false
             if let e = error as NSError? {
@@ -1501,51 +1492,6 @@ class FPServer : AFHTTPSessionManager {
             completion(errors, nil, nil)
         }
         self.post(kGiftCardRedeem, parameters: params, success: success, failure: failure)
-    }
-    
-    func createCardflightToken(_ token: String, forClientId clientId: String, completion: @escaping (_ errMsg: String?) -> Void) {
-        let params = ["client_id": clientId, "token": token]
-        let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
-            var errors: String? = kInternalError
-            
-            if let r = responseObject as? NSDictionary {
-                errors = self.errors(r["errors"])
-            }
-            
-            completion(errors)
-        }
-        
-        let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
-            let errors = self.errors(error)
-            completion(errors)
-        }
-        self.post(kCreateCardFlightToken, parameters: params, success: success, failure: failure)
-    }
-    
-    func cardflightLogin(_ token: String, completion: @escaping (_ errMsg: String?, _ customer: FPCustomer?) -> Void) {
-        let params = ["token": token]
-        let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
-            
-            var errors: String? = kInternalError
-            var customer: FPCustomer? = nil
-            
-            if let r = responseObject as? NSDictionary {
-                
-                if r["status"] as! Bool {
-                    let customerInfo = r["client"] as! Dictionary<String, AnyObject>
-                    customer = FPModelParser.customerWithInfo(customerInfo as NSDictionary)
-                }
-                errors = self.errors(r["errors"])
-            }
-            
-            completion(errors, customer)
-        }
-        
-        let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
-            let errors = self.errors(error)
-            completion(errors, nil)
-        }
-        self.post(kCardflightLogin, parameters: params, success: success, failure: failure)
     }
     
     func productInventoryNoteCreateForProduct(_ product: FPProduct, text: String, completion:@escaping (_ errMsg: String?, _ note: FPInventoryProductNote?) -> Void) {
