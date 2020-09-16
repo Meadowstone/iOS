@@ -51,7 +51,6 @@ class FPPaymentOptionsViewController: FPRotationViewController {
     @IBOutlet var button5: UIButton!
     
     var balancePayment = false
-    var hasCards = false
     var balanceSum : Double = 0.0
     
     @IBAction func payNowPressed(_ sender: AnyObject?) {
@@ -91,20 +90,8 @@ class FPPaymentOptionsViewController: FPRotationViewController {
         self.button4.isHidden = true
         self.button5.isHidden = true
         
-        if (FPCustomer.activeCustomer() != nil) {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            FPServer.sharedInstance.creditCardsWithCompletion(true, completion: {[weak self] errMsg, cards, count in
-                MBProgressHUD.hide(for: self?.view, animated: true)
-//                if errMsg != nil {
-//                    FPAlertManager.showMessage(errMsg!, withTitle: "Error")
-                if let count = count, errMsg == nil {
-                    self?.hasCards = count > 0
-                    self?.updateChoices()
-                }
-            })
-        } else {
-            updateChoices()
-        }
+        updateChoices()
+        
         if UIDevice.current.userInterfaceIdiom == .phone {
             view.backgroundColor = UIColor.white
         }
