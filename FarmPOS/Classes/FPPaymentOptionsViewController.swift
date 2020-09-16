@@ -50,8 +50,6 @@ class FPPaymentOptionsViewController: FPRotationViewController {
     @IBOutlet var button4: UIButton!
     @IBOutlet var button5: UIButton!
     
-    @IBOutlet var cardflightActivityIndicator: UIActivityIndicatorView!
-    
     var balancePayment = false
     var hasCards = false
     var balanceSum : Double = 0.0
@@ -142,8 +140,6 @@ class FPPaymentOptionsViewController: FPRotationViewController {
         
         navigationController!.navigationBar.barStyle = .black
         navigationController!.navigationBar.isTranslucent = false
-        
-        cardflightActivityIndicator.isHidden = true
         
         preferredContentSize = CGSize(width: 640, height: 468)
     }
@@ -250,9 +246,6 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             //payNowPressed(nil)
         }
         updateChoices()
-        NotificationCenter.default.addObserver(self, selector: #selector(FPPaymentOptionsViewController.checkCardFlightStatus), name: NSNotification.Name(rawValue: FPReaderStatusChangedNotification), object: nil)
-        // Advanced logging
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "SEND CARDFLIGHT LOG", style: .plain, target: self, action: #selector(FPPaymentOptionsViewController.sendEmail(_:)))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -330,56 +323,5 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             depositSumPayWithCheck(true, creditCard: false, checkNumber: text, transactionToken: nil, last4: nil)
         }
     }
-    //MARK: - Cardflight
-    @objc func checkCardFlightStatus() {
-        print("reader status: \(FPCardFlightManager.sharedInstance.statusCode.hashValue)")
-        if FPCardFlightManager.sharedInstance.statusCode == StatusCode.readerAttached || FPCardFlightManager.sharedInstance.statusCode == StatusCode.readerConnecting {
-            cardflightActivityIndicator.isHidden = false
-            if !cardflightActivityIndicator.isAnimating {
-                cardflightActivityIndicator.startAnimating()
-            }
-            button3.setTitle("Connecting to terminal...", for: .normal)
-        } else {
-            cardflightActivityIndicator.stopAnimating()
-            cardflightActivityIndicator.isHidden = true
-            updateChoices()
-        }
-    }
-}
-
-extension FPPaymentOptionsViewController : MFMailComposeViewControllerDelegate {
-    //MARK: mail view controller
-    @IBAction func sendEmail(_ sender: UIButton) {
-        //Check to see the device can send email.
-        if( MFMailComposeViewController.canSendMail() ) {
-            print("Can send email.")
-            
-            let mailComposer = MFMailComposeViewController()
-            mailComposer.mailComposeDelegate = self
-            
-            // Set the subject and message of the email
-            mailComposer.setSubject("CardFlight log")
-            //mailComposer.setMessageBody("This is what they sound like.", isHTML: false)
-            
-            let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] 
-        
-            let path = (paths as NSString).appendingPathComponent("cardFlightLog.txt")
-            
-            //            if let fileData = data {
-            //                let content = NSString(data: fileData, encoding:NSUTF8StringEncoding) as! String
-            //            }
-            
-            mailComposer.setToRecipients(["yaroslav@mojosells.com"])
-            
-            do {
-                let logData = try Data(contentsOf: URL(fileURLWithPath: path))
-                mailComposer.addAttachmentData(logData, mimeType: "text/plain", fileName: "cardFlightLog")
-                self.present(mailComposer, animated: true, completion: nil)
-            } catch {}
-        }
-    }
     
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        self.dismiss(animated: true, completion: nil)
-    }
 }

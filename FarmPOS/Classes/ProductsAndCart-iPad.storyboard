@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="GzJ-8j-cW5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="GzJ-8j-cW5">
     <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,7 +10,7 @@
         <!--Products And Cart View Controller-->
         <scene sceneID="hg1-6V-VFI">
             <objects>
-                <viewController storyboardIdentifier="FPProductsAndCartViewController" automaticallyAdjustsScrollViewInsets="NO" id="GzJ-8j-cW5" customClass="FPProductsAndCartViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPProductsAndCartViewController" automaticallyAdjustsScrollViewInsets="NO" id="GzJ-8j-cW5" customClass="FPProductsAndCartViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zfk-yB-XHY"/>
                         <viewControllerLayoutGuide type="bottom" id="2GN-mK-sHz"/>
@@ -56,7 +56,7 @@
         <!--Gift Card Options View Controller-->
         <scene sceneID="Egq-iP-7Mi">
             <objects>
-                <viewController storyboardIdentifier="FPGiftCardOptionsViewController" automaticallyAdjustsScrollViewInsets="NO" id="jDI-7d-MJs" customClass="FPGiftCardOptionsViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPGiftCardOptionsViewController" automaticallyAdjustsScrollViewInsets="NO" id="jDI-7d-MJs" customClass="FPGiftCardOptionsViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6g6-pk-hQo"/>
                         <viewControllerLayoutGuide type="bottom" id="Bq4-aP-i2d"/>
@@ -130,7 +130,7 @@
         <!--Gift Cards View Controller-->
         <scene sceneID="Lsg-d5-KF9">
             <objects>
-                <viewController storyboardIdentifier="FPGiftCardsViewController" automaticallyAdjustsScrollViewInsets="NO" id="Jzc-Sc-skN" customClass="FPGiftCardsViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPGiftCardsViewController" automaticallyAdjustsScrollViewInsets="NO" id="Jzc-Sc-skN" customClass="FPGiftCardsViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="O8R-sn-Bln"/>
                         <viewControllerLayoutGuide type="bottom" id="B7l-C8-FCM"/>
@@ -169,7 +169,7 @@
         <!--Buy Gift Card View Controller-->
         <scene sceneID="iLW-CU-zbk">
             <objects>
-                <viewController storyboardIdentifier="FPBuyGiftCardViewController" automaticallyAdjustsScrollViewInsets="NO" id="Bic-nx-sZt" customClass="FPBuyGiftCardViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPBuyGiftCardViewController" automaticallyAdjustsScrollViewInsets="NO" id="Bic-nx-sZt" customClass="FPBuyGiftCardViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="a7S-nF-jXV"/>
                         <viewControllerLayoutGuide type="bottom" id="7bh-AT-Nva"/>
@@ -318,7 +318,7 @@
         <!--Create Credit Card View Controller-->
         <scene sceneID="mSi-RO-bBu">
             <objects>
-                <viewController storyboardIdentifier="FPCreateCreditCardViewController" automaticallyAdjustsScrollViewInsets="NO" id="k1u-2h-tw3" customClass="FPCreateCreditCardViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPCreateCreditCardViewController" automaticallyAdjustsScrollViewInsets="NO" id="k1u-2h-tw3" customClass="FPCreateCreditCardViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4ci-Xp-jrz"/>
                         <viewControllerLayoutGuide type="bottom" id="rig-Ud-1xc"/>
@@ -584,7 +584,7 @@
         <!--Redeem Gift Card View Controller-->
         <scene sceneID="G0a-H9-uZX">
             <objects>
-                <viewController storyboardIdentifier="FPRedeemGiftCardViewController" automaticallyAdjustsScrollViewInsets="NO" id="pQc-QP-4ux" customClass="FPRedeemGiftCardViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPRedeemGiftCardViewController" automaticallyAdjustsScrollViewInsets="NO" id="pQc-QP-4ux" customClass="FPRedeemGiftCardViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y2r-0o-xk0"/>
                         <viewControllerLayoutGuide type="bottom" id="47x-6R-F4Y"/>
@@ -657,7 +657,7 @@
         <!--ScanQR Code View Controller-->
         <scene sceneID="QZg-W5-XST">
             <objects>
-                <viewController storyboardIdentifier="FPScanQRCodeViewController" automaticallyAdjustsScrollViewInsets="NO" id="X5Y-Pd-hT5" customClass="FPScanQRCodeViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPScanQRCodeViewController" automaticallyAdjustsScrollViewInsets="NO" id="X5Y-Pd-hT5" customClass="FPScanQRCodeViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ikH-9n-zlT"/>
                         <viewControllerLayoutGuide type="bottom" id="tfQ-Jb-iSI"/>
@@ -682,7 +682,7 @@
         <!--Manage Balance View Controller-->
         <scene sceneID="VOL-yO-HQ4">
             <objects>
-                <viewController storyboardIdentifier="FPManageBalanceViewController" automaticallyAdjustsScrollViewInsets="NO" id="NNs-mv-oVn" customClass="FPManageBalanceViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPManageBalanceViewController" automaticallyAdjustsScrollViewInsets="NO" id="NNs-mv-oVn" customClass="FPManageBalanceViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J3s-aL-ARA"/>
                         <viewControllerLayoutGuide type="bottom" id="Vkj-kC-Hls"/>
@@ -741,7 +741,7 @@
         <!--Payment Options View Controller-->
         <scene sceneID="RCh-ac-nQt">
             <objects>
-                <viewController storyboardIdentifier="FPPaymentOptionsViewController" automaticallyAdjustsScrollViewInsets="NO" id="MSK-Qr-Fgg" customClass="FPPaymentOptionsViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPPaymentOptionsViewController" automaticallyAdjustsScrollViewInsets="NO" id="MSK-Qr-Fgg" customClass="FPPaymentOptionsViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="36N-uz-gco"/>
                         <viewControllerLayoutGuide type="bottom" id="EyK-pQ-zFq"/>
@@ -810,26 +810,17 @@
                                     <action selector="buttonPressed:" destination="MSK-Qr-Fgg" eventType="touchUpInside" id="mVc-jI-LK1"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="AME-fv-mwx">
-                                <rect key="frame" x="508" y="224" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="6eR-YD-sfG"/>
-                                    <constraint firstAttribute="height" constant="20" id="icM-su-Nj2"/>
-                                </constraints>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.86274509799999999" green="0.88235294119999996" blue="0.83137254900000002" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="O3D-fJ-0JI" secondAttribute="centerX" constant="-0.5" id="4gw-l5-ZLr"/>
                             <constraint firstAttribute="centerX" secondItem="Z4M-6b-Ugz" secondAttribute="centerX" constant="-0.5" id="AaE-GH-Yzj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="AME-fv-mwx" secondAttribute="trailing" constant="92" id="Cfo-Wl-Bl7"/>
                             <constraint firstAttribute="centerX" secondItem="ydj-if-xZ8" secondAttribute="centerX" constant="-0.5" id="GI3-9A-zRJ"/>
                             <constraint firstItem="O3D-fJ-0JI" firstAttribute="top" secondItem="36N-uz-gco" secondAttribute="bottom" constant="116" id="Vsh-GQ-DdX"/>
                             <constraint firstItem="Z4M-6b-Ugz" firstAttribute="top" secondItem="lLN-a7-rWq" secondAttribute="bottom" constant="8" id="VyJ-uE-qWm"/>
                             <constraint firstItem="pqe-fc-JSO" firstAttribute="top" secondItem="O3D-fJ-0JI" secondAttribute="bottom" constant="8" id="WfO-Tu-HeP"/>
                             <constraint firstItem="ydj-if-xZ8" firstAttribute="top" secondItem="Z4M-6b-Ugz" secondAttribute="bottom" constant="8" id="fDL-pu-9gg"/>
                             <constraint firstAttribute="centerX" secondItem="lLN-a7-rWq" secondAttribute="centerX" constant="-0.5" id="h8e-2c-ILc"/>
-                            <constraint firstItem="AME-fv-mwx" firstAttribute="top" secondItem="pqe-fc-JSO" secondAttribute="bottom" constant="20" id="i8x-yp-4F0"/>
                             <constraint firstAttribute="centerX" secondItem="pqe-fc-JSO" secondAttribute="centerX" constant="-0.5" id="nNw-SM-ipL"/>
                             <constraint firstItem="lLN-a7-rWq" firstAttribute="top" secondItem="pqe-fc-JSO" secondAttribute="bottom" constant="8" id="x0f-Lh-jjX"/>
                         </constraints>
@@ -845,7 +836,6 @@
                         <outlet property="button3" destination="lLN-a7-rWq" id="5t8-mt-TFN"/>
                         <outlet property="button4" destination="Z4M-6b-Ugz" id="9ms-zk-pti"/>
                         <outlet property="button5" destination="ydj-if-xZ8" id="XSN-CH-K2r"/>
-                        <outlet property="cardflightActivityIndicator" destination="AME-fv-mwx" id="WSf-NP-x01"/>
                         <segue destination="8gF-Id-My5" kind="push" identifier="pushPayNow" id="qYN-X3-uqa"/>
                     </connections>
                 </viewController>
@@ -856,7 +846,7 @@
         <!--Pay Now View Controller-->
         <scene sceneID="rr2-e6-Ede">
             <objects>
-                <viewController storyboardIdentifier="FPPayNowViewController" automaticallyAdjustsScrollViewInsets="NO" id="8gF-Id-My5" customClass="FPPayNowViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPPayNowViewController" automaticallyAdjustsScrollViewInsets="NO" id="8gF-Id-My5" customClass="FPPayNowViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cdO-j6-JBx"/>
                         <viewControllerLayoutGuide type="bottom" id="8h5-HA-kyv"/>
@@ -977,7 +967,7 @@
         <!--Cash Check View Controller-->
         <scene sceneID="KZx-Ob-0Nl">
             <objects>
-                <viewController storyboardIdentifier="FPCashCheckViewController" automaticallyAdjustsScrollViewInsets="NO" id="1wI-75-4Uh" customClass="FPCashCheckViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPCashCheckViewController" automaticallyAdjustsScrollViewInsets="NO" id="1wI-75-4Uh" customClass="FPCashCheckViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ck2-pF-8Lb"/>
                         <viewControllerLayoutGuide type="bottom" id="KAv-mF-sSJ"/>
@@ -1096,7 +1086,7 @@
         <!--Apply Balance View Controller-->
         <scene sceneID="i8W-Wm-KZ5">
             <objects>
-                <viewController storyboardIdentifier="FPApplyBalanceViewController" id="IeE-qp-YlN" customClass="FPApplyBalanceViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPApplyBalanceViewController" id="IeE-qp-YlN" customClass="FPApplyBalanceViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G6I-bE-RlG"/>
                         <viewControllerLayoutGuide type="bottom" id="8aB-pk-2Oe"/>
@@ -1143,7 +1133,7 @@
         <!--Payment Confirm View Controller-->
         <scene sceneID="bq4-GT-OhI">
             <objects>
-                <viewController storyboardIdentifier="FPPaymentConfirmViewController" automaticallyAdjustsScrollViewInsets="NO" id="BYr-9K-jaB" customClass="FPPaymentConfirmViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPPaymentConfirmViewController" automaticallyAdjustsScrollViewInsets="NO" id="BYr-9K-jaB" customClass="FPPaymentConfirmViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="67x-tH-Geu"/>
                         <viewControllerLayoutGuide type="bottom" id="A0j-vX-sCk"/>
@@ -1222,7 +1212,7 @@
         <!--Select Price View Controller-->
         <scene sceneID="yjy-fZ-EZO">
             <objects>
-                <viewController storyboardIdentifier="FPSelectPriceViewController" id="kTa-wN-454" customClass="FPSelectPriceViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPSelectPriceViewController" id="kTa-wN-454" customClass="FPSelectPriceViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TRj-tJ-tIQ"/>
                         <viewControllerLayoutGuide type="bottom" id="17Y-91-kal"/>
@@ -1276,7 +1266,7 @@
         <!--Cash Check Summary View Controller-->
         <scene sceneID="zFf-OD-ihs">
             <objects>
-                <viewController storyboardIdentifier="FPCashCheckSummaryViewController" automaticallyAdjustsScrollViewInsets="NO" id="5g3-A8-g7z" customClass="FPCashCheckSummaryViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPCashCheckSummaryViewController" automaticallyAdjustsScrollViewInsets="NO" id="5g3-A8-g7z" customClass="FPCashCheckSummaryViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tdS-si-dp6"/>
                         <viewControllerLayoutGuide type="bottom" id="d1M-Nf-afV"/>
@@ -1537,7 +1527,7 @@
         <!--Customer Edit View Controller-->
         <scene sceneID="7ru-Ow-uAn">
             <objects>
-                <viewController storyboardIdentifier="FPCustomerEditViewController" id="udR-oS-VPe" customClass="FPCustomerEditViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPCustomerEditViewController" id="udR-oS-VPe" customClass="FPCustomerEditViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g9m-C3-VYQ"/>
                         <viewControllerLayoutGuide type="bottom" id="qBC-6n-VTa"/>

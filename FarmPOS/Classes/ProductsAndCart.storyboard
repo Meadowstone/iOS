@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ssw-Nw-yGu">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ssw-Nw-yGu">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Menu View Controller-->
         <scene sceneID="oRZ-dT-12m">
             <objects>
-                <viewController storyboardIdentifier="FPMenuViewController" automaticallyAdjustsScrollViewInsets="NO" id="m0b-Gl-saA" customClass="FPMenuViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPMenuViewController" automaticallyAdjustsScrollViewInsets="NO" id="m0b-Gl-saA" customClass="FPMenuViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BzT-Wg-KQf"/>
                         <viewControllerLayoutGuide type="bottom" id="dEy-eY-2O8"/>
@@ -54,13 +52,13 @@
         <!--Cart View Controller-->
         <scene sceneID="XsM-7d-lvz">
             <objects>
-                <viewController storyboardIdentifier="FPCartViewController" automaticallyAdjustsScrollViewInsets="NO" id="OL9-7w-AVV" customClass="FPCartViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPCartViewController" automaticallyAdjustsScrollViewInsets="NO" id="OL9-7w-AVV" customClass="FPCartViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="b5E-Cg-8Rf"/>
                         <viewControllerLayoutGuide type="bottom" id="aiA-ih-nLM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iuH-UQ-4xC">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -74,17 +72,17 @@
         <!--Categories View Controller-->
         <scene sceneID="2h4-c5-ZSi">
             <objects>
-                <viewController storyboardIdentifier="FPCategoriesViewController" automaticallyAdjustsScrollViewInsets="NO" id="Ssw-Nw-yGu" customClass="FPCategoriesViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPCategoriesViewController" automaticallyAdjustsScrollViewInsets="NO" id="Ssw-Nw-yGu" customClass="FPCategoriesViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9e4-Ys-2NA"/>
                         <viewControllerLayoutGuide type="bottom" id="GGr-to-Rot"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qgU-7Q-uzS">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZAk-sf-LWb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Ssw-Nw-yGu" id="6bX-0c-Wz8"/>
@@ -115,13 +113,13 @@
         <!--Manage Balance View Controller-->
         <scene sceneID="Sqm-fa-o8U">
             <objects>
-                <viewController storyboardIdentifier="FPManageBalanceViewController" automaticallyAdjustsScrollViewInsets="NO" id="L5e-gS-Bip" customClass="FPManageBalanceViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPManageBalanceViewController" automaticallyAdjustsScrollViewInsets="NO" id="L5e-gS-Bip" customClass="FPManageBalanceViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AOj-6a-g2l"/>
                         <viewControllerLayoutGuide type="bottom" id="2dh-T3-cLT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tRf-B7-2zj">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR CURRENT BALANCE: $1000.00" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="eVA-PZ-AOX">
@@ -198,17 +196,17 @@
         <!--Products View Controller-->
         <scene sceneID="Woj-D7-ghu">
             <objects>
-                <viewController storyboardIdentifier="FPProductsViewController" automaticallyAdjustsScrollViewInsets="NO" id="fgA-8B-fsz" customClass="FPProductsViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPProductsViewController" automaticallyAdjustsScrollViewInsets="NO" id="fgA-8B-fsz" customClass="FPProductsViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wdz-NW-Dw1"/>
                         <viewControllerLayoutGuide type="bottom" id="TFn-wN-4Vc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KwJ-1Y-icd">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="58q-Cm-rcK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="fgA-8B-fsz" id="kUi-oF-bHF"/>
@@ -236,17 +234,17 @@
         <!--Create Credit Card View Controller-->
         <scene sceneID="YdB-bZ-38j">
             <objects>
-                <viewController storyboardIdentifier="FPCreateCreditCardViewController" automaticallyAdjustsScrollViewInsets="NO" id="46r-ft-4cZ" customClass="FPCreateCreditCardViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPCreateCreditCardViewController" automaticallyAdjustsScrollViewInsets="NO" id="46r-ft-4cZ" customClass="FPCreateCreditCardViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eTV-y3-P3V"/>
                         <viewControllerLayoutGuide type="bottom" id="CcQ-EQ-M2F"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yZb-AV-NnH">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ix0-zs-BI6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="547"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="567"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="46r-ft-4cZ" id="M7j-4d-lfl"/>
@@ -254,10 +252,10 @@
                                 </connections>
                             </tableView>
                             <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ver-We-7ky">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="547"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="567"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnC-fV-3bM">
-                                        <rect key="frame" x="37" y="0.0" width="300" height="260"/>
+                                        <rect key="frame" x="37.5" y="0.0" width="300" height="260"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="XXXX" textAlignment="center" minimumFontSize="17" background="input_bg" translatesAutoresizingMaskIntoConstraints="NO" id="R93-6x-gHT">
                                                 <rect key="frame" x="0.0" y="20" width="69" height="48"/>
@@ -445,7 +443,7 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emn-k3-XCa">
-                                <rect key="frame" x="20" y="555" width="335" height="40"/>
+                                <rect key="frame" x="20" y="575" width="335" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="qq5-ZH-Kqo"/>
                                 </constraints>
@@ -456,7 +454,7 @@
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhI-IC-31O">
-                                <rect key="frame" x="34" y="554" width="308" height="41"/>
+                                <rect key="frame" x="33.5" y="574" width="308" height="41"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay outstanding balance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGR-wi-g3z">
                                         <rect key="frame" x="20" y="9" width="211" height="23"/>
@@ -533,13 +531,13 @@
         <!--Payment Options View Controller-->
         <scene sceneID="8oL-VG-GXd">
             <objects>
-                <viewController storyboardIdentifier="FPPaymentOptionsViewController" automaticallyAdjustsScrollViewInsets="NO" id="i7k-wH-n0P" customClass="FPPaymentOptionsViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPPaymentOptionsViewController" automaticallyAdjustsScrollViewInsets="NO" id="i7k-wH-n0P" customClass="FPPaymentOptionsViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IvG-Gq-RAJ"/>
                         <viewControllerLayoutGuide type="bottom" id="Tan-G1-gwG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pT9-8T-slZ">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiJ-OV-aCE">
@@ -597,14 +595,6 @@
                                     <action selector="buttonPressed:" destination="i7k-wH-n0P" eventType="touchUpInside" id="ceP-Ib-q3l"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="tRY-9Y-q99">
-                                <rect key="frame" x="330" y="126" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="O4E-lI-0vn"/>
-                                    <constraint firstAttribute="height" constant="20" id="VUp-oN-utI"/>
-                                </constraints>
-                                <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.86274509799999999" green="0.88235294119999996" blue="0.83137254900000002" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -614,9 +604,7 @@
                             <constraint firstItem="W2a-mY-TLv" firstAttribute="leading" secondItem="pT9-8T-slZ" secondAttribute="leading" constant="20" id="7zo-KH-nNs"/>
                             <constraint firstItem="DtV-Fk-IOc" firstAttribute="top" secondItem="oiJ-OV-aCE" secondAttribute="bottom" constant="8" id="8Qc-AS-8Me"/>
                             <constraint firstAttribute="trailing" secondItem="oiJ-OV-aCE" secondAttribute="trailing" constant="20" id="Qrt-qz-6UW"/>
-                            <constraint firstItem="tRY-9Y-q99" firstAttribute="leading" secondItem="oiJ-OV-aCE" secondAttribute="trailing" constant="-25" id="Rex-5C-XcQ"/>
                             <constraint firstItem="oiJ-OV-aCE" firstAttribute="top" secondItem="uRJ-La-QNx" secondAttribute="bottom" constant="8" id="Y3m-xO-5dk"/>
-                            <constraint firstItem="tRY-9Y-q99" firstAttribute="top" secondItem="uRJ-La-QNx" secondAttribute="bottom" constant="18" id="YgO-Rs-5Hh"/>
                             <constraint firstItem="W2a-mY-TLv" firstAttribute="top" secondItem="DtV-Fk-IOc" secondAttribute="bottom" constant="8" id="aeK-3w-v7g"/>
                             <constraint firstAttribute="trailing" secondItem="W2a-mY-TLv" secondAttribute="trailing" constant="20" id="pIY-Gv-EfS"/>
                             <constraint firstAttribute="trailing" secondItem="DtV-Fk-IOc" secondAttribute="trailing" constant="20" id="r6M-x9-gEM"/>
@@ -636,7 +624,6 @@
                         <outlet property="button3" destination="oiJ-OV-aCE" id="mlC-SU-jyV"/>
                         <outlet property="button4" destination="DtV-Fk-IOc" id="fCY-D3-6pM"/>
                         <outlet property="button5" destination="W2a-mY-TLv" id="3zB-xg-Pfl"/>
-                        <outlet property="cardflightActivityIndicator" destination="tRY-9Y-q99" id="LTH-41-aVi"/>
                         <segue destination="aRh-7u-zJz" kind="show" identifier="pushPayNow" id="56U-Ax-MMM"/>
                     </connections>
                 </viewController>
@@ -647,13 +634,13 @@
         <!--Pay Now View Controller-->
         <scene sceneID="YEu-hV-a7B">
             <objects>
-                <viewController storyboardIdentifier="FPPayNowViewController" automaticallyAdjustsScrollViewInsets="NO" id="aRh-7u-zJz" customClass="FPPayNowViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPPayNowViewController" automaticallyAdjustsScrollViewInsets="NO" id="aRh-7u-zJz" customClass="FPPayNowViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SHI-p7-W6C"/>
                         <viewControllerLayoutGuide type="bottom" id="wYQ-vG-Ba6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dgs-Kq-sdR">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHy-zH-y64">
@@ -749,13 +736,13 @@
         <!--Apply Balance View Controller-->
         <scene sceneID="Tlh-lD-wcI">
             <objects>
-                <viewController storyboardIdentifier="FPApplyBalanceViewController" id="9KL-IF-uZ7" customClass="FPApplyBalanceViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPApplyBalanceViewController" id="9KL-IF-uZ7" customClass="FPApplyBalanceViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZlP-xH-Wv6"/>
                         <viewControllerLayoutGuide type="bottom" id="mr1-b1-WBa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Uat-1f-1lM">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IsB-QS-O9r">
@@ -817,17 +804,17 @@
         <!--Cash Check View Controller-->
         <scene sceneID="hQv-gD-Zq1">
             <objects>
-                <viewController storyboardIdentifier="FPCashCheckViewController" automaticallyAdjustsScrollViewInsets="NO" id="WE9-bE-Miy" customClass="FPCashCheckViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPCashCheckViewController" automaticallyAdjustsScrollViewInsets="NO" id="WE9-bE-Miy" customClass="FPCashCheckViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="joV-H0-phm"/>
                         <viewControllerLayoutGuide type="bottom" id="4c3-ey-wDx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hVp-1Y-9jO">
-                        <rect key="frame" x="0.0" y="64" width="375" height="240"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Fz-Ok-d88">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MO5-v9-2qb">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
@@ -952,17 +939,17 @@
         <!--Payment Confirm View Controller-->
         <scene sceneID="Xp2-Jj-q4H">
             <objects>
-                <viewController storyboardIdentifier="FPPaymentConfirmViewController" automaticallyAdjustsScrollViewInsets="NO" id="tgm-Gu-stm" customClass="FPPaymentConfirmViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPPaymentConfirmViewController" automaticallyAdjustsScrollViewInsets="NO" id="tgm-Gu-stm" customClass="FPPaymentConfirmViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RMX-zv-pHH"/>
                         <viewControllerLayoutGuide type="bottom" id="p1U-Nx-Khm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YF8-gD-Hey">
-                        <rect key="frame" x="0.0" y="64" width="375" height="240"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sH-8f-zQL">
-                                <rect key="frame" x="20" y="180" width="157.5" height="40"/>
+                                <rect key="frame" x="20" y="563" width="157.5" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="T1F-Bj-7XW"/>
                                 </constraints>
@@ -976,7 +963,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xks-Qe-5o5">
-                                <rect key="frame" x="197.5" y="180" width="157.5" height="40"/>
+                                <rect key="frame" x="197.5" y="563" width="157.5" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7jX-CZ-izT"/>
                                 </constraints>
@@ -1027,13 +1014,13 @@
         <!--Select Price View Controller-->
         <scene sceneID="1P6-dE-1CT">
             <objects>
-                <viewController storyboardIdentifier="FPSelectPriceViewController" id="lTQ-me-Dej" customClass="FPSelectPriceViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPSelectPriceViewController" id="lTQ-me-Dej" customClass="FPSelectPriceViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wFq-hB-1f3"/>
                         <viewControllerLayoutGuide type="bottom" id="FWa-L7-vio"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="09B-Eu-PNj">
-                        <rect key="frame" x="0.0" y="64" width="375" height="240"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WON-4k-hUx">
@@ -1082,13 +1069,13 @@
         <!--Redeem Gift Card View Controller-->
         <scene sceneID="Ryl-4O-sBa">
             <objects>
-                <viewController storyboardIdentifier="FPRedeemGiftCardViewController" automaticallyAdjustsScrollViewInsets="NO" id="n3B-cE-A1f" customClass="FPRedeemGiftCardViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPRedeemGiftCardViewController" automaticallyAdjustsScrollViewInsets="NO" id="n3B-cE-A1f" customClass="FPRedeemGiftCardViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="O0k-gW-Szz"/>
                         <viewControllerLayoutGuide type="bottom" id="IkI-ya-zbQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rBa-m9-2wb">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Gift Card Code" textAlignment="center" minimumFontSize="17" background="activity_input_bg" translatesAutoresizingMaskIntoConstraints="NO" id="4w3-WD-JFO">
@@ -1154,13 +1141,13 @@
         <!--ScanQR Code View Controller-->
         <scene sceneID="fub-4Y-RzS">
             <objects>
-                <viewController storyboardIdentifier="FPScanQRCodeViewController" automaticallyAdjustsScrollViewInsets="NO" id="R5g-IA-fCI" customClass="FPScanQRCodeViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPScanQRCodeViewController" automaticallyAdjustsScrollViewInsets="NO" id="R5g-IA-fCI" customClass="FPScanQRCodeViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jcn-So-gEz"/>
                         <viewControllerLayoutGuide type="bottom" id="n8f-g8-QOt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="r8t-TI-KnB">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.86274509799999999" green="0.88235294119999996" blue="0.83137254900000002" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1175,7 +1162,7 @@
     </scenes>
     <resources>
         <image name="activity_input_bg" width="320" height="42"/>
-        <image name="green_btn" width="10" height="40"/>
+        <image name="green_btn" width="10.5" height="40"/>
         <image name="input_bg" width="250" height="44"/>
     </resources>
 </document>
