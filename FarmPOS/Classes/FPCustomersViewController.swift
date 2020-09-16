@@ -123,7 +123,6 @@ class FPCustomersViewController: FPRotationViewController, UIPopoverControllerDe
     }
     
     @objc func unassign() {
-        FPCardFlightManager.sharedInstance.cardFlightCard = nil
         FPCustomer.setActiveCustomer(nil)
         FPOrder.setActiveOrder(nil)
         FPCartView.sharedCart().resetCart()
