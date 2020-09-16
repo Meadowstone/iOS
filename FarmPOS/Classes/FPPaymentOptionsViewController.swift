@@ -151,6 +151,7 @@ class FPPaymentOptionsViewController: FPRotationViewController {
     func updateChoices() {
         button1.setTitle("Pay with Cash", for: .normal)
         button1.tag = 1
+        
         button2.setTitle("Pay with Check", for: .normal)
         button2.tag = 2
         
@@ -158,96 +159,30 @@ class FPPaymentOptionsViewController: FPRotationViewController {
         button4.isHidden = false
         button5.isHidden = false
         
-        let cardButtonCaption : String
-        if hasCards {
-            cardButtonCaption = "Enter Card / Use Saved"
-        } else {
-            cardButtonCaption = "Enter Card"
-        }
-        
-        if FPUser.activeUser() != nil && FPUser.activeUser()!.farm != nil && FPUser.activeUser()!.farm!.allowCreditCardPayments {
-            // Credit cards are active
-            //println("reader status: \(FPCardFlightManager.sharedInstance.statusCode.hashValue)")
-            if FPCardFlightManager.sharedInstance.statusCode == StatusCode.readerConnected {
-                // Can use Cardflight
-                button3.setTitle("Swipe Credit Card", for: .normal)
-                button3.tag = 3
-                
-                if let ac = FPCustomer.activeCustomer() {
-                    button4.setTitle(cardButtonCaption, for: .normal)
-                    button4.tag = 4
-                    if FPCurrencyFormatter.intCurrencyRepresentation(FPCartView.sharedCart().sumWithTax) <= FPCurrencyFormatter.intCurrencyRepresentation(ac.balance) {
-                        // Balance covers payment entirely
-                        button5.setTitle("Pay With Balance", for: .normal)
-                        button5.tag = 5
-                    } else {
-                        button5.setTitle("Pay Later", for: .normal)
-                        button5.tag = 6
-                    }
+        if let ac = FPCustomer.activeCustomer() {
+            if !balancePayment {
+                if FPCurrencyFormatter.intCurrencyRepresentation(FPCartView.sharedCart().sumWithTax) <= FPCurrencyFormatter.intCurrencyRepresentation(ac.balance) {
+                    button3.setTitle("Pay with Balance", for: .normal)
+                    button3.tag = 5
                 } else {
-                    // No active customer (balance payment and pay later disabled
-                    button4.isHidden = true
-                    button5.isHidden = true
+                    button3.setTitle("Pay Later", for: .normal)
+                    button3.tag = 6
                 }
-                if balancePayment {
-                    button5.isHidden = true
-                }
+                button4.setTitle("Pay with Credit/Debit Card", for: .normal)
+                button4.tag = 7
+                button5.isHidden = true
             } else {
-                // Cardflight terminal disconnected
-                
-                if let ac = FPCustomer.activeCustomer() {
-                    button3.setTitle(cardButtonCaption, for: .normal)
-                    button3.tag = 4
-                    if FPCurrencyFormatter.intCurrencyRepresentation(FPCartView.sharedCart().sumWithTax) <= FPCurrencyFormatter.intCurrencyRepresentation(ac.balance) {
-                        // Balance covers payment entirely
-                        button4.setTitle("Pay With Balance", for: .normal)
-                        button4.tag = 5
-                        button5.isHidden = true
-                    } else {
-                        button4.setTitle("Pay Later", for: .normal)
-                        button4.tag = 6
-                        button5.isHidden = true
-                    }
-                } else {
-                    // No active customer (balance payment and pay later disabled
-                    //                    button3.hidden = true
-                    button3.setTitle("Use Card", for: .normal)
-                    button3.tag = 3
-                    button4.isHidden = true
-                    button5.isHidden = true
-                }
-                if balancePayment {
-                    button4.isHidden = true
-                }
-            }
-        } else {
-            // Credit card payments through CardFlight are not allowed, but are allowed through Stripe
-            if let ac = FPCustomer.activeCustomer() {
-                if !balancePayment {
-                    if FPCurrencyFormatter.intCurrencyRepresentation(FPCartView.sharedCart().sumWithTax) <= FPCurrencyFormatter.intCurrencyRepresentation(ac.balance) {
-                        // Balance covers payment entirely
-                        button3.setTitle("Pay with Balance", for: .normal)
-                        button3.tag = 5
-                    } else {
-                        button3.setTitle("Pay Later", for: .normal)
-                        button3.tag = 6
-                    }
-                    button4.setTitle("Pay with Credit/Debit Card", for: .normal)
-                    button4.tag = 7
-                    button5.isHidden = true
-                } else {
-                    button3.isHidden = true
-                    button4.isHidden = true
-                    button5.isHidden = true
-                }
-            } else {
-                // No active customer (balance payment and pay later disabled
                 button3.isHidden = true
                 button4.isHidden = true
                 button5.isHidden = true
             }
+        } else {
+            button3.isHidden = true
+            button4.isHidden = true
+            button5.isHidden = true
         }
     }
+    
     //MARK: - Payment action
     @IBAction func buttonPressed(_ sender: AnyObject?) {
         switch sender!.tag {
@@ -278,54 +213,6 @@ class FPPaymentOptionsViewController: FPRotationViewController {
                 alert.addButton(withTitle: "Submit")
                 alert.show()
             }
-        case 3:
-            // Cardflight
-            let vc : FPCreateCreditCardViewController
-            if !balancePayment {
-             vc = FPCreateCreditCardViewController.createCreditCardViewControllerWithCardSelectedHandler({ creditCard, transactionToken, last4 in
-                let sum = FPCartView.sharedCart().checkoutSum
-                var params: Dictionary<String, AnyObject> = ["method": 1 as AnyObject, "sumPaid": sum as AnyObject]
-                if let cc = creditCard {
-                    if FPCustomer.activeCustomer() == nil {
-                        params["creditCard"] = cc
-                    }
-                }
-                NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification), object: params)
-                })
-            } else {
-                vc = FPCreateCreditCardViewController.createCreditCardViewControllerWithCardSelectedHandler({[weak self] creditCard, transactionToken, last4 in
-                    self!.navigationController!.popViewController(animated: true)
-                    self!.depositSumPayWithCheck(false, creditCard: true, checkNumber: nil, transactionToken: transactionToken, last4: last4)
-                    })
-            }
-            vc.useCardFlightIfPossible = true
-            vc.balancePayment = balancePayment
-            vc.balanceSum = balanceSum
-            navigationController!.pushViewController(vc, animated: true)
-        case 4:
-            // Simple card payment
-            let vc : FPCreateCreditCardViewController
-            if !balancePayment {
-                vc = FPCreateCreditCardViewController.createCreditCardViewControllerWithCardSelectedHandler({ creditCard, transactionToken, last4 in
-                let sum = FPCartView.sharedCart().checkoutSum
-                var params: Dictionary<String, AnyObject> = ["method": 1 as AnyObject, "sumPaid": sum as AnyObject]
-                if let cc = creditCard {
-                    if FPCustomer.activeCustomer() == nil {
-                        params["creditCard"] = cc
-                    }
-                }
-                NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification), object: params)
-                })
-            } else {
-                vc = FPCreateCreditCardViewController.createCreditCardViewControllerWithCardSelectedHandler({[weak self] creditCard, transactionToken, last4 in
-                    self!.navigationController!.popViewController(animated: true)
-                    self!.depositSumPayWithCheck(false, creditCard: true, checkNumber: nil, transactionToken: transactionToken, last4: last4)
-                    })
-            }
-            vc.useCardFlightIfPossible = false
-            vc.balancePayment = balancePayment
-            vc.balanceSum = balanceSum
-            navigationController!.pushViewController(vc, animated: true)
         case 5:
             // Pay With Balance
             let notificationParams: [String : Any] = [
