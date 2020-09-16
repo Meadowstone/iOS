@@ -150,10 +150,10 @@ class FPPaymentOptionsViewController: FPRotationViewController {
     
     func updateChoices() {
         button1.setTitle("Pay with Cash", for: .normal)
-        button1.tag = 1
+        button1.tag = FPPaymentMethod.cash.rawValue
         
         button2.setTitle("Pay with Check", for: .normal)
-        button2.tag = 2
+        button2.tag = FPPaymentMethod.check.rawValue
         
         button3.isHidden = false
         button4.isHidden = false
@@ -163,13 +163,13 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             if !balancePayment {
                 if FPCurrencyFormatter.intCurrencyRepresentation(FPCartView.sharedCart().sumWithTax) <= FPCurrencyFormatter.intCurrencyRepresentation(ac.balance) {
                     button3.setTitle("Pay with Balance", for: .normal)
-                    button3.tag = 5
+                    button3.tag = FPPaymentMethod.balance.rawValue
                 } else {
                     button3.setTitle("Pay Later", for: .normal)
-                    button3.tag = 6
+                    button3.tag = FPPaymentMethod.payLater.rawValue
                 }
                 button4.setTitle("Pay with Credit/Debit Card", for: .normal)
-                button4.tag = 7
+                button4.tag = FPPaymentMethod.paymentCard.rawValue
                 button5.isHidden = true
             } else {
                 button3.isHidden = true
@@ -186,24 +186,20 @@ class FPPaymentOptionsViewController: FPRotationViewController {
     //MARK: - Payment action
     @IBAction func buttonPressed(_ sender: AnyObject?) {
         switch sender!.tag {
-        case 1:
+        case FPPaymentMethod.cash.rawValue:
             if !balancePayment {
-                // Pay with cash
                 let vc = FPCashCheckViewController.cashCheckViewControllerShowCancel(false)
                 vc.mode = 1
                 navigationController!.pushViewController(vc, animated: true)
             } else {
-                // Balance payment with case
                 depositSumPayWithCheck(false, creditCard: false, checkNumber: nil, transactionToken: nil, last4: nil)
             }
-        case 2:
+        case FPPaymentMethod.check.rawValue:
             if !balancePayment {
-                // Pay with check
                 let vc = FPCashCheckViewController.cashCheckViewControllerShowCancel(false)
                 vc.mode = 2
                 navigationController!.pushViewController(vc, animated: true)
             } else {
-                // Balance payment with check
                 let alert = UIAlertView()
                 alert.alertViewStyle = .plainTextInput
                 alert.tag = 2
@@ -213,19 +209,16 @@ class FPPaymentOptionsViewController: FPRotationViewController {
                 alert.addButton(withTitle: "Submit")
                 alert.show()
             }
-        case 5:
-            // Pay With Balance
+        case FPPaymentMethod.balance.rawValue:
             let notificationParams: [String : Any] = [
                 "method": FPPaymentMethod.balance.rawValue,
                 "sumPaid": FPCartView.sharedCart().checkoutSum
             ]
             NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification),
                                             object: notificationParams)
-        case 6:
-            // Pay later
+        case FPPaymentMethod.payLater.rawValue:
             NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification), object: ["method": 4])
-        case 7:
-            // Pay with Payment Card
+        case FPPaymentMethod.paymentCard.rawValue:
             let payWithPaymentCardViewController = FPPayWithPaymentCardViewController()
             
             payWithPaymentCardViewController.unableToStartPayment = { [weak self] in
@@ -245,7 +238,7 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             
             navigationController?.pushViewController(payWithPaymentCardViewController, animated: true)
         default:
-            ()
+            break
         }
     }
     
