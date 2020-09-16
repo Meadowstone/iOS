@@ -40,25 +40,7 @@ class FPBuyGiftCardViewController: FPRotationViewController, UITextFieldDelegate
     }
     
     @IBAction func sendPressed(_ sender: AnyObject) {
-        var hud: MBProgressHUD!
-        let vc = FPCreateCreditCardViewController.createCreditCardViewControllerWithCardSelectedHandler({[weak self] _, _, _  in
-            let completion = {[weak self] (errMsg: String?) -> Void in
-                hud.hide(false)
-                if errMsg != nil {
-                    FPAlertManager.showMessage(errMsg!, withTitle: "Error")
-                } else {
-                    let giftCardSum = NumberFormatter().string(from: NSNumber(value: self!.giftCard.sum))!
-                    FPAlertManager.showMessage("Gift card for $\(giftCardSum) is successfully sent to \(self!.email)", withTitle: "Success!")
-                    self!.cardBoughtHandler?()
-                }
-            }
-            hud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
-            hud?.removeFromSuperViewOnHide = true
-            hud?.labelText = "Purchasing Gift Card"
-            FPServer.sharedInstance.giftCardPurchase(self!.giftCard, forEmail: self!.email, completion: completion)
-            })
-        vc.giftCardPayment = true
-        navigationController!.pushViewController(vc, animated: true)
+        // Before removing the CardFlight integration, there was an option to buy gift card by using credit card here 
     }
     
     class func buyGiftCardViewControllerWithGiftCard(_ giftCard: FPGiftCard, cardBoughtHandler:@escaping () -> Void) -> FPBuyGiftCardViewController {
