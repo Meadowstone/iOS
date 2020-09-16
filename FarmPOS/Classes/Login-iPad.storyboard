@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="ps8-Xp-5Ny">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="ps8-Xp-5Ny">
     <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,7 +10,7 @@
         <!--Login View Controller-->
         <scene sceneID="Fsh-0U-1Hi">
             <objects>
-                <viewController storyboardIdentifier="FPLoginViewController" automaticallyAdjustsScrollViewInsets="NO" id="ps8-Xp-5Ny" customClass="FPLoginViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPLoginViewController" automaticallyAdjustsScrollViewInsets="NO" id="ps8-Xp-5Ny" customClass="FPLoginViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1eY-ev-9x3"/>
                         <viewControllerLayoutGuide type="bottom" id="Xda-pw-cvz"/>
@@ -138,7 +138,7 @@
         <!--Auth Options View Controller-->
         <scene sceneID="0aR-xH-mAH">
             <objects>
-                <viewController storyboardIdentifier="FPAuthOptionsViewController" automaticallyAdjustsScrollViewInsets="NO" id="ZBL-41-c9Z" customClass="FPAuthOptionsViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPAuthOptionsViewController" automaticallyAdjustsScrollViewInsets="NO" id="ZBL-41-c9Z" customClass="FPAuthOptionsViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JM1-X9-xVF"/>
                         <viewControllerLayoutGuide type="bottom" id="Eqt-TG-fHe"/>
@@ -270,7 +270,7 @@
         <!--Customer Login View Controller-->
         <scene sceneID="upp-cc-cJg">
             <objects>
-                <viewController storyboardIdentifier="FPCustomerLoginViewController" automaticallyAdjustsScrollViewInsets="NO" id="eD9-Mw-tTL" customClass="FPCustomerLoginViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPCustomerLoginViewController" automaticallyAdjustsScrollViewInsets="NO" id="eD9-Mw-tTL" customClass="FPCustomerLoginViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lRQ-Y9-KSH"/>
                         <viewControllerLayoutGuide type="bottom" id="TPN-35-9Sr"/>
@@ -366,22 +366,8 @@
                                         <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GD9-h6-pQJ">
-                                        <rect key="frame" x="339" y="590" width="349" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="LaW-l3-2NX"/>
-                                            <constraint firstAttribute="width" constant="349" id="u9b-nX-go8"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                        <state key="normal" title="LOGIN WITH CARD" backgroundImage="green_btn">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="cardflightLoginPressed:" destination="eD9-Mw-tTL" eventType="touchUpInside" id="0Pa-Cq-ZjW"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikp-ge-CzC">
-                                        <rect key="frame" x="339" y="638" width="349" height="40"/>
+                                        <rect key="frame" x="339" y="590" width="349" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="349" id="0qZ-aH-TFU"/>
                                             <constraint firstAttribute="height" constant="40" id="mBw-Fv-GjV"/>
@@ -399,6 +385,7 @@
                                     <constraint firstItem="F4u-Ll-189" firstAttribute="leading" secondItem="7Vv-K1-PWi" secondAttribute="leading" constant="20" id="3q7-SN-TSm"/>
                                     <constraint firstItem="DqF-o1-rBf" firstAttribute="leading" secondItem="7Vv-K1-PWi" secondAttribute="leading" constant="338" id="9Ed-Jm-nVn"/>
                                     <constraint firstItem="RWs-iC-obL" firstAttribute="leading" secondItem="7Vv-K1-PWi" secondAttribute="leading" constant="338" id="Aff-Yd-8dL"/>
+                                    <constraint firstItem="ikp-ge-CzC" firstAttribute="top" secondItem="F4u-Ll-189" secondAttribute="bottom" constant="8" id="MtK-cG-EGV"/>
                                     <constraint firstItem="F4u-Ll-189" firstAttribute="top" secondItem="fUh-TR-qiq" secondAttribute="bottom" constant="8" id="Oi9-uO-Auj"/>
                                     <constraint firstItem="ZR7-ed-CK3" firstAttribute="top" secondItem="7Vv-K1-PWi" secondAttribute="top" constant="81" id="Po6-jp-vB6"/>
                                     <constraint firstAttribute="trailing" secondItem="ikp-ge-CzC" secondAttribute="trailing" constant="336" id="QaM-AU-K1U"/>
@@ -412,9 +399,6 @@
                                     <constraint firstItem="DqF-o1-rBf" firstAttribute="top" secondItem="RWs-iC-obL" secondAttribute="bottom" constant="60" id="iBD-SU-bP4"/>
                                     <constraint firstItem="fUh-TR-qiq" firstAttribute="leading" secondItem="7Vv-K1-PWi" secondAttribute="leading" constant="338" id="ltF-iu-di7"/>
                                     <constraint firstAttribute="bottom" secondItem="ikp-ge-CzC" secondAttribute="bottom" constant="26" id="ml5-Pk-3Cg"/>
-                                    <constraint firstItem="GD9-h6-pQJ" firstAttribute="top" secondItem="F4u-Ll-189" secondAttribute="bottom" constant="8" id="oPb-ye-IBe"/>
-                                    <constraint firstItem="ikp-ge-CzC" firstAttribute="top" secondItem="GD9-h6-pQJ" secondAttribute="bottom" constant="8" id="oTe-9s-tKs"/>
-                                    <constraint firstItem="GD9-h6-pQJ" firstAttribute="leading" secondItem="7Vv-K1-PWi" secondAttribute="leading" constant="339" id="r9x-xT-o5S"/>
                                     <constraint firstItem="xgl-hL-FP8" firstAttribute="top" secondItem="ZR7-ed-CK3" secondAttribute="bottom" constant="45" id="rt9-ma-KJV"/>
                                     <constraint firstItem="GnK-UJ-e4K" firstAttribute="leading" secondItem="7Vv-K1-PWi" secondAttribute="leading" constant="338" id="ykf-cQ-VLs"/>
                                 </constraints>
@@ -435,7 +419,6 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="VSi-VP-WG6"/>
                     <connections>
-                        <outlet property="cardflightLoginButton" destination="GD9-h6-pQJ" id="SZR-IP-3Mh"/>
                         <outlet property="phoneTextField" destination="xgl-hL-FP8" id="RRQ-sH-gFk"/>
                         <outlet property="pinTextField" destination="RWs-iC-obL" id="OPT-a9-val"/>
                         <outlet property="scrollView" destination="7Vv-K1-PWi" id="p4p-iU-xoK"/>
@@ -449,7 +432,7 @@
         <!--Account Setup View Controller-->
         <scene sceneID="aeR-iX-Wi4">
             <objects>
-                <viewController storyboardIdentifier="FPAccountSetupViewController" automaticallyAdjustsScrollViewInsets="NO" id="DJa-us-IjD" customClass="FPAccountSetupViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPAccountSetupViewController" automaticallyAdjustsScrollViewInsets="NO" id="DJa-us-IjD" customClass="FPAccountSetupViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6pS-0j-0ux"/>
                         <viewControllerLayoutGuide type="bottom" id="8xu-sX-527"/>
@@ -547,7 +530,7 @@
         <!--Farm Worker Login View Controller-->
         <scene sceneID="BC2-Wj-Hhi">
             <objects>
-                <viewController storyboardIdentifier="FPFarmWorkerLoginViewController" automaticallyAdjustsScrollViewInsets="NO" id="0qi-n6-0z0" customClass="FPFarmWorkerLoginViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPFarmWorkerLoginViewController" automaticallyAdjustsScrollViewInsets="NO" id="0qi-n6-0z0" customClass="FPFarmWorkerLoginViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dWS-Kp-vD4"/>
                         <viewControllerLayoutGuide type="bottom" id="brQ-F5-7gJ"/>
@@ -677,7 +660,7 @@
         <!--Customer Create View Controller-->
         <scene sceneID="9SG-Su-Bfg">
             <objects>
-                <viewController storyboardIdentifier="FPCustomerCreateViewController" automaticallyAdjustsScrollViewInsets="NO" id="VVQ-TH-4uW" customClass="FPCustomerCreateViewController" customModule="FPOS_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FPCustomerCreateViewController" automaticallyAdjustsScrollViewInsets="NO" id="VVQ-TH-4uW" customClass="FPCustomerCreateViewController" customModule="Farmstand_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KqU-45-Ne2"/>
                         <viewControllerLayoutGuide type="bottom" id="9TO-vR-3Rj"/>

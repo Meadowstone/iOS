@@ -16,7 +16,6 @@ class FPCustomerLoginViewController: FPRotationViewController, UIPopoverControll
     @IBOutlet var phoneTextField: UITextField!
     @IBOutlet var pinTextField: UITextField!
     @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var cardflightLoginButton: UIButton!
     
     @IBAction func loginPressed(_ sender: AnyObject?) {
         
@@ -41,20 +40,6 @@ class FPCustomerLoginViewController: FPRotationViewController, UIPopoverControll
         }
         
         FPServer.sharedInstance.customerAuthenticateWithPhone(phone, pin: pinTextField.text!, completion: completion)
-    }
-    
-    @IBAction func cardflightLoginPressed(_ sender: AnyObject?) {
-        if !FPUser.activeUser()!.farm!.canUseCreditCard {
-            FPAlertManager.showMessage("This farm is not configured to use credit cards.", withTitle: "Error")
-            return
-        }
-        // Wait for card swipe
-        switch (FPCardFlightManager.sharedInstance.statusCode!) {
-        case .readerAttached, .readerConnecting, .readerDisconnected, .generic, .waitingForSwipe:
-            _ = ""
-        default:
-            FPCardFlightManager.sharedInstance.waitForSwipe()
-        }
     }
     
     @IBAction func createAccountPressed(_ sender: AnyObject?) {
@@ -84,7 +69,6 @@ class FPCustomerLoginViewController: FPRotationViewController, UIPopoverControll
     
     deinit {
         NotificationCenter.default.removeObserver(self)
-        FPCardFlightManager.sharedInstance.cancelSwipe()
     }
     
     override func viewDidLoad() {
@@ -98,17 +82,11 @@ class FPCustomerLoginViewController: FPRotationViewController, UIPopoverControll
         NotificationCenter.default.addObserver(self, selector: #selector(FPCustomerLoginViewController.keyboardWillChangeFrame(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(FPCustomerLoginViewController.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        // @Cardflight notifications
-        NotificationCenter.default.addObserver(self, selector: #selector(FPCustomerLoginViewController.updateReaderStatus), name: Notification.Name(rawValue: FPReaderStatusChangedNotification), object: nil)
-        
         for textField in [phoneTextField, pinTextField] {
             if let placeholder = textField?.placeholder {
                 textField?.attributedPlaceholder = NSAttributedString(string : placeholder, attributes: [.foregroundColor: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
             }
         }
-        
-        // Initialize instance
-        _ = FPCardFlightManager.sharedInstance
     }
     
     func customerAuthenticated(_ customer: FPCustomer?) {
@@ -166,41 +144,4 @@ class FPCustomerLoginViewController: FPRotationViewController, UIPopoverControll
         return false
     }
     
-    //MARK: @Cardflight-related
-    @objc func updateReaderStatus() {
-        var status = FPCardFlightManager.sharedInstance.status
-        
-        switch (FPCardFlightManager.sharedInstance.statusCode!) {
-        case .swipeTimedOut :
-            status = "LOGIN WITH CARD"
-            FPAlertManager.showMessage(FPCardFlightManager.sharedInstance.status, withTitle: "Warning")
-        case .readerConnected :
-            status = "LOGIN WITH CARD"
-        case .readerDisconnected:
-            status = "LOGIN WITH CARD"
-            FPAlertManager.showMessage(FPCardFlightManager.sharedInstance.status, withTitle: "Warning")
-        case .recognizedCard:
-            let token = FPCardFlightManager.sharedInstance.getCardToken()
-            let hud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
-            hud?.removeFromSuperViewOnHide = true
-            hud?.labelText = "Logging in"
-            let completion = {[weak self] (errMsg: String?, customer: FPCustomer?) -> Void in
-                hud?.hide(false)
-                if errMsg != nil {
-                    // Reset card
-                    FPAlertManager.showMessage(errMsg!, withTitle: "Error")
-                    self?.cardflightLoginButton.setTitle("LOGIN WITH CARD", for: .normal)
-                    FPCardFlightManager.sharedInstance.cardFlightCard = nil
-                } else {
-                    self?.customerAuthenticated(customer!)
-                }
-            }
-            FPServer.sharedInstance.cardflightLogin(token, completion: completion)
-            
-        default:
-            break
-        }
-        
-        self.cardflightLoginButton.setTitle(status, for: .normal)
-    }
 }
