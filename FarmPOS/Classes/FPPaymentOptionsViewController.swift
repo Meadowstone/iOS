@@ -57,26 +57,6 @@ class FPPaymentOptionsViewController: FPRotationViewController {
     @IBAction func payNowPressed(_ sender: AnyObject?) {
         let vc = FPCashCheckViewController.cashCheckViewControllerShowCancel(false)
         navigationController!.pushViewController(vc, animated: true)
-        return
-        // WORKAROUND
-//        if let ac = FPCustomer.activeCustomer() {
-//            //ZORGadd!
-//            if FPUser.activeUser() != nil && FPUser.activeUser()!.farm != nil && FPUser.activeUser()!.farm!.allowCreditCardPayments {
-//                if FPCurrencyFormatter.intCurrencyRepresentation(FPCartView.sharedCart().sumWithTax) <= FPCurrencyFormatter.intCurrencyRepresentation(ac.balance) {
-//                    
-//                    
-//                } else {
-//                    self.payNowBtn.setTitle("Pay With Cash/Check", for: UIControlState())
-//                    self.payLaterBtn.setTitle("Pay Later", for: UIControlState())
-//                }
-//                return
-//            }
-//            if FPCurrencyFormatter.intCurrencyRepresentation(FPCartView.sharedCart().sumWithTax) <= FPCurrencyFormatter.intCurrencyRepresentation(ac.balance) {
-//                payLaterBtn.setTitle("Pay With Balance", for: UIControlState())
-//            }
-//        }
-        //        let vc = FPPayNowViewController.payNowViewController()
-        //        navigationController!.pushViewController(vc, animated: true)
     }
     
     @IBAction func payLaterPressed(_ sender: AnyObject) {

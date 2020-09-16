@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FPPayNowViewController: FPRotationViewController, UIActionSheetDelegate {
+class FPPayNowViewController: FPRotationViewController {
     
     @IBOutlet weak var balanceBtn: UIButton!
     @IBOutlet var creditCardBtn: UIButton!
@@ -40,24 +40,7 @@ class FPPayNowViewController: FPRotationViewController, UIActionSheetDelegate {
             FPAlertManager.showMessage("Credit card payments are temporarily unavailable. Please try again later", withTitle:"")
             return
         }
-        if FPCardFlightManager.sharedInstance.statusCode != StatusCode.readerDisconnected {
-            let actionSheet = UIActionSheet(title: "Select option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Swipe Credit Card", "Enter Card / Use Saved")
-            actionSheet.tag = 2
-            actionSheet.show(in: self.view)
-        } else {
-            let vc = FPCreateCreditCardViewController.createCreditCardViewControllerWithCardSelectedHandler({ creditCard, transactionToken, last4 in
-                let sum = FPCartView.sharedCart().checkoutSum
-                var params: Dictionary<String, AnyObject> = ["method": 1 as AnyObject, "sumPaid": sum as AnyObject]
-                if let cc = creditCard {
-                    if FPCustomer.activeCustomer() == nil {
-                        params["creditCard"] = cc
-                    }
-                }
-                NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification), object: params)
-                })
-            navigationController!.pushViewController(vc, animated: true)
-        }
-        
+        // previously there was a CardFlight payment here, but currently this entire view controller could be removed probably
     }
     
     @IBAction func cashCheckPressed(_ sender: AnyObject) {
@@ -129,27 +112,4 @@ class FPPayNowViewController: FPRotationViewController, UIActionSheetDelegate {
         }
     }
     
-    // MARK: - UIActionSheetDelegate
-    func actionSheet(_ actionSheet: UIActionSheet, didDismissWithButtonIndex buttonIndex: Int) {
-        let title = actionSheet.buttonTitle(at: buttonIndex)
-        if actionSheet.tag == 2 && title != "Cancel"{
-            let useCardFlight = title == "Swipe Credit Card"
-            self.cardAction(useCardFlight)
-        }
-    }
-    
-    func cardAction(_ useCardFlight: Bool) {
-        let vc = FPCreateCreditCardViewController.createCreditCardViewControllerWithCardSelectedHandler({ creditCard, transactionToken, last4 in
-            let sum = FPCartView.sharedCart().checkoutSum
-            var params: Dictionary<String, AnyObject> = ["method": 1 as AnyObject, "sumPaid": sum as AnyObject]
-            if let cc = creditCard {
-                if FPCustomer.activeCustomer() == nil {
-                    params["creditCard"] = cc
-                }
-            }
-            NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification), object: params)
-            })
-        vc.useCardFlightIfPossible = useCardFlight
-        navigationController!.pushViewController(vc, animated: true)
-    }
 }
