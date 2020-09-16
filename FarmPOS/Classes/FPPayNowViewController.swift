@@ -40,7 +40,7 @@ class FPPayNowViewController: FPRotationViewController {
             FPAlertManager.showMessage("Credit card payments are temporarily unavailable. Please try again later", withTitle:"")
             return
         }
-        // previously there was a CardFlight payment here, but currently this entire view controller could be removed probably
+        // Before removing the CardFlight integration, there was an option to pay with credit card here
     }
     
     @IBAction func cashCheckPressed(_ sender: AnyObject) {
