@@ -1236,7 +1236,7 @@ class FPServer : AFHTTPSessionManager {
         self.post(kCreateStripePaymentIntent, parameters: params, success: success, failure: failure)
     }
     
-    func paymentProcessWithSum(_ sum: Double?, method: FPPaymentMethod, checkNumber: String?, creditCard: FPCreditCard?, transactionToken : String?, last4: String?, completion:@escaping (_ errMsg: String?, _ didSaveOffline: Bool) -> Void) {
+    func paymentProcessWithSum(_ sum: Double?, method: FPPaymentMethod, checkNumber: String?, transactionToken : String?, last4: String?, completion:@escaping (_ errMsg: String?, _ didSaveOffline: Bool) -> Void) {
         
         var params = Dictionary<String, Any>()
         
@@ -1310,12 +1310,6 @@ class FPServer : AFHTTPSessionManager {
             if (cn as NSString).length > 0 {
                 params["check_number"] = cn as AnyObject?
             }
-        }
-        
-        if let c = creditCard {
-            params["card_number"] = c.cardNumber! as AnyObject?
-            params["cvv"] = c.cvv! as AnyObject?
-            params["expiration_date"] = c.expirationDateString! as AnyObject?
         }
         
         if let ao = FPOrder.activeOrder() {

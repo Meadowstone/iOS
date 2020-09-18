@@ -239,7 +239,6 @@ class FPCheckoutViewController: FPRotationViewController, UITableViewDelegate, U
         let covered = noteInfo["covered"] as? Bool
         let last4 = noteInfo["last_4"] as? String
         let transactionToken = noteInfo["transaction_token"] as? String
-        let creditCard = noteInfo["creditCard"] as? FPCreditCard
         let checkNumber = noteInfo["checkNumber"] as? String
         let sumPaid = noteInfo["sumPaid"] as? Double
         
@@ -348,7 +347,7 @@ class FPCheckoutViewController: FPRotationViewController, UITableViewDelegate, U
             hud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
             hud.removeFromSuperViewOnHide = true
             hud.labelText = "Finalizing transaction"
-            FPServer.sharedInstance.paymentProcessWithSum(sum, method: method, checkNumber: checkNumber, creditCard: creditCard, transactionToken : transactionToken, last4: last4, completion: completion)
+            FPServer.sharedInstance.paymentProcessWithSum(sum, method: method, checkNumber: checkNumber, transactionToken : transactionToken, last4: last4, completion: completion)
         }
         
         let covd = covered != nil && covered!
