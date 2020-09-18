@@ -8,14 +8,15 @@ iOS front end app
 If you want to be sure you'll be able run the app locally, follow these steps. If you don't like this setup (e.g. you want to use a different Xcode version), you can try experimenting with that as well.
 
 1. Install Xcode 11.6
-2. Add `libstdc++.6.0.9.tdb` library to Xcode's iPhoneOS and iPhoneSimulator SDKs
-    * `libstdc++.6.0.9.tdb` was removed from Xcode in the Xcode 10 release. That's why you need to add it manually. In order to do that, you can download Xcode 9.4.1 and copy these files into the same locations of Xcode 11.6:
-      * `<path_to_xcode_9.4.1>/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libstdc++.6.0.9.tdb`
-      * `<path_to_xcode_9.4.1>/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/lib/libstdc++.6.0.9.tdb`
+2. Install CocoaPods 1.9.3
 3. Install pods
-4. Open `Farm POS.xcworkspace`, select the `Farmstand Cart` scheme, select a simulator running iOS 11, and run the app
+4. Open `Farm POS.xcworkspace`, select the `Farmstand Cart (DEV)` scheme, and run the app
 5. Voila!
 
 
 ## Notes
-* In order to fully use and test the app, you'll need a Farm Worker account and a Customer account. Please contact the app owner for those.
+* There are 3 schemes in the project:
+  * "Farmstand Cart" - represents the production version of the app. Includes the "Farmstand Cart" target. This version is installed on the iPad in the farm stand. You can also use this scheme to test some stuff that is not testable in the development scheme, such as real Stripe payments that charge the payment card.
+  * "Farmstand Card (DEV)" - represents the development version of the app. Includes the "Farmstand Cart (DEV)" target. Use this scheme for most of the development work.
+  * "Swift Migration" - as the name says, this one is used for Swift migrations. The Swift migrator checks only the files in the active scheme, so this scheme includes both production and development targets.
+* In order to fully use and test the app, you'll need a Farm Worker account and a Customer account, for both production and development versions of the app. Please contact the app owner for those.
