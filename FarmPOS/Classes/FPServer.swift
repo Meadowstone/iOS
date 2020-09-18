@@ -27,10 +27,6 @@ let kFarmWorkerEmails = "farm_worker_emails/"
 // Cutomers
 let kCustomerCreate         = "client_create/"
 let kCustomerEdit           = "client_edit/"
-let kCreditCards            = "client_credit_card_list/"
-let kCreditCardCreate       = "client_credit_card_create/"
-let kCreditCardDelete       = "client_credit_card_delete/"
-let kCreditCardMakeDefault  = "client_credit_card_make_default/"
 let kClientSendPurchaseHistory = "send_client_purchase_history/"
 let kBalanceDeposit         = "balance_deposit/"
 let kCustomers              = "clients/"
@@ -658,101 +654,6 @@ class FPServer : AFHTTPSessionManager {
         self.post(kCustomerEdit, parameters: params, success: success, failure: failure)
     }
     
-    func creditCardsWithCompletion(_ countOnly: Bool, completion: @escaping (_ errMsg: String?, _ cards: Array<FPCreditCard>?, _ count : Int?) -> Void) {
-        var params = ["client_id": FPCustomer.activeCustomer()!.id]
-        
-        if countOnly {
-            params["get_card_count_only"] = 1
-        }
-        
-        let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
-            
-            var errors: String? = kInternalError
-            var creditCards = [FPCreditCard]()
-            
-            if let r = responseObject as? NSDictionary {
-                if r["status"] as! Bool {
-                    // Process cards
-                    if !countOnly {
-                        for info in r["card_list"] as! Array<NSDictionary> {
-                            creditCards.append(FPModelParser.creditCardWithInfo(info))
-                        }
-                    } else {
-                        completion(nil, nil, r["card_count"] as? Int)
-                        return
-                    }
-                }
-                errors = self.errors(r["errors"])
-            }
-            
-            completion(errors, creditCards, nil)
-        }
-        
-        let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
-            let errors = self.errors(error)
-            completion(errors, nil, nil)
-        }
-        self.get(kCreditCards, parameters: params, success: success, failure: failure)
-    }
-    
-    func creditCardCreateWithCardNumber(_ cardNumber: String, expirationDate: String, cvv: String, label: String, completion: @escaping (_ errMsg: String?) -> Void) {
-        let params = ["client_id": FPCustomer.activeCustomer()!.id, "card_number": cardNumber, "expiration_date": expirationDate, "cvv": cvv, "label": label] as [String : Any]
-        
-        let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
-            var errors: String? = kInternalError
-            
-            if let r = responseObject as? NSDictionary {
-                errors = self.errors(r["errors"])
-            }
-            
-            completion(errors)
-        }
-        
-        let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
-            let errors = self.errors(error)
-            completion(errors)
-        }
-        self.post(kCreditCardCreate, parameters: params, success: success, failure: failure)
-    }
-    
-    func creditCardDelete(_ creditCard: FPCreditCard, completion: @escaping (_ errMsg: String?) -> Void) {
-        let params = ["token": creditCard.token]
-        
-        let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
-            var errors: String? = kInternalError
-            if let r = responseObject as? NSDictionary {
-                errors = self.errors(r["errors"])
-            }
-            completion(errors)
-        }
-        
-        let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
-            let errors = self.errors(error)
-            completion(errors)
-        }
-        self.post(kCreditCardDelete, parameters: params, success: success, failure: failure)
-    }
-    
-    func creditCardMakeDefault(_ card: FPCreditCard, completion: @escaping (_ errMsg: String?) -> Void) {
-        let params = ["token": card.token]
-        
-        let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
-            var errors: String? = kInternalError
-            
-            if let r = responseObject as? NSDictionary {
-                errors = self.errors(r["errors"])
-            }
-            
-            completion(errors)
-        }
-        
-        let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
-            let errors = self.errors(error)
-            completion(errors)
-        }
-        self.post(kCreditCardMakeDefault, parameters: params, success: success, failure: failure)
-    }
-    
     func balanceDepositWithSum(_ sum: Double, isCheck: Bool, checkNumber: String?, transactionToken: String?, last4: String?, completion:@escaping (_ errMsg: String?) -> Void) {
         let params: NSMutableDictionary = ["sum": sum, "is_check": isCheck, "client_id": FPCustomer.activeCustomer()!.id, "check_number": checkNumber != nil ? checkNumber! : ""]
         if let tt = transactionToken {
@@ -1249,8 +1150,6 @@ class FPServer : AFHTTPSessionManager {
         
         var m = 0
         switch method {
-        case .creditCard:
-            m = 1
         case .cash:
             m = 2
         case .check:
