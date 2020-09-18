@@ -330,9 +330,6 @@ class FPCheckoutViewController: FPRotationViewController, UITableViewDelegate, U
                         title = "Thanks for your purchase!"
                         message = "Please drop your check or cash into the container labeled \"Cash/Check Box.\"\nYou will receive an email receipt of your purchase."
                     }
-                } else if method == FPPaymentMethod.creditCard {
-                    title = "Success!"
-                    message = "Purchase successfully recorded!"
                 }
                 if didSaveOffline {
                     title += " - Offline purchase"
