@@ -3,7 +3,6 @@
 - Implement product view controller - Done
 - Add binding logic to refreh products (discount prices) - Done
 - Add category headers - Done
-- Complete Credit Cards controller - Done
 - Add session management - Done
 - Implement auxiliary controllers:
     - Help - Done
@@ -36,7 +35,6 @@
     - Create Orders controller - Done
     - Create products view controller: - Base Done
         - Complete Customers branch: - Done
-            - Complete Credit Card branch - Done
             - Complete Transactions branch - Done
         - Create view controller to add new products (Advanced)
     - Create Checkout screen:
