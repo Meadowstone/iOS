@@ -84,7 +84,7 @@ class FPAccountSetupViewController: FPRotationViewController {
             
             contentLabel.attributedText = attrText
         } else {
-            contentLabel.text = "\(FPUser.activeUser()!.farm!.name) uses an old fashion account system for customer to purchase farmstand items.\nCustomer creates a simple account by completing the following steps.\nOnce an account is created customers can select items from the Farmstand and \"put it on the account\". \(FPUser.activeUser()!.farm!.name) will send the customer an account statement at the end of the month. Customers will have fifteen (15) days to pay the monthly statement.\nCustomers can also choose to pay via credit card, cash or check.\n\nTo setup an account press the Next button below."
+            contentLabel.text = "\(FPUser.activeUser()!.farm!.name) uses an old fashion account system for customer to purchase farmstand items.\nCustomer creates a simple account by completing the following steps.\nOnce an account is created customers can select items from the Farmstand and \"put it on the account\". \(FPUser.activeUser()!.farm!.name) will send the customer an account statement at the end of the month. Customers will have fifteen (15) days to pay the monthly statement.\nCustomers can also choose to pay via credit/debit card, cash or check.\n\nTo setup an account press the Next button below."
             contentLabel.font = UIFont(name: "HelveticaNeue-Light", size: 21)
         }
     }

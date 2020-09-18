@@ -487,9 +487,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="600" translatesAutoresizingMaskIntoConstraints="NO" id="aaY-gc-bxU">
-                                <rect key="frame" x="20" y="20" width="600" height="316"/>
+                                <rect key="frame" x="20" y="20" width="600" height="292"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="316" id="erN-9M-TRU"/>
                                     <constraint firstAttribute="width" constant="600" id="evF-bO-olL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
@@ -507,6 +506,7 @@
                             <constraint firstItem="1PQ-Tc-kfs" firstAttribute="leading" secondItem="sZe-nQ-QNb" secondAttribute="leading" constant="225" id="m4s-Ug-Gcj"/>
                             <constraint firstItem="8xu-sX-527" firstAttribute="top" secondItem="For-w7-Png" secondAttribute="bottom" constant="20" id="w2Q-hK-tmf"/>
                             <constraint firstItem="aaY-gc-bxU" firstAttribute="top" secondItem="6pS-0j-0ux" secondAttribute="bottom" constant="20" id="wT5-zV-INY"/>
+                            <constraint firstItem="G3E-Cz-8L2" firstAttribute="top" secondItem="aaY-gc-bxU" secondAttribute="bottom" constant="20" id="x2o-qc-sLy"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -518,7 +518,6 @@
                         <outlet property="cancelBtn" destination="For-w7-Png" id="JYk-d6-vUP"/>
                         <outlet property="closeBtn" destination="1PQ-Tc-kfs" id="uNi-Lh-KJf"/>
                         <outlet property="contentLabel" destination="aaY-gc-bxU" id="RwY-jb-44z"/>
-                        <outlet property="contentLabelHeightConstraint" destination="erN-9M-TRU" id="gO3-00-RBG"/>
                         <outlet property="nextBtn" destination="G3E-Cz-8L2" id="HgO-bd-IF2"/>
                         <segue destination="VVQ-TH-4uW" kind="push" identifier="pushCreateCustomer" id="9Z1-vK-0sE"/>
                     </connections>
