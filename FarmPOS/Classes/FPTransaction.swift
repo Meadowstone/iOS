@@ -13,18 +13,16 @@ var _activeTransaction: FPTransaction?
 class FPTransaction : NSObject {
     
     enum PaymentType : Int {
-        case card = 1
         case cash = 2
         case check = 3
         case payLater = 4
         case credits = 5
         case unknown = 6
+        case paymentCard = 14
         
         func toString() -> String {
             var text = ""
             switch self {
-                case .card:
-                    text = "Credit Card"
                 case .cash:
                     text = "Cash"
                 case .check:
@@ -35,6 +33,8 @@ class FPTransaction : NSObject {
                     text = "Balance"
                 case .unknown:
                     text = "Unknown"
+                case .paymentCard:
+                    text = "Credit/Debit Card"
             }
             return text
         }
@@ -47,7 +47,7 @@ class FPTransaction : NSObject {
     var isOrdered = false
     var last4: String?
     var customer: FPCustomer!
-    var paymentType = PaymentType.card
+    var paymentType = PaymentType.unknown
     var retailLocation: FPRetailLocation!
     
     class func setActiveTransaction(_ t: FPTransaction?) {
