@@ -28,9 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "50FB1FA11980176B00D7106C"
-               BuildableName = "FPOS Dev.app"
-               BlueprintName = "FPOS Dev"
+               BlueprintIdentifier = "E92BF88E24EBBC77002CB596"
+               BuildableName = "Farmstand Cart (DEV).app"
+               BlueprintName = "Farmstand Cart (DEV)"
                ReferencedContainer = "container:Farm POS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -58,12 +58,21 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E92BF88E24EBBC77002CB596"
+            BuildableName = "Farmstand Cart (DEV).app"
+            BlueprintName = "Farmstand Cart (DEV)"
+            ReferencedContainer = "container:Farm POS.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
             BlueprintIdentifier = "81DB781B195C2A860021DE57"
             BuildableName = "Farmstand Cart.app"
             BlueprintName = "Farmstand Cart"
             ReferencedContainer = "container:Farm POS.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Debug"
