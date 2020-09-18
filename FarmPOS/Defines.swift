@@ -17,8 +17,7 @@ let FPColorPaymentFlowMessage       = UIColor(red: 71.0/255.0, green: 71.0/255.0
 let popoverWidth: CGFloat = 640.0
 
 enum FPPaymentMethod : Int {
-    case creditCard = 1
-    case cash
+    case cash = 2
     case check
     case payLater
     case giftCard
