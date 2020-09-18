@@ -188,7 +188,6 @@ class FPCashCheckViewController: FPRotationViewController {
     }
     
     func updateRightBarButtonItem() {
-        // Removed check for allowcreditcardusage
         if let user = FPUser.activeUser(), user.farm != nil && FPCustomer.activeCustomer() != nil {
             var item: UIBarButtonItem!
             if self.navigationItem.rightBarButtonItem != nil {
