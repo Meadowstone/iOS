@@ -155,7 +155,7 @@ class FPPaymentOptionsViewController: FPRotationViewController {
                 vc.mode = 1
                 navigationController!.pushViewController(vc, animated: true)
             } else {
-                depositSumPayWithCheck(false, creditCard: false, checkNumber: nil, transactionToken: nil, last4: nil)
+                depositSumPayWithCheck(false, checkNumber: nil, transactionToken: nil, last4: nil)
             }
         case FPPaymentMethod.check.rawValue:
             if !balancePayment {
@@ -240,7 +240,7 @@ class FPPaymentOptionsViewController: FPRotationViewController {
         }
     }
     //MARK: - Balance payment
-    func depositSumPayWithCheck(_ isCheck: Bool, creditCard: Bool, checkNumber: String?, transactionToken: String?, last4: String?) {
+    func depositSumPayWithCheck(_ isCheck: Bool, checkNumber: String?, transactionToken: String?, last4: String?) {
         var hud: MBProgressHUD!
         let completion = { [weak self] (errMsg: String?) -> Void in
             hud.hide(false)
@@ -251,10 +251,6 @@ class FPPaymentOptionsViewController: FPRotationViewController {
                 if isCheck {
                     if FPFarmWorker.activeWorker() == nil {
                         message = "Please drop your check into the container labeled \"Cash/Check Box.\"\nYou will receive an email receipt of your deposit."
-                    }
-                } else if creditCard {
-                    if FPFarmWorker.activeWorker() == nil {
-                        message = "You will receive an email receipt of your deposit."
                     }
                 } else { // cash
                     if FPFarmWorker.activeWorker() == nil {
@@ -272,7 +268,7 @@ class FPPaymentOptionsViewController: FPRotationViewController {
         hud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
         hud.removeFromSuperViewOnHide = true
         hud.labelText = "Processing"
-        FPServer.sharedInstance.balanceDepositWithSum(self.balanceSum, isCheck: isCheck, useCreditCard: creditCard, checkNumber: checkNumber, transactionToken: transactionToken, last4: last4, completion: completion)
+        FPServer.sharedInstance.balanceDepositWithSum(self.balanceSum, isCheck: isCheck, checkNumber: checkNumber, transactionToken: transactionToken, last4: last4, completion: completion)
     }
     
     // UIAlertView delegate (probably can be removed since it's deprecated and not called anymore)
@@ -282,7 +278,7 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             balanceCompletionHandler()
         } else if alertView.tag == 2 && buttonIndex == 1 {
             let text = alertView.textField(at: 0)!.text
-            depositSumPayWithCheck(true, creditCard: false, checkNumber: text, transactionToken: nil, last4: nil)
+            depositSumPayWithCheck(true, checkNumber: text, transactionToken: nil, last4: nil)
         }
     }
     
