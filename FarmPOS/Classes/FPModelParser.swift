@@ -352,15 +352,6 @@ class FPModelParser {
         return FPGiftCard(id: info["gift_card_id"] as! Int, sum: info["sum"] as! Double)
     }
     
-    class func creditCardWithInfo(_ info: NSDictionary) -> FPCreditCard {
-        let creditCard = FPCreditCard()
-        creditCard.isDefault = info["is_default"] as! Bool
-        creditCard.label = info["label"] as! String
-        creditCard.last4 = info["last_4"] as! String
-        creditCard.token = info["token"] as! String
-        return creditCard
-    }
-    
     class func orderWithInfo(_ info: NSDictionary) -> FPOrder {
         let order = FPOrder()
         order.id = info["purchase_id"] as! Int
