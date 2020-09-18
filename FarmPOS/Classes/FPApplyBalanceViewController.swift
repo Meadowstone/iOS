@@ -75,7 +75,7 @@ class FPApplyBalanceViewController: FPRotationViewController, UIAlertViewDelegat
             self.balanceTextField.becomeFirstResponder()
         }
         
-        if let user = FPUser.activeUser(), user.farm != nil && !user.farm!.allowCreditCardPayments {
+        if let user = FPUser.activeUser(), user.farm != nil {
             if let ac = FPCustomer.activeCustomer(), FPCurrencyFormatter.intCurrencyRepresentation(ac.balance) >= FPCurrencyFormatter.intCurrencyRepresentation(FPCartView.sharedCart().sumWithTax) {
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Pay With Balance", style: .plain, target: self, action: #selector(FPApplyBalanceViewController.payWithBalancePressed))
             }

@@ -13,12 +13,9 @@ class FPGiftCardOptionsViewController: FPRotationViewController {
     var closeBlock: (() -> Void)!
 
     @IBAction func buyPressed(_ sender: AnyObject) {
-        if !FPUser.activeUser()!.farm!.canUseCreditCard {
-            FPAlertManager.showMessage("This farm is not configured to use credit cards.", withTitle: "Error")
-            return
-        }
-        let vc = FPGiftCardsViewController.giftCardsViewControllerWithContentSize(preferredContentSize, cardBoughtHandler:closeBlock)
-        navigationController!.pushViewController(vc, animated: true)
+        return // before removing the old credit card code, there was a possibility to proceed further here
+//        let vc = FPGiftCardsViewController.giftCardsViewControllerWithContentSize(preferredContentSize, cardBoughtHandler:closeBlock)
+//        navigationController!.pushViewController(vc, animated: true)
     }
     
     @IBAction func redeemPressed(_ sender: AnyObject) {

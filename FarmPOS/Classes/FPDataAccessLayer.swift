@@ -83,7 +83,6 @@ class FPDataAccessLayer : NSObject {
         c.name = info["name"] as! String
         c.balance = NSNumber(value: info["balance"] as! Double)
         c.farmBucks = NSNumber(value: ((info["farm_bucks"] as? Double) != nil ? info["farm_bucks"] as! Double : 0.00))
-        c.hasCreditCard = info["has_credit_card"] as! Bool as NSNumber
         c.hasOverdueBalance = info["has_overdue_balance"] as! Bool as NSNumber
         c.email = info["email"] as! String
         c.pin = info["pin"] as! String
@@ -261,7 +260,6 @@ class FPDataAccessLayer : NSObject {
         c.email = cd.email
         c.pin = cd.pin
         c.phone = cd.phone
-        c.hasCreditCard = cd.hasCreditCard.boolValue
         c.hasOverdueBalance = cd.hasOverdueBalance.boolValue
         c.phoneHome = cd.phoneHome
         c.city = cd.city

@@ -59,20 +59,6 @@ class FPPaymentOptionsViewController: FPRotationViewController {
     }
     
     @IBAction func payLaterPressed(_ sender: AnyObject) {
-        if let ac = FPCustomer.activeCustomer() {
-            //ZORGadd!
-            if FPUser.activeUser() != nil && FPUser.activeUser()!.farm != nil && FPUser.activeUser()!.farm!.allowCreditCardPayments {
-                if FPCurrencyFormatter.intCurrencyRepresentation(FPCartView.sharedCart().sumWithTax) <= FPCurrencyFormatter.intCurrencyRepresentation(ac.balance) {
-                    
-                    let vc = FPCashCheckViewController.cashCheckViewControllerShowCancel(false)
-                    navigationController!.pushViewController(vc, animated: true)
-                    
-                } else {
-                    NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification), object: ["method": 4])
-                }
-                return
-            }
-        }
         NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification), object: ["method": 4])
     }
     

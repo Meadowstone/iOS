@@ -21,7 +21,6 @@ extension FPCDCustomer {
     @NSManaged public var farmBucks: NSNumber
     @NSManaged public var city: String?
     @NSManaged public var email: String
-    @NSManaged public var hasCreditCard: NSNumber
     @NSManaged public var wholesale: NSNumber
     @NSManaged public var hasOverdueBalance: NSNumber
     @NSManaged public var id: NSNumber

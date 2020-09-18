@@ -40,7 +40,7 @@ class FPBuyGiftCardViewController: FPRotationViewController, UITextFieldDelegate
     }
     
     @IBAction func sendPressed(_ sender: AnyObject) {
-        // Before removing the CardFlight integration, there was an option to buy gift card by using credit card here 
+        // before removing the old credit card code, there was an option to buy gift card by using credit card here 
     }
     
     class func buyGiftCardViewControllerWithGiftCard(_ giftCard: FPGiftCard, cardBoughtHandler:@escaping () -> Void) -> FPBuyGiftCardViewController {

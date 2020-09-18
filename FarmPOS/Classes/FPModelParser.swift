@@ -77,7 +77,6 @@ class FPModelParser {
         customer.name = customerInfo["name"] as! String
         customer.balance = customerInfo["balance"] as! Double
         customer.farmBucks = (customerInfo["farm_bucks"] as? Double) != nil ? customerInfo["farm_bucks"] as! Double : 0.00
-        customer.hasCreditCard = customerInfo["has_credit_card"] as! Bool
         customer.hasOverdueBalance = customerInfo["has_overdue_balance"] as! Bool
         customer.email = customerInfo["email"] as! String
         customer.pin = customerInfo["pin"] as! String
@@ -109,7 +108,6 @@ class FPModelParser {
         info["name"] = c.name
         info["balance"] = c.balance
         info["farm_bucks"] = c.farmBucks
-        info["has_credit_card"] = c.hasCreditCard
         info["email"] = c.email
         info["pin"] = c.pin
         info["phone"] = c.phone
@@ -403,12 +401,6 @@ class FPModelParser {
     
     class func farmWithInfo(_ info: NSDictionary) -> FPFarm {
         let farm = FPFarm()
-        if let cucc = info["can_use_credit_card"] as? Bool {
-            farm.canUseCreditCard = cucc
-        }
-        if let allowCreditCardPayments = info["allow_credit_card_payments"] as? Bool {
-            farm.allowCreditCardPayments = allowCreditCardPayments
-        }
         if let allowCustomerBalancePayments = info["allow_customer_balance_payments"] as? Bool {
             farm.allowCustomerBalancePayments = allowCustomerBalancePayments
         }
@@ -421,7 +413,7 @@ class FPModelParser {
     }
     
     class func infoWithFarm(_ farm: FPFarm) -> NSDictionary {
-        return ["name": farm.name, "address": farm.address, "city": farm.city, "state": farm.state, "zip_code": farm.zipCode, "can_use_credit_card": farm.canUseCreditCard, "allow_credit_card_payments": farm.allowCreditCardPayments, "allow_customer_balance_payments": farm.allowCustomerBalancePayments]
+        return ["name": farm.name, "address": farm.address, "city": farm.city, "state": farm.state, "zip_code": farm.zipCode, "allow_customer_balance_payments": farm.allowCustomerBalancePayments]
     }
     
 }

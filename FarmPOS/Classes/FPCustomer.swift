@@ -25,7 +25,6 @@ class FPCustomer : NSObject {
     var wholesale: Bool = false
     var hasOverdueBalance: Bool = false
     var overduePopoverShown: Bool = false
-    var hasCreditCard: Bool = false
     var synchronized: Bool = true // indicates that the customer was created and synchronized with the server or created outside of the application. Used to fetch and re-synchronize all customers that were created without active internet connection.
     var zip: String?
     var voidTransactionProducts: [NSDictionary]?

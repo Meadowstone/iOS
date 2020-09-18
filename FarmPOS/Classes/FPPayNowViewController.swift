@@ -32,15 +32,12 @@ class FPPayNowViewController: FPRotationViewController {
     }
     
     @IBAction func creditCardPressed(_ sender: AnyObject) {
-        if !FPUser.activeUser()!.farm!.canUseCreditCard {
-            FPAlertManager.showMessage("This farm is not configured to use credit cards.", withTitle: "Error")
-            return
-        }
-        if !FPServer.sharedInstance.reachabilityManager.isReachable {
-            FPAlertManager.showMessage("Credit card payments are temporarily unavailable. Please try again later", withTitle:"")
-            return
-        }
-        // Before removing the CardFlight integration, there was an option to pay with credit card here
+        return // before removing the old credit card code, there was a possibility to proceed further here
+//        if !FPServer.sharedInstance.reachabilityManager.isReachable {
+//            FPAlertManager.showMessage("Credit card payments are temporarily unavailable. Please try again later", withTitle:"")
+//            return
+//        }
+        // before removing the old credit card code, there was an option to pay with credit card here
     }
     
     @IBAction func cashCheckPressed(_ sender: AnyObject) {
