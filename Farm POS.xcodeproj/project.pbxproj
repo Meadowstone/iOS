@@ -48,7 +48,6 @@
 		812967481B403BA3009ABC6A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812967471B403BA3009ABC6A /* MessageUI.framework */; };
 		8129674A1B403BAF009ABC6A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812967491B403BAF009ABC6A /* CoreGraphics.framework */; };
 		8129674C1B403BB8009ABC6A /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8129674B1B403BB8009ABC6A /* ExternalAccessory.framework */; };
-		8129674E1B403BC7009ABC6A /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8129674D1B403BC7009ABC6A /* libstdc++.6.0.9.dylib */; };
 		812BEEE91B2AE31800F01436 /* FPApplyBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812BEEE81B2AE31800F01436 /* FPApplyBalanceViewController.swift */; };
 		812DDEC21E0AC11C00DE1777 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEBB1E0AC11C00DE1777 /* AFNetworking.framework */; };
 		812DDEC41E0AC11C00DE1777 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812DDEBD1E0AC11C00DE1777 /* MBProgressHUD.framework */; };
@@ -255,7 +254,6 @@
 		E92BF8FE24EBBC77002CB596 /* FPProductCategoryTax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B63A271B556455002E795F /* FPProductCategoryTax.swift */; };
 		E92BF8FF24EBBC77002CB596 /* FPProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC7E196775BE00587E50 /* FPProductCategory.swift */; };
 		E92BF90024EBBC77002CB596 /* FPCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC7A196773CD00587E50 /* FPCartView.swift */; };
-		E92BF90224EBBC77002CB596 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8129674D1B403BC7009ABC6A /* libstdc++.6.0.9.dylib */; };
 		E92BF90324EBBC77002CB596 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8129674B1B403BB8009ABC6A /* ExternalAccessory.framework */; };
 		E92BF90424EBBC77002CB596 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812967491B403BAF009ABC6A /* CoreGraphics.framework */; };
 		E92BF90524EBBC77002CB596 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812967471B403BA3009ABC6A /* MessageUI.framework */; };
@@ -487,7 +485,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8129674E1B403BC7009ABC6A /* libstdc++.6.0.9.dylib in Frameworks */,
 				8129674C1B403BB8009ABC6A /* ExternalAccessory.framework in Frameworks */,
 				8129674A1B403BAF009ABC6A /* CoreGraphics.framework in Frameworks */,
 				812967481B403BA3009ABC6A /* MessageUI.framework in Frameworks */,
@@ -512,7 +509,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E92BF90224EBBC77002CB596 /* libstdc++.6.0.9.dylib in Frameworks */,
 				E92BF90324EBBC77002CB596 /* ExternalAccessory.framework in Frameworks */,
 				E92BF90424EBBC77002CB596 /* CoreGraphics.framework in Frameworks */,
 				E92BF90524EBBC77002CB596 /* MessageUI.framework in Frameworks */,
