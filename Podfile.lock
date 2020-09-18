@@ -10,9 +10,6 @@ PODS:
   - AFNetworking/Reachability (2.5.4)
   - AFNetworking/Security (2.5.4)
   - AFNetworking/Serialization (2.5.4)
-  - CardFlight (2.0.6):
-    - CardFlight/AudioJack (= 2.0.6)
-  - CardFlight/AudioJack (2.0.6)
   - MBProgressHUD (0.9.1)
   - MMDrawerController (0.6.0):
     - MMDrawerController/Core (= 0.6.0)
@@ -38,7 +35,6 @@ DEPENDENCIES:
   - AFNetworking/Reachability (= 2.5.4)
   - AFNetworking/Security (= 2.5.4)
   - AFNetworking/Serialization (= 2.5.4)
-  - CardFlight (= 2.0.6)
   - MBProgressHUD (= 0.9.1)
   - MMDrawerController (= 0.6.0)
   - SDWebImage (= 3.7.3)
@@ -48,7 +44,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
-    - CardFlight
     - MBProgressHUD
     - MMDrawerController
     - SDWebImage
@@ -58,13 +53,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
-  CardFlight: eae95b7f9bbbf190f7de64cd5b29f95e1f515e83
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   Stripe: 92f1c73a9dbd3c54277ed06a1fea6e08f20414c6
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
 
-PODFILE CHECKSUM: c0a5c17b2711b28b37130a6ee3384767328c7f61
+PODFILE CHECKSUM: 8a5ab20cacf044912c15c5db1c3f9a351cee7163
 
 COCOAPODS: 1.9.3

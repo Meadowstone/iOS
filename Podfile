@@ -8,7 +8,6 @@ def pods_to_add
     pod 'MBProgressHUD', '0.9.1'
     pod 'SDWebImage', '3.7.3'
     pod 'SVPullToRefresh', '0.4.1'
-    pod 'CardFlight', '2.0.6'
     pod 'Stripe'
 end
 
