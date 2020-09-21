@@ -13,6 +13,8 @@ import MBProgressHUD
 class FPPayWithPaymentCardViewController: UIViewController {
     
     private var paymentCardDetailsField: STPPaymentCardTextField!
+    private var emailTextField: UITextField!
+    private var emailExplanationLabel: UILabel!
     private var payButton: UIButton!
     private var processedByStripeLabel: UILabel!
     
@@ -24,6 +26,8 @@ class FPPayWithPaymentCardViewController: UIViewController {
         view.backgroundColor = FPColorPaymentFlowBackground
         
         createPaymentCardDetailsField()
+        createEmailTextField()
+        createEmailExplanationLabel()
         createPayButton()
         createProcessedByStripeLabel()
     }
@@ -31,37 +35,78 @@ class FPPayWithPaymentCardViewController: UIViewController {
     private func createPaymentCardDetailsField() {
         paymentCardDetailsField = STPPaymentCardTextField()
         paymentCardDetailsField.postalCodeEntryEnabled = false
+        paymentCardDetailsField.font = UIFont(name: "HelveticaNeue-Light", size: 20)!
+        paymentCardDetailsField.placeholderColor = FPColorPaymentFlowPlaceholder
+        paymentCardDetailsField.delegate = self
         view.addSubview(paymentCardDetailsField)
         paymentCardDetailsField.translatesAutoresizingMaskIntoConstraints = false
         paymentCardDetailsField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         paymentCardDetailsField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        paymentCardDetailsField.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        paymentCardDetailsField.topAnchor.constraint(equalTo: view.topAnchor, constant: 14).isActive = true
+    }
+    
+    private func createEmailTextField() {
+        emailTextField = UITextField()
+        emailTextField.autocapitalizationType = .none
+        emailTextField.autocorrectionType = .no
+        emailTextField.keyboardType = .emailAddress
+        emailTextField.attributedPlaceholder = NSAttributedString(
+            string: "E-mail",
+            attributes: [
+                .font : UIFont(name: "HelveticaNeue-Light", size: 20)!,
+                .foregroundColor : FPColorPaymentFlowPlaceholder
+            ]   
+        )
+        emailTextField.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        emailTextField.layer.cornerRadius = paymentCardDetailsField.cornerRadius
+        emailTextField.layer.borderColor = paymentCardDetailsField.borderColor?.cgColor
+        emailTextField.layer.borderWidth = paymentCardDetailsField.borderWidth
+        emailTextField.layer.sublayerTransform = CATransform3DMakeTranslation(12, 0, 0)
+        view.addSubview(emailTextField)
+        emailTextField.translatesAutoresizingMaskIntoConstraints = false
+        emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        emailTextField.topAnchor.constraint(equalTo: paymentCardDetailsField.bottomAnchor, constant: 14).isActive = true
+        emailTextField.heightAnchor.constraint(equalToConstant: 44).isActive = true
+    }
+    
+    private func createEmailExplanationLabel() {
+        emailExplanationLabel = UILabel()
+        emailExplanationLabel.text = "If you fill out your e-mail, we'll send you a receipt for this purchase."
+        emailExplanationLabel.numberOfLines = 0
+        emailExplanationLabel.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        emailExplanationLabel.textColor = FPColorPaymentFlowMessage
+        view.addSubview(emailExplanationLabel)
+        emailExplanationLabel.translatesAutoresizingMaskIntoConstraints = false
+        emailExplanationLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        emailExplanationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        emailExplanationLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 4).isActive = true
     }
     
     private func createPayButton() {
         payButton = UIButton()
         payButton.setBackgroundImage(UIImage(named: "green_btn"), for: .normal)
         payButton.setTitle("Pay", for: .normal)
-        payButton.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 20.0)
+        payButton.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 20)
         payButton.addTarget(self, action: #selector(payTapped), for: .touchUpInside)
         view.addSubview(payButton)
         payButton.translatesAutoresizingMaskIntoConstraints = false
         payButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         payButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        payButton.topAnchor.constraint(equalTo: paymentCardDetailsField.bottomAnchor, constant: 14).isActive = true
+        payButton.topAnchor.constraint(equalTo: emailExplanationLabel.bottomAnchor, constant: 20).isActive = true
         payButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
     
     private func createProcessedByStripeLabel() {
         processedByStripeLabel = UILabel()
         processedByStripeLabel.text = "Your card details will be processed by Stripe."
-        processedByStripeLabel.font = UIFont(name: "HelveticaNeue-Light", size: 22.0)
+        processedByStripeLabel.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         processedByStripeLabel.textColor = FPColorPaymentFlowMessage
         view.addSubview(processedByStripeLabel)
         processedByStripeLabel.translatesAutoresizingMaskIntoConstraints = false
         processedByStripeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         processedByStripeLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        processedByStripeLabel.topAnchor.constraint(equalTo: payButton.bottomAnchor, constant: 14).isActive = true
+        processedByStripeLabel.topAnchor.constraint(equalTo: payButton.bottomAnchor, constant: 4).isActive = true
     }
     
     override func viewDidLoad() {
@@ -103,6 +148,14 @@ extension FPPayWithPaymentCardViewController: STPAuthenticationContext {
     
     func authenticationPresentingViewController() -> UIViewController {
         return self
+    }
+    
+}
+
+extension FPPayWithPaymentCardViewController: STPPaymentCardTextFieldDelegate {
+    
+    func paymentCardTextFieldDidEndEditing(_ textField: STPPaymentCardTextField) {
+        emailTextField.becomeFirstResponder()
     }
     
 }
