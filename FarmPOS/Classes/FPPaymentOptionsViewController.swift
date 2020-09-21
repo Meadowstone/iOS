@@ -104,31 +104,29 @@ class FPPaymentOptionsViewController: FPRotationViewController {
         button2.setTitle("Pay with Check", for: .normal)
         button2.tag = FPPaymentMethod.check.rawValue
         
-        button3.isHidden = false
-        button4.isHidden = false
-        button5.isHidden = false
+        button3.isHidden = true
+        button4.isHidden = true
+        button5.isHidden = true
         
-        if let ac = FPCustomer.activeCustomer() {
+        if let customer = FPCustomer.activeCustomer() {
             if !balancePayment {
-                if FPCurrencyFormatter.intCurrencyRepresentation(FPCartView.sharedCart().sumWithTax) <= FPCurrencyFormatter.intCurrencyRepresentation(ac.balance) {
+                if FPCurrencyFormatter.intCurrencyRepresentation(FPCartView.sharedCart().sumWithTax) <= FPCurrencyFormatter.intCurrencyRepresentation(customer.balance) {
                     button3.setTitle("Pay with Balance", for: .normal)
                     button3.tag = FPPaymentMethod.balance.rawValue
                 } else {
                     button3.setTitle("Pay Later", for: .normal)
                     button3.tag = FPPaymentMethod.payLater.rawValue
                 }
+                button3.isHidden = false
+                
                 button4.setTitle("Pay with Credit/Debit Card", for: .normal)
                 button4.tag = FPPaymentMethod.paymentCard.rawValue
-                button5.isHidden = true
-            } else {
-                button3.isHidden = true
-                button4.isHidden = true
-                button5.isHidden = true
+                button4.isHidden = false
             }
-        } else {
-            button3.isHidden = true
-            button4.isHidden = true
-            button5.isHidden = true
+        } else if FPFarmWorker.activeWorker() == nil {
+            button3.setTitle("Pay with Credit/Debit Card", for: .normal)
+            button3.tag = FPPaymentMethod.paymentCard.rawValue
+            button3.isHidden = false
         }
     }
     
