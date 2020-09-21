@@ -1119,10 +1119,13 @@ class FPServer : AFHTTPSessionManager {
         operation?.start()
     }
     
-    func createStripePaymentIntent(forAmount amount: Double, completion: @escaping (_ clientSecret: String?) -> Void) {
+    func createStripePaymentIntent(forAmount amount: Double, email: String?, completion: @escaping (_ clientSecret: String?) -> Void) {
         var params = [String : Any]()
         params["amount"] = amount
         params["currency"] = "usd"
+        if let email = email, !email.isEmpty {
+            params["receipt_email"] = email
+        }
         
         let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
             let jsonResponse = responseObject as? [AnyHashable : Any]

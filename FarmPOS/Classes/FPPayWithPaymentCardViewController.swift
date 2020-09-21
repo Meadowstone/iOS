@@ -18,7 +18,6 @@ class FPPayWithPaymentCardViewController: UIViewController {
     private var payButton: UIButton!
     private var processedByStripeLabel: UILabel!
     
-    var unableToStartPayment: (() -> Void)?
     var paymentSucceeded: (() -> Void)?
     
     override func loadView() {
@@ -112,16 +111,6 @@ class FPPayWithPaymentCardViewController: UIViewController {
     override func viewDidLoad() {
         title = "Enter card details"
         paymentCardDetailsField.becomeFirstResponder()
-        createPaymentIntent()
-    }
-    
-    private func createPaymentIntent() {
-        let checkoutSum = FPCartView.sharedCart().checkoutSum
-        PaymentCardProcessor.shared.createPaymentIntent(forCheckoutSum: checkoutSum) { [weak self] didSucceed in
-            if !didSucceed {
-                self?.unableToStartPayment?()
-            }
-        }
     }
     
     @objc private func payTapped() {
@@ -129,15 +118,25 @@ class FPPayWithPaymentCardViewController: UIViewController {
         progressHud?.removeFromSuperViewOnHide = true
         progressHud?.labelText = "Performing payment..."
         
-        PaymentCardProcessor.shared.performPayment(with: paymentCardDetailsField.cardParams, in: self) { [weak self] paymentResult in
-            progressHud?.hide(false)
-            switch paymentResult {
-            case .canceled:
-                FPAlertManager.showMessage("Your card was not charged.", withTitle: "Payment canceled")
-            case .error(message: let message):
-                FPAlertManager.showMessage(message ?? "Unknown error occurred.", withTitle: "Unable to make payment")
-            case .success:
-                self?.paymentSucceeded?()
+        let checkoutSum = FPCartView.sharedCart().checkoutSum
+        let email = emailTextField.text
+        PaymentCardProcessor.shared.createPaymentIntent(forCheckoutSum: checkoutSum, email: email) { [weak self] didSucceed in
+            guard let self = self, didSucceed else {
+                progressHud?.hide(false)
+                FPAlertManager.showMessage("Please try again later.", withTitle: "Unable to make card payment at the moment")
+                return
+            }
+
+            PaymentCardProcessor.shared.performPayment(with: self.paymentCardDetailsField.cardParams, in: self) { [weak self] paymentResult in
+                progressHud?.hide(false)
+                switch paymentResult {
+                case .canceled:
+                    FPAlertManager.showMessage("Your card was not charged.", withTitle: "Payment canceled")
+                case .error(message: let message):
+                    FPAlertManager.showMessage(message ?? "Unknown error occurred.", withTitle: "Unable to make payment")
+                case .success:
+                    self?.paymentSucceeded?()
+                }
             }
         }
     }

@@ -167,12 +167,6 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification), object: ["method": 4])
         case FPPaymentMethod.paymentCard.rawValue:
             let payWithPaymentCardViewController = FPPayWithPaymentCardViewController()
-            
-            payWithPaymentCardViewController.unableToStartPayment = { [weak self] in
-                self?.navigationController?.popViewController(animated: true)
-                FPAlertManager.showMessage("Please try again later.", withTitle: "Unable to make card payments at the moment")
-            }
-            
             payWithPaymentCardViewController.paymentSucceeded = { [weak self] in
                 self?.navigationController?.popViewController(animated: true)
                 let notificationParams: [String : Any] = [
@@ -182,7 +176,6 @@ class FPPaymentOptionsViewController: FPRotationViewController {
                 NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification),
                                                 object: notificationParams)
             }
-            
             navigationController?.pushViewController(payWithPaymentCardViewController, animated: true)
         default:
             break

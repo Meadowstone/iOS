@@ -27,8 +27,8 @@ class PaymentCardProcessor: NSObject {
         #endif
     }
     
-    func createPaymentIntent(forCheckoutSum checkoutSum: Double, completion: @escaping ((_ didSucceed: Bool) -> Void)) {
-        FPServer.sharedInstance.createStripePaymentIntent(forAmount: checkoutSum * 100) { [weak self] clientSecret in
+    func createPaymentIntent(forCheckoutSum checkoutSum: Double, email: String?, completion: @escaping ((_ didSucceed: Bool) -> Void)) {
+        FPServer.sharedInstance.createStripePaymentIntent(forAmount: checkoutSum * 100, email: email) { [weak self] clientSecret in
             guard let clientSecret = clientSecret else {
                 completion(false)
                 return
