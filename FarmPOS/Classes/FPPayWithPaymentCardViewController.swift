@@ -111,6 +111,7 @@ class FPPayWithPaymentCardViewController: UIViewController {
     override func viewDidLoad() {
         title = "Enter card details"
         paymentCardDetailsField.becomeFirstResponder()
+        prefillEmailIfNeeded()
     }
     
     @objc private func payTapped() {
@@ -139,6 +140,11 @@ class FPPayWithPaymentCardViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    private func prefillEmailIfNeeded() {
+        guard let customer = FPCustomer.activeCustomer() else { return }
+        emailTextField.text = customer.email
     }
 
 }
