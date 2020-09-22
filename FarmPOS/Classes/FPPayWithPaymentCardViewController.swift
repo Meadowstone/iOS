@@ -115,12 +115,17 @@ class FPPayWithPaymentCardViewController: UIViewController {
     }
     
     @objc private func payTapped() {
+        let email = emailTextField.text
+        if let email = email, !email.isEmpty, !FPInputValidator.isValid(email: email) {
+            FPAlertManager.showMessage("Please enter a valid e-mail address.", withTitle: "Invalid e-mail")
+            return
+        }
+        
         let progressHud = MBProgressHUD.showAdded(to: view, animated: false)
         progressHud?.removeFromSuperViewOnHide = true
         progressHud?.labelText = "Performing payment..."
         
         let checkoutSum = FPCartView.sharedCart().checkoutSum
-        let email = emailTextField.text
         PaymentCardProcessor.shared.createPaymentIntent(forCheckoutSum: checkoutSum, email: email) { [weak self] didSucceed in
             guard let self = self, didSucceed else {
                 progressHud?.hide(false)
