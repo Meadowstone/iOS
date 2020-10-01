@@ -50,6 +50,9 @@ class FPPaymentOptionsViewController: FPRotationViewController {
     @IBOutlet var button4: UIButton!
     @IBOutlet var button5: UIButton!
     
+    @IBOutlet weak var button3explanationLabel: UILabel!
+    @IBOutlet weak var button4explanationLabel: UILabel!
+    
     var balancePayment = false
     var balanceSum : Double = 0.0
     
@@ -108,6 +111,14 @@ class FPPaymentOptionsViewController: FPRotationViewController {
         button4.isHidden = true
         button5.isHidden = true
         
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            button3explanationLabel.isHidden = true
+            button4explanationLabel.isHidden = true
+        }
+        
+        let payWithPaymentCardTitle = "Pay with Credit/Debit Card"
+        let payWithPaymentCardExplanation = "If you use credit card you will pay 3% more."
+        
         if let customer = FPCustomer.activeCustomer() {
             if !balancePayment {
                 if FPCurrencyFormatter.intCurrencyRepresentation(FPCartView.sharedCart().sumWithTax) <= FPCurrencyFormatter.intCurrencyRepresentation(customer.balance) {
@@ -119,14 +130,18 @@ class FPPaymentOptionsViewController: FPRotationViewController {
                 }
                 button3.isHidden = false
                 
-                button4.setTitle("Pay with Credit/Debit Card", for: .normal)
+                button4.setTitle(payWithPaymentCardTitle, for: .normal)
                 button4.tag = FPPaymentMethod.paymentCard.rawValue
                 button4.isHidden = false
+                button4explanationLabel.text = payWithPaymentCardExplanation
+                button4explanationLabel.isHidden = false
             }
         } else if FPFarmWorker.activeWorker() == nil {
-            button3.setTitle("Pay with Credit/Debit Card", for: .normal)
+            button3.setTitle(payWithPaymentCardTitle, for: .normal)
             button3.tag = FPPaymentMethod.paymentCard.rawValue
             button3.isHidden = false
+            button3explanationLabel.text = payWithPaymentCardExplanation
+            button3explanationLabel.isHidden = false
         }
     }
     
