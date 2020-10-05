@@ -507,6 +507,13 @@ class FPServer : AFHTTPSessionManager {
                 if r["status"] as! Bool {
                     let customerInfo = r["client"] as! Dictionary<String, AnyObject>
                     customer = FPModelParser.customerWithInfo(customerInfo as NSDictionary)
+                    
+                    if let paymentCardProcessorInfos = r["credit_cards"] as? [NSDictionary],
+                        let paymentCardProcessorInfo = paymentCardProcessorInfos.first
+                    {
+                        let paymentCardProcessor = FPModelParser.paymentCardProcessorWithInfo(paymentCardProcessorInfo)
+                        PaymentCardController.shared.paymentProcessor = paymentCardProcessor
+                    }
                 }
                 errors = self.errors(r["errors"])
             }

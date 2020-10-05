@@ -301,6 +301,8 @@
 		E92BF93224EBBC77002CB596 /* FPProductCheckoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101EE90199280280042FBB6 /* FPProductCheckoutCell.xib */; };
 		E92BF93C24EBC641002CB596 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503EB714197D735D00B86869 /* Images.xcassets */; };
 		E92BF93E24EBC81F002CB596 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503EB714197D735D00B86869 /* Images.xcassets */; };
+		E9445537252B1D08002AD1BD /* FPPaymentCardProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9445536252B1D08002AD1BD /* FPPaymentCardProcessor.swift */; };
+		E9445538252B1DD3002AD1BD /* FPPaymentCardProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9445536252B1D08002AD1BD /* FPPaymentCardProcessor.swift */; };
 		E972DD4425079213008E0652 /* PaymentCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD4325079213008E0652 /* PaymentCardController.swift */; };
 		E972DD452507944C008E0652 /* PaymentCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD4325079213008E0652 /* PaymentCardController.swift */; };
 		E972DD47250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD46250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift */; };
@@ -476,6 +478,7 @@
 		E92BF93724EBBC77002CB596 /* Farmstand Cart (DEV).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmstand Cart (DEV).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92BF93824EBBC78002CB596 /* FarmstandCartDEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FarmstandCartDEV-Info.plist"; path = "/Users/denismendica/Projects/toptal/Meadowstone Farm/FarmPOS-MobileApp/FarmstandCartDEV-Info.plist"; sourceTree = "<absolute>"; };
 		E92BF93F24F0124A002CB596 /* DataModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DataModel 3.xcdatamodel"; sourceTree = "<group>"; };
+		E9445536252B1D08002AD1BD /* FPPaymentCardProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPPaymentCardProcessor.swift; sourceTree = "<group>"; };
 		E972DD4325079213008E0652 /* PaymentCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardController.swift; sourceTree = "<group>"; };
 		E972DD46250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPPayWithPaymentCardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -694,6 +697,7 @@
 				81E5B7DB1B5FFA420061E377 /* FPProductSupplier.swift */,
 				81E95A481B612CC500F95F18 /* FPInventoryProductNote.swift */,
 				81E9AC1C1B6A4FAD00DF81AA /* FPInventoryProductHistory.swift */,
+				E9445536252B1D08002AD1BD /* FPPaymentCardProcessor.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -1327,6 +1331,7 @@
 				8151073C197BB31700AFC491 /* FPCheckoutFooterView.swift in Sources */,
 				812ED2B6195CF354008F178C /* FPModelParser.swift in Sources */,
 				818A3A7F1A82938E00C2A12C /* FPFarm.swift in Sources */,
+				E9445537252B1D08002AD1BD /* FPPaymentCardProcessor.swift in Sources */,
 				811B455C198A52B8000EC090 /* DataModel.xcdatamodeld in Sources */,
 				8179D43D198F969800B49FC3 /* FPCategoriesViewController.swift in Sources */,
 				81F452721E11632800A583D3 /* FPCDPurchase+CoreDataClass.swift in Sources */,
@@ -1436,6 +1441,7 @@
 				E92BF8C924EBBC77002CB596 /* FPCheckoutFooterView.swift in Sources */,
 				E92BF8CA24EBBC77002CB596 /* FPModelParser.swift in Sources */,
 				E92BF8CB24EBBC77002CB596 /* FPFarm.swift in Sources */,
+				E9445538252B1DD3002AD1BD /* FPPaymentCardProcessor.swift in Sources */,
 				E92BF8CC24EBBC77002CB596 /* DataModel.xcdatamodeld in Sources */,
 				E92BF8CD24EBBC77002CB596 /* FPCategoriesViewController.swift in Sources */,
 				E92BF8CE24EBBC77002CB596 /* FPCDPurchase+CoreDataClass.swift in Sources */,

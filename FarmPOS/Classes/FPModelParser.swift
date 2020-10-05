@@ -137,6 +137,13 @@ class FPModelParser {
         return info as NSDictionary
     }
     
+    class func paymentCardProcessorWithInfo(_ info: NSDictionary) -> FPPaymentCardProcessor {
+        return FPPaymentCardProcessor(
+            name: info["payment_processor"] as? String ?? "",
+            transactionFeePercentage: info["fee"] as? Double ?? 0,
+            transactionFeeFixed: info["fixed_per_transaction"] as? Double ?? 0
+        )
+    }
     
     class func measurementWithInfo(_ mi: NSDictionary) -> FPMeasurement {
         return FPMeasurement(id: mi["id"] as! Int, shortName: mi["short"] as! String, longName: mi["long"] as! String)

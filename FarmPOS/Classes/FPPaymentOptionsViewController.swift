@@ -117,7 +117,8 @@ class FPPaymentOptionsViewController: FPRotationViewController {
         }
         
         let payWithPaymentCardTitle = "Pay with Credit/Debit Card"
-        let payWithPaymentCardExplanation = "If you use credit card you will pay 3% more."
+        let payWithPaymentCardTotalPrice = PaymentCardController.shared.totalPrice(forCheckoutSum: FPCartView.sharedCart().checkoutSum)
+        let payWithPaymentCardExplanation = "If you use a payment card you will pay a total of $\(FPCurrencyFormatter.printableCurrency(payWithPaymentCardTotalPrice))"
         
         if let customer = FPCustomer.activeCustomer() {
             if !balancePayment {

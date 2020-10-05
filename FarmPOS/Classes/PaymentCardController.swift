@@ -17,8 +17,7 @@ class PaymentCardController: NSObject {
     }
     
     static let shared = PaymentCardController()
-    var processingFeePercentage: Double?
-    var processingFeeFixed: Double?
+    var paymentProcessor: FPPaymentCardProcessor?
     private var paymentIntentClientSecret: String?
     
     func initialize() {
@@ -29,8 +28,18 @@ class PaymentCardController: NSObject {
         #endif
     }
     
+    func totalPrice(forCheckoutSum checkoutSum: Double) -> Double {
+        guard let paymentProcessor = paymentProcessor else { return checkoutSum }
+        return FPCurrencyFormatter.roundCrrency(
+            checkoutSum
+            + checkoutSum * paymentProcessor.transactionFeePercentage / 100
+            + paymentProcessor.transactionFeeFixed
+        )
+    }
+    
     func createPaymentIntent(forCheckoutSum checkoutSum: Double, email: String?, completion: @escaping ((_ didSucceed: Bool) -> Void)) {
-        FPServer.sharedInstance.createStripePaymentIntent(forAmount: checkoutSum * 100, email: email) { [weak self] clientSecret in
+        let totalPrice = self.totalPrice(forCheckoutSum: checkoutSum)
+        FPServer.sharedInstance.createStripePaymentIntent(forAmount: totalPrice * 100, email: email) { [weak self] clientSecret in
             guard let clientSecret = clientSecret else {
                 completion(false)
                 return
