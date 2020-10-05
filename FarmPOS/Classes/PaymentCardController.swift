@@ -1,5 +1,5 @@
 //
-//  PaymentCardProcessor.swift
+//  PaymentCardController.swift
 //  Farmstand Cart
 //
 //  Created by Denis Mendica on 08/09/2020.
@@ -8,7 +8,7 @@
 
 import Stripe
 
-class PaymentCardProcessor: NSObject {
+class PaymentCardController: NSObject {
     
     enum PaymentResult {
         case success
@@ -16,7 +16,9 @@ class PaymentCardProcessor: NSObject {
         case error(message: String?)
     }
     
-    static let shared = PaymentCardProcessor()
+    static let shared = PaymentCardController()
+    var processingFeePercentage: Double?
+    var processingFeeFixed: Double?
     private var paymentIntentClientSecret: String?
     
     func initialize() {

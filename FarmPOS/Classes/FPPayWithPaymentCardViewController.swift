@@ -126,14 +126,14 @@ class FPPayWithPaymentCardViewController: UIViewController {
         progressHud?.labelText = "Performing payment..."
         
         let checkoutSum = FPCartView.sharedCart().checkoutSum
-        PaymentCardProcessor.shared.createPaymentIntent(forCheckoutSum: checkoutSum, email: email) { [weak self] didSucceed in
+        PaymentCardController.shared.createPaymentIntent(forCheckoutSum: checkoutSum, email: email) { [weak self] didSucceed in
             guard let self = self, didSucceed else {
                 progressHud?.hide(false)
                 FPAlertManager.showMessage("Please try again later.", withTitle: "Unable to make card payment at the moment")
                 return
             }
 
-            PaymentCardProcessor.shared.performPayment(with: self.paymentCardDetailsField.cardParams, in: self) { [weak self] paymentResult in
+            PaymentCardController.shared.performPayment(with: self.paymentCardDetailsField.cardParams, in: self) { [weak self] paymentResult in
                 progressHud?.hide(false)
                 switch paymentResult {
                 case .canceled:
