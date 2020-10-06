@@ -31,9 +31,8 @@ class PaymentCardController: NSObject {
     func totalPrice(forCheckoutSum checkoutSum: Double) -> Double {
         guard let paymentProcessor = paymentProcessor else { return checkoutSum }
         return FPCurrencyFormatter.roundCrrency(
-            checkoutSum
-            + checkoutSum * paymentProcessor.transactionFeePercentage / 100
-            + paymentProcessor.transactionFeeFixed
+            (checkoutSum + paymentProcessor.transactionFeeFixed)
+            / (1 - paymentProcessor.transactionFeePercentage / 100)       
         )
     }
     
