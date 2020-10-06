@@ -187,7 +187,7 @@ class FPPaymentOptionsViewController: FPRotationViewController {
                 self?.navigationController?.popViewController(animated: true)
                 let notificationParams: [String : Any] = [
                     "method": FPPaymentMethod.paymentCard.rawValue,
-                    "sumPaid": FPCartView.sharedCart().checkoutSum
+                    "sumPaid": PaymentCardController.shared.totalPrice(forCheckoutSum: FPCartView.sharedCart().checkoutSum)
                 ]
                 NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification),
                                                 object: notificationParams)
