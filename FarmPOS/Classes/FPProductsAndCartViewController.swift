@@ -310,9 +310,13 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
             }
             let customersItem = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(FPProductsAndCartViewController.customersPressed))
             items.append(customersItem)
-        } else if FPCustomer.activeCustomer() != nil && FPUser.activeUser()!.farm!.allowCustomerBalancePayments {
-            let balanceItem = UIBarButtonItem(title: "Gift Cards / Balance", style: .plain, target: self, action: #selector(FPProductsAndCartViewController.balancePressed))
-            items.append(balanceItem)
+        } else if FPCustomer.activeCustomer() != nil {
+            let manageBalanceItem = UIBarButtonItem(title: "Manage balance", style: .plain, target: self, action: #selector(FPProductsAndCartViewController.manageBalancePressed))
+            items.append(manageBalanceItem)
+            if FPUser.activeUser()!.farm!.allowCustomerBalancePayments {
+                let balanceItem = UIBarButtonItem(title: "Gift Cards / Balance", style: .plain, target: self, action: #selector(FPProductsAndCartViewController.balancePressed))
+                items.append(balanceItem)
+            }
         }
         
         let editItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(FPProductsAndCartViewController.editPressed(_:)))
@@ -416,6 +420,10 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
     @objc func customersPressed() {
         let vc = FPCustomersViewController.customersViewController()
         navigationController!.pushViewController(vc, animated: true)
+    }
+    
+    @objc func manageBalancePressed() {
+        print("manage balance!")
     }
     
     @objc func balancePressed() {
