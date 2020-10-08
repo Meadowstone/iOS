@@ -167,6 +167,7 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             NotificationCenter.default.post(name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification), object: ["method": 4])
         case FPPaymentMethod.paymentCard.rawValue:
             let payWithPaymentCardViewController = FPPayWithPaymentCardViewController()
+            payWithPaymentCardViewController.price = FPCartView.sharedCart().checkoutSum
             payWithPaymentCardViewController.paymentSucceeded = { [weak self] in
                 self?.navigationController?.popViewController(animated: true)
                 let notificationParams: [String : Any] = [

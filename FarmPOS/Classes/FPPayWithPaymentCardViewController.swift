@@ -18,6 +18,7 @@ class FPPayWithPaymentCardViewController: UIViewController {
     private var payButton: UIButton!
     private var processedByStripeLabel: UILabel!
     
+    var price: Double?
     var paymentSucceeded: (() -> Void)?
     
     override func loadView() {
@@ -115,6 +116,8 @@ class FPPayWithPaymentCardViewController: UIViewController {
     }
     
     @objc private func payTapped() {
+        guard let price = price else { return }
+        
         let email = emailTextField.text
         if let email = email, !email.isEmpty, !FPInputValidator.isValid(email: email) {
             FPAlertManager.showMessage("Please enter a valid e-mail address.", withTitle: "Invalid e-mail")
@@ -125,8 +128,7 @@ class FPPayWithPaymentCardViewController: UIViewController {
         progressHud?.removeFromSuperViewOnHide = true
         progressHud?.labelText = "Performing payment..."
         
-        let checkoutSum = FPCartView.sharedCart().checkoutSum
-        PaymentCardProcessor.shared.createPaymentIntent(forCheckoutSum: checkoutSum, email: email) { [weak self] didSucceed in
+        PaymentCardProcessor.shared.createPaymentIntent(forPrice: price, email: email) { [weak self] didSucceed in
             guard let self = self, didSucceed else {
                 progressHud?.hide(false)
                 FPAlertManager.showMessage("Please try again later.", withTitle: "Unable to make card payment at the moment")

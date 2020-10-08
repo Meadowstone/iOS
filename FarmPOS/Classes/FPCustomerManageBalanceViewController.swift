@@ -14,6 +14,7 @@ class FPCustomerManageBalanceViewController: UIViewController {
     private var optionsStackView: UIStackView!
     
     var cancelTapped: (() -> Void)?
+    var balanceUpdated: (() -> Void)?
     private var optionsForViews = [UIView : FPCustomerManageBalanceOption]()
     
     override func loadView() {
@@ -86,7 +87,13 @@ class FPCustomerManageBalanceViewController: UIViewController {
     
     @objc private func optionViewTapped(sender: UIButton) {
         guard let option = optionsForViews[sender] else { return }
-        print(option.price, option.balanceAdded)
+        let payWithPaymentCardViewController = FPPayWithPaymentCardViewController()
+        payWithPaymentCardViewController.price = option.price
+        payWithPaymentCardViewController.paymentSucceeded = { [weak self] in
+            // CMB TODO: contact server, update local balance & UI
+            self?.balanceUpdated?()
+        }
+        navigationController?.pushViewController(payWithPaymentCardViewController, animated: true)
     }
     
 }
