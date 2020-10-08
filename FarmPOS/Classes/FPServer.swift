@@ -759,6 +759,17 @@ class FPServer : AFHTTPSessionManager {
         self.get(kClientSendPurchaseHistory, parameters: params, success: success, failure: failure)
     }
     
+    func customerManageBalanceOptions(completion: @escaping ([FPCustomerManageBalanceOption]) -> Void) {
+        // CMB TODO: fetch real data when implemented on server
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            completion([
+                FPCustomerManageBalanceOption(price: 100, balanceAdded: 110),
+                FPCustomerManageBalanceOption(price: 200, balanceAdded: 220),
+                FPCustomerManageBalanceOption(price: 300, balanceAdded: 330)
+            ])
+        }
+    }
+    
     //MARK: - Products
     func productsWithCompletion(_ completion: @escaping (_ errMsg: String?, _ products: Array<FPProduct>?) -> Void) {
         var params: Dictionary<String, AnyObject> = [:]

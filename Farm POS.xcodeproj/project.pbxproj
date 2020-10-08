@@ -154,6 +154,10 @@
 		81FF080E196C28660046457A /* FPCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FF080D196C28660046457A /* FPCartCell.swift */; };
 		81FF0810196C28830046457A /* FPCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81FF080F196C28830046457A /* FPCartCell.xib */; };
 		9ED4662D84EEE722658BBC3A /* Pods_Farmstand_Cart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C888CEE0E0B0F6CFC0EE4BC /* Pods_Farmstand_Cart.framework */; };
+		E90DDA65252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90DDA64252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift */; };
+		E90DDA66252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90DDA64252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift */; };
+		E90DDA68252E14C8004DB111 /* FPCustomerManageBalanceOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90DDA67252E14C8004DB111 /* FPCustomerManageBalanceOption.swift */; };
+		E90DDA69252E14C8004DB111 /* FPCustomerManageBalanceOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90DDA67252E14C8004DB111 /* FPCustomerManageBalanceOption.swift */; };
 		E92BF89124EBBC77002CB596 /* FPProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB47ED198FC673003A3DEE /* FPProductsViewController.swift */; };
 		E92BF89224EBBC77002CB596 /* FPRetailLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444852ED199246DF00A1F87C /* FPRetailLocation.swift */; };
 		E92BF89324EBBC77002CB596 /* FPRedeemGiftCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E4431971F2540037FCD0 /* FPRedeemGiftCardViewController.swift */; };
@@ -473,6 +477,8 @@
 		81FB1968198BA4FB00FF6815 /* FPMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPMenuViewController.swift; sourceTree = "<group>"; };
 		81FF080D196C28660046457A /* FPCartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCartCell.swift; sourceTree = "<group>"; };
 		81FF080F196C28830046457A /* FPCartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPCartCell.xib; sourceTree = "<group>"; };
+		E90DDA64252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPCustomerManageBalanceViewController.swift; sourceTree = "<group>"; };
+		E90DDA67252E14C8004DB111 /* FPCustomerManageBalanceOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPCustomerManageBalanceOption.swift; sourceTree = "<group>"; };
 		E92BF93724EBBC77002CB596 /* Farmstand Cart (DEV).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmstand Cart (DEV).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92BF93824EBBC78002CB596 /* FarmstandCartDEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FarmstandCartDEV-Info.plist"; path = "/Users/denismendica/Projects/toptal/Meadowstone Farm/FarmPOS-MobileApp/FarmstandCartDEV-Info.plist"; sourceTree = "<absolute>"; };
 		E92BF93F24F0124A002CB596 /* DataModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DataModel 3.xcdatamodel"; sourceTree = "<group>"; };
@@ -694,6 +700,7 @@
 				81E5B7DB1B5FFA420061E377 /* FPProductSupplier.swift */,
 				81E95A481B612CC500F95F18 /* FPInventoryProductNote.swift */,
 				81E9AC1C1B6A4FAD00DF81AA /* FPInventoryProductHistory.swift */,
+				E90DDA67252E14C8004DB111 /* FPCustomerManageBalanceOption.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -765,6 +772,7 @@
 				81FA71831B3998C000C0CD7D /* FPCashCheckSummaryViewController.swift */,
 				81B63A231B53AA79002E795F /* FPCustomerEditViewController.swift */,
 				E972DD46250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift */,
+				E90DDA64252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift */,
 			);
 			name = ProductsAndCart;
 			sourceTree = "<group>";
@@ -1280,6 +1288,7 @@
 				814A71FB19622CFB00F2A689 /* FPProductsAndCartViewController.swift in Sources */,
 				8157106719781C3300F184D0 /* main.swift in Sources */,
 				811B4558198A520A000EC090 /* FPDataAccessLayer.swift in Sources */,
+				E90DDA68252E14C8004DB111 /* FPCustomerManageBalanceOption.swift in Sources */,
 				814F463D1966DF75007A009E /* FPChoiceOverlayView.swift in Sources */,
 				81BB47F81990F803003A3DEE /* FPInputValidator.swift in Sources */,
 				81510737197988E200AFC491 /* FPCheckoutHeaderView.swift in Sources */,
@@ -1361,6 +1370,7 @@
 				81BB47EB198FB327003A3DEE /* FPCartViewController.swift in Sources */,
 				81F452741E11632800A583D3 /* FPCDPurchase+CoreDataProperties.swift in Sources */,
 				E972DD4425079213008E0652 /* PaymentCardProcessor.swift in Sources */,
+				E90DDA65252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift in Sources */,
 				50EA292C197E71580024B299 /* FPPaymentConfirmViewController.swift in Sources */,
 				81FF080E196C28660046457A /* FPCartCell.swift in Sources */,
 				81D23F881966B66A00A330E0 /* FPCustomerCreateViewController.swift in Sources */,
@@ -1389,6 +1399,7 @@
 				E92BF89424EBBC77002CB596 /* FPProductsAndCartViewController.swift in Sources */,
 				E92BF89624EBBC77002CB596 /* main.swift in Sources */,
 				E92BF89724EBBC77002CB596 /* FPDataAccessLayer.swift in Sources */,
+				E90DDA69252E14C8004DB111 /* FPCustomerManageBalanceOption.swift in Sources */,
 				E92BF89824EBBC77002CB596 /* FPChoiceOverlayView.swift in Sources */,
 				E92BF89924EBBC77002CB596 /* FPInputValidator.swift in Sources */,
 				E92BF89A24EBBC77002CB596 /* FPCheckoutHeaderView.swift in Sources */,
@@ -1470,6 +1481,7 @@
 				E92BF8EF24EBBC77002CB596 /* FPCartViewController.swift in Sources */,
 				E92BF8F024EBBC77002CB596 /* FPCDPurchase+CoreDataProperties.swift in Sources */,
 				E972DD452507944C008E0652 /* PaymentCardProcessor.swift in Sources */,
+				E90DDA66252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift in Sources */,
 				E92BF8F124EBBC77002CB596 /* FPPaymentConfirmViewController.swift in Sources */,
 				E92BF8F224EBBC77002CB596 /* FPCartCell.swift in Sources */,
 				E92BF8F324EBBC77002CB596 /* FPCustomerCreateViewController.swift in Sources */,

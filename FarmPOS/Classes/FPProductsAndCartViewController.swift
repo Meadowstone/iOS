@@ -423,7 +423,12 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
     }
     
     @objc func manageBalancePressed() {
-        print("manage balance!")
+        let viewController = FPCustomerManageBalanceViewController()
+        viewController.cancelTapped = { [weak self] in
+            self?.popover?.dismiss(animated: false)
+        }
+        let navigationController = UINavigationController(rootViewController: viewController)
+        displayPopoverInViewController(navigationController)
     }
     
     @objc func balancePressed() {
