@@ -9,6 +9,9 @@
 import Foundation
 
 class FPCustomerManageBalanceOption {
+    
+    static var currentOptions = [FPCustomerManageBalanceOption]()
+    
     let price: Double
     let balanceAdded: Double
     
@@ -16,4 +19,5 @@ class FPCustomerManageBalanceOption {
         self.price = price
         self.balanceAdded = balanceAdded
     }
+    
 }

@@ -19,17 +19,14 @@ class FPCustomerManageBalanceViewController: UIViewController {
     
     override func loadView() {
         preferredContentSize = .init(width: 640, height: 512)
-        
         view = UIView()
         view.backgroundColor = FPColorPaymentFlowBackground
-        
         createOptionsStackView()
+        createOptionViews(from: FPCustomerManageBalanceOption.currentOptions)
     }
     
     override func viewDidLoad() {
-        title = "Manage balance"
         setupNavigationBar()
-        loadOptions()
     }
     
     private func createOptionsStackView() {
@@ -41,23 +38,6 @@ class FPCustomerManageBalanceViewController: UIViewController {
         optionsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         optionsStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         optionsStackView.widthAnchor.constraint(equalToConstant: 350).isActive = true
-    }
-    
-    private func setupNavigationBar() {
-        navigationController?.navigationBar.isTranslucent = false
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelButtonTapped))
-    }
-    
-    private func loadOptions() {
-        let progressHud = MBProgressHUD.showAdded(to: view, animated: false)
-        progressHud?.removeFromSuperViewOnHide = true
-        progressHud?.labelText = "Loading..."
-        
-        FPServer.sharedInstance.customerManageBalanceOptions { [weak self] options in
-            progressHud?.hide(false)
-            // CMB TODO: handle errors
-            self?.createOptionViews(from: options)
-        }
     }
     
     private func createOptionViews(from options: [FPCustomerManageBalanceOption]) {
@@ -79,6 +59,12 @@ class FPCustomerManageBalanceViewController: UIViewController {
         optionButton.translatesAutoresizingMaskIntoConstraints = false
         optionButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         return optionButton
+    }
+    
+    private func setupNavigationBar() {
+        title = "Manage balance"
+        navigationController?.navigationBar.isTranslucent = false
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelButtonTapped))
     }
     
     @objc private func cancelButtonTapped() {

@@ -507,6 +507,13 @@ class FPServer : AFHTTPSessionManager {
                 if r["status"] as! Bool {
                     let customerInfo = r["client"] as! Dictionary<String, AnyObject>
                     customer = FPModelParser.customerWithInfo(customerInfo as NSDictionary)
+                    
+                    FPCustomerManageBalanceOption.currentOptions = []
+                    if let manageBalanceOptionsInfo = r["farm_bucks_credit"] as? [NSDictionary] {
+                        FPCustomerManageBalanceOption.currentOptions = manageBalanceOptionsInfo.map { info in
+                            FPModelParser.customerManageBalanceOptionWithInfo(info)
+                        }
+                    }   
                 }
                 errors = self.errors(r["errors"])
             }
@@ -757,17 +764,6 @@ class FPServer : AFHTTPSessionManager {
         }
         
         self.get(kClientSendPurchaseHistory, parameters: params, success: success, failure: failure)
-    }
-    
-    func customerManageBalanceOptions(completion: @escaping ([FPCustomerManageBalanceOption]) -> Void) {
-        // CMB TODO: fetch real data when implemented on server
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            completion([
-                FPCustomerManageBalanceOption(price: 100, balanceAdded: 110),
-                FPCustomerManageBalanceOption(price: 200, balanceAdded: 220),
-                FPCustomerManageBalanceOption(price: 300, balanceAdded: 330)
-            ])
-        }
     }
     
     //MARK: - Products

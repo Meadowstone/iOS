@@ -70,6 +70,13 @@ class FPModelParser {
         return info as NSDictionary
     }
     
+    class func customerManageBalanceOptionWithInfo(_ info: NSDictionary) -> FPCustomerManageBalanceOption {
+        return FPCustomerManageBalanceOption(
+            price: info["pay_credit"] as? Double ?? 0,
+            balanceAdded: info["get_credit"] as? Double ?? 0
+        )
+    }
+    
     class func customerWithInfo(_ customerInfo: NSDictionary) -> FPCustomer {
         let customer = FPCustomer()
         customer.wholesale = customerInfo["wholesale"] as! Bool
