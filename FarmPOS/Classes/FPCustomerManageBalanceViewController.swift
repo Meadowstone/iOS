@@ -76,7 +76,11 @@ class FPCustomerManageBalanceViewController: UIViewController {
         guard let option = optionsForViews[sender] else { return }
         let payWithPaymentCardViewController = FPPayWithPaymentCardViewController()
         payWithPaymentCardViewController.price = option.price
-        payWithPaymentCardViewController.paymentSucceeded = { [weak self] in
+        payWithPaymentCardViewController.paymentSucceeded = {
+            let progressHud = MBProgressHUD.showAdded(to: payWithPaymentCardViewController.view, animated: false)
+            progressHud?.removeFromSuperViewOnHide = true
+            progressHud?.labelText = "Updating balance..."
+            
             FPServer.sharedInstance.balanceDepositWithSum(
                 option.price,
                 getCredit: option.balanceAdded,
@@ -85,6 +89,7 @@ class FPCustomerManageBalanceViewController: UIViewController {
                 transactionToken: nil,
                 last4: nil,
                 completion: { [weak self] errorMessage in
+                    progressHud?.hide(false)
                     if let errorMessage = errorMessage {
                         self?.errorWhileContactingFarmServer?(errorMessage)
                     } else {

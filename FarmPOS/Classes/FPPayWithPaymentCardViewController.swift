@@ -119,8 +119,6 @@ class FPPayWithPaymentCardViewController: UIViewController {
     @objc private func payTapped() {
         guard let price = price else { return }
         
-        view.endEditing(true)
-        
         let email = emailTextField.text
         if let email = email, !email.isEmpty, !FPInputValidator.isValid(email: email) {
             FPAlertManager.showMessage("Please enter a valid e-mail address.", withTitle: "Invalid e-mail")
@@ -139,14 +137,19 @@ class FPPayWithPaymentCardViewController: UIViewController {
             }
 
             PaymentCardProcessor.shared.performPayment(with: self.paymentCardDetailsField.cardParams, in: self) { [weak self] paymentResult in
-                progressHud?.hide(false)
                 switch paymentResult {
                 case .canceled:
+                    progressHud?.hide(false)
                     FPAlertManager.showMessage("Your card was not charged.", withTitle: "Payment canceled")
                 case .error(message: let message):
+                    progressHud?.hide(false)
                     FPAlertManager.showMessage(message ?? "Unknown error occurred.", withTitle: "Unable to make payment")
                 case .success:
-                    self?.paymentSucceeded?()
+                    self?.view.endEditing(true)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in // wait until keyboard is dismissed
+                        progressHud?.hide(false)
+                        self?.paymentSucceeded?()
+                    }
                 }
             }
         }
