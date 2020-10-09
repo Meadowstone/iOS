@@ -483,12 +483,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="640" height="462"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ETm-JT-4xq">
-                                <rect key="frame" x="98.5" y="116" width="443" height="296"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ETm-JT-4xq">
+                                <rect key="frame" x="20" y="116" width="600" height="296"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3D-fJ-0JI">
-                                        <rect key="frame" x="0.0" y="0.0" width="443" height="40"/>
+                                        <rect key="frame" x="78.5" y="0.0" width="443" height="40"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="443" id="4Og-D0-ChC"/>
                                             <constraint firstAttribute="height" constant="40" id="zS5-XH-4kE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
@@ -498,7 +499,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqe-fc-JSO">
-                                        <rect key="frame" x="0.0" y="48" width="443" height="40"/>
+                                        <rect key="frame" x="78.5" y="48" width="443" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ayq-Dl-kpW"/>
                                         </constraints>
@@ -509,7 +510,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLN-a7-rWq">
-                                        <rect key="frame" x="0.0" y="96" width="443" height="40"/>
+                                        <rect key="frame" x="78.5" y="96" width="443" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Fi8-Xf-8TG"/>
                                         </constraints>
@@ -519,14 +520,14 @@
                                             <action selector="buttonPressed:" destination="MSK-Qr-Fgg" eventType="touchUpInside" id="XKr-tb-5R2"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="explanation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLc-oT-2kE">
-                                        <rect key="frame" x="0.0" y="144" width="443" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="explanation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLc-oT-2kE">
+                                        <rect key="frame" x="251" y="144" width="98.5" height="24"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4M-6b-Ugz">
-                                        <rect key="frame" x="0.0" y="176" width="443" height="40"/>
+                                        <rect key="frame" x="78.5" y="176" width="443" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="fO3-xP-oYD"/>
                                         </constraints>
@@ -536,14 +537,14 @@
                                             <action selector="buttonPressed:" destination="MSK-Qr-Fgg" eventType="touchUpInside" id="Kei-MK-Ls8"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="explanation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RG-Aa-yOc">
-                                        <rect key="frame" x="0.0" y="224" width="443" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="explanation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RG-Aa-yOc">
+                                        <rect key="frame" x="251" y="224" width="98.5" height="24"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydj-if-xZ8">
-                                        <rect key="frame" x="0.0" y="256" width="443" height="40"/>
+                                        <rect key="frame" x="78.5" y="256" width="443" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Zwm-4S-QOJ"/>
                                         </constraints>
@@ -555,13 +556,17 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="443" id="Hi6-t7-suO"/>
+                                    <constraint firstItem="lLN-a7-rWq" firstAttribute="width" secondItem="O3D-fJ-0JI" secondAttribute="width" id="IkR-V1-Th7"/>
+                                    <constraint firstItem="ydj-if-xZ8" firstAttribute="width" secondItem="O3D-fJ-0JI" secondAttribute="width" id="WNo-U3-Rzl"/>
+                                    <constraint firstItem="pqe-fc-JSO" firstAttribute="width" secondItem="O3D-fJ-0JI" secondAttribute="width" id="ZJo-me-5Dm"/>
+                                    <constraint firstItem="Z4M-6b-Ugz" firstAttribute="width" secondItem="O3D-fJ-0JI" secondAttribute="width" id="pkK-5x-f3Y"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.86274509799999999" green="0.88235294119999996" blue="0.83137254900000002" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ETm-JT-4xq" firstAttribute="centerX" secondItem="APa-hh-oPS" secondAttribute="centerX" id="60K-6y-5qo"/>
+                            <constraint firstAttribute="trailing" secondItem="ETm-JT-4xq" secondAttribute="trailing" constant="20" id="0iE-J5-HGB"/>
+                            <constraint firstItem="ETm-JT-4xq" firstAttribute="leading" secondItem="APa-hh-oPS" secondAttribute="leading" constant="20" id="J8t-LK-1D9"/>
                             <constraint firstItem="ETm-JT-4xq" firstAttribute="top" secondItem="36N-uz-gco" secondAttribute="bottom" constant="116" id="vlK-Iw-KY3"/>
                         </constraints>
                     </view>

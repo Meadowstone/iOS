@@ -118,7 +118,12 @@ class FPPaymentOptionsViewController: FPRotationViewController {
         
         let payWithPaymentCardTitle = "Pay with Credit/Debit Card"
         let payWithPaymentCardTotalPrice = PaymentCardController.shared.priceWithAddedFees(forPrice: FPCartView.sharedCart().checkoutSum)
-        let payWithPaymentCardExplanation = "If you use a payment card you will pay a total of $\(FPCurrencyFormatter.printableCurrency(payWithPaymentCardTotalPrice))"
+        let payWithPaymentCardExplanation = """
+            Thanks for supporting local agriculture and Meadowstone Farm!\
+              Unfortunately we are unable to absorb bank fees, so for this purchase you will be charged,\
+              $\(FPCurrencyFormatter.printableCurrency(payWithPaymentCardTotalPrice)), approximately 3% more.\
+              Please check our Farm Bucks program on our website to receive discounts on all stand purchases.
+            """
         
         if let customer = FPCustomer.activeCustomer() {
             if !balancePayment {
