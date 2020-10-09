@@ -38,7 +38,7 @@ class FPAppDelegate: UIApplication, UIApplicationDelegate, UIAlertViewDelegate {
         center.requestAuthorization(options:[.badge, .alert]) { _, _ in }
         application.registerForRemoteNotifications()
         
-        PaymentCardProcessor.shared.initialize()
+        PaymentCardController.shared.initialize()
         
         // Setup
         application.isIdleTimerDisabled = true

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="GzJ-8j-cW5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="GzJ-8j-cW5">
     <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -483,79 +483,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="640" height="462"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLN-a7-rWq">
-                                <rect key="frame" x="99" y="212" width="443" height="40"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ETm-JT-4xq">
+                                <rect key="frame" x="98.5" y="116" width="443" height="296"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3D-fJ-0JI">
+                                        <rect key="frame" x="0.0" y="0.0" width="443" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="zS5-XH-4kE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="Pay with cash" backgroundImage="green_btn"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="MSK-Qr-Fgg" eventType="touchUpInside" id="8LM-lS-ePv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqe-fc-JSO">
+                                        <rect key="frame" x="0.0" y="48" width="443" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ayq-Dl-kpW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="Swipe card" backgroundImage="green_btn"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="MSK-Qr-Fgg" eventType="touchUpInside" id="Bo5-pL-P0X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLN-a7-rWq">
+                                        <rect key="frame" x="0.0" y="96" width="443" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Fi8-Xf-8TG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="Use card" backgroundImage="green_btn"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="MSK-Qr-Fgg" eventType="touchUpInside" id="XKr-tb-5R2"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="explanation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLc-oT-2kE">
+                                        <rect key="frame" x="0.0" y="144" width="443" height="24"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4M-6b-Ugz">
+                                        <rect key="frame" x="0.0" y="176" width="443" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="fO3-xP-oYD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="Balance payment" backgroundImage="green_btn"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="MSK-Qr-Fgg" eventType="touchUpInside" id="Kei-MK-Ls8"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="explanation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RG-Aa-yOc">
+                                        <rect key="frame" x="0.0" y="224" width="443" height="24"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydj-if-xZ8">
+                                        <rect key="frame" x="0.0" y="256" width="443" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Zwm-4S-QOJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="Pay later" backgroundImage="green_btn"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="MSK-Qr-Fgg" eventType="touchUpInside" id="mVc-jI-LK1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Fi8-Xf-8TG"/>
-                                    <constraint firstAttribute="width" constant="443" id="zFd-N2-6fp"/>
+                                    <constraint firstAttribute="width" constant="443" id="Hi6-t7-suO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
-                                <state key="normal" title="Use card" backgroundImage="green_btn"/>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="MSK-Qr-Fgg" eventType="touchUpInside" id="XKr-tb-5R2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqe-fc-JSO">
-                                <rect key="frame" x="99" y="164" width="443" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="ayq-Dl-kpW"/>
-                                    <constraint firstAttribute="width" constant="443" id="gnR-gc-Td9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
-                                <state key="normal" title="Swipe card" backgroundImage="green_btn"/>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="MSK-Qr-Fgg" eventType="touchUpInside" id="Bo5-pL-P0X"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3D-fJ-0JI">
-                                <rect key="frame" x="99" y="116" width="443" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="443" id="Xbb-wf-axq"/>
-                                    <constraint firstAttribute="height" constant="40" id="zS5-XH-4kE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
-                                <state key="normal" title="Pay with cash" backgroundImage="green_btn"/>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="MSK-Qr-Fgg" eventType="touchUpInside" id="8LM-lS-ePv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4M-6b-Ugz">
-                                <rect key="frame" x="99" y="260" width="443" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="443" id="6aw-7X-6tC"/>
-                                    <constraint firstAttribute="height" constant="40" id="fO3-xP-oYD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
-                                <state key="normal" title="Balance payment" backgroundImage="green_btn"/>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="MSK-Qr-Fgg" eventType="touchUpInside" id="Kei-MK-Ls8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydj-if-xZ8">
-                                <rect key="frame" x="99" y="308" width="443" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="443" id="0oV-ni-0Od"/>
-                                    <constraint firstAttribute="height" constant="40" id="Zwm-4S-QOJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
-                                <state key="normal" title="Pay later" backgroundImage="green_btn"/>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="MSK-Qr-Fgg" eventType="touchUpInside" id="mVc-jI-LK1"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.86274509799999999" green="0.88235294119999996" blue="0.83137254900000002" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="O3D-fJ-0JI" secondAttribute="centerX" constant="-0.5" id="4gw-l5-ZLr"/>
-                            <constraint firstAttribute="centerX" secondItem="Z4M-6b-Ugz" secondAttribute="centerX" constant="-0.5" id="AaE-GH-Yzj"/>
-                            <constraint firstAttribute="centerX" secondItem="ydj-if-xZ8" secondAttribute="centerX" constant="-0.5" id="GI3-9A-zRJ"/>
-                            <constraint firstItem="O3D-fJ-0JI" firstAttribute="top" secondItem="36N-uz-gco" secondAttribute="bottom" constant="116" id="Vsh-GQ-DdX"/>
-                            <constraint firstItem="Z4M-6b-Ugz" firstAttribute="top" secondItem="lLN-a7-rWq" secondAttribute="bottom" constant="8" id="VyJ-uE-qWm"/>
-                            <constraint firstItem="pqe-fc-JSO" firstAttribute="top" secondItem="O3D-fJ-0JI" secondAttribute="bottom" constant="8" id="WfO-Tu-HeP"/>
-                            <constraint firstItem="ydj-if-xZ8" firstAttribute="top" secondItem="Z4M-6b-Ugz" secondAttribute="bottom" constant="8" id="fDL-pu-9gg"/>
-                            <constraint firstAttribute="centerX" secondItem="lLN-a7-rWq" secondAttribute="centerX" constant="-0.5" id="h8e-2c-ILc"/>
-                            <constraint firstAttribute="centerX" secondItem="pqe-fc-JSO" secondAttribute="centerX" constant="-0.5" id="nNw-SM-ipL"/>
-                            <constraint firstItem="lLN-a7-rWq" firstAttribute="top" secondItem="pqe-fc-JSO" secondAttribute="bottom" constant="8" id="x0f-Lh-jjX"/>
+                            <constraint firstItem="ETm-JT-4xq" firstAttribute="centerX" secondItem="APa-hh-oPS" secondAttribute="centerX" id="60K-6y-5qo"/>
+                            <constraint firstItem="ETm-JT-4xq" firstAttribute="top" secondItem="36N-uz-gco" secondAttribute="bottom" constant="116" id="vlK-Iw-KY3"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -567,7 +574,9 @@
                         <outlet property="button1" destination="O3D-fJ-0JI" id="9jd-rG-ohZ"/>
                         <outlet property="button2" destination="pqe-fc-JSO" id="lTB-tJ-FZZ"/>
                         <outlet property="button3" destination="lLN-a7-rWq" id="5t8-mt-TFN"/>
+                        <outlet property="button3explanationLabel" destination="YLc-oT-2kE" id="OAZ-dp-31E"/>
                         <outlet property="button4" destination="Z4M-6b-Ugz" id="9ms-zk-pti"/>
+                        <outlet property="button4explanationLabel" destination="7RG-Aa-yOc" id="BI8-XK-ZPb"/>
                         <outlet property="button5" destination="ydj-if-xZ8" id="XSN-CH-K2r"/>
                         <segue destination="8gF-Id-My5" kind="push" identifier="pushPayNow" id="qYN-X3-uqa"/>
                     </connections>

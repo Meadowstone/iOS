@@ -1,5 +1,5 @@
 //
-//  PaymentCardProcessor.swift
+//  PaymentCardController.swift
 //  Farmstand Cart
 //
 //  Created by Denis Mendica on 08/09/2020.
@@ -8,7 +8,7 @@
 
 import Stripe
 
-class PaymentCardProcessor: NSObject {
+class PaymentCardController: NSObject {
     
     enum PaymentResult {
         case success
@@ -16,7 +16,8 @@ class PaymentCardProcessor: NSObject {
         case error(message: String?)
     }
     
-    static let shared = PaymentCardProcessor()
+    static let shared = PaymentCardController()
+    var paymentProcessor: FPPaymentCardProcessor?
     private var paymentIntentClientSecret: String?
     
     func initialize() {
@@ -25,6 +26,14 @@ class PaymentCardProcessor: NSObject {
         #else
         Stripe.setDefaultPublishableKey("pk_live_kiMVjsyb2V1IyM9br7Ylnj5b")
         #endif
+    }
+    
+    func priceWithAddedFees(forPrice price: Double) -> Double {
+        guard let paymentProcessor = paymentProcessor else { return price }
+        return FPCurrencyFormatter.roundCrrency(
+            (price + paymentProcessor.transactionFeeFixed)
+            / (1 - paymentProcessor.transactionFeePercentage / 100)       
+        )
     }
     
     func createPaymentIntent(forPrice price: Double, email: String?, completion: @escaping ((_ didSucceed: Bool) -> Void)) {
