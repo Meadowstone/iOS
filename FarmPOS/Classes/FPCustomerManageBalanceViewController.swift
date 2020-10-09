@@ -76,8 +76,17 @@ class FPCustomerManageBalanceViewController: UIViewController {
         let payWithPaymentCardViewController = FPPayWithPaymentCardViewController()
         payWithPaymentCardViewController.price = option.price
         payWithPaymentCardViewController.paymentSucceeded = { [weak self] in
-            // CMB TODO: contact server, update local balance & UI
-            self?.balanceUpdated?()
+            FPServer.sharedInstance.balanceDepositWithSum(
+                option.price,
+                getCredit: option.balanceAdded,
+                isCheck: false,
+                checkNumber: nil,
+                transactionToken: nil,
+                last4: nil,
+                completion: { [weak self] errorMessage in
+                    // CMB TODO: handle error
+                    self?.balanceUpdated?()
+                })
         }
         navigationController?.pushViewController(payWithPaymentCardViewController, animated: true)
     }

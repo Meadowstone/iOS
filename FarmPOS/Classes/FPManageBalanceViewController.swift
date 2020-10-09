@@ -130,7 +130,15 @@ class FPManageBalanceViewController: FPRotationViewController, UIAlertViewDelega
         hud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
         hud.removeFromSuperViewOnHide = true
         hud.labelText = "Processing"
-        FPServer.sharedInstance.balanceDepositWithSum(sum, isCheck: isCheck, checkNumber: checkNumber, transactionToken: transactionToken, last4: last4, completion: completion)
+        FPServer.sharedInstance.balanceDepositWithSum(
+            sum,
+            getCredit: nil,
+            isCheck: isCheck,
+            checkNumber: checkNumber,
+            transactionToken: transactionToken,
+            last4: last4,
+            completion: completion
+        )
     }
     
     // UIAlertView delegate

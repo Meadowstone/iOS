@@ -246,7 +246,15 @@ class FPPaymentOptionsViewController: FPRotationViewController {
         hud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
         hud.removeFromSuperViewOnHide = true
         hud.labelText = "Processing"
-        FPServer.sharedInstance.balanceDepositWithSum(self.balanceSum, isCheck: isCheck, checkNumber: checkNumber, transactionToken: transactionToken, last4: last4, completion: completion)
+        FPServer.sharedInstance.balanceDepositWithSum(
+            self.balanceSum,
+            getCredit: nil,
+            isCheck: isCheck,
+            checkNumber: checkNumber,
+            transactionToken: transactionToken,
+            last4: last4,
+            completion: completion
+        )
     }
     
     // UIAlertView delegate (probably can be removed since it's deprecated and not called anymore)

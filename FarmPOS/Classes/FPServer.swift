@@ -661,8 +661,14 @@ class FPServer : AFHTTPSessionManager {
         self.post(kCustomerEdit, parameters: params, success: success, failure: failure)
     }
     
-    func balanceDepositWithSum(_ sum: Double, isCheck: Bool, checkNumber: String?, transactionToken: String?, last4: String?, completion:@escaping (_ errMsg: String?) -> Void) {
-        let params: NSMutableDictionary = ["sum": sum, "is_check": isCheck, "client_id": FPCustomer.activeCustomer()!.id, "check_number": checkNumber != nil ? checkNumber! : ""]
+    func balanceDepositWithSum(_ sum: Double, getCredit: Double?, isCheck: Bool, checkNumber: String?, transactionToken: String?, last4: String?, completion:@escaping (_ errMsg: String?) -> Void) {
+        let params: NSMutableDictionary = [
+            "sum": sum,
+            "get_credit": getCredit ?? 0,
+            "is_check": isCheck,
+            "client_id": FPCustomer.activeCustomer()!.id,
+            "check_number": checkNumber != nil ? checkNumber! : ""
+        ]
         if let tt = transactionToken {
             params["transaction_token"] = tt
         }
@@ -683,7 +689,7 @@ class FPServer : AFHTTPSessionManager {
             if let r = responseObject as? NSDictionary {
                 errors = self.errors(r["errors"])
                 if r["status"] as! Bool {
-                    FPCustomer.activeCustomer()!.balance += sum
+                    FPCustomer.activeCustomer()!.balance += getCredit ?? sum
                 }
             }
             completion(errors)

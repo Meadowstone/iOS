@@ -427,7 +427,8 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         manageBalanceViewController.cancelTapped = { [weak self] in
             self?.popover?.dismiss(animated: false)
         }
-        manageBalanceViewController.balanceUpdated = { [weak self] in 
+        manageBalanceViewController.balanceUpdated = { [weak self] in
+            self?.updateUI()
             self?.popover?.dismiss(animated: false)
             FPAlertManager.showMessage("", withTitle: "Balance updated!")
         }
