@@ -62,6 +62,7 @@ class FPPayWithPaymentCardViewController: UIViewController {
         emailTextField.layer.borderColor = paymentCardDetailsField.borderColor?.cgColor
         emailTextField.layer.borderWidth = paymentCardDetailsField.borderWidth
         emailTextField.layer.sublayerTransform = CATransform3DMakeTranslation(12, 0, 0)
+        emailTextField.delegate = self
         view.addSubview(emailTextField)
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
         emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
@@ -118,6 +119,8 @@ class FPPayWithPaymentCardViewController: UIViewController {
     @objc private func payTapped() {
         guard let price = price else { return }
         
+        view.endEditing(true)
+        
         let email = emailTextField.text
         if let email = email, !email.isEmpty, !FPInputValidator.isValid(email: email) {
             FPAlertManager.showMessage("Please enter a valid e-mail address.", withTitle: "Invalid e-mail")
@@ -166,8 +169,17 @@ extension FPPayWithPaymentCardViewController: STPAuthenticationContext {
 
 extension FPPayWithPaymentCardViewController: STPPaymentCardTextFieldDelegate {
     
-    func paymentCardTextFieldDidEndEditing(_ textField: STPPaymentCardTextField) {
+    func paymentCardTextFieldWillEndEditing(forReturn textField: STPPaymentCardTextField) {
         emailTextField.becomeFirstResponder()
+    }
+    
+}
+
+extension FPPayWithPaymentCardViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailTextField.resignFirstResponder()
+        return false
     }
     
 }

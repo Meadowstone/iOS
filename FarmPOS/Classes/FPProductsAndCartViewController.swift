@@ -182,10 +182,37 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         categoriesFooterView.delegate = self
         categoriesFooterPlaceholderView.addSubview(categoriesFooterView)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(FPProductsAndCartViewController.keyboardWillChangeFrame(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(FPProductsAndCartViewController.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        addKeyboardObservers()
         
         self.reframeForMode(true)
+    }
+    
+    private func addKeyboardObservers() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(FPProductsAndCartViewController.keyboardWillChangeFrame(_:)),
+            name: UIResponder.keyboardWillChangeFrameNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(FPProductsAndCartViewController.keyboardWillHide(_:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+    
+    private func removeKeyboardObservers() {
+        NotificationCenter.default.removeObserver(
+            self,
+            name: UIResponder.keyboardWillChangeFrameNotification,
+            object: nil
+        )
+        NotificationCenter.default.removeObserver(
+            self,
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
     
     func reframeForMode(_ largeMode: Bool) {
@@ -426,6 +453,7 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         let manageBalanceViewController = FPCustomerManageBalanceViewController()
         manageBalanceViewController.cancelTapped = { [weak self] in
             self?.popover?.dismiss(animated: false)
+            self?.addKeyboardObservers()
         }
         manageBalanceViewController.errorWhileContactingFarmServer = { [weak self] errorMessage in
             self?.popover?.dismiss(animated: false)
@@ -442,8 +470,12 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
             self?.updateUI()
             self?.popover?.dismiss(animated: false)
             FPAlertManager.showMessage("", withTitle: "Balance updated!")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+                self?.addKeyboardObservers()
+            }
         }
         let navigationController = UINavigationController(rootViewController: manageBalanceViewController)
+        removeKeyboardObservers()
         displayPopoverInViewController(navigationController)
     }
     
