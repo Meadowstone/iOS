@@ -427,6 +427,17 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         manageBalanceViewController.cancelTapped = { [weak self] in
             self?.popover?.dismiss(animated: false)
         }
+        manageBalanceViewController.errorWhileContactingFarmServer = { [weak self] errorMessage in
+            self?.popover?.dismiss(animated: false)
+            let fullErrorMessage = """
+                Your card was successfully charged, but there was an error while updating your balance:
+
+                \(errorMessage)
+                
+                Please contact a farm worker for help.
+                """
+            FPAlertManager.showMessage(fullErrorMessage, withTitle: "Error")
+        }
         manageBalanceViewController.balanceUpdated = { [weak self] in
             self?.updateUI()
             self?.popover?.dismiss(animated: false)

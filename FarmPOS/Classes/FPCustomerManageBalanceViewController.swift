@@ -14,6 +14,7 @@ class FPCustomerManageBalanceViewController: UIViewController {
     private var optionsStackView: UIStackView!
     
     var cancelTapped: (() -> Void)?
+    var errorWhileContactingFarmServer: ((String) -> Void)?
     var balanceUpdated: (() -> Void)?
     private var optionsForViews = [UIView : FPCustomerManageBalanceOption]()
     
@@ -84,8 +85,11 @@ class FPCustomerManageBalanceViewController: UIViewController {
                 transactionToken: nil,
                 last4: nil,
                 completion: { [weak self] errorMessage in
-                    // CMB TODO: handle error
-                    self?.balanceUpdated?()
+                    if let errorMessage = errorMessage {
+                        self?.errorWhileContactingFarmServer?(errorMessage)
+                    } else {
+                        self?.balanceUpdated?()
+                    }
                 })
         }
         navigationController?.pushViewController(payWithPaymentCardViewController, animated: true)
