@@ -87,7 +87,7 @@ class FPPayWithPaymentCardViewController: UIViewController {
     private func createPayButton() {
         payButton = UIButton()
         payButton.setBackgroundImage(UIImage(named: "green_btn"), for: .normal)
-        payButton.setTitle("Pay", for: .normal)
+        payButton.setTitle("Pay $\(FPCurrencyFormatter.printableCurrency(price ?? 0))", for: .normal)
         payButton.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 20)
         payButton.addTarget(self, action: #selector(payTapped), for: .touchUpInside)
         view.addSubview(payButton)
