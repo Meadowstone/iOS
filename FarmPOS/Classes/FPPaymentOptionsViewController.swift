@@ -117,13 +117,6 @@ class FPPaymentOptionsViewController: FPRotationViewController {
         }
         
         let payWithPaymentCardTitle = "Pay with Credit/Debit Card"
-        let payWithPaymentCardTotalPrice = PaymentCardController.shared.priceWithAddedFees(forPrice: FPCartView.sharedCart().checkoutSum)
-        let payWithPaymentCardExplanation = """
-            Thanks for supporting local agriculture and Meadowstone Farm!\
-              Unfortunately we are unable to absorb bank fees, so for this purchase you will be charged,\
-              $\(FPCurrencyFormatter.printableCurrency(payWithPaymentCardTotalPrice)), approximately 3% more.\
-              Please check our Farm Bucks program on our website to receive discounts on all stand purchases.
-            """
         
         if let customer = FPCustomer.activeCustomer() {
             if !balancePayment {
@@ -139,16 +132,29 @@ class FPPaymentOptionsViewController: FPRotationViewController {
                 button4.setTitle(payWithPaymentCardTitle, for: .normal)
                 button4.tag = FPPaymentMethod.paymentCard.rawValue
                 button4.isHidden = false
-                button4explanationLabel.text = payWithPaymentCardExplanation
+                button4explanationLabel.text = payWithPaymentCardExplanation()
                 button4explanationLabel.isHidden = false
             }
         } else if FPFarmWorker.activeWorker() == nil {
             button3.setTitle(payWithPaymentCardTitle, for: .normal)
             button3.tag = FPPaymentMethod.paymentCard.rawValue
             button3.isHidden = false
-            button3explanationLabel.text = payWithPaymentCardExplanation
+            button3explanationLabel.text = payWithPaymentCardExplanation()
             button3explanationLabel.isHidden = false
         }
+    }
+    
+    private func payWithPaymentCardExplanation() -> String {
+        let totalPrice = PaymentCardController.shared.priceWithAddedFees(forPrice: FPCartView.sharedCart().checkoutSum)
+        let totalPriceText = FPCurrencyFormatter.printableCurrency(totalPrice)
+        let feePercentageText = String(format: "%.1f%%", PaymentCardController.shared.paymentProcessor?.transactionFeePercentage ?? 0)
+        let feeFixedText = "\(Int((PaymentCardController.shared.paymentProcessor?.transactionFeeFixed ?? 0) * 100))¢"
+        return """
+            Thanks for supporting local agriculture and Meadowstone Farm!\
+              Unfortunately we are unable to absorb bank fees, so for this purchase you will be charged,\
+              $\(totalPriceText), which is \(feePercentageText) + \(feeFixedText) more.\
+              Please check our Farm Bucks program on our website to receive discounts on all stand purchases.
+            """
     }
     
     //MARK: - Payment action
