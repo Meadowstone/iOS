@@ -423,6 +423,19 @@ class FPModelParser {
         farm.city = info["city"] as! String
         farm.state = info["state"] as! String
         farm.zipCode = info["zip_code"] as! String
+        
+        if let paymentCardProcessorInfos = info["credit_cards"] as? [NSDictionary],
+            let paymentCardProcessorInfo = paymentCardProcessorInfos.first
+        {
+            farm.paymentCardProcessor = paymentCardProcessorWithInfo(paymentCardProcessorInfo)
+        }
+        
+        if let customerManageBalanceOptionsInfo = info["farm_bucks_credit"] as? [NSDictionary] {
+            farm.customerManageBalanceOptions = customerManageBalanceOptionsInfo.map { info in
+                customerManageBalanceOptionWithInfo(info)
+            }
+        }
+        
         return farm
     }
     

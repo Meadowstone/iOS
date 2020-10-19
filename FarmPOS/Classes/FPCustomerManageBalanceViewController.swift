@@ -23,7 +23,7 @@ class FPCustomerManageBalanceViewController: UIViewController {
         view = UIView()
         view.backgroundColor = FPColorPaymentFlowBackground
         createOptionsStackView()
-        createOptionViews(from: FPCustomerManageBalanceOption.currentOptions)
+        createOptionViews(from: FPUser.activeUser()!.farm!.customerManageBalanceOptions)
     }
     
     override func viewDidLoad() {

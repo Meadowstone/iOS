@@ -16,5 +16,7 @@ class FPFarm: NSObject {
     var city = ""
     var state = ""
     var zipCode = ""
-   
+    var paymentCardProcessor: FPPaymentCardProcessor?
+    var customerManageBalanceOptions = [FPCustomerManageBalanceOption]()
+    
 }

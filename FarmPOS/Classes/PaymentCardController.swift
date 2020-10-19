@@ -17,7 +17,6 @@ class PaymentCardController: NSObject {
     }
     
     static let shared = PaymentCardController()
-    var paymentProcessor: FPPaymentCardProcessor?
     private var paymentIntentClientSecret: String?
     
     func initialize() {
@@ -29,10 +28,10 @@ class PaymentCardController: NSObject {
     }
     
     func priceWithAddedFees(forPrice price: Double) -> Double {
-        guard let paymentProcessor = paymentProcessor else { return price }
+        let paymentCardProcessor = FPUser.activeUser()!.farm!.paymentCardProcessor!
         return FPCurrencyFormatter.roundCrrency(
-            (price + paymentProcessor.transactionFeeFixed)
-            / (1 - paymentProcessor.transactionFeePercentage / 100)       
+            (price + paymentCardProcessor.transactionFeeFixed)
+            / (1 - paymentCardProcessor.transactionFeePercentage / 100)       
         )
     }
     
