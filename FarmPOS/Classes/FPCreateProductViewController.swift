@@ -10,11 +10,10 @@ import UIKit
 import MBProgressHUD
 import SDWebImage
 
-class FPCreateProductViewController: FPRotationViewController, UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIAlertViewDelegate {
+class FPCreateProductViewController: FPRotationViewController, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIAlertViewDelegate {
     
     var editProduct: FPProduct?
     var completion: ((_ product: FPProduct?) -> Void)?
-    var notes = [FPInventoryProductNote]()
     var selectedImage: UIImage?
     var measurements = FPMeasurement.allMeasurements()!
     var selectedMeasurement: FPMeasurement! {
@@ -63,7 +62,6 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
     var boughtHeaderLabel: UILabel!
     var remainingHeaderLabel: UILabel!
     var soldHeaderLabel: UILabel!
-    var notesHeaderLabel: UILabel!
     
     // Controls and inputs
     var textFields = [UITextField]()
@@ -213,7 +211,7 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
     }
     
     @objc func addPressed() {
-        let actionSheet = UIActionSheet(title: "Choose option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Add Notes", "Product Delivery", "Update Inventory", "Product Spoilage")
+        let actionSheet = UIActionSheet(title: "Choose option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Product Delivery", "Update Inventory", "Product Spoilage")
         actionSheet.tag = 2
         actionSheet.show(in: self.view)
     }
@@ -383,9 +381,6 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         /************************/
         
         self.addConstraintsToView(self.view, forView: self.inventoryExpandableView, placeBelowView: self.inventorySegmented, xPadding: 0, yPadding: yPadding, width: 0, height: 0)
-        
-        // notesHeaderLabel
-        self.addConstraintsToView(self.view, forView: self.notesHeaderLabel, placeBelowView: self.inventoryExpandableView, xPadding: headerLabelXPadding, yPadding: yPadding, width: 0, height: headerLabelHeight, determinesHeaderHeight: true, heightMargin: 8)
     }
     
     func genericHeaderLabel() -> UILabel {
@@ -434,10 +429,6 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         self.inventoryTableView = UITableView()
         self.inventoryTableView.backgroundColor = UIColor.clear
         self.inventoryTableView.translatesAutoresizingMaskIntoConstraints = false
-        self.inventoryTableView.estimatedRowHeight = 44.0
-        self.inventoryTableView.rowHeight = UITableView.automaticDimension
-        self.inventoryTableView.dataSource = self
-        self.inventoryTableView.delegate = self
         self.inventoryTableView.isHidden = true
         self.view.addSubview(self.inventoryTableView)
         
@@ -573,8 +564,6 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
             self.inventoryExpandableView.addSubview(self.remainingHeaderLabel)
             self.soldHeaderLabel = self.genericHeaderLabel()
             self.inventoryExpandableView.addSubview(self.soldHeaderLabel)
-            self.notesHeaderLabel = self.genericHeaderLabel()
-            self.inventoryTableHeaderView.addSubview(self.notesHeaderLabel)
             
             self.barcodeTextField = self.genericTextField()
             self.inventoryExpandableView.addSubview(self.barcodeTextField)
@@ -613,7 +602,6 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
             self.boughtHeaderLabel.text = "BOUGHT"
             self.remainingHeaderLabel.text = "REMAINING"
             self.soldHeaderLabel.text = "SOLD"
-            self.notesHeaderLabel.text = "NOTES"
             
             self.boughtTextField.placeholder = "0"
             self.remainingTextField.placeholder = "0"
@@ -878,45 +866,6 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
         }
     }
     
-    // MARK: - UITableViewDelegate, UITableViewDataSource
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let t = titleSegmented {
-            if t.selectedSegmentIndex == 0 {
-                return 0
-            }
-        }
-        return self.notes.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifier = "cell"
-        var cell = tableView.dequeueReusableCell(withIdentifier: identifier)
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: identifier)
-            cell?.selectionStyle = .none
-            cell!.textLabel?.numberOfLines = 0
-        }
-        cell!.textLabel?.text = notes[indexPath.row].text
-        return cell!
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCell.EditingStyle.delete {
-            let hud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
-            hud?.removeFromSuperViewOnHide = true
-            hud?.labelText = "Processing"
-            FPServer.sharedInstance.productInventoryNoteDelete(notes[indexPath.row], completion: { (errMsg) -> Void in
-                hud?.hide(false)
-                if let e = errMsg {
-                    FPAlertManager.showMessage(e, withTitle: "Error")
-                } else {
-                    self.notes.remove(at: indexPath.row)
-                    self.inventoryTableView.reloadData()
-                }
-            })
-        }
-    }
-    
     // MARK: - UIActionSheetDelegate
     func actionSheet(_ actionSheet: UIActionSheet, didDismissWithButtonIndex buttonIndex: Int) {
         let buttonTitle = actionSheet.buttonTitle(at: buttonIndex)?.lowercased()
@@ -929,26 +878,6 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
                 pickerController.delegate = self
                 self.present(pickerController, animated: true, completion: nil)
             } else if actionSheet.tag == 2 {
-                if buttonTitle == "add notes" {
-                    let vc = FPAddNotesViewController.addNotesViewControllerWithCompletion({ (text) -> Void in
-                        let hud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
-                        hud?.removeFromSuperViewOnHide = true
-                        hud?.labelText = "Processing"
-                        FPServer.sharedInstance.productInventoryNoteCreateForProduct(self.editProduct!, text: text, completion: { (errMsg, note) -> Void in
-                            hud?.hide(false)
-                            if let e = errMsg {
-                                FPAlertManager.showMessage(e, withTitle: "Error")
-                            } else if let n = note {
-                                _ = self.navigationController?.popViewController(animated: true)
-                                self.notes.insert(n, at: 0)
-                                self.inventoryTableView.reloadData()
-                            }
-                        })
-                    })
-                    self.navigationController?.pushViewController(vc, animated: true)
-                    return
-                }
-                
                 var type: Int = 0
                 var title = ""
                 var defaultValue = ""
