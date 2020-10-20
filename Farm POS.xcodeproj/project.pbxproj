@@ -135,7 +135,6 @@
 		81E914381960E62C00865AFC /* FPFarmWorkerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E914371960E62C00865AFC /* FPFarmWorkerLoginViewController.swift */; };
 		81E95A3B1B600F0100F95F18 /* FPProductSuppliersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A3A1B600F0100F95F18 /* FPProductSuppliersViewController.swift */; };
 		81E95A491B612CC500F95F18 /* FPInventoryProductNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A481B612CC500F95F18 /* FPInventoryProductNote.swift */; };
-		81E95A4C1B61461C00F95F18 /* FPAddNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A4B1B61461C00F95F18 /* FPAddNotesViewController.swift */; };
 		81E9AC1D1B6A4FAD00DF81AA /* FPInventoryProductHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AC1C1B6A4FAD00DF81AA /* FPInventoryProductHistory.swift */; };
 		81E9AC201B6A536100DF81AA /* FPInventoryProductHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AC1F1B6A536100DF81AA /* FPInventoryProductHistoryViewController.swift */; };
 		81F14B061B1731680068372B /* FPProductCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F14B041B1731680068372B /* FPProductCategoryCollectionViewCell.swift */; };
@@ -236,7 +235,6 @@
 		E92BF8E724EBBC77002CB596 /* FPProductCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CFDDB219CAFB37003BB974 /* FPProductCreateViewController.swift */; };
 		E92BF8E824EBBC77002CB596 /* FPCustomerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814A71FE19622EF000F2A689 /* FPCustomerLoginViewController.swift */; };
 		E92BF8E924EBBC77002CB596 /* FPMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1CC82196778A800587E50 /* FPMeasurement.swift */; };
-		E92BF8EA24EBBC77002CB596 /* FPAddNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A4B1B61461C00F95F18 /* FPAddNotesViewController.swift */; };
 		E92BF8EB24EBBC77002CB596 /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FFD431966990D00BF652C /* Defines.swift */; };
 		E92BF8EC24EBBC77002CB596 /* FPFarmWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81148ADD1961A05100A40D26 /* FPFarmWorker.swift */; };
 		E92BF8ED24EBBC77002CB596 /* FPAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81199D3B195C313F00BE139D /* FPAppDelegate.swift */; };
@@ -456,7 +454,6 @@
 		81E914371960E62C00865AFC /* FPFarmWorkerLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPFarmWorkerLoginViewController.swift; sourceTree = "<group>"; };
 		81E95A3A1B600F0100F95F18 /* FPProductSuppliersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPProductSuppliersViewController.swift; sourceTree = "<group>"; };
 		81E95A481B612CC500F95F18 /* FPInventoryProductNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPInventoryProductNote.swift; sourceTree = "<group>"; };
-		81E95A4B1B61461C00F95F18 /* FPAddNotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPAddNotesViewController.swift; sourceTree = "<group>"; };
 		81E9AC1A1B67B38000DF81AA /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/../build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		81E9AC1C1B6A4FAD00DF81AA /* FPInventoryProductHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPInventoryProductHistory.swift; sourceTree = "<group>"; };
 		81E9AC1F1B6A536100DF81AA /* FPInventoryProductHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPInventoryProductHistoryViewController.swift; sourceTree = "<group>"; };
@@ -873,7 +870,6 @@
 				81CFDDB219CAFB37003BB974 /* FPProductCreateViewController.swift */,
 				81A0FEB91998C6820022D31D /* FPProductCategoriesViewController.swift */,
 				81E95A3A1B600F0100F95F18 /* FPProductSuppliersViewController.swift */,
-				81E95A4B1B61461C00F95F18 /* FPAddNotesViewController.swift */,
 				81DC1D4A1B6674E1002029C8 /* FPCreateProductViewController.swift */,
 				81DC1D811B66E048002029C8 /* FPSelectNamableViewController.swift */,
 				81E9AC1F1B6A536100DF81AA /* FPInventoryProductHistoryViewController.swift */,
@@ -1364,7 +1360,6 @@
 				81CFDDB319CAFB37003BB974 /* FPProductCreateViewController.swift in Sources */,
 				814A71FF19622EF000F2A689 /* FPCustomerLoginViewController.swift in Sources */,
 				81A1CC83196778A800587E50 /* FPMeasurement.swift in Sources */,
-				81E95A4C1B61461C00F95F18 /* FPAddNotesViewController.swift in Sources */,
 				810FFD441966990D00BF652C /* Defines.swift in Sources */,
 				81148ADE1961A05100A40D26 /* FPFarmWorker.swift in Sources */,
 				81199D3D195C313F00BE139D /* FPAppDelegate.swift in Sources */,
@@ -1475,7 +1470,6 @@
 				E92BF8E724EBBC77002CB596 /* FPProductCreateViewController.swift in Sources */,
 				E92BF8E824EBBC77002CB596 /* FPCustomerLoginViewController.swift in Sources */,
 				E92BF8E924EBBC77002CB596 /* FPMeasurement.swift in Sources */,
-				E92BF8EA24EBBC77002CB596 /* FPAddNotesViewController.swift in Sources */,
 				E92BF8EB24EBBC77002CB596 /* Defines.swift in Sources */,
 				E92BF8EC24EBBC77002CB596 /* FPFarmWorker.swift in Sources */,
 				E92BF8ED24EBBC77002CB596 /* FPAppDelegate.swift in Sources */,
