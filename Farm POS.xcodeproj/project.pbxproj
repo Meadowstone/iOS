@@ -134,7 +134,6 @@
 		81E5B7DC1B5FFA420061E377 /* FPProductSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5B7DB1B5FFA420061E377 /* FPProductSupplier.swift */; };
 		81E914381960E62C00865AFC /* FPFarmWorkerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E914371960E62C00865AFC /* FPFarmWorkerLoginViewController.swift */; };
 		81E95A3B1B600F0100F95F18 /* FPProductSuppliersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A3A1B600F0100F95F18 /* FPProductSuppliersViewController.swift */; };
-		81E95A491B612CC500F95F18 /* FPInventoryProductNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A481B612CC500F95F18 /* FPInventoryProductNote.swift */; };
 		81E9AC1D1B6A4FAD00DF81AA /* FPInventoryProductHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AC1C1B6A4FAD00DF81AA /* FPInventoryProductHistory.swift */; };
 		81E9AC201B6A536100DF81AA /* FPInventoryProductHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AC1F1B6A536100DF81AA /* FPInventoryProductHistoryViewController.swift */; };
 		81F14B061B1731680068372B /* FPProductCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F14B041B1731680068372B /* FPProductCategoryCollectionViewCell.swift */; };
@@ -197,7 +196,6 @@
 		E92BF8BE24EBBC77002CB596 /* FPStoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8115CDE7195D90E800C51C83 /* FPStoryboardManager.swift */; };
 		E92BF8BF24EBBC77002CB596 /* FPCashCheckSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA71831B3998C000C0CD7D /* FPCashCheckSummaryViewController.swift */; };
 		E92BF8C024EBBC77002CB596 /* FPProductCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F14B041B1731680068372B /* FPProductCategoryCollectionViewCell.swift */; };
-		E92BF8C124EBBC77002CB596 /* FPInventoryProductNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A481B612CC500F95F18 /* FPInventoryProductNote.swift */; };
 		E92BF8C224EBBC77002CB596 /* FPGiftCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682CD196F713900BE4E90 /* FPGiftCard.swift */; };
 		E92BF8C324EBBC77002CB596 /* FPGiftCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813682CB196F6C4500BE4E90 /* FPGiftCardsViewController.swift */; };
 		E92BF8C424EBBC77002CB596 /* FPScanQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141E4451971FF930037FCD0 /* FPScanQRCodeViewController.swift */; };
@@ -453,7 +451,6 @@
 		81E5B7DB1B5FFA420061E377 /* FPProductSupplier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPProductSupplier.swift; sourceTree = "<group>"; };
 		81E914371960E62C00865AFC /* FPFarmWorkerLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPFarmWorkerLoginViewController.swift; sourceTree = "<group>"; };
 		81E95A3A1B600F0100F95F18 /* FPProductSuppliersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPProductSuppliersViewController.swift; sourceTree = "<group>"; };
-		81E95A481B612CC500F95F18 /* FPInventoryProductNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPInventoryProductNote.swift; sourceTree = "<group>"; };
 		81E9AC1A1B67B38000DF81AA /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/../build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		81E9AC1C1B6A4FAD00DF81AA /* FPInventoryProductHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPInventoryProductHistory.swift; sourceTree = "<group>"; };
 		81E9AC1F1B6A536100DF81AA /* FPInventoryProductHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPInventoryProductHistoryViewController.swift; sourceTree = "<group>"; };
@@ -695,7 +692,6 @@
 				8151073319797C0400AFC491 /* FPCheckoutProduct.swift */,
 				812065531B566FAE00CA180F /* FPCheckoutTaxItem.swift */,
 				81E5B7DB1B5FFA420061E377 /* FPProductSupplier.swift */,
-				81E95A481B612CC500F95F18 /* FPInventoryProductNote.swift */,
 				81E9AC1C1B6A4FAD00DF81AA /* FPInventoryProductHistory.swift */,
 				E90DDA67252E14C8004DB111 /* FPCustomerManageBalanceOption.swift */,
 				E9445536252B1D08002AD1BD /* FPPaymentCardProcessor.swift */,
@@ -1320,7 +1316,6 @@
 				8115CDE8195D90E800C51C83 /* FPStoryboardManager.swift in Sources */,
 				81FA71841B3998C000C0CD7D /* FPCashCheckSummaryViewController.swift in Sources */,
 				81F14B061B1731680068372B /* FPProductCategoryCollectionViewCell.swift in Sources */,
-				81E95A491B612CC500F95F18 /* FPInventoryProductNote.swift in Sources */,
 				813682CE196F713900BE4E90 /* FPGiftCard.swift in Sources */,
 				813682CC196F6C4500BE4E90 /* FPGiftCardsViewController.swift in Sources */,
 				E972DD47250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift in Sources */,
@@ -1430,7 +1425,6 @@
 				E92BF8BE24EBBC77002CB596 /* FPStoryboardManager.swift in Sources */,
 				E92BF8BF24EBBC77002CB596 /* FPCashCheckSummaryViewController.swift in Sources */,
 				E92BF8C024EBBC77002CB596 /* FPProductCategoryCollectionViewCell.swift in Sources */,
-				E92BF8C124EBBC77002CB596 /* FPInventoryProductNote.swift in Sources */,
 				E92BF8C224EBBC77002CB596 /* FPGiftCard.swift in Sources */,
 				E92BF8C324EBBC77002CB596 /* FPGiftCardsViewController.swift in Sources */,
 				E972DD48250A2F1F008E0652 /* FPPayWithPaymentCardViewController.swift in Sources */,

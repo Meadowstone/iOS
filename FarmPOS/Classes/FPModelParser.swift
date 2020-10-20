@@ -356,10 +356,6 @@ class FPModelParser {
         return info as NSDictionary
     }
     
-    class func inventoryProductNoteWithInfo(_ info: NSDictionary) -> FPInventoryProductNote {
-        return FPInventoryProductNote(id: info["id"] as! Int, text: info["text"] as! String)
-    }
-    
     class func giftCardWithInfo(_ info: NSDictionary) -> FPGiftCard {
         return FPGiftCard(id: info["gift_card_id"] as! Int, sum: info["sum"] as! Double)
     }

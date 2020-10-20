@@ -44,9 +44,6 @@ let kTransactions       = "payments/"
 let kVoidTransaction    = "void_transaction/"
 let kTransactionReceipt = "transaction_receipt/"
 let kPaymentProcess     = "payment_process/"
-let kNotesAdd           = "product_note_create/"
-let kNotesDelete        = "product_note_delete/"
-let kProductNotes       = "product_note_display/"
 let kInventoryAdd       = "product_inventory_add/"
 var kInventoryHistory   = "inventory_history/"
 var kInventoryHistoryDelete   = "inventory_history_delete/"
@@ -1394,81 +1391,6 @@ class FPServer : AFHTTPSessionManager {
             completion(errors, nil, nil)
         }
         self.post(kGiftCardRedeem, parameters: params, success: success, failure: failure)
-    }
-    
-    func productInventoryNoteCreateForProduct(_ product: FPProduct, text: String, completion:@escaping (_ errMsg: String?, _ note: FPInventoryProductNote?) -> Void) {
-        let params = ["product_id": product.id, "text": text] as [String : Any]
-        
-        let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
-            
-            var errors: String? = kInternalError
-            var note: FPInventoryProductNote? = nil
-            
-            if let r = responseObject as? NSDictionary {
-                if r["status"] as! Bool {
-                    let noteInfo = r["note"] as! Dictionary<String, AnyObject>
-                    note = FPModelParser.inventoryProductNoteWithInfo(noteInfo as NSDictionary)
-                }
-                errors = self.errors(r["errors"])
-            }
-            
-            completion(errors, note)
-        }
-        
-        let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
-            let errors = self.errors(error)
-            completion(errors, nil)
-        }
-        self.post(kNotesAdd, parameters: params, success: success, failure: failure)
-    }
-    
-    func productInventoryNoteDelete(_ note: FPInventoryProductNote, completion:@escaping (_ errMsg: String?) -> Void) {
-        let params = ["note_id": note.id]
-        
-        let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
-            
-            var errors: String? = kInternalError
-            
-            if let r = responseObject as? NSDictionary {
-                errors = self.errors(r["errors"])
-            }
-            
-            completion(errors)
-        }
-        
-        let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
-            let errors = self.errors(error)
-            completion(errors)
-        }
-        self.post(kNotesDelete, parameters: params, success: success, failure: failure)
-    }
-    
-    func inventoryProductNotesForProduct(_ product: FPProduct, completion: @escaping (_ errMsg: String?, _ notes: [FPInventoryProductNote]?) -> Void) {
-        let params = ["product_id": product.id]
-        
-        let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
-            
-            var errors: String? = kInternalError
-            var notes = [FPInventoryProductNote]()
-            
-            if let r = responseObject as? NSDictionary {
-                if r["status"] as! Bool {
-                    for info in r["notes"] as! [NSDictionary] {
-                        notes.append(FPModelParser.inventoryProductNoteWithInfo(info))
-                    }
-                }
-                errors = self.errors(r["errors"])
-            }
-            
-            completion(errors, notes)
-        }
-        
-        let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
-            let errors = self.errors(error)
-            completion(errors, nil)
-        }
-        
-        self.get(kProductNotes, parameters: params, success: success, failure: failure)
     }
     
     func productInventoryAddForProduct(_ product: FPProduct, amount: Double, type: Int, completion: @escaping (_ errMsg: String?, _ product: FPProduct?) -> Void) {
