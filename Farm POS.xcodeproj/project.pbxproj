@@ -134,7 +134,6 @@
 		81E5B7DC1B5FFA420061E377 /* FPProductSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5B7DB1B5FFA420061E377 /* FPProductSupplier.swift */; };
 		81E914381960E62C00865AFC /* FPFarmWorkerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E914371960E62C00865AFC /* FPFarmWorkerLoginViewController.swift */; };
 		81E95A3B1B600F0100F95F18 /* FPProductSuppliersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A3A1B600F0100F95F18 /* FPProductSuppliersViewController.swift */; };
-		81E95A461B612AFE00F95F18 /* FPInventoryProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A451B612AFE00F95F18 /* FPInventoryProductViewController.swift */; };
 		81E95A491B612CC500F95F18 /* FPInventoryProductNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A481B612CC500F95F18 /* FPInventoryProductNote.swift */; };
 		81E95A4C1B61461C00F95F18 /* FPAddNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A4B1B61461C00F95F18 /* FPAddNotesViewController.swift */; };
 		81E9AC1D1B6A4FAD00DF81AA /* FPInventoryProductHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AC1C1B6A4FAD00DF81AA /* FPInventoryProductHistory.swift */; };
@@ -247,7 +246,6 @@
 		E92BF8F224EBBC77002CB596 /* FPCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FF080D196C28660046457A /* FPCartCell.swift */; };
 		E92BF8F324EBBC77002CB596 /* FPCustomerCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D23F871966B66A00A330E0 /* FPCustomerCreateViewController.swift */; };
 		E92BF8F424EBBC77002CB596 /* FPMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FB1968198BA4FB00FF6815 /* FPMenuViewController.swift */; };
-		E92BF8F524EBBC77002CB596 /* FPInventoryProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E95A451B612AFE00F95F18 /* FPInventoryProductViewController.swift */; };
 		E92BF8F624EBBC77002CB596 /* FPCurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3A84D196BF99B0006C479 /* FPCurrencyFormatter.swift */; };
 		E92BF8F724EBBC77002CB596 /* FPTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DD91D41977DC810056754B /* FPTransactionCell.swift */; };
 		E92BF8F824EBBC77002CB596 /* FPUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812ED2B3195CEFEC008F178C /* FPUser.swift */; };
@@ -457,7 +455,6 @@
 		81E5B7DB1B5FFA420061E377 /* FPProductSupplier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPProductSupplier.swift; sourceTree = "<group>"; };
 		81E914371960E62C00865AFC /* FPFarmWorkerLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPFarmWorkerLoginViewController.swift; sourceTree = "<group>"; };
 		81E95A3A1B600F0100F95F18 /* FPProductSuppliersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPProductSuppliersViewController.swift; sourceTree = "<group>"; };
-		81E95A451B612AFE00F95F18 /* FPInventoryProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPInventoryProductViewController.swift; sourceTree = "<group>"; };
 		81E95A481B612CC500F95F18 /* FPInventoryProductNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPInventoryProductNote.swift; sourceTree = "<group>"; };
 		81E95A4B1B61461C00F95F18 /* FPAddNotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPAddNotesViewController.swift; sourceTree = "<group>"; };
 		81E9AC1A1B67B38000DF81AA /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/../build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
@@ -876,7 +873,6 @@
 				81CFDDB219CAFB37003BB974 /* FPProductCreateViewController.swift */,
 				81A0FEB91998C6820022D31D /* FPProductCategoriesViewController.swift */,
 				81E95A3A1B600F0100F95F18 /* FPProductSuppliersViewController.swift */,
-				81E95A451B612AFE00F95F18 /* FPInventoryProductViewController.swift */,
 				81E95A4B1B61461C00F95F18 /* FPAddNotesViewController.swift */,
 				81DC1D4A1B6674E1002029C8 /* FPCreateProductViewController.swift */,
 				81DC1D811B66E048002029C8 /* FPSelectNamableViewController.swift */,
@@ -1380,7 +1376,6 @@
 				81FF080E196C28660046457A /* FPCartCell.swift in Sources */,
 				81D23F881966B66A00A330E0 /* FPCustomerCreateViewController.swift in Sources */,
 				81FB1969198BA4FB00FF6815 /* FPMenuViewController.swift in Sources */,
-				81E95A461B612AFE00F95F18 /* FPInventoryProductViewController.swift in Sources */,
 				81A3A84E196BF99B0006C479 /* FPCurrencyFormatter.swift in Sources */,
 				81DD91D61977DC810056754B /* FPTransactionCell.swift in Sources */,
 				812ED2B4195CEFEC008F178C /* FPUser.swift in Sources */,
@@ -1492,7 +1487,6 @@
 				E92BF8F224EBBC77002CB596 /* FPCartCell.swift in Sources */,
 				E92BF8F324EBBC77002CB596 /* FPCustomerCreateViewController.swift in Sources */,
 				E92BF8F424EBBC77002CB596 /* FPMenuViewController.swift in Sources */,
-				E92BF8F524EBBC77002CB596 /* FPInventoryProductViewController.swift in Sources */,
 				E92BF8F624EBBC77002CB596 /* FPCurrencyFormatter.swift in Sources */,
 				E92BF8F724EBBC77002CB596 /* FPTransactionCell.swift in Sources */,
 				E92BF8F824EBBC77002CB596 /* FPUser.swift in Sources */,

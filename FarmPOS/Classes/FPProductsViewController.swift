@@ -81,7 +81,6 @@ class FPProductsViewController: FPRotationViewController, UITableViewDelegate, U
     }
     
     func inventoryProductSelected(_ product: FPProduct, fromBarcode: Bool = false) {
-//        let vc = FPInventoryProductViewController.inventoryProductViewControllerForProduct(product)
         let vc = FPCreateProductViewController.createProductViewControllerForEditProduct(product, withCompletion: { (product2) -> Void in
             if let p2 = product2 {
                 product.mergeWithProduct(p2)
