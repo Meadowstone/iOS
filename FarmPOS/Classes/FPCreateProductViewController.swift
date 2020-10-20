@@ -124,17 +124,6 @@ class FPCreateProductViewController: FPRotationViewController, UITableViewDelega
             self.selectedMeasurement = self.measurements[0]
         }
         
-        if let product = editProduct {
-            FPServer.sharedInstance.inventoryProductNotesForProduct(product, completion: {[weak self] (errMsg, notes) -> Void in
-                if let e = errMsg {
-                    FPAlertManager.showMessage(e, withTitle: "Error")
-                } else if let n = notes {
-                    self?.notes += n
-                    self?.inventoryTableView.reloadData()
-                }
-                })
-        }
-        
         self.productTableView.tableFooterView = UIView()
         self.inventoryTableView.tableFooterView = UIView()
         
