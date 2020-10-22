@@ -30,7 +30,6 @@ class FPModelParser {
         return info
     }
     
-    
     class func workerWithInfo(_ workerInfo: NSDictionary) -> FPFarmWorker {
         let worker = FPFarmWorker()
         worker.id = workerInfo["worker_id"] as! Int
@@ -53,7 +52,6 @@ class FPModelParser {
         return ["location_id": rl.id, "name": rl.name]
     }
 
-
     class func productDescriptorWithInfo(_ info: NSDictionary) -> FPProductDescriptor {
         let pd = FPProductDescriptor()
         pd.productId = info["product_id"] as! Int
@@ -68,13 +66,6 @@ class FPModelParser {
             info["discount_price"] = discPrice
         }
         return info as NSDictionary
-    }
-    
-    class func customerManageBalanceOptionWithInfo(_ info: NSDictionary) -> FPCustomerManageBalanceOption {
-        return FPCustomerManageBalanceOption(
-            price: info["pay_credit"] as? Double ?? 0,
-            balanceAdded: info["get_credit"] as? Double ?? 0
-        )
     }
     
     class func customerWithInfo(_ customerInfo: NSDictionary) -> FPCustomer {
@@ -142,14 +133,6 @@ class FPModelParser {
         }
         
         return info as NSDictionary
-    }
-    
-    class func paymentCardProcessorWithInfo(_ info: NSDictionary) -> FPPaymentCardProcessor {
-        return FPPaymentCardProcessor(
-            name: info["payment_processor"] as? String ?? "",
-            transactionFeePercentage: info["fee"] as? Double ?? 0,
-            transactionFeeFixed: info["fixed_per_transaction"] as? Double ?? 0
-        )
     }
     
     class func measurementWithInfo(_ mi: NSDictionary) -> FPMeasurement {
@@ -409,6 +392,36 @@ class FPModelParser {
         return t
     }
     
+    class func paymentCardProcessorWithInfo(_ info: NSDictionary) -> FPPaymentCardProcessor {
+        return FPPaymentCardProcessor(
+            name: info["payment_processor"] as? String ?? "",
+            transactionFeePercentage: info["fee"] as? Double ?? 0,
+            transactionFeeFixed: info["fixed_per_transaction"] as? Double ?? 0
+        )
+    }
+    
+    class func infoWithPaymentCardProcessor(_ paymentCardProcessor: FPPaymentCardProcessor) -> NSDictionary {
+        return [
+            "payment_processor" : paymentCardProcessor.name,
+            "fee" : paymentCardProcessor.transactionFeePercentage,
+            "fixed_per_transaction" : paymentCardProcessor.transactionFeeFixed
+        ]
+    }
+    
+    class func customerManageBalanceOptionWithInfo(_ info: NSDictionary) -> FPCustomerManageBalanceOption {
+        return FPCustomerManageBalanceOption(
+            price: info["pay_credit"] as? Double ?? 0,
+            balanceAdded: info["get_credit"] as? Double ?? 0
+        )
+    }
+    
+    class func infoWithCustomerManageBalanceOption(_ customerManageBalanceOption: FPCustomerManageBalanceOption) -> NSDictionary {
+        return [
+            "pay_credit" : customerManageBalanceOption.price,
+            "get_credit" : customerManageBalanceOption.balanceAdded
+        ]
+    }
+    
     class func farmWithInfo(_ info: NSDictionary) -> FPFarm {
         let farm = FPFarm()
         if let allowCustomerBalancePayments = info["allow_customer_balance_payments"] as? Bool {
@@ -436,7 +449,24 @@ class FPModelParser {
     }
     
     class func infoWithFarm(_ farm: FPFarm) -> NSDictionary {
-        return ["name": farm.name, "address": farm.address, "city": farm.city, "state": farm.state, "zip_code": farm.zipCode, "allow_customer_balance_payments": farm.allowCustomerBalancePayments]
+        var info: [String : Any] = [
+            "name": farm.name,
+            "address": farm.address,
+            "city": farm.city,
+            "state": farm.state,
+            "zip_code": farm.zipCode,
+            "allow_customer_balance_payments": farm.allowCustomerBalancePayments
+        ]
+        
+        if let paymentCardProcessor = farm.paymentCardProcessor {
+            let processors = [infoWithPaymentCardProcessor(paymentCardProcessor)]
+            info["credit_cards"] = processors
+        }
+        
+        info["farm_bucks_credit"] = farm.customerManageBalanceOptions
+            .map { infoWithCustomerManageBalanceOption($0) }
+        
+        return info as NSDictionary
     }
     
 }
