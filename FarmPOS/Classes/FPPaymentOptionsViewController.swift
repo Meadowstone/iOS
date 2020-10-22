@@ -145,15 +145,11 @@ class FPPaymentOptionsViewController: FPRotationViewController {
     }
     
     private func payWithPaymentCardExplanation() -> String {
-        let totalPrice = PaymentCardController.shared.priceWithAddedFees(forPrice: FPCartView.sharedCart().checkoutSum)
-        let totalPriceText = FPCurrencyFormatter.printableCurrency(totalPrice)
         let feePercentageText = String(format: "%.1f%%", FPUser.activeUser()!.farm!.paymentCardProcessor!.transactionFeePercentage)
-        let feeFixedText = "\(Int(FPUser.activeUser()!.farm!.paymentCardProcessor!.transactionFeeFixed * 100))¢"
+        let feeFixedText = "$.\(Int(FPUser.activeUser()!.farm!.paymentCardProcessor!.transactionFeeFixed * 100))"
         return """
-            Thanks for supporting local agriculture and Meadowstone Farm!\
-              Unfortunately we are unable to absorb bank fees, so for this purchase you will be charged,\
-              $\(totalPriceText), which is \(feePercentageText) + \(feeFixedText) more.\
-              Please check our Farm Bucks program on our website to receive discounts on all stand purchases.
+            Unfortunately we are unable to absorb the credit card bank fees so an additional \
+            \(feePercentageText) + \(feeFixedText) will be charged per transaction.
             """
     }
     

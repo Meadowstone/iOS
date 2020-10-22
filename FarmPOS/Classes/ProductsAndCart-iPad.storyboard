@@ -483,6 +483,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="640" height="462"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you for supporting Meadowstone Farm and local agriculture!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdU-Qi-zhj">
+                                <rect key="frame" x="20" y="0.0" width="600" height="116"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="116" id="MHA-g3-nzL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ETm-JT-4xq">
                                 <rect key="frame" x="20" y="116" width="600" height="296"/>
                                 <subviews>
@@ -567,7 +576,10 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ETm-JT-4xq" secondAttribute="trailing" constant="20" id="0iE-J5-HGB"/>
                             <constraint firstItem="ETm-JT-4xq" firstAttribute="leading" secondItem="APa-hh-oPS" secondAttribute="leading" constant="20" id="J8t-LK-1D9"/>
-                            <constraint firstItem="ETm-JT-4xq" firstAttribute="top" secondItem="36N-uz-gco" secondAttribute="bottom" constant="116" id="vlK-Iw-KY3"/>
+                            <constraint firstAttribute="trailing" secondItem="rdU-Qi-zhj" secondAttribute="trailing" constant="20" id="SFg-VA-Jfw"/>
+                            <constraint firstItem="rdU-Qi-zhj" firstAttribute="leading" secondItem="APa-hh-oPS" secondAttribute="leading" constant="20" id="bck-Iq-Kt0"/>
+                            <constraint firstItem="ETm-JT-4xq" firstAttribute="top" secondItem="rdU-Qi-zhj" secondAttribute="bottom" id="eTY-D8-pFW"/>
+                            <constraint firstItem="rdU-Qi-zhj" firstAttribute="top" secondItem="36N-uz-gco" secondAttribute="bottom" id="zuu-Ch-sCa"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -588,7 +600,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hw0-Wq-E18" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="698.4375" y="82.6171875"/>
+            <point key="canvasLocation" x="694" y="82"/>
         </scene>
         <!--Pay Now View Controller-->
         <scene sceneID="rr2-e6-Ede">
@@ -1269,7 +1281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fln-jp-rAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="698.4375" y="431.8359375"/>
+            <point key="canvasLocation" x="694" y="586"/>
         </scene>
         <!--Customer Edit View Controller-->
         <scene sceneID="7ru-Ow-uAn">
@@ -1368,7 +1380,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asm-Wn-JT7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748.4375" y="695.21484375"/>
+            <point key="canvasLocation" x="694" y="980"/>
         </scene>
     </scenes>
     <resources>
