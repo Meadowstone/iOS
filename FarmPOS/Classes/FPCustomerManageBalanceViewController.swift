@@ -11,7 +11,9 @@ import MBProgressHUD
 
 class FPCustomerManageBalanceViewController: UIViewController {
     
+    private var thankYouMessageLabel: UILabel!
     private var optionsStackView: UIStackView!
+    private var paymentExplanationLabel: UILabel!
     
     var cancelTapped: (() -> Void)?
     var errorWhileContactingFarmServer: ((String) -> Void)?
@@ -24,6 +26,8 @@ class FPCustomerManageBalanceViewController: UIViewController {
         view.backgroundColor = FPColorPaymentFlowBackground
         createOptionsStackView()
         createOptionViews(from: FPUser.activeUser()!.farm!.customerManageBalanceOptions)
+        createThankYouMessageLabel()
+        createPaymentExplanationLabel()
     }
     
     override func viewDidLoad() {
@@ -60,6 +64,40 @@ class FPCustomerManageBalanceViewController: UIViewController {
         optionButton.translatesAutoresizingMaskIntoConstraints = false
         optionButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         return optionButton
+    }
+    
+    private func createThankYouMessageLabel() {
+        thankYouMessageLabel = UILabel()
+        thankYouMessageLabel.text = "Thank you for supporting Meadowstone Farm and local agriculture!"
+        thankYouMessageLabel.numberOfLines = 0
+        thankYouMessageLabel.textAlignment = .center
+        thankYouMessageLabel.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        thankYouMessageLabel.textColor = FPColorPaymentFlowMessage
+        view.addSubview(thankYouMessageLabel)
+        thankYouMessageLabel.translatesAutoresizingMaskIntoConstraints = false
+        thankYouMessageLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        thankYouMessageLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        thankYouMessageLabel.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        thankYouMessageLabel.bottomAnchor.constraint(equalTo: optionsStackView.topAnchor).isActive = true
+    }
+    
+    private func createPaymentExplanationLabel() {
+        paymentExplanationLabel = UILabel()
+        paymentExplanationLabel.text = """
+            You can only update your balance with a credit card on this page.  \
+            If you would like to add to your account with cash or check, \
+            please place either in the cash box and we’ll add it ASAP.
+            """
+        paymentExplanationLabel.numberOfLines = 0
+        paymentExplanationLabel.textAlignment = .center
+        paymentExplanationLabel.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        paymentExplanationLabel.textColor = FPColorPaymentFlowMessage
+        view.addSubview(paymentExplanationLabel)
+        paymentExplanationLabel.translatesAutoresizingMaskIntoConstraints = false
+        paymentExplanationLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        paymentExplanationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        paymentExplanationLabel.topAnchor.constraint(equalTo: optionsStackView.bottomAnchor).isActive = true
+        paymentExplanationLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
     private func setupNavigationBar() {
