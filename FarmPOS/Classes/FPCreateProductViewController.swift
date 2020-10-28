@@ -136,6 +136,15 @@ class FPCreateProductViewController: FPRotationViewController, UIActionSheetDele
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // for some reason this fixes the issue with not being able to scroll product table view
+        let currentContentInset = productTableView.contentInset 
+        productTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 1, right: 0)
+        productTableView.contentInset = currentContentInset
+    }
+    
     @objc func historyPressed() {
         guard let editProduct = editProduct else { return }
         let vc = FPInventoryProductHistoryViewController.inventoryProductHistoryViewControllerForProduct(
