@@ -172,7 +172,7 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             } else {
                 let alert = UIAlertView()
                 alert.alertViewStyle = .plainTextInput
-                alert.tag = 2
+                alert.tag = FPPaymentMethod.check.rawValue
                 alert.message = "Check number"
                 alert.delegate = self
                 alert.addButton(withTitle: "Cancel")
@@ -280,16 +280,16 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             completion: completion
         )
     }
+
+}
+
+extension FPPaymentOptionsViewController: UIAlertViewDelegate {
     
-    // UIAlertView delegate (probably can be removed since it's deprecated and not called anymore)
     func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
-        if alertView.tag == 1 {
-            // Call balance competion handler
-            balanceCompletionHandler()
-        } else if alertView.tag == 2 && buttonIndex == 1 {
-            let text = alertView.textField(at: 0)!.text
-            depositSumPayWithCheck(true, checkNumber: text, transactionToken: nil, last4: nil)
-        }
+        if alertView.tag == FPPaymentMethod.check.rawValue && buttonIndex == 1 {
+             let text = alertView.textField(at: 0)!.text
+             depositSumPayWithCheck(true, checkNumber: text, transactionToken: nil, last4: nil)
+         }
     }
     
 }
