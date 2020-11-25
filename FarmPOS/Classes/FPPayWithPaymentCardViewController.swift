@@ -101,6 +101,7 @@ class FPPayWithPaymentCardViewController: UIViewController {
     private func createProcessedByStripeLabel() {
         processedByStripeLabel = UILabel()
         processedByStripeLabel.text = "Your card details will be processed by Stripe."
+        processedByStripeLabel.numberOfLines = 0
         processedByStripeLabel.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         processedByStripeLabel.textColor = FPColorPaymentFlowMessage
         view.addSubview(processedByStripeLabel)

@@ -132,8 +132,11 @@ class FPPaymentOptionsViewController: FPRotationViewController {
                 button4.setTitle(payWithPaymentCardTitle, for: .normal)
                 button4.tag = FPPaymentMethod.paymentCard.rawValue
                 button4.isHidden = false
-                button4explanationLabel.text = payWithPaymentCardExplanation()
-                button4explanationLabel.isHidden = false
+                
+                if UIDevice.current.userInterfaceIdiom == .pad {
+                    button4explanationLabel.text = payWithPaymentCardExplanation()
+                    button4explanationLabel.isHidden = false
+                }
             }
         } else if FPFarmWorker.activeWorker() == nil {
             button3.setTitle(payWithPaymentCardTitle, for: .normal)
