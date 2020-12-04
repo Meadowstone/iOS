@@ -63,27 +63,15 @@ class FPCustomerLoginViewController: FPRotationViewController, UIPopoverControll
         let hud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
         hud?.removeFromSuperViewOnHide = true
         hud?.labelText = "Entering POS..."
+        
         let completion = { [weak self] (errorMessage: String?, productDescriptors: [FPProductDescriptor]?) -> Void in
             hud?.hide(false)
             if let errorMessage = errorMessage {
                 FPAlertManager.showMessage(errorMessage, withTitle: "Error")
                 return
             }
-            
             self?.customerAuthenticated(nil)
-            
-            if let products = FPProduct.allProducts() {
-                for productDescriptor in productDescriptors ?? [] {
-                    let searchProducts = products.filter { $0.id == productDescriptor.productId }
-                    if searchProducts.count > 0 {
-                        let product = searchProducts[0]
-                        if let discountPrice = productDescriptor.discountPrice {
-                            product.discountPrice = discountPrice
-                        }
-                        FPProduct.setAllProducts(products)
-                    }
-                }
-            }
+            FPProduct.addDiscounts(using: productDescriptors ?? [])
         }
         
         FPServer.sharedInstance.guestCheckout(completion: completion)

@@ -37,22 +37,9 @@ class FPCustomer : NSObject {
         FPProduct.reloadAllProducts()
         _activeCustomer = customer
         
-        // Add discounts
-        if let c = customer {
-            if let products = FPProduct.allProducts() {
-                for pd in c.productDescriptors {
-                    let searchProducts = products.filter() { return $0.id == pd.productId }
-                    if searchProducts.count > 0 {
-                        let product = searchProducts[0]
-                        if let discPrice = pd.discountPrice {
-                            product.discountPrice = discPrice
-                        }
-                        FPProduct.setAllProducts(products)
-                    }
-                }                
-            }
+        if let customer = customer {
+            FPProduct.addDiscounts(using: customer.productDescriptors)
         }
-        
     }
     
     class func activeCustomer() -> FPCustomer? {

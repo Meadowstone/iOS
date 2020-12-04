@@ -178,4 +178,16 @@ class FPProduct: NSObject {
         }
     }
     
+    class func addDiscounts(using productDescriptors: [FPProductDescriptor]) {
+        guard let products = FPProduct.allProducts() else { return }
+        for productDescriptor in productDescriptors {
+            guard let discountPrice = productDescriptor.discountPrice else { continue }
+            guard let product = products
+                .filter({ $0.id == productDescriptor.productId })
+                .first else { continue }
+            product.discountPrice = discountPrice
+            FPProduct.setAllProducts(products)
+        }
+    }
+    
 }
