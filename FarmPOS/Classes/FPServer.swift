@@ -23,6 +23,7 @@ let kLogin = "login/"
 let kFarmWorkerAuth = "worker_auth/"
 let kCustomerAuth = "customer_auth/"
 let kFarmWorkerEmails = "farm_worker_emails/"
+let kGuestCheckout = "anonymous_customer/"
 
 // Cutomers
 let kCustomerCreate         = "client_create/"
@@ -531,6 +532,27 @@ class FPServer : AFHTTPSessionManager {
         }
         
         self.post(kCustomerAuth, parameters: params, success: success, failure: failure)
+    }
+    
+    func guestCheckout(completion: @escaping (_ errMsg: String?, _ productDescriptors: [FPProductDescriptor]?) -> Void) {
+        let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in    
+            var errors: String? = kInternalError
+            var productDescriptors: [FPProductDescriptor]?
+            if let r = responseObject as? NSDictionary {
+                if r["status"] as? Bool == true, let productDescriptorsInfo = r["products"] as? [NSDictionary] {
+                    productDescriptors = productDescriptorsInfo.map(FPModelParser.productDescriptorWithInfo)
+                }
+                errors = self.errors(r["errors"])
+            }
+            completion(errors, productDescriptors)
+        }
+        
+        let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
+            let errors = self.errors(error)
+            completion(errors, nil)
+        }
+        
+        post(kGuestCheckout, parameters: nil, success: success, failure: failure)
     }
     
     
