@@ -35,6 +35,8 @@
 	<string>Please provide mic access</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allows taking pictures of products.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location access is required in order to accept payments.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Launch Screen</string>
 	<key>UIRequiredDeviceCapabilities</key>
