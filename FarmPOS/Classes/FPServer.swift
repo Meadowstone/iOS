@@ -60,6 +60,7 @@ let kCashCheckSummarySet = "cash_check_summary_set/"
 
 // Payment card processing
 let kCreateStripePaymentIntent = "stripe_create_payment_intent/"
+let kCreateStripeConnectionToken = "connection_token/"
 
 class FPServer : AFHTTPSessionManager {
     
@@ -1163,6 +1164,27 @@ class FPServer : AFHTTPSessionManager {
         }
         
         self.post(kCreateStripePaymentIntent, parameters: params, success: success, failure: failure)
+    }
+    
+    func createStripeConnectionToken(
+        completion: @escaping (_ clientSecret: String?) -> Void
+    ) {
+        let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
+            let jsonResponse = responseObject as? [AnyHashable : Any]
+            let clientSecret = jsonResponse?["client_secret"] as? String
+            completion(clientSecret)
+        }
+        
+        let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
+            completion(nil)
+        }
+        
+        self.post(
+            kCreateStripeConnectionToken,
+            parameters: nil,
+            success: success,
+            failure: failure
+        )
     }
     
     func paymentProcessWithSum(_ sum: Double?, method: FPPaymentMethod, checkNumber: String?, transactionToken : String?, last4: String?, completion:@escaping (_ errMsg: String?, _ didSaveOffline: Bool) -> Void) {
