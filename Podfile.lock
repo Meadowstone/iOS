@@ -27,6 +27,7 @@ PODS:
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
   - Stripe (19.4.0)
+  - StripeTerminal (2.0.0)
   - SVPullToRefresh (0.4.1)
 
 DEPENDENCIES:
@@ -39,17 +40,18 @@ DEPENDENCIES:
   - MMDrawerController (= 0.6.0)
   - SDWebImage (= 3.7.3)
   - Stripe
+  - StripeTerminal (= 2.0)
   - SVPullToRefresh (= 0.4.1)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - AFNetworking
     - MBProgressHUD
     - MMDrawerController
     - SDWebImage
-    - SVPullToRefresh
-  trunk:
     - Stripe
+    - StripeTerminal
+    - SVPullToRefresh
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
@@ -57,8 +59,9 @@ SPEC CHECKSUMS:
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   Stripe: 92f1c73a9dbd3c54277ed06a1fea6e08f20414c6
+  StripeTerminal: 92673ce3ecb15ae2f8436fc47c78fdf729955462
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
 
-PODFILE CHECKSUM: 8a5ab20cacf044912c15c5db1c3f9a351cee7163
+PODFILE CHECKSUM: 0e4ea43766b9276431d20a2a8e7d1a4bb796da6d
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

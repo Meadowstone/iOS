@@ -9,6 +9,7 @@ def pods_to_add
     pod 'SDWebImage', '3.7.3'
     pod 'SVPullToRefresh', '0.4.1'
     pod 'Stripe'
+    pod 'StripeTerminal', '2.0'
 end
 
 target 'Farmstand Cart' do
