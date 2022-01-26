@@ -11,6 +11,8 @@ import StripeTerminal
 
 class PaymentCardController: NSObject {
     
+    let terminal = PaymentCardTerminalController()
+    
     enum PaymentResult {
         case success
         case canceled
@@ -112,7 +114,7 @@ extension PaymentCardController: ConnectionTokenProvider {
                         domain: "com.stripe-terminal-ios.example",
                         code: 0,
                         userInfo: [
-                            NSLocalizedDescriptionKey: "Other networking error encountered."
+                            NSLocalizedDescriptionKey: "Networking error encountered."
                         ]
                     )
                 )
@@ -121,3 +123,90 @@ extension PaymentCardController: ConnectionTokenProvider {
     }
     
 }
+
+class PaymentCardTerminalController {
+    
+    var isReaderConnected: Bool {
+        return Terminal.shared.connectedReader != nil
+    }
+    
+    func discoverReaders(
+        delegate: DiscoveryDelegate,
+        completion: @escaping ErrorCompletionBlock
+    ) {
+        Terminal.shared.discoverReaders(
+            .init(
+                discoveryMethod: .bluetoothScan,
+                simulated: true
+            ),
+            delegate: delegate,
+            completion: completion
+        )
+    }
+    
+    func disconnectReader(
+        _ completion: @escaping ErrorCompletionBlock
+    ) {
+        Terminal.shared.disconnectReader(completion)
+    }
+    
+    func collectPayment(
+        price: Double,
+        email: String?,
+        completion: @escaping (Result<PaymentIntent, Error>) -> ()
+    ) {
+        let params = PaymentIntentParameters(
+            amount: UInt(price * 100),
+            currency: "usd",
+            paymentMethodTypes: ["card_present"]
+        )
+        params.receiptEmail = email
+        
+        Terminal.shared.createPaymentIntent(params) { result, error in
+            guard let result = result
+            else {
+                return completion(
+                    .failure(
+                        error ?? NSError()
+                    )
+                )
+            }
+            
+            Terminal.shared.collectPaymentMethod(result) { result, error in
+                if let error = error {
+                    completion(
+                        .failure(error)
+                    )
+                } else if let result = result {
+                    completion(
+                        .success(result)
+                    )
+                }
+            }
+        }
+    }
+    
+    func processPayment(
+        _ paymentIntent: PaymentIntent,
+        completion: @escaping (Result<String, Error>) -> ()
+    ) {
+        Terminal.shared.processPayment(paymentIntent) { result, error in
+            if let error = error {
+                completion(
+                    .failure(error)
+                )
+            } else if let result = result {
+                completion(
+                    .success(result.stripeId)
+                )
+            }
+        }
+    }
+    
+}
+
+// TODO: 1. Add button Pay with Terminal
+// TODO: 2. If not connected, show connect button
+// TODO: 2. If connected, show connect to a new terminal button
+// TODO: 3. Handle connection, and process payment
+// TODO: 4. Handle updates
