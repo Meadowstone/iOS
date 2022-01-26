@@ -7,6 +7,7 @@
 //
 
 import Stripe
+import StripeTerminal
 
 class PaymentCardController: NSObject {
     
@@ -67,6 +68,54 @@ class PaymentCardController: NSObject {
                 completion(.success)
             @unknown default:
                 break
+            }
+        }
+    }
+    
+}
+
+extension PaymentCardController: ConnectionTokenProvider {
+    
+    func fetchConnectionToken(
+        _ completion: @escaping ConnectionTokenCompletionBlock
+    ) {
+        FPServer.sharedInstance.fetchStripeConnectionToken { token in
+            if let token = token {
+                completion(token, nil)
+            } else {
+                completion(
+                    nil,
+                    NSError(
+                        domain: "com.stripe-terminal-ios.example",
+                        code: 2000,
+                        userInfo: [
+                            NSLocalizedDescriptionKey: "Missing 'secret' in ConnectionToken JSON response"
+                        ]
+                    )
+                )
+            }
+        }
+    }
+    
+    func capturePaymentIntent(
+        _ intent: String,
+        completion: @escaping ErrorCompletionBlock
+    ) {
+        FPServer.sharedInstance.captureStripePaymentIntent(
+            intent
+        ) { success in
+            if success {
+                completion(nil)
+            } else {
+                completion(
+                    NSError(
+                        domain: "com.stripe-terminal-ios.example",
+                        code: 0,
+                        userInfo: [
+                            NSLocalizedDescriptionKey: "Other networking error encountered."
+                        ]
+                    )
+                )
             }
         }
     }

@@ -60,7 +60,8 @@ let kCashCheckSummarySet = "cash_check_summary_set/"
 
 // Payment card processing
 let kCreateStripePaymentIntent = "stripe_create_payment_intent/"
-let kCreateStripeConnectionToken = "connection_token/"
+let kFetchStripeConnectionToken = "connection_token/"
+let kCaptureStripePaymentIntent = "capture_payment_intent/"
 
 class FPServer : AFHTTPSessionManager {
     
@@ -1166,12 +1167,12 @@ class FPServer : AFHTTPSessionManager {
         self.post(kCreateStripePaymentIntent, parameters: params, success: success, failure: failure)
     }
     
-    func createStripeConnectionToken(
+    func fetchStripeConnectionToken(
         completion: @escaping (_ clientSecret: String?) -> Void
     ) {
         let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
             let jsonResponse = responseObject as? [AnyHashable : Any]
-            let clientSecret = jsonResponse?["client_secret"] as? String
+            let clientSecret = jsonResponse?["secret"] as? String
             completion(clientSecret)
         }
         
@@ -1180,8 +1181,40 @@ class FPServer : AFHTTPSessionManager {
         }
         
         self.post(
-            kCreateStripeConnectionToken,
+            kFetchStripeConnectionToken,
             parameters: nil,
+            success: success,
+            failure: failure
+        )
+    }
+    
+    func captureStripePaymentIntent(
+        _ intent: String,
+        completion: @escaping (_ success: Bool) -> Void
+    ) {
+        var params = [String : Any]()
+        params["id"] = intent
+        
+        let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
+            guard let response = task?.response as? HTTPURLResponse,
+                  responseObject != nil
+            else { return completion(false) }
+            
+            switch response.statusCode {
+            case 200 ..< 300:
+                completion(true)
+            default:
+                completion(false)
+            }
+        }
+        
+        let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
+            completion(false)
+        }
+        
+        self.post(
+            kCaptureStripePaymentIntent,
+            parameters: params,
             success: success,
             failure: failure
         )
