@@ -111,11 +111,17 @@ class FPCustomerManageBalanceViewController: UIViewController {
     }
     
     @objc private func optionViewTapped(sender: UIButton) {
-        guard let option = optionsForViews[sender] else { return }
-        let payWithPaymentCardViewController = FPPayWithPaymentCardViewController()
-        payWithPaymentCardViewController.price = option.price
-        payWithPaymentCardViewController.paymentSucceeded = {
-            let progressHud = MBProgressHUD.showAdded(to: payWithPaymentCardViewController.view, animated: false)
+        guard let option = optionsForViews[sender]
+        else { return }
+        
+        var vc: FPPayWithTerminalViewController?
+        vc = FPPayWithTerminalViewController(
+            price: option.price
+        ) {
+            let progressHud = MBProgressHUD.showAdded(
+                to: vc!.view,
+                animated: false
+            )
             progressHud?.removeFromSuperViewOnHide = true
             progressHud?.labelText = "Updating balance..."
             
@@ -135,7 +141,11 @@ class FPCustomerManageBalanceViewController: UIViewController {
                     }
                 })
         }
-        navigationController?.pushViewController(payWithPaymentCardViewController, animated: true)
+        
+        navigationController?.pushViewController(
+            vc!,
+            animated: true
+        )
     }
     
 }
