@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Stripe
 import StripeTerminal
 import SnapKit
 
@@ -18,6 +19,8 @@ class FPPayWithTerminalViewController: UIViewController {
     
     private let discoverButton = LoadableButton()
     private let connectedReaderLabel = UILabel()
+    private let emailTextField = UITextField()
+    private let emailExplanationLabel = UILabel()
     private let payButton = LoadableButton()
     private let payProcessLabel = UILabel()
     
@@ -103,6 +106,8 @@ extension FPPayWithTerminalViewController {
     
     @objc
     func actionDiscover() {
+        emailTextField.resignFirstResponder()
+        
         if isReaderConnected {
             isDiscovering = true
             PaymentCardController.shared.terminal.disconnectReader { _ in
@@ -130,11 +135,15 @@ extension FPPayWithTerminalViewController {
         guard isReaderConnected
         else { return }
         
+        emailTextField.resignFirstResponder()
+        
         isPaying = true
         
         PaymentCardController.shared.terminal.collectPayment(
             price: price,
-            email: nil
+            email: emailTextField.text?.isEmpty == true
+                ? nil
+                : emailTextField.text
         ) { result in
             guard case let .success(value) = result
             else {
@@ -269,23 +278,37 @@ private extension FPPayWithTerminalViewController {
     func setUpView() {
         view.backgroundColor = .white
         
-        view.addSubview(discoverButton)
         view.addSubview(connectedReaderLabel)
+        view.addSubview(discoverButton)
+        view.addSubview(emailTextField)
+        view.addSubview(emailExplanationLabel)
         view.addSubview(payButton)
         view.addSubview(payProcessLabel)
+        connectedReaderLabel.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().offset(16)
+        }
         discoverButton.snp.makeConstraints {
-            $0.center.equalToSuperview()
+            $0.top.equalTo(connectedReaderLabel.snp.bottom).offset(16)
+            $0.centerX.equalTo(connectedReaderLabel.snp.centerX)
             $0.width.equalToSuperview().offset(-60)
             $0.height.equalTo(40)
         }
-        connectedReaderLabel.snp.makeConstraints {
-            $0.centerX.equalTo(discoverButton.snp.centerX)
-            $0.bottom.equalTo(discoverButton.snp.top).offset(-16)
-        }
-        payButton.snp.makeConstraints {
+        emailTextField.snp.makeConstraints {
             $0.centerX.equalTo(discoverButton.snp.centerX)
             $0.top.equalTo(discoverButton.snp.bottom).offset(16)
             $0.width.equalTo(discoverButton.snp.width)
+            $0.height.equalTo(44)
+        }
+        emailExplanationLabel.snp.makeConstraints {
+            $0.centerX.equalTo(emailTextField.snp.centerX)
+            $0.top.equalTo(emailTextField.snp.bottom).offset(16)
+            $0.width.equalTo(emailTextField.snp.width)
+        }
+        payButton.snp.makeConstraints {
+            $0.centerX.equalTo(emailExplanationLabel.snp.centerX)
+            $0.top.equalTo(emailExplanationLabel.snp.bottom).offset(16)
+            $0.width.equalTo(emailTextField.snp.width)
             $0.height.equalTo(discoverButton.snp.height)
         }
         payProcessLabel.snp.makeConstraints {
@@ -293,6 +316,8 @@ private extension FPPayWithTerminalViewController {
             $0.top.equalTo(payButton.snp.bottom).offset(16)
             $0.width.equalTo(payButton.snp.width)
         }
+        
+        connectedReaderLabel.textColor = .black
         
         discoverButton.addTarget(
             self,
@@ -329,10 +354,31 @@ private extension FPPayWithTerminalViewController {
         payButton.layer.cornerRadius = 4
         payButton.isEnabled = false
         
-        connectedReaderLabel.textColor = .black
         payProcessLabel.textColor = .black
         payProcessLabel.textAlignment = .center
         payProcessLabel.numberOfLines = 0
+        
+        let toCopyColors = STPPaymentCardTextField()
+        emailTextField.autocapitalizationType = .none
+        emailTextField.autocorrectionType = .no
+        emailTextField.keyboardType = .emailAddress
+        emailTextField.attributedPlaceholder = NSAttributedString(
+            string: "E-mail",
+            attributes: [
+                .font : UIFont(name: "HelveticaNeue-Light", size: 20)!,
+                .foregroundColor : FPColorPaymentFlowPlaceholder
+            ]
+        )
+        emailTextField.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        emailTextField.layer.cornerRadius = toCopyColors.cornerRadius
+        emailTextField.layer.borderColor = toCopyColors.borderColor?.cgColor
+        emailTextField.layer.borderWidth = toCopyColors.borderWidth
+        emailTextField.layer.sublayerTransform = CATransform3DMakeTranslation(12, 0, 0)
+        
+        emailExplanationLabel.text = "If you fill out your e-mail, we'll send you a receipt for this purchase."
+        emailExplanationLabel.numberOfLines = 0
+        emailExplanationLabel.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        emailExplanationLabel.textColor = FPColorPaymentFlowMessage
     }
     
     func handleNewDiscoveringValue() {
