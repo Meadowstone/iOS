@@ -21,11 +21,13 @@ class FPPayWithTerminalViewController: UIViewController {
     private let payProcessLabel = UILabel()
     
     private var discoverCancelable: Cancelable?
+    private var updateCancelable: Cancelable?
     private var isDiscovering = false {
         didSet {
             handleNewDiscoveringValue()
         }
     }
+    private var isConnecting = false
     private var isPaying = false {
         didSet {
             discoverButton.isEnabled = !isPaying
@@ -33,6 +35,8 @@ class FPPayWithTerminalViewController: UIViewController {
             payButton.isLoading = isPaying
         }
     }
+    private weak var readersViewController: FPPayWithTerminalListViewController?
+    private var ignoreDiscoverCancelable = false
     
     init(
         price: Double
@@ -60,18 +64,34 @@ class FPPayWithTerminalViewController: UIViewController {
         _ animated: Bool
     ) {
         super.viewWillAppear(animated)
+        
+        guard !ignoreDiscoverCancelable
+        else {
+            ignoreDiscoverCancelable = false
+            return
+        }
+        
         discoverCancelable?.cancel { _ in
             self.isDiscovering = false
         }
+        updateCancelable?.cancel { _ in }
     }
     
     override func viewWillDisappear(
         _ animated: Bool
     ) {
         super.viewWillDisappear(animated)
+        
+        guard !ignoreDiscoverCancelable
+        else {
+            ignoreDiscoverCancelable = false
+            return
+        }
+        
         discoverCancelable?.cancel { _ in
             self.isDiscovering = false
         }
+        updateCancelable?.cancel { _ in }
     }
     
 }
@@ -131,36 +151,48 @@ extension FPPayWithTerminalViewController: DiscoveryDelegate {
         _ terminal: Terminal,
         didUpdateDiscoveredReaders readers: [Reader]
     ) {
-//        self.readerMessageLabel.text = "\(readers.count) readers found"
-
-        // Select the first reader the SDK discovers. In your app,
-        // you should display the available readers to your user, then
-        // connect to the reader they've selected.
-        guard let selectedReader = readers.first else { return }
-
-        // Only connect if we aren't currently connected.
-        guard terminal.connectionStatus == .notConnected else { return }
-
-        let connectionConfig = BluetoothConnectionConfiguration(
-          // When connecting to a physical reader, your integration should specify either the
-          // same location as the last connection (selectedReader.locationId) or a new location
-          // of your user's choosing.
-          //
-          // Since the simulated reader is not associated with a real location, we recommend
-          // specifying its existing mock location.
-          locationId: selectedReader.locationId!
-        )
+        guard terminal.connectionStatus == .notConnected,
+              isDiscovering,
+              !isConnecting
+        else { return }
         
-        Terminal.shared.connectBluetoothReader(
-            selectedReader,
-            delegate: self,
-            connectionConfig: connectionConfig
-        ) { reader, error in
-            if let reader = reader {
-                print("Successfully connected to reader: \(reader)")
-            } else if let error = error {
-                print("connectReader failed: \(error)")
+        if readersViewController == nil {
+            let vc = FPPayWithTerminalListViewController(
+                options: readers
+            ) { reader in
+                self.isConnecting = true
+                self.ignoreDiscoverCancelable = true
+                
+                self.navigationController?.popViewController(
+                    animated: true
+                )
+                
+                Terminal.shared.connectBluetoothReader(
+                    reader,
+                    delegate: self,
+                    connectionConfig: .init(
+                        locationId: reader.locationId ?? ""
+                    )
+                ) { reader, error in
+                    self.isConnecting = false
+                    if let reader = reader {
+                        print("Successfully connected to reader: \(reader)")
+                    } else if let error = error {
+                        print("connectReader failed: \(error)")
+                    }
+                }
             }
+            
+            ignoreDiscoverCancelable = true
+            
+            navigationController?.pushViewController(
+                vc,
+                animated: true
+            )
+            
+            readersViewController = vc
+        } else {
+            readersViewController?.options = readers
         }
     }
     
@@ -187,6 +219,7 @@ extension FPPayWithTerminalViewController: BluetoothReaderDelegate {
         didStartInstallingUpdate update: ReaderSoftwareUpdate,
         cancelable: Cancelable?
     ) {
+        updateCancelable = cancelable
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.payProcessLabel.text = "Terminal: Installing updates, hold on please!"
             self.isPaying = true

@@ -155,6 +155,8 @@
 		A2E9382227A215B2009C8464 /* FPPayWithTerminalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E9382027A215B2009C8464 /* FPPayWithTerminalViewController.swift */; };
 		A2E9382427A216C8009C8464 /* LoadableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E9382327A216C8009C8464 /* LoadableButton.swift */; };
 		A2E9382527A216C8009C8464 /* LoadableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E9382327A216C8009C8464 /* LoadableButton.swift */; };
+		A2E9382727A32475009C8464 /* FPPayWithTerminalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E9382627A32475009C8464 /* FPPayWithTerminalListViewController.swift */; };
+		A2E9382827A32475009C8464 /* FPPayWithTerminalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E9382627A32475009C8464 /* FPPayWithTerminalListViewController.swift */; };
 		E90DDA65252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90DDA64252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift */; };
 		E90DDA66252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90DDA64252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift */; };
 		E90DDA68252E14C8004DB111 /* FPCustomerManageBalanceOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90DDA67252E14C8004DB111 /* FPCustomerManageBalanceOption.swift */; };
@@ -476,6 +478,7 @@
 		81FF080F196C28830046457A /* FPCartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPCartCell.xib; sourceTree = "<group>"; };
 		A2E9382027A215B2009C8464 /* FPPayWithTerminalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPPayWithTerminalViewController.swift; sourceTree = "<group>"; };
 		A2E9382327A216C8009C8464 /* LoadableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableButton.swift; sourceTree = "<group>"; };
+		A2E9382627A32475009C8464 /* FPPayWithTerminalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPPayWithTerminalListViewController.swift; sourceTree = "<group>"; };
 		E90DDA64252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPCustomerManageBalanceViewController.swift; sourceTree = "<group>"; };
 		E90DDA67252E14C8004DB111 /* FPCustomerManageBalanceOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPCustomerManageBalanceOption.swift; sourceTree = "<group>"; };
 		E92BF93724EBBC77002CB596 /* Farmstand Cart (DEV).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmstand Cart (DEV).app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -774,6 +777,7 @@
 				81B63A231B53AA79002E795F /* FPCustomerEditViewController.swift */,
 				E972DD46250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift */,
 				A2E9382027A215B2009C8464 /* FPPayWithTerminalViewController.swift */,
+				A2E9382627A32475009C8464 /* FPPayWithTerminalListViewController.swift */,
 				E90DDA64252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift */,
 			);
 			name = ProductsAndCart;
@@ -1381,6 +1385,7 @@
 				E90DDA65252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift in Sources */,
 				E972DD4425079213008E0652 /* PaymentCardController.swift in Sources */,
 				50EA292C197E71580024B299 /* FPPaymentConfirmViewController.swift in Sources */,
+				A2E9382727A32475009C8464 /* FPPayWithTerminalListViewController.swift in Sources */,
 				81FF080E196C28660046457A /* FPCartCell.swift in Sources */,
 				81D23F881966B66A00A330E0 /* FPCustomerCreateViewController.swift in Sources */,
 				81FB1969198BA4FB00FF6815 /* FPMenuViewController.swift in Sources */,
@@ -1492,6 +1497,7 @@
 				E90DDA66252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift in Sources */,
 				E972DD452507944C008E0652 /* PaymentCardController.swift in Sources */,
 				E92BF8F124EBBC77002CB596 /* FPPaymentConfirmViewController.swift in Sources */,
+				A2E9382827A32475009C8464 /* FPPayWithTerminalListViewController.swift in Sources */,
 				E92BF8F224EBBC77002CB596 /* FPCartCell.swift in Sources */,
 				E92BF8F324EBBC77002CB596 /* FPCustomerCreateViewController.swift in Sources */,
 				E92BF8F424EBBC77002CB596 /* FPMenuViewController.swift in Sources */,
