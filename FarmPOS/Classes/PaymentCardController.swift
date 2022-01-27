@@ -144,7 +144,13 @@ class PaymentCardTerminalController {
         Terminal.shared.discoverReaders(
             .init(
                 discoveryMethod: .bluetoothScan,
-                simulated: true
+                simulated: {
+                    #if Devbuild
+                    true
+                    #else
+                    false
+                    #endif
+                }()
             ),
             delegate: delegate,
             completion: completion
