@@ -315,7 +315,7 @@ private extension FPPayWithTerminalViewController {
             for: .touchUpInside
         )
         payButton.setTitle(
-            "Pay $\(price)",
+            "Pay $\(FPCurrencyFormatter.printableCurrency(price))",
             for: .normal
         )
         payButton.setTitleColor(
