@@ -14,6 +14,7 @@ import SnapKit
 class FPPayWithTerminalViewController: UIViewController {
     
     let price: Double
+    let onCompletion: () -> Void
     
     private let discoverButton = LoadableButton()
     private let connectedReaderLabel = UILabel()
@@ -39,9 +40,11 @@ class FPPayWithTerminalViewController: UIViewController {
     private var ignoreDiscoverCancelable = false
     
     init(
-        price: Double
+        price: Double,
+        onCompletion: @escaping () -> Void
     ) {
         self.price = price
+        self.onCompletion = onCompletion
         super.init(
             nibName: nil,
             bundle: nil
@@ -371,6 +374,9 @@ private extension FPPayWithTerminalViewController {
                 self.payProcessLabel.text = error == nil
                     ? "Payment completed!"
                     : "Error!"
+                if error == nil {
+                    self.onCompletion()
+                }
             }
         }
     }

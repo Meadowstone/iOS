@@ -17,11 +17,11 @@ class FPPayWithTerminalListViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-    let onSelection: (Reader) -> ()
+    let onSelection: (Reader) -> Void
     
     init(
         options: [Reader],
-        onSelection: @escaping (Reader) -> ()
+        onSelection: @escaping (Reader) -> Void
     ) {
         self.options = options
         self.onSelection = onSelection

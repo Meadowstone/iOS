@@ -210,11 +210,30 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             }
             navigationController?.pushViewController(payWithPaymentCardViewController, animated: true)
         case FPPaymentMethod.terminal.rawValue:
-            let viewController = FPPayWithTerminalViewController(
-                price: PaymentCardController.shared.priceWithAddedFees(
-                    forPrice: FPCartView.sharedCart().checkoutSum
-                )
+            let price = PaymentCardController.shared.priceWithAddedFees(
+                forPrice: FPCartView.sharedCart().checkoutSum
             )
+            
+            let viewController = FPPayWithTerminalViewController(
+                price: price
+            ) { [weak self] in
+                self?.navigationController?.popViewController(
+                    animated: true
+                )
+                
+                let notificationParams: [String : Any] = [
+                    "method": FPPaymentMethod.terminal.rawValue,
+                    "sumPaid": price
+                ]
+                
+                NotificationCenter.default.post(
+                    name: Notification.Name(
+                        rawValue: FPPaymentMethodSelectedNotification
+                    ),
+                    object: notificationParams
+                )
+            }
+            
             navigationController?.pushViewController(
                 viewController,
                 animated: true
