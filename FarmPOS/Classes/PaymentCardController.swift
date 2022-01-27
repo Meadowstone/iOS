@@ -217,9 +217,3 @@ class PaymentCardTerminalController {
     }
     
 }
-
-// TODO: 1. Add button Pay with Terminal
-// TODO: 2. If not connected, show connect button
-// TODO: 2. If connected, show connect to a new terminal button
-// TODO: 3. Handle connection, and process payment
-// TODO: 4. Handle updates
