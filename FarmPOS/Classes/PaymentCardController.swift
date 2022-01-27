@@ -28,6 +28,8 @@ class PaymentCardController: NSObject {
         #else
         Stripe.setDefaultPublishableKey("pk_live_kiMVjsyb2V1IyM9br7Ylnj5b")
         #endif
+        
+        Terminal.setTokenProvider(self)
     }
     
     func priceWithAddedFees(forPrice price: Double) -> Double {
@@ -126,14 +128,19 @@ extension PaymentCardController: ConnectionTokenProvider {
 
 class PaymentCardTerminalController {
     
-    var isReaderConnected: Bool {
-        return Terminal.shared.connectedReader != nil
+    var connectedReader: Reader? {
+        return Terminal.shared.connectedReader
     }
     
+    var isReaderConnected: Bool {
+        return connectedReader != nil
+    }
+    
+    @discardableResult
     func discoverReaders(
         delegate: DiscoveryDelegate,
         completion: @escaping ErrorCompletionBlock
-    ) {
+    ) -> Cancelable? {
         Terminal.shared.discoverReaders(
             .init(
                 discoveryMethod: .bluetoothScan,

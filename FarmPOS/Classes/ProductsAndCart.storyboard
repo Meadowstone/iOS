@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ssw-Nw-yGu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ssw-Nw-yGu">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -297,9 +297,22 @@
                                     <action selector="buttonPressed:" destination="i7k-wH-n0P" eventType="touchUpInside" id="ceP-Ib-q3l"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uj0-4A-l2v">
+                                <rect key="frame" x="20" y="260" width="335" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="uhL-mV-SOe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                <state key="normal" title="Terminal" backgroundImage="green_btn"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="i7k-wH-n0P" eventType="touchUpInside" id="CWZ-w3-6P2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.86274509799999999" green="0.88235294119999996" blue="0.83137254900000002" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="uj0-4A-l2v" firstAttribute="leading" secondItem="W2a-mY-TLv" secondAttribute="leading" id="1AQ-9E-4Fe"/>
+                            <constraint firstItem="uj0-4A-l2v" firstAttribute="centerX" secondItem="W2a-mY-TLv" secondAttribute="centerX" id="3el-yD-dP5"/>
                             <constraint firstItem="qcU-Jm-N0X" firstAttribute="top" secondItem="IvG-Gq-RAJ" secondAttribute="bottom" constant="20" id="41V-Di-kBd"/>
                             <constraint firstItem="uRJ-La-QNx" firstAttribute="top" secondItem="qcU-Jm-N0X" secondAttribute="bottom" constant="8" id="5sh-kn-MhJ"/>
                             <constraint firstAttribute="trailing" secondItem="uRJ-La-QNx" secondAttribute="trailing" constant="20" id="5vT-DD-fPQ"/>
@@ -308,6 +321,7 @@
                             <constraint firstAttribute="trailing" secondItem="oiJ-OV-aCE" secondAttribute="trailing" constant="20" id="Qrt-qz-6UW"/>
                             <constraint firstItem="oiJ-OV-aCE" firstAttribute="top" secondItem="uRJ-La-QNx" secondAttribute="bottom" constant="8" id="Y3m-xO-5dk"/>
                             <constraint firstItem="W2a-mY-TLv" firstAttribute="top" secondItem="DtV-Fk-IOc" secondAttribute="bottom" constant="8" id="aeK-3w-v7g"/>
+                            <constraint firstItem="uj0-4A-l2v" firstAttribute="top" secondItem="W2a-mY-TLv" secondAttribute="bottom" constant="8" id="jQ2-8t-OpV"/>
                             <constraint firstAttribute="trailing" secondItem="W2a-mY-TLv" secondAttribute="trailing" constant="20" id="pIY-Gv-EfS"/>
                             <constraint firstAttribute="trailing" secondItem="DtV-Fk-IOc" secondAttribute="trailing" constant="20" id="r6M-x9-gEM"/>
                             <constraint firstItem="uRJ-La-QNx" firstAttribute="leading" secondItem="pT9-8T-slZ" secondAttribute="leading" constant="20" id="rQF-Hu-Onh"/>
@@ -326,6 +340,7 @@
                         <outlet property="button3" destination="oiJ-OV-aCE" id="mlC-SU-jyV"/>
                         <outlet property="button4" destination="DtV-Fk-IOc" id="fCY-D3-6pM"/>
                         <outlet property="button5" destination="W2a-mY-TLv" id="3zB-xg-Pfl"/>
+                        <outlet property="button6" destination="uj0-4A-l2v" id="yLi-U0-aQh"/>
                         <segue destination="aRh-7u-zJz" kind="show" identifier="pushPayNow" id="56U-Ax-MMM"/>
                     </connections>
                 </viewController>

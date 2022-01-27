@@ -49,6 +49,7 @@ class FPPaymentOptionsViewController: FPRotationViewController {
     @IBOutlet var button3: UIButton!
     @IBOutlet var button4: UIButton!
     @IBOutlet var button5: UIButton!
+    @IBOutlet var button6: UIButton!
     
     @IBOutlet weak var button3explanationLabel: UILabel!
     @IBOutlet weak var button4explanationLabel: UILabel!
@@ -106,6 +107,9 @@ class FPPaymentOptionsViewController: FPRotationViewController {
         
         button2.setTitle("Pay with Check", for: .normal)
         button2.tag = FPPaymentMethod.check.rawValue
+        
+        button6.setTitle("Pay with Terminal", for: .normal)
+        button6.tag = FPPaymentMethod.terminal.rawValue
         
         button3.isHidden = true
         button4.isHidden = true
@@ -205,6 +209,12 @@ class FPPaymentOptionsViewController: FPRotationViewController {
                                                 object: notificationParams)
             }
             navigationController?.pushViewController(payWithPaymentCardViewController, animated: true)
+        case FPPaymentMethod.terminal.rawValue:
+            let viewController = FPPayWithTerminalViewController()
+            navigationController?.pushViewController(
+                viewController,
+                animated: true
+            )
         default:
             break
         }

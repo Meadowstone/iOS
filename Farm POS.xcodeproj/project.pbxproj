@@ -151,6 +151,10 @@
 		81FF080E196C28660046457A /* FPCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FF080D196C28660046457A /* FPCartCell.swift */; };
 		81FF0810196C28830046457A /* FPCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81FF080F196C28830046457A /* FPCartCell.xib */; };
 		9ED4662D84EEE722658BBC3A /* Pods_Farmstand_Cart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C888CEE0E0B0F6CFC0EE4BC /* Pods_Farmstand_Cart.framework */; };
+		A2E9382127A215B2009C8464 /* FPPayWithTerminalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E9382027A215B2009C8464 /* FPPayWithTerminalViewController.swift */; };
+		A2E9382227A215B2009C8464 /* FPPayWithTerminalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E9382027A215B2009C8464 /* FPPayWithTerminalViewController.swift */; };
+		A2E9382427A216C8009C8464 /* LoadableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E9382327A216C8009C8464 /* LoadableButton.swift */; };
+		A2E9382527A216C8009C8464 /* LoadableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E9382327A216C8009C8464 /* LoadableButton.swift */; };
 		E90DDA65252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90DDA64252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift */; };
 		E90DDA66252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90DDA64252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift */; };
 		E90DDA68252E14C8004DB111 /* FPCustomerManageBalanceOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90DDA67252E14C8004DB111 /* FPCustomerManageBalanceOption.swift */; };
@@ -470,6 +474,8 @@
 		81FB1968198BA4FB00FF6815 /* FPMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPMenuViewController.swift; sourceTree = "<group>"; };
 		81FF080D196C28660046457A /* FPCartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCartCell.swift; sourceTree = "<group>"; };
 		81FF080F196C28830046457A /* FPCartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPCartCell.xib; sourceTree = "<group>"; };
+		A2E9382027A215B2009C8464 /* FPPayWithTerminalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPPayWithTerminalViewController.swift; sourceTree = "<group>"; };
+		A2E9382327A216C8009C8464 /* LoadableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableButton.swift; sourceTree = "<group>"; };
 		E90DDA64252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPCustomerManageBalanceViewController.swift; sourceTree = "<group>"; };
 		E90DDA67252E14C8004DB111 /* FPCustomerManageBalanceOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPCustomerManageBalanceOption.swift; sourceTree = "<group>"; };
 		E92BF93724EBBC77002CB596 /* Farmstand Cart (DEV).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmstand Cart (DEV).app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -650,6 +656,7 @@
 				81CD1DA5196A273A00EEAD8F /* ProductCartCellView */,
 				81A3A845196B739B0006C479 /* CartView */,
 				8101827C196EAB35009C9E98 /* NumPadView */,
+				A2E9382327A216C8009C8464 /* LoadableButton.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -766,6 +773,7 @@
 				81FA71831B3998C000C0CD7D /* FPCashCheckSummaryViewController.swift */,
 				81B63A231B53AA79002E795F /* FPCustomerEditViewController.swift */,
 				E972DD46250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift */,
+				A2E9382027A215B2009C8464 /* FPPayWithTerminalViewController.swift */,
 				E90DDA64252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift */,
 			);
 			name = ProductsAndCart;
@@ -1201,7 +1209,9 @@
 				"${BUILT_PRODUCTS_DIR}/MMDrawerController/MMDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVPullToRefresh/SVPullToRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/StripeTerminal/StripeTerminal.framework/StripeTerminal",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1210,7 +1220,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPullToRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StripeTerminal.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1229,7 +1241,9 @@
 				"${BUILT_PRODUCTS_DIR}/MMDrawerController/MMDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVPullToRefresh/SVPullToRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/StripeTerminal/StripeTerminal.framework/StripeTerminal",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1238,7 +1252,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPullToRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StripeTerminal.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1320,6 +1336,7 @@
 				813682CC196F6C4500BE4E90 /* FPGiftCardsViewController.swift in Sources */,
 				E972DD47250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift in Sources */,
 				8141E4461971FF930037FCD0 /* FPScanQRCodeViewController.swift in Sources */,
+				A2E9382427A216C8009C8464 /* LoadableButton.swift in Sources */,
 				81A3A847196B73B60006C479 /* FPCartHeaderView.swift in Sources */,
 				81DC1D7F1B66DE27002029C8 /* FPNamable.swift in Sources */,
 				8141E45C197557CB0037FCD0 /* FPManageBalanceViewController.swift in Sources */,
@@ -1352,6 +1369,7 @@
 				813682C1196F575B00BE4E90 /* FPGiftCardOptionsViewController.swift in Sources */,
 				813682C9196F69FB00BE4E90 /* FPGiftCardCell.swift in Sources */,
 				8111A98F195DB15F00F1928E /* FPAuthOptionsViewController.swift in Sources */,
+				A2E9382127A215B2009C8464 /* FPPayWithTerminalViewController.swift in Sources */,
 				81CFDDB319CAFB37003BB974 /* FPProductCreateViewController.swift in Sources */,
 				814A71FF19622EF000F2A689 /* FPCustomerLoginViewController.swift in Sources */,
 				81A1CC83196778A800587E50 /* FPMeasurement.swift in Sources */,
@@ -1429,6 +1447,7 @@
 				E92BF8C324EBBC77002CB596 /* FPGiftCardsViewController.swift in Sources */,
 				E972DD48250A2F1F008E0652 /* FPPayWithPaymentCardViewController.swift in Sources */,
 				E92BF8C424EBBC77002CB596 /* FPScanQRCodeViewController.swift in Sources */,
+				A2E9382527A216C8009C8464 /* LoadableButton.swift in Sources */,
 				E92BF8C524EBBC77002CB596 /* FPCartHeaderView.swift in Sources */,
 				E92BF8C624EBBC77002CB596 /* FPNamable.swift in Sources */,
 				E92BF8C724EBBC77002CB596 /* FPManageBalanceViewController.swift in Sources */,
@@ -1461,6 +1480,7 @@
 				E92BF8E324EBBC77002CB596 /* FPGiftCardOptionsViewController.swift in Sources */,
 				E92BF8E524EBBC77002CB596 /* FPGiftCardCell.swift in Sources */,
 				E92BF8E624EBBC77002CB596 /* FPAuthOptionsViewController.swift in Sources */,
+				A2E9382227A215B2009C8464 /* FPPayWithTerminalViewController.swift in Sources */,
 				E92BF8E724EBBC77002CB596 /* FPProductCreateViewController.swift in Sources */,
 				E92BF8E824EBBC77002CB596 /* FPCustomerLoginViewController.swift in Sources */,
 				E92BF8E924EBBC77002CB596 /* FPMeasurement.swift in Sources */,
@@ -1562,6 +1582,7 @@
 				CURRENT_PROJECT_VERSION = 0.1.0.3;
 				DEVELOPMENT_TEAM = 4268HQ9ZMJ;
 				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = arm64;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
@@ -1644,6 +1665,7 @@
 				CURRENT_PROJECT_VERSION = 0.1.0.3;
 				DEVELOPMENT_TEAM = 4268HQ9ZMJ;
 				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = arm64;
 				INFOPLIST_FILE = "FarmPOS/FarmstandCart-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

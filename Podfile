@@ -10,6 +10,7 @@ def pods_to_add
     pod 'SVPullToRefresh', '0.4.1'
     pod 'Stripe'
     pod 'StripeTerminal', '2.0'
+    pod 'SnapKit'
 end
 
 target 'Farmstand Cart' do
