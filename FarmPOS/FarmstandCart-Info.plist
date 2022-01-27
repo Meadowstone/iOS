@@ -29,16 +29,20 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Grant access to bluetooth to pair the terminal.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Used to scan barcodes and take pictures.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location access is required in order to accept payments.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Please provide mic access</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allows taking pictures of products.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Location access is required in order to accept payments.</string>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>Grant access to bluetooth to pair the terminal.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>bluetooth-central</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>Launch Screen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -58,9 +62,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-    <key>UIBackgroundModes</key>
-    <array>
-        <string>bluetooth-central</string>
-    </array>
 </dict>
 </plist>
