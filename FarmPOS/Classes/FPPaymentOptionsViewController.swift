@@ -210,7 +210,11 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             }
             navigationController?.pushViewController(payWithPaymentCardViewController, animated: true)
         case FPPaymentMethod.terminal.rawValue:
-            let viewController = FPPayWithTerminalViewController()
+            let viewController = FPPayWithTerminalViewController(
+                price: PaymentCardController.shared.priceWithAddedFees(
+                    forPrice: FPCartView.sharedCart().checkoutSum
+                )
+            )
             navigationController?.pushViewController(
                 viewController,
                 animated: true

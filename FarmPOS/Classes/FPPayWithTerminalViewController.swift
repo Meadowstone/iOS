@@ -13,14 +13,39 @@ import SnapKit
 
 class FPPayWithTerminalViewController: UIViewController {
     
+    let price: Double
+    
     private let discoverButton = LoadableButton()
     private let connectedReaderLabel = UILabel()
+    private let payButton = LoadableButton()
     
     private var discoverCancelable: Cancelable?
     private var isDiscovering = false {
         didSet {
             handleNewDiscoveringValue()
         }
+    }
+    private var isPaying = false {
+        didSet {
+            payButton.isEnabled = !isPaying
+            payButton.isLoading = isPaying
+        }
+    }
+    
+    init(
+        price: Double
+    ) {
+        self.price = price
+        super.init(
+            nibName: nil,
+            bundle: nil
+        )
+    }
+    
+    required init?(
+        coder: NSCoder
+    ) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -72,6 +97,27 @@ extension FPPayWithTerminalViewController {
                     print("discoverReaders succeeded")
                 }
             }
+        }
+    }
+    
+    @objc
+    func actionPay() {
+        guard isReaderConnected
+        else { return }
+        
+        isPaying = true
+        
+        PaymentCardController.shared.terminal.collectPayment(
+            price: price,
+            email: nil
+        ) { result in
+            guard case let .success(value) = result
+            else {
+                self.isPaying = false
+                return
+            }
+
+            self.processPayment(value)
         }
     }
     
@@ -186,14 +232,21 @@ private extension FPPayWithTerminalViewController {
         
         view.addSubview(discoverButton)
         view.addSubview(connectedReaderLabel)
+        view.addSubview(payButton)
         discoverButton.snp.makeConstraints {
             $0.center.equalToSuperview()
             $0.width.equalTo(200)
             $0.height.equalTo(32)
         }
         connectedReaderLabel.snp.makeConstraints {
-            $0.centerX.equalTo(discoverButton)
+            $0.centerX.equalTo(discoverButton.snp.centerX)
             $0.bottom.equalTo(discoverButton.snp.top).offset(-16)
+        }
+        payButton.snp.makeConstraints {
+            $0.centerX.equalTo(discoverButton.snp.centerX)
+            $0.top.equalTo(discoverButton.snp.bottom).offset(16)
+            $0.width.equalTo(discoverButton.snp.width)
+            $0.height.equalTo(discoverButton.snp.height)
         }
         
         discoverButton.addTarget(
@@ -211,6 +264,31 @@ private extension FPPayWithTerminalViewController {
         )
         discoverButton.layer.cornerRadius = 4
         
+        payButton.addTarget(
+            self,
+            action: #selector(actionPay),
+            for: .touchUpInside
+        )
+        payButton.setTitle(
+            "Pay $\(price)",
+            for: .normal
+        )
+        payButton.setTitleColor(
+            .white,
+            for: .normal
+        )
+        payButton.setBackgroundImage(
+            UIImage(named: "green_btn"),
+            for: .normal
+        )
+        payButton.setBackgroundImage(
+            nil,
+            for: .disabled
+        )
+        payButton.backgroundColor = .darkGray
+        payButton.layer.cornerRadius = 4
+        payButton.isEnabled = false
+        
         connectedReaderLabel.textColor = .black
     }
     
@@ -227,6 +305,7 @@ private extension FPPayWithTerminalViewController {
             ,
             for: .normal
         )
+        payButton.isEnabled = isReaderConnected
         connectedReaderLabel.text = isReaderConnected
             ? "Connected terminal: \(connectedReader?.serialNumber ?? "")"
             : ""
@@ -234,65 +313,27 @@ private extension FPPayWithTerminalViewController {
     
 }
 
-//class AViewController: UIViewController {
-//
-//    var discoverCancelable: Cancelable?
-//    var collectCancelable: Cancelable?
-//
-//    var nextActionButton = UIButton(type: .system)
-//    var readerMessageLabel = UILabel()
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        setUpInterface()
-//    }
-//
-//    @objc
-//    func collectPayment() {
-//        PaymentCardController.shared.terminal.collectPayment(
-//            price: 10,
-//            email: nil
-//        ) { result in
-//            guard case let .success(value) = result
-//            else { return }
-//
-//            self.processPayment(value)
-//        }
-//    }
-//
-//    private func processPayment(
-//        _ intent: PaymentIntent
-//    ) {
-//        PaymentCardController.shared.terminal.processPayment(intent) { result in
-//            guard case let .success(value) = result
-//            else { return }
-//
-//            PaymentCardController.shared.capturePaymentIntent(value) { error in
-//                print(
-//                    error == nil
-//                        ? "Completed!"
-//                        : "Error!"
-//                )
-//            }
-//        }
-//    }
-//
-//    func setUpInterface() {
-//      readerMessageLabel.textAlignment = .center
-//      readerMessageLabel.numberOfLines = 0
-//
-//      nextActionButton.setTitle("Connect to a reader", for: .normal)
-//      nextActionButton.addTarget(self, action: #selector(discoverReaders), for: .touchUpInside)
-//
-//      let stackView = UIStackView(arrangedSubviews: [nextActionButton, readerMessageLabel])
-//      stackView.axis = .vertical
-//      stackView.translatesAutoresizingMaskIntoConstraints = false
-//      view.addSubview(stackView)
-//      NSLayoutConstraint.activate([
-//          stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-//          stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//          stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//          stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//      ])
-//    }
-//}
+private extension FPPayWithTerminalViewController {
+    
+    func processPayment(
+        _ intent: PaymentIntent
+    ) {
+        PaymentCardController.shared.terminal.processPayment(intent) { result in
+            guard case let .success(value) = result
+            else {
+                self.isPaying = false
+                return
+            }
+
+            PaymentCardController.shared.capturePaymentIntent(value) { error in
+                self.isPaying = false
+                print(
+                    error == nil
+                        ? "Completed!"
+                        : "Error!"
+                )
+            }
+        }
+    }
+    
+}
