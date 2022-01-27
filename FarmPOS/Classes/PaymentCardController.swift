@@ -23,11 +23,11 @@ class PaymentCardController: NSObject {
     private var paymentIntentClientSecret: String?
     
     func initialize() {
-        #if Devbuild
+//        #if Devbuild
         Stripe.setDefaultPublishableKey("pk_test_K3By3BKoIS1Um4kOqX2VnTIC")
-        #else
-        Stripe.setDefaultPublishableKey("pk_live_kiMVjsyb2V1IyM9br7Ylnj5b")
-        #endif
+//        #else
+//        Stripe.setDefaultPublishableKey("pk_live_kiMVjsyb2V1IyM9br7Ylnj5b")
+//        #endif
         
         Terminal.setTokenProvider(self)
     }

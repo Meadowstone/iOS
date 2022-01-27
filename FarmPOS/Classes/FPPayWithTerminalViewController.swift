@@ -18,6 +18,7 @@ class FPPayWithTerminalViewController: UIViewController {
     private let discoverButton = LoadableButton()
     private let connectedReaderLabel = UILabel()
     private let payButton = LoadableButton()
+    private let payProcessLabel = UILabel()
     
     private var discoverCancelable: Cancelable?
     private var isDiscovering = false {
@@ -27,6 +28,7 @@ class FPPayWithTerminalViewController: UIViewController {
     }
     private var isPaying = false {
         didSet {
+            discoverButton.isEnabled = !isPaying
             payButton.isEnabled = !isPaying
             payButton.isLoading = isPaying
         }
@@ -170,14 +172,14 @@ extension FPPayWithTerminalViewController: BluetoothReaderDelegate {
         _ reader: Reader,
         didRequestReaderInput inputOptions: ReaderInputOptions = []
     ) {
-//        readerMessageLabel.text = Terminal.stringFromReaderInputOptions(inputOptions)
+        payProcessLabel.text = "Terminal: " + Terminal.stringFromReaderInputOptions(inputOptions)
     }
     
     func reader(
         _ reader: Reader,
         didRequestReaderDisplayMessage displayMessage: ReaderDisplayMessage
     ) {
-//        readerMessageLabel.text = Terminal.stringFromReaderDisplayMessage(displayMessage)
+        payProcessLabel.text = "Terminal: " +  Terminal.stringFromReaderDisplayMessage(displayMessage)
     }
     
     func reader(
@@ -185,33 +187,34 @@ extension FPPayWithTerminalViewController: BluetoothReaderDelegate {
         didStartInstallingUpdate update: ReaderSoftwareUpdate,
         cancelable: Cancelable?
     ) {
-        // Show UI communicating that a required update has started installing
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.payProcessLabel.text = "Terminal: Installing updates, hold on please!"
+            self.isPaying = true
+        }
     }
     
     func reader(
         _ reader: Reader,
         didReportReaderSoftwareUpdateProgress progress: Float
-    ) {
-        // Update the progress of the install
-    }
+    ) { }
     
     func reader(
         _ reader: Reader,
         didFinishInstallingUpdate update: ReaderSoftwareUpdate?,
         error: Error?
     ) {
-        // Report success or failure of the update
+        payProcessLabel.text = "Installation completed, you can continue with the payment now."
+        isPaying = false
     }
     
     func reader(
         _ reader: Reader,
         didReportAvailableUpdate update: ReaderSoftwareUpdate
     ) {
-        // Show UI communicating that an update is available
+        Terminal.shared.installAvailableUpdate()
     }
     
 }
-
 
 private extension FPPayWithTerminalViewController {
     
@@ -233,10 +236,11 @@ private extension FPPayWithTerminalViewController {
         view.addSubview(discoverButton)
         view.addSubview(connectedReaderLabel)
         view.addSubview(payButton)
+        view.addSubview(payProcessLabel)
         discoverButton.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.width.equalTo(200)
-            $0.height.equalTo(32)
+            $0.width.equalToSuperview().offset(-60)
+            $0.height.equalTo(40)
         }
         connectedReaderLabel.snp.makeConstraints {
             $0.centerX.equalTo(discoverButton.snp.centerX)
@@ -247,6 +251,11 @@ private extension FPPayWithTerminalViewController {
             $0.top.equalTo(discoverButton.snp.bottom).offset(16)
             $0.width.equalTo(discoverButton.snp.width)
             $0.height.equalTo(discoverButton.snp.height)
+        }
+        payProcessLabel.snp.makeConstraints {
+            $0.centerX.equalTo(payButton.snp.centerX)
+            $0.top.equalTo(payButton.snp.bottom).offset(16)
+            $0.width.equalTo(payButton.snp.width)
         }
         
         discoverButton.addTarget(
@@ -281,15 +290,13 @@ private extension FPPayWithTerminalViewController {
             UIImage(named: "green_btn"),
             for: .normal
         )
-        payButton.setBackgroundImage(
-            nil,
-            for: .disabled
-        )
-        payButton.backgroundColor = .darkGray
         payButton.layer.cornerRadius = 4
         payButton.isEnabled = false
         
         connectedReaderLabel.textColor = .black
+        payProcessLabel.textColor = .black
+        payProcessLabel.textAlignment = .center
+        payProcessLabel.numberOfLines = 0
     }
     
     func handleNewDiscoveringValue() {
@@ -309,6 +316,7 @@ private extension FPPayWithTerminalViewController {
         connectedReaderLabel.text = isReaderConnected
             ? "Connected terminal: \(connectedReader?.serialNumber ?? "")"
             : ""
+        payProcessLabel.text = ""
     }
     
 }
@@ -327,11 +335,9 @@ private extension FPPayWithTerminalViewController {
 
             PaymentCardController.shared.capturePaymentIntent(value) { error in
                 self.isPaying = false
-                print(
-                    error == nil
-                        ? "Completed!"
-                        : "Error!"
-                )
+                self.payProcessLabel.text = error == nil
+                    ? "Payment completed!"
+                    : "Error!"
             }
         }
     }
