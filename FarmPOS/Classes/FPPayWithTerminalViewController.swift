@@ -394,6 +394,9 @@ private extension FPPayWithTerminalViewController {
         emailExplanationLabel.numberOfLines = 0
         emailExplanationLabel.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         emailExplanationLabel.textColor = FPColorPaymentFlowMessage
+        
+        guard let customer = FPCustomer.activeCustomer() else { return }
+        emailTextField.text = customer.email
     }
     
     func handleNewDiscoveringValue() {
