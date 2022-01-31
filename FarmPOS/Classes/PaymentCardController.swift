@@ -216,4 +216,28 @@ class PaymentCardTerminalController {
         }
     }
     
+    func readLocation(
+        completion: @escaping (Result<String, Error>) -> ()
+    ) {
+        FPServer.sharedInstance.retrieveStripeLocation { location in
+            if let location = location {
+                completion(
+                    .success(location)
+                )
+            } else {
+                completion(
+                    .failure(
+                        NSError(
+                            domain: "com.stripe-terminal-ios.example",
+                            code: 0,
+                            userInfo: [
+                                NSLocalizedDescriptionKey: "Location: networking error encountered."
+                            ]
+                        )
+                    )
+                )
+            }
+        }
+    }
+    
 }

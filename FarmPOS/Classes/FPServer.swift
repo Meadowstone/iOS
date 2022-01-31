@@ -62,6 +62,7 @@ let kCashCheckSummarySet = "cash_check_summary_set/"
 let kCreateStripePaymentIntent = "stripe_create_payment_intent/"
 let kFetchStripeConnectionToken = "connection_token/"
 let kCaptureStripePaymentIntent = "capture_payment_intent/"
+let kStripeLocation = "location/"
 
 class FPServer : AFHTTPSessionManager {
     
@@ -1215,6 +1216,27 @@ class FPServer : AFHTTPSessionManager {
         self.post(
             kCaptureStripePaymentIntent,
             parameters: params,
+            success: success,
+            failure: failure
+        )
+    }
+    
+    func retrieveStripeLocation(
+        completion: @escaping (_ location: String?) -> Void
+    ) {
+        let success = { (task: URLSessionDataTask?, responseObject: Any?) -> Void in
+            let jsonResponse = responseObject as? [AnyHashable : Any]
+            let clientSecret = (jsonResponse?["location"] as? [String: Any])?["id"] as? String
+            completion(clientSecret)
+        }
+        
+        let failure = { (task: URLSessionDataTask?, error: Error?) -> Void in
+            completion(nil)
+        }
+        
+        self.get(
+            kStripeLocation,
+            parameters: nil,
             success: success,
             failure: failure
         )

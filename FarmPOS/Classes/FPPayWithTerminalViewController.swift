@@ -179,18 +179,33 @@ extension FPPayWithTerminalViewController: DiscoveryDelegate {
                     animated: true
                 )
                 
-                Terminal.shared.connectBluetoothReader(
-                    reader,
-                    delegate: self,
-                    connectionConfig: .init(
-                        locationId: reader.locationId ?? ""
-                    )
-                ) { reader, error in
-                    self.isConnecting = false
-                    if let reader = reader {
-                        print("Successfully connected to reader: \(reader)")
-                    } else if let error = error {
-                        print("connectReader failed: \(error)")
+                let completion = {
+                    Terminal.shared.connectBluetoothReader(
+                        reader,
+                        delegate: self,
+                        connectionConfig: .init(
+                            locationId: $0
+                        )
+                    ) { reader, error in
+                        self.isConnecting = false
+                        if let reader = reader {
+                            print("Successfully connected to reader: \(reader)")
+                        } else if let error = error {
+                            print("connectReader failed: \(error)")
+                        }
+                    }
+                }
+                
+                if let locationId = reader.locationId, !locationId.isEmpty {
+                    completion(locationId)
+                } else {
+                    PaymentCardController.shared.terminal.readLocation { location in
+                        switch location {
+                        case .success(let value):
+                            completion(value)
+                        case .failure(let error):
+                            print("location error: \(error)")
+                        }
                     }
                 }
             }
