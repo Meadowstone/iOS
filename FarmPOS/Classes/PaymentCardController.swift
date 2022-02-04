@@ -128,6 +128,8 @@ extension PaymentCardController: ConnectionTokenProvider {
 
 class PaymentCardTerminalController {
     
+    var collecting: Cancelable?
+    
     var connectedReader: Reader? {
         return Terminal.shared.connectedReader
     }
@@ -175,7 +177,7 @@ class PaymentCardTerminalController {
         )
         params.receiptEmail = email
         
-        Terminal.shared.createPaymentIntent(params) { result, error in
+        Terminal.shared.createPaymentIntent(params) { [weak self] result, error in
             guard let result = result
             else {
                 return completion(
@@ -185,7 +187,10 @@ class PaymentCardTerminalController {
                 )
             }
             
-            Terminal.shared.collectPaymentMethod(result) { result, error in
+            self?.collecting?.cancel { _ in
+                self?.collecting = nil
+            }
+            self?.collecting = Terminal.shared.collectPaymentMethod(result) { [weak self] result, error in
                 if let error = error {
                     completion(
                         .failure(error)
@@ -195,6 +200,7 @@ class PaymentCardTerminalController {
                         .success(result)
                     )
                 }
+                self?.collecting = nil
             }
         }
     }
