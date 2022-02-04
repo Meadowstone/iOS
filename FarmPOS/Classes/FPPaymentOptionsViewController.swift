@@ -108,7 +108,7 @@ class FPPaymentOptionsViewController: FPRotationViewController {
         button2.setTitle("Pay with Check", for: .normal)
         button2.tag = FPPaymentMethod.check.rawValue
         
-        button6.setTitle("Pay with Terminal", for: .normal)
+        button6.setTitle("Pay with Credit/Debit Card", for: .normal)
         button6.tag = FPPaymentMethod.terminal.rawValue
         
         button3.isHidden = true
