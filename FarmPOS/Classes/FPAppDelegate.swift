@@ -153,6 +153,21 @@ class FPAppDelegate: UIApplication, UIApplicationDelegate, UIAlertViewDelegate {
         UINavigationBar.appearance().barTintColor = UIColor(red: 109.0 / 255.0, green: 140.0 / 255.0, blue: 83.0 / 255.0, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor.white]
+        
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBar.appearance()
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.titleTextAttributes = appearance.titleTextAttributes ?? [:]
+            navBarAppearance.largeTitleTextAttributes = appearance.largeTitleTextAttributes ?? [:]
+            navBarAppearance.backgroundColor = appearance.barTintColor
+            navBarAppearance.shadowImage = nil
+            navBarAppearance.shadowColor = .clear
+            
+            appearance.standardAppearance = navBarAppearance
+            appearance.scrollEdgeAppearance = navBarAppearance
+            appearance.compactAppearance = navBarAppearance
+        }
     }
     
 //    func resetTimers() {

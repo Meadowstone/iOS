@@ -37,6 +37,7 @@ class FPPayWithTerminalViewController: UIViewController {
             discoverButton.isEnabled = !isPaying
             payButton.isEnabled = !isPaying
             payButton.isLoading = isPaying
+            payButton.isHidden = isPaying
         }
     }
     private weak var readersViewController: FPPayWithTerminalListViewController?
@@ -138,6 +139,8 @@ extension FPPayWithTerminalViewController {
         emailTextField.resignFirstResponder()
         
         isPaying = true
+        
+        payProcessLabel.text = "Terminal: Swipe / Insert / Tap"
         
         PaymentCardController.shared.terminal.collectPayment(
             price: price,
@@ -372,6 +375,7 @@ private extension FPPayWithTerminalViewController {
         payProcessLabel.textColor = .black
         payProcessLabel.textAlignment = .center
         payProcessLabel.numberOfLines = 0
+        payProcessLabel.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         
         let toCopyColors = STPPaymentCardTextField()
         emailTextField.autocapitalizationType = .none
@@ -407,7 +411,7 @@ private extension FPPayWithTerminalViewController {
         
         discoverButton.setTitle(
             isReaderConnected
-                ? "Find new terminals"
+                ? "Connected"
                 : "Connect to terminal"
             ,
             for: .normal
