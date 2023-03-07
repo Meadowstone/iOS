@@ -303,8 +303,8 @@
 		E92BF93024EBBC77002CB596 /* FPCartHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81A3A848196B73CC0006C479 /* FPCartHeaderView.xib */; };
 		E92BF93124EBBC77002CB596 /* FPCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8179D441198F9EE400B49FC3 /* FPCategoryCell.xib */; };
 		E92BF93224EBBC77002CB596 /* FPProductCheckoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101EE90199280280042FBB6 /* FPProductCheckoutCell.xib */; };
-		E92BF93C24EBC641002CB596 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503EB714197D735D00B86869 /* Images.xcassets */; };
-		E92BF93E24EBC81F002CB596 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503EB714197D735D00B86869 /* Images.xcassets */; };
+		E92BF93C24EBC641002CB596 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503EB714197D735D00B86869 /* Assets.xcassets */; };
+		E92BF93E24EBC81F002CB596 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503EB714197D735D00B86869 /* Assets.xcassets */; };
 		E9445537252B1D08002AD1BD /* FPPaymentCardProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9445536252B1D08002AD1BD /* FPPaymentCardProcessor.swift */; };
 		E9445538252B1DD3002AD1BD /* FPPaymentCardProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9445536252B1D08002AD1BD /* FPPaymentCardProcessor.swift */; };
 		E972DD4425079213008E0652 /* PaymentCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD4325079213008E0652 /* PaymentCardController.swift */; };
@@ -322,7 +322,7 @@
 		503EB70E197D635A00B86869 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		503EB710197D66E800B86869 /* FPPaymentOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPPaymentOptionsViewController.swift; sourceTree = "<group>"; };
 		503EB712197D67C300B86869 /* FPPayNowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPPayNowViewController.swift; sourceTree = "<group>"; };
-		503EB714197D735D00B86869 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		503EB714197D735D00B86869 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50EA2929197E5A6F0024B299 /* FPCashCheckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCashCheckViewController.swift; sourceTree = "<group>"; };
 		50EA292B197E71580024B299 /* FPPaymentConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPPaymentConfirmViewController.swift; sourceTree = "<group>"; };
 		67B08AFBD1944595B139EC08 /* Pods-Farmstand Cart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Farmstand Cart.debug.xcconfig"; path = "Target Support Files/Pods-Farmstand Cart/Pods-Farmstand Cart.debug.xcconfig"; sourceTree = "<group>"; };
@@ -935,7 +935,7 @@
 		81DB781E195C2A860021DE57 /* FarmPOS */ = {
 			isa = PBXGroup;
 			children = (
-				503EB714197D735D00B86869 /* Images.xcassets */,
+				503EB714197D735D00B86869 /* Assets.xcassets */,
 				81199D3A195C313F00BE139D /* Classes */,
 				81DB781F195C2A860021DE57 /* Supporting Files */,
 			);
@@ -1127,7 +1127,7 @@
 				812657001E11966D00588EA9 /* Launch Screen.storyboard in Resources */,
 				81F14B081B1731680068372B /* FPProductCategoryCollectionViewCell.xib in Resources */,
 				81ADF35A1B172A360092A9FD /* FPProductCategoriesFooterView.xib in Resources */,
-				E92BF93E24EBC81F002CB596 /* Images.xcassets in Resources */,
+				E92BF93E24EBC81F002CB596 /* Assets.xcassets in Resources */,
 				8101EE9419928D4A0042FBB6 /* FPCheckoutFooterView.xib in Resources */,
 				81CD1DA4196A190400EEAD8F /* FPProductCartCellView.xib in Resources */,
 				81FF0810196C28830046457A /* FPCartCell.xib in Resources */,
@@ -1164,7 +1164,7 @@
 				E92BF92724EBBC77002CB596 /* Launch Screen.storyboard in Resources */,
 				E92BF92924EBBC77002CB596 /* FPProductCategoryCollectionViewCell.xib in Resources */,
 				E92BF92A24EBBC77002CB596 /* FPProductCategoriesFooterView.xib in Resources */,
-				E92BF93C24EBC641002CB596 /* Images.xcassets in Resources */,
+				E92BF93C24EBC641002CB596 /* Assets.xcassets in Resources */,
 				E92BF92B24EBBC77002CB596 /* FPCheckoutFooterView.xib in Resources */,
 				E92BF92C24EBBC77002CB596 /* FPProductCartCellView.xib in Resources */,
 				E92BF92D24EBBC77002CB596 /* FPCartCell.xib in Resources */,
@@ -1582,10 +1582,12 @@
 			baseConfigurationReference = 67B08AFBD1944595B139EC08 /* Pods-Farmstand Cart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Farmstand Cart.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.1.0.7;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 108;
 				DEVELOPMENT_TEAM = 4268HQ9ZMJ;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1593,9 +1595,10 @@
 					"COCOAPODS=1",
 				);
 				INFOPLIST_FILE = "FarmPOS/FarmstandCart-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = FarmstandCart;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDebug";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meadowstonefarm.farmpos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1664,16 +1667,19 @@
 			baseConfigurationReference = 07C21F483BE85534741FD66B /* Pods-Farmstand Cart.appstore.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Farmstand Cart.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.1.0.7;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 108;
 				DEVELOPMENT_TEAM = 4268HQ9ZMJ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "FarmPOS/FarmstandCart-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = FarmstandCart;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meadowstonefarm.farmpos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1692,7 +1698,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Farmstand Cart.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.1.0.10;
+				CURRENT_PROJECT_VERSION = 0.1.0.11;
 				DEVELOPMENT_TEAM = 4268HQ9ZMJ;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1722,7 +1728,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Farmstand Cart.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.1.0.10;
+				CURRENT_PROJECT_VERSION = 0.1.0.11;
 				DEVELOPMENT_TEAM = 4268HQ9ZMJ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "FarmstandCartDEV-Info.plist";

@@ -34,6 +34,7 @@ class FPAppDelegate: UIApplication, UIApplicationDelegate, UIAlertViewDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options:[.badge, .alert]) { _, _ in }
         application.registerForRemoteNotifications()

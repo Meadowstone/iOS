@@ -26,8 +26,8 @@ PODS:
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
-  - SnapKit (5.0.1)
-  - Stripe (19.4.0)
+  - SnapKit (5.6.0)
+  - Stripe (19.4.1)
   - StripeTerminal (2.0.0)
   - SVPullToRefresh (0.4.1)
 
@@ -57,15 +57,15 @@ SPEC REPOS:
     - SVPullToRefresh
 
 SPEC CHECKSUMS:
-  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  AFNetworking: 407b0a35966776613924a869ef358b59f927d788
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
-  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  Stripe: 92f1c73a9dbd3c54277ed06a1fea6e08f20414c6
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  Stripe: 5914399ac5878056b985d56b409cb4bb1e7fc7e8
   StripeTerminal: 92673ce3ecb15ae2f8436fc47c78fdf729955462
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
 
 PODFILE CHECKSUM: 768a083122363743cf068777feca2a661c204737
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.11.3
