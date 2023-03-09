@@ -311,6 +311,8 @@
 		E972DD452507944C008E0652 /* PaymentCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD4325079213008E0652 /* PaymentCardController.swift */; };
 		E972DD47250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD46250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift */; };
 		E972DD48250A2F1F008E0652 /* FPPayWithPaymentCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD46250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift */; };
+		E9988B4529BA306D00C81E1A /* FPPayWithVenmoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9988B4429BA306D00C81E1A /* FPPayWithVenmoViewController.swift */; };
+		E9988B4629BA306D00C81E1A /* FPPayWithVenmoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9988B4429BA306D00C81E1A /* FPPayWithVenmoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -487,6 +489,7 @@
 		E9445536252B1D08002AD1BD /* FPPaymentCardProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPPaymentCardProcessor.swift; sourceTree = "<group>"; };
 		E972DD4325079213008E0652 /* PaymentCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardController.swift; sourceTree = "<group>"; };
 		E972DD46250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPPayWithPaymentCardViewController.swift; sourceTree = "<group>"; };
+		E9988B4429BA306D00C81E1A /* FPPayWithVenmoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPPayWithVenmoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -778,6 +781,7 @@
 				E972DD46250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift */,
 				A2E9382027A215B2009C8464 /* FPPayWithTerminalViewController.swift */,
 				A2E9382627A32475009C8464 /* FPPayWithTerminalListViewController.swift */,
+				E9988B4429BA306D00C81E1A /* FPPayWithVenmoViewController.swift */,
 				E90DDA64252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift */,
 			);
 			name = ProductsAndCart;
@@ -1391,6 +1395,7 @@
 				81FB1969198BA4FB00FF6815 /* FPMenuViewController.swift in Sources */,
 				81A3A84E196BF99B0006C479 /* FPCurrencyFormatter.swift in Sources */,
 				81DD91D61977DC810056754B /* FPTransactionCell.swift in Sources */,
+				E9988B4529BA306D00C81E1A /* FPPayWithVenmoViewController.swift in Sources */,
 				812ED2B4195CEFEC008F178C /* FPUser.swift in Sources */,
 				8141E45E1975DC470037FCD0 /* FPOrdersViewController.swift in Sources */,
 				812065541B566FAE00CA180F /* FPCheckoutTaxItem.swift in Sources */,
@@ -1503,6 +1508,7 @@
 				E92BF8F424EBBC77002CB596 /* FPMenuViewController.swift in Sources */,
 				E92BF8F624EBBC77002CB596 /* FPCurrencyFormatter.swift in Sources */,
 				E92BF8F724EBBC77002CB596 /* FPTransactionCell.swift in Sources */,
+				E9988B4629BA306D00C81E1A /* FPPayWithVenmoViewController.swift in Sources */,
 				E92BF8F824EBBC77002CB596 /* FPUser.swift in Sources */,
 				E92BF8FA24EBBC77002CB596 /* FPOrdersViewController.swift in Sources */,
 				E92BF8FB24EBBC77002CB596 /* FPCheckoutTaxItem.swift in Sources */,
