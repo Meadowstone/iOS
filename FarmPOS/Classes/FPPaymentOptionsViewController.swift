@@ -50,6 +50,7 @@ class FPPaymentOptionsViewController: FPRotationViewController {
     @IBOutlet var button4: UIButton!
     @IBOutlet var button5: UIButton!
     @IBOutlet var button6: UIButton!
+    @IBOutlet var button7: UIButton!
     
     @IBOutlet weak var button3explanationLabel: UILabel!
     @IBOutlet weak var button4explanationLabel: UILabel!
@@ -110,6 +111,9 @@ class FPPaymentOptionsViewController: FPRotationViewController {
         
         button6.setTitle("Pay with Credit/Debit Card", for: .normal)
         button6.tag = FPPaymentMethod.terminal.rawValue
+        
+        button7.setTitle("Pay with Venmo", for: .normal)
+        button7.tag = FPPaymentMethod.venmo.rawValue
         
         button3.isHidden = true
         button4.isHidden = true
@@ -250,6 +254,9 @@ class FPPaymentOptionsViewController: FPRotationViewController {
                 viewController,
                 animated: true
             )
+        case FPPaymentMethod.venmo.rawValue:
+            let viewController = FPPayWithVenmoViewController()
+            navigationController?.pushViewController(viewController, animated: true)
         default:
             break
         }

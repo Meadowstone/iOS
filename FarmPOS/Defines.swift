@@ -26,6 +26,7 @@ enum FPPaymentMethod : Int {
     case balance
     case paymentCard
     case terminal
+    case venmo
     
     func toString() -> String {
         switch self {

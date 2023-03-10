@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="GzJ-8j-cW5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="GzJ-8j-cW5">
     <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -493,7 +493,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ETm-JT-4xq">
-                                <rect key="frame" x="20" y="116" width="600" height="344"/>
+                                <rect key="frame" x="20" y="116" width="600" height="392"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3D-fJ-0JI">
                                         <rect key="frame" x="78.5" y="0.0" width="443" height="40"/>
@@ -574,10 +574,22 @@
                                             <action selector="buttonPressed:" destination="MSK-Qr-Fgg" eventType="touchUpInside" id="mVc-jI-LK1"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtG-Yf-MDD">
+                                        <rect key="frame" x="78.5" y="352" width="443" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="suG-9y-TwS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="Pay with Venmo" backgroundImage="green_btn"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="MSK-Qr-Fgg" eventType="touchUpInside" id="u4t-VW-K1w"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Fl5-KY-WVh" firstAttribute="width" secondItem="O3D-fJ-0JI" secondAttribute="width" id="4pJ-Af-WTV"/>
                                     <constraint firstItem="lLN-a7-rWq" firstAttribute="width" secondItem="O3D-fJ-0JI" secondAttribute="width" id="IkR-V1-Th7"/>
+                                    <constraint firstItem="FtG-Yf-MDD" firstAttribute="width" secondItem="O3D-fJ-0JI" secondAttribute="width" id="JGU-Mg-L30"/>
                                     <constraint firstItem="ydj-if-xZ8" firstAttribute="width" secondItem="O3D-fJ-0JI" secondAttribute="width" id="WNo-U3-Rzl"/>
                                     <constraint firstItem="pqe-fc-JSO" firstAttribute="width" secondItem="O3D-fJ-0JI" secondAttribute="width" id="ZJo-me-5Dm"/>
                                     <constraint firstItem="Z4M-6b-Ugz" firstAttribute="width" secondItem="O3D-fJ-0JI" secondAttribute="width" id="pkK-5x-f3Y"/>
@@ -608,6 +620,7 @@
                         <outlet property="button4explanationLabel" destination="7RG-Aa-yOc" id="BI8-XK-ZPb"/>
                         <outlet property="button5" destination="ydj-if-xZ8" id="XSN-CH-K2r"/>
                         <outlet property="button6" destination="Fl5-KY-WVh" id="FdS-12-ogY"/>
+                        <outlet property="button7" destination="FtG-Yf-MDD" id="RYj-Oi-LS6"/>
                         <segue destination="8gF-Id-My5" kind="push" identifier="pushPayNow" id="qYN-X3-uqa"/>
                     </connections>
                 </viewController>
@@ -1125,7 +1138,7 @@
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="UDM-15-jJl">
-                                    <rect key="frame" x="0.0" y="219" width="640" height="67"/>
+                                    <rect key="frame" x="0.0" y="230" width="640" height="67"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3Z-sJ-LUt">
@@ -1149,7 +1162,7 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="gzW-2z-gfG">
-                                        <rect key="frame" x="0.0" y="152.5" width="640" height="44"/>
+                                        <rect key="frame" x="0.0" y="158" width="640" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gzW-2z-gfG" id="6rb-GH-Q8K">
                                             <rect key="frame" x="0.0" y="0.0" width="640" height="44"/>
