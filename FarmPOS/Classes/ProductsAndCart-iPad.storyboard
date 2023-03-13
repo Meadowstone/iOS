@@ -529,8 +529,19 @@
                                             <action selector="buttonPressed:" destination="MSK-Qr-Fgg" eventType="touchUpInside" id="XKr-tb-5R2"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fl5-KY-WVh">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtG-Yf-MDD">
                                         <rect key="frame" x="78.5" y="144" width="443" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="suG-9y-TwS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="Pay with Venmo" backgroundImage="green_btn"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="MSK-Qr-Fgg" eventType="touchUpInside" id="u4t-VW-K1w"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fl5-KY-WVh">
+                                        <rect key="frame" x="78.5" y="192" width="443" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="xDn-tP-4vn"/>
                                         </constraints>
@@ -541,13 +552,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="explanation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLc-oT-2kE">
-                                        <rect key="frame" x="251" y="192" width="98.5" height="24"/>
+                                        <rect key="frame" x="251" y="240" width="98.5" height="24"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4M-6b-Ugz">
-                                        <rect key="frame" x="78.5" y="224" width="443" height="40"/>
+                                        <rect key="frame" x="78.5" y="272" width="443" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="fO3-xP-oYD"/>
                                         </constraints>
@@ -558,13 +569,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="explanation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RG-Aa-yOc">
-                                        <rect key="frame" x="251" y="272" width="98.5" height="24"/>
+                                        <rect key="frame" x="251" y="320" width="98.5" height="24"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydj-if-xZ8">
-                                        <rect key="frame" x="78.5" y="304" width="443" height="40"/>
+                                        <rect key="frame" x="78.5" y="352" width="443" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Zwm-4S-QOJ"/>
                                         </constraints>
@@ -572,17 +583,6 @@
                                         <state key="normal" title="Pay later" backgroundImage="green_btn"/>
                                         <connections>
                                             <action selector="buttonPressed:" destination="MSK-Qr-Fgg" eventType="touchUpInside" id="mVc-jI-LK1"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtG-Yf-MDD">
-                                        <rect key="frame" x="78.5" y="352" width="443" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="suG-9y-TwS"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
-                                        <state key="normal" title="Pay with Venmo" backgroundImage="green_btn"/>
-                                        <connections>
-                                            <action selector="buttonPressed:" destination="MSK-Qr-Fgg" eventType="touchUpInside" id="u4t-VW-K1w"/>
                                         </connections>
                                     </button>
                                 </subviews>
