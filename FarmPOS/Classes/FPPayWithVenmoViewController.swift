@@ -10,6 +10,7 @@ import UIKit
 
 class FPPayWithVenmoViewController: UIViewController {
     
+    private var purchaseAmountLabel: UILabel!
     private var qrCodeImageView: UIImageView!
     private var paymentSubmittedButton: UIButton!
     
@@ -17,8 +18,33 @@ class FPPayWithVenmoViewController: UIViewController {
         view = UIView()
         view.backgroundColor = FPColorPaymentFlowBackground
         
+        createPurchaseAmountLabel()
         createQRCodeImageView()
         createPaymentSubmittedButton()
+    }
+    
+    private func purchaseAmountAttributedString() -> NSAttributedString {
+        let dollarsText = "$" + FPCurrencyFormatter.printableCurrency(FPCartView.sharedCart().checkoutSum)
+        let attributedString = NSMutableAttributedString(string: "Purchase Amount: \(dollarsText)")
+        attributedString.addAttribute(
+            .foregroundColor,
+            value: FPColorGreen,
+            range: (attributedString.string as NSString)
+                .range(of: dollarsText, options: .backwards)
+        )
+        return attributedString
+    }
+    
+    private func createPurchaseAmountLabel() {
+        purchaseAmountLabel = UILabel()
+        purchaseAmountLabel.font = UIFont(name: "HelveticaNeue-Light", size: 22)
+        purchaseAmountLabel.textColor = FPColorPaymentFlowMessage
+        purchaseAmountLabel.attributedText = purchaseAmountAttributedString()
+        
+        view.addSubview(purchaseAmountLabel)
+        purchaseAmountLabel.translatesAutoresizingMaskIntoConstraints = false
+        purchaseAmountLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        purchaseAmountLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
     }
     
     private func createQRCodeImageView() {
@@ -27,7 +53,7 @@ class FPPayWithVenmoViewController: UIViewController {
         view.addSubview(qrCodeImageView)
         qrCodeImageView.translatesAutoresizingMaskIntoConstraints = false
         qrCodeImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        qrCodeImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 16).isActive = true
+        qrCodeImageView.topAnchor.constraint(equalTo: purchaseAmountLabel.bottomAnchor, constant: 16).isActive = true
     }
     
     private func createPaymentSubmittedButton() {
