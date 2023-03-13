@@ -46,6 +46,9 @@ class FPPayWithVenmoViewController: UIViewController {
     }
     
     @objc private func paymentSubmittedTapped() {
-        
+        NotificationCenter.default.post(
+            name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification),
+            object: ["method": FPPaymentMethod.venmo.rawValue]
+        )
     }
 }
