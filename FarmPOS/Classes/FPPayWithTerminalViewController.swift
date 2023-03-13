@@ -11,6 +11,7 @@ import UIKit
 import Stripe
 import StripeTerminal
 import SnapKit
+import MBProgressHUD
 
 class FPPayWithTerminalViewController: UIViewController {
     
@@ -140,6 +141,17 @@ extension FPPayWithTerminalViewController {
         
         isPaying = true
         
+        #if Devbuild
+        let hud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
+        hud?.removeFromSuperViewOnHide = true
+        hud?.labelText = "Processing payment..."
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            hud?.hide(false)
+            self?.isPaying = false
+            self?.payProcessLabel.text = "Payment completed!"
+            self?.onCompletion()
+        }
+        #else
         payProcessLabel.text = "Terminal: Swipe / Insert / Tap"
         
         PaymentCardController.shared.terminal.collectPayment(
@@ -156,6 +168,7 @@ extension FPPayWithTerminalViewController {
 
             self.processPayment(value)
         }
+        #endif
     }
     
 }
@@ -282,7 +295,11 @@ extension FPPayWithTerminalViewController: BluetoothReaderDelegate {
 private extension FPPayWithTerminalViewController {
     
     var isReaderConnected: Bool {
+        #if Devbuild
+        true
+        #else
         PaymentCardController.shared.terminal.isReaderConnected
+        #endif
     }
     
     var connectedReader: Reader? {
@@ -417,9 +434,15 @@ private extension FPPayWithTerminalViewController {
             for: .normal
         )
         payButton.isEnabled = isReaderConnected
+        
+        #if Devbuild
+        connectedReaderLabel.text = "Connected terminal: DEV"
+        #else
         connectedReaderLabel.text = isReaderConnected
             ? "Connected terminal: \(connectedReader?.serialNumber ?? "")"
             : ""
+        #endif
+        
         payProcessLabel.text = ""
     }
     
