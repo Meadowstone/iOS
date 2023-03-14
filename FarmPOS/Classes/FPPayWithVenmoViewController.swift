@@ -10,9 +10,22 @@ import UIKit
 
 class FPPayWithVenmoViewController: UIViewController {
     
-    private var purchaseAmountLabel: UILabel!
+    private let price: Double
+    private let balancePayment: Bool
+    
+    private var priceLabel: UILabel!
     private var qrCodeImageView: UIImageView!
     private var paymentSubmittedButton: UIButton!
+    
+    init(price: Double, balancePayment: Bool) {
+        self.price = price
+        self.balancePayment = balancePayment
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         view = UIView()
@@ -24,8 +37,9 @@ class FPPayWithVenmoViewController: UIViewController {
     }
     
     private func purchaseAmountAttributedString() -> NSAttributedString {
-        let dollarsText = "$" + FPCurrencyFormatter.printableCurrency(FPCartView.sharedCart().checkoutSum)
-        let attributedString = NSMutableAttributedString(string: "Purchase Amount: \(dollarsText)")
+        let meaningText = !balancePayment ? "Purchase Amount" : "Balance Payment"
+        let dollarsText = "$" + FPCurrencyFormatter.printableCurrency(price)
+        let attributedString = NSMutableAttributedString(string: "\(meaningText): \(dollarsText)")
         attributedString.addAttribute(
             .foregroundColor,
             value: FPColorGreen,
@@ -36,15 +50,15 @@ class FPPayWithVenmoViewController: UIViewController {
     }
     
     private func createPurchaseAmountLabel() {
-        purchaseAmountLabel = UILabel()
-        purchaseAmountLabel.font = UIFont(name: "HelveticaNeue-Light", size: 22)
-        purchaseAmountLabel.textColor = FPColorPaymentFlowMessage
-        purchaseAmountLabel.attributedText = purchaseAmountAttributedString()
+        priceLabel = UILabel()
+        priceLabel.font = UIFont(name: "HelveticaNeue-Light", size: 22)
+        priceLabel.textColor = FPColorPaymentFlowMessage
+        priceLabel.attributedText = purchaseAmountAttributedString()
         
-        view.addSubview(purchaseAmountLabel)
-        purchaseAmountLabel.translatesAutoresizingMaskIntoConstraints = false
-        purchaseAmountLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-        purchaseAmountLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
+        view.addSubview(priceLabel)
+        priceLabel.translatesAutoresizingMaskIntoConstraints = false
+        priceLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        priceLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
     }
     
     private func createQRCodeImageView() {
@@ -53,7 +67,7 @@ class FPPayWithVenmoViewController: UIViewController {
         view.addSubview(qrCodeImageView)
         qrCodeImageView.translatesAutoresizingMaskIntoConstraints = false
         qrCodeImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        qrCodeImageView.topAnchor.constraint(equalTo: purchaseAmountLabel.bottomAnchor, constant: 16).isActive = true
+        qrCodeImageView.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 16).isActive = true
     }
     
     private func createPaymentSubmittedButton() {

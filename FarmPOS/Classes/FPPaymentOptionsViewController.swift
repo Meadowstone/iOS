@@ -255,7 +255,11 @@ class FPPaymentOptionsViewController: FPRotationViewController {
                 animated: true
             )
         case FPPaymentMethod.venmo.rawValue:
-            let viewController = FPPayWithVenmoViewController()
+            let price = !balancePayment ? FPCartView.sharedCart().checkoutSum : balanceSum
+            let viewController = FPPayWithVenmoViewController(
+                price: price,
+                balancePayment: balancePayment
+            )
             navigationController?.pushViewController(viewController, animated: true)
         default:
             break
