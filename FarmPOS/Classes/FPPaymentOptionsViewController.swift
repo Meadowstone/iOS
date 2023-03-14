@@ -218,21 +218,32 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             let viewController = FPPayWithTerminalViewController(
                 price: price
             ) { [weak self] in
-                self?.navigationController?.popViewController(
-                    animated: true
-                )
+                guard let self = self else { return }
                 
-                let notificationParams: [String : Any] = [
-                    "method": FPPaymentMethod.terminal.rawValue,
-                    "sumPaid": price
-                ]
-                
-                NotificationCenter.default.post(
-                    name: Notification.Name(
-                        rawValue: FPPaymentMethodSelectedNotification
-                    ),
-                    object: notificationParams
-                )
+                if !self.balancePayment {
+                    self.navigationController?.popViewController(
+                        animated: true
+                    )
+                    
+                    let notificationParams: [String : Any] = [
+                        "method": FPPaymentMethod.terminal.rawValue,
+                        "sumPaid": price
+                    ]
+                    
+                    NotificationCenter.default.post(
+                        name: Notification.Name(
+                            rawValue: FPPaymentMethodSelectedNotification
+                        ),
+                        object: notificationParams
+                    )
+                } else {
+                    self.depositSumPayWithCheck(
+                        false,
+                        checkNumber: nil,
+                        transactionToken: nil,
+                        last4: nil
+                    )
+                }
             }
             
             navigationController?.pushViewController(
