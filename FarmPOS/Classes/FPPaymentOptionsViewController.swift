@@ -210,8 +210,9 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             }
             navigationController?.pushViewController(payWithPaymentCardViewController, animated: true)
         case FPPaymentMethod.terminal.rawValue:
+            let amount = !balancePayment ? FPCartView.sharedCart().checkoutSum : balanceSum 
             let price = PaymentCardController.shared.priceWithAddedFees(
-                forPrice: FPCartView.sharedCart().checkoutSum
+                forPrice: amount
             )
             
             let viewController = FPPayWithTerminalViewController(
