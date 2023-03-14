@@ -139,19 +139,12 @@ extension FPPayWithTerminalViewController {
         
         emailTextField.resignFirstResponder()
         
-        isPaying = true
-        
         #if Devbuild
-        let hud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
-        hud?.removeFromSuperViewOnHide = true
-        hud?.labelText = "Processing payment..."
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-            hud?.hide(false)
-            self?.isPaying = false
-            self?.payProcessLabel.text = "Payment completed!"
-            self?.onCompletion()
-        }
+        onCompletion()
         #else
+        
+        isPaying = true
+    
         payProcessLabel.text = "Terminal: Swipe / Insert / Tap"
         
         PaymentCardController.shared.terminal.collectPayment(
@@ -168,6 +161,7 @@ extension FPPayWithTerminalViewController {
 
             self.processPayment(value)
         }
+        
         #endif
     }
     
