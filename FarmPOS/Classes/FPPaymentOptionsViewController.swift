@@ -258,7 +258,24 @@ class FPPaymentOptionsViewController: FPRotationViewController {
             let price = !balancePayment ? FPCartView.sharedCart().checkoutSum : balanceSum
             let viewController = FPPayWithVenmoViewController(
                 price: price,
-                balancePayment: balancePayment
+                balancePayment: balancePayment,
+                completion: { [weak self] in
+                    guard let self = self else { return }
+                    
+                    if !self.balancePayment {
+                        NotificationCenter.default.post(
+                            name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification),
+                            object: ["method": FPPaymentMethod.venmo.rawValue]
+                        )
+                    } else {
+                        self.depositSumPayWithCheck(
+                            false,
+                            checkNumber: nil,
+                            transactionToken: nil,
+                            last4: nil
+                        )
+                    }
+                }
             )
             navigationController?.pushViewController(viewController, animated: true)
         default:

@@ -12,14 +12,16 @@ class FPPayWithVenmoViewController: UIViewController {
     
     private let price: Double
     private let balancePayment: Bool
+    private let completion: (() -> Void)
     
     private var priceLabel: UILabel!
     private var qrCodeImageView: UIImageView!
     private var paymentSubmittedButton: UIButton!
     
-    init(price: Double, balancePayment: Bool) {
+    init(price: Double, balancePayment: Bool, completion: @escaping (() -> Void)) {
         self.price = price
         self.balancePayment = balancePayment
+        self.completion = completion
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -86,9 +88,6 @@ class FPPayWithVenmoViewController: UIViewController {
     }
     
     @objc private func paymentSubmittedTapped() {
-        NotificationCenter.default.post(
-            name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification),
-            object: ["method": FPPaymentMethod.venmo.rawValue]
-        )
+        completion()
     }
 }
