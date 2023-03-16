@@ -1265,6 +1265,8 @@ class FPServer : AFHTTPSessionManager {
             m = 5
         case .paymentCard:
             m = 14
+        case .venmo:
+            m = 8
         default:
             m = 0
         }

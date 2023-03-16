@@ -265,7 +265,10 @@ class FPPaymentOptionsViewController: FPRotationViewController {
                     if !self.balancePayment {
                         NotificationCenter.default.post(
                             name: Notification.Name(rawValue: FPPaymentMethodSelectedNotification),
-                            object: ["method": FPPaymentMethod.venmo.rawValue]
+                            object: [
+                                "method": FPPaymentMethod.venmo.rawValue,
+                                "sumPaid": price
+                            ]
                         )
                     } else {
                         self.depositSumPayWithCheck(
