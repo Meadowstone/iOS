@@ -98,7 +98,7 @@ class FPCustomerLoginViewController: FPRotationViewController, UIPopoverControll
         
         for textField in [phoneTextField, pinTextField] {
             if let placeholder = textField?.placeholder {
-                textField?.attributedPlaceholder = NSAttributedString(string : placeholder, attributes: [.foregroundColor: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
+                textField?.attributedPlaceholder = NSAttributedString(string : placeholder, attributes: [.foregroundColor: UIColor.black])
             }
         }
     }
