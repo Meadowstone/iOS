@@ -149,7 +149,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="672"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Of2-WG-6s5">
-                                <rect key="frame" x="262" y="500" width="500" height="80"/>
+                                <rect key="frame" x="252" y="500" width="520" height="80"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                 <state key="normal" title="CREATE AN ACCOUNT" backgroundImage="green_btn">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -166,7 +166,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TS5-cz-Eig">
-                                <rect key="frame" x="262" y="376" width="500" height="80"/>
+                                <rect key="frame" x="252" y="376" width="520" height="80"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                 <state key="normal" title="GUEST CHECKOUT" backgroundImage="green_btn">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -222,13 +222,13 @@
                                 </constraints>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y59-Hd-vFr">
-                                <rect key="frame" x="262" y="180" width="500" height="80"/>
+                                <rect key="frame" x="252" y="180" width="520" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="500" id="UCj-nQ-59X"/>
+                                    <constraint firstAttribute="width" constant="520" id="UCj-nQ-59X"/>
                                     <constraint firstAttribute="height" constant="80" id="bry-l6-7Gg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
-                                <state key="normal" title="CUSTOMER LOGIN" backgroundImage="green_btn">
+                                <state key="normal" title="CUSTOMER CHECKOUT" backgroundImage="green_btn">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -237,7 +237,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select if you'd like to buy from the Farmstand" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAn-DG-2lQ">
-                                <rect key="frame" x="262" y="268" width="500" height="28"/>
+                                <rect key="frame" x="252" y="268" width="520" height="28"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
