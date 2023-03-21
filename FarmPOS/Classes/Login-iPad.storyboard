@@ -156,6 +156,7 @@
                                 </state>
                                 <connections>
                                     <action selector="createAccountPressed:" destination="eD9-Mw-tTL" eventType="touchUpInside" id="Die-sk-fua"/>
+                                    <action selector="createAccountPressed:" destination="ZBL-41-c9Z" eventType="touchUpInside" id="xJc-9f-COo"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKu-yN-fde">
@@ -171,6 +172,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="guestPressed:" destination="ZBL-41-c9Z" eventType="touchUpInside" id="Ono-Aq-tV1"/>
                                     <action selector="guestPressed:" destination="eD9-Mw-tTL" eventType="touchUpInside" id="f3j-cl-fbv"/>
                                 </connections>
                             </button>
