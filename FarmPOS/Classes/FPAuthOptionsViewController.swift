@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class FPAuthOptionsViewController: FPRotationViewController {
     
@@ -23,6 +24,41 @@ class FPAuthOptionsViewController: FPRotationViewController {
         navigationController!.pushViewController(vc, animated: true)
     }
     
+    @IBAction func guestPressed(_ sender: AnyObject) {
+        let hud = MBProgressHUD.showAdded(to: FPAppDelegate.instance().window!, animated: false)
+        hud?.removeFromSuperViewOnHide = true
+        hud?.labelText = "Entering POS..."
+        
+        let completion = { [weak self] (errorMessage: String?, productDescriptors: [FPProductDescriptor]?) -> Void in
+            hud?.hide(false)
+            if let errorMessage = errorMessage {
+                FPAlertManager.showMessage(errorMessage, withTitle: "Error")
+                return
+            }
+            self?.customerAuthenticated(nil)
+            FPProduct.addDiscounts(using: productDescriptors ?? [])
+        }
+        
+        FPServer.sharedInstance.guestCheckout(completion: completion)
+    }
+    
+    @IBAction func createAccountPressed(_ sender: AnyObject?) {
+        self.view.endEditing(true)
+        
+        let completion = { [weak self] (customer: FPCustomer?) -> Void in
+            self!.popover!.dismiss(animated: false)
+            if let c = customer {
+                self!.customerAuthenticated(c)
+            }
+        }
+        let vc = FPAccountSetupViewController.accountSetupViewControllerWithCompletion(completion)
+        let nc = UINavigationController(rootViewController: vc)
+        let centerRect = CGRect(x: view.frame.size.width / 2, y: view.frame.size.height / 2, width: 1, height: 1)
+        popover = UIPopoverController(contentViewController: nc)
+        popover!.delegate = self
+        popover?.present(from: centerRect, in: view, permittedArrowDirections: UIPopoverArrowDirection(rawValue: 0), animated: false)
+    }
+    
     @IBAction func farmWorkerPressed(_ sender: UIButton) {
         let vc = FPFarmWorkerLoginViewController.farmWorkerLoginViewController()
         navigationController!.pushViewController(vc, animated: true)
@@ -36,6 +72,12 @@ class FPAuthOptionsViewController: FPRotationViewController {
         updateUI()
     }
     
+    func customerAuthenticated(_ customer: FPCustomer?) {
+        FPCustomer.setActiveCustomer(customer)
+        let vc = FPProductsAndCartViewController.productsAndCartViewController()
+        let nc = UINavigationController(rootViewController: vc)
+        FPAppDelegate.instance().window!.rootViewController = nc
+    }
     
     class func authOptionsViewController() -> FPAuthOptionsViewController {
         return FPStoryboardManager.loginStoryboard().instantiateViewController(withIdentifier: "FPAuthOptionsViewController") as! FPAuthOptionsViewController
@@ -115,4 +157,11 @@ class FPAuthOptionsViewController: FPRotationViewController {
         present(alert, animated: true)
     }
     
+}
+
+extension FPAuthOptionsViewController: UIPopoverControllerDelegate {
+    
+    func popoverControllerShouldDismissPopover(_ popoverController: UIPopoverController) -> Bool {
+        return false
+    }
 }
