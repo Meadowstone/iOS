@@ -375,75 +375,18 @@
                                             <action selector="loginPressed:" destination="eD9-Mw-tTL" eventType="touchUpInside" id="7gY-4b-tTZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUh-TR-qiq">
-                                        <rect key="frame" x="338" y="454" width="349" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="349" id="RLn-Ny-2ZB"/>
-                                            <constraint firstAttribute="height" constant="40" id="aKk-td-gHu"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                        <state key="normal" title="CREATE AN ACCOUNT" backgroundImage="green_btn">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="createAccountPressed:" destination="eD9-Mw-tTL" eventType="touchUpInside" id="W3m-gc-Q1F"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnK-UJ-e4K">
-                                        <rect key="frame" x="338" y="408" width="349" height="38"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="38" id="Kgu-Hc-nrE"/>
-                                            <constraint firstAttribute="width" constant="349" id="Wj2-pZ-LlE"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
-                                        <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select if you're new to this Farmstand and would like to set up an account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4u-Ll-189">
-                                        <rect key="frame" x="20" y="502" width="984" height="28"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="984" id="jJd-HD-4SF"/>
-                                            <constraint firstAttribute="height" constant="28" id="lku-n1-ar9"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
-                                        <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikp-ge-CzC">
-                                        <rect key="frame" x="339" y="538" width="349" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="349" id="0qZ-aH-TFU"/>
-                                            <constraint firstAttribute="height" constant="40" id="mBw-Fv-GjV"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                        <state key="normal" title="GUEST CHECKOUT" backgroundImage="green_btn">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="guestPressed:" destination="eD9-Mw-tTL" eventType="touchUpInside" id="pph-fq-sdo"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="F4u-Ll-189" firstAttribute="leading" secondItem="7Vv-K1-PWi" secondAttribute="leading" constant="20" id="3q7-SN-TSm"/>
                                     <constraint firstItem="DqF-o1-rBf" firstAttribute="leading" secondItem="7Vv-K1-PWi" secondAttribute="leading" constant="338" id="9Ed-Jm-nVn"/>
                                     <constraint firstItem="RWs-iC-obL" firstAttribute="leading" secondItem="7Vv-K1-PWi" secondAttribute="leading" constant="338" id="Aff-Yd-8dL"/>
-                                    <constraint firstItem="ikp-ge-CzC" firstAttribute="top" secondItem="F4u-Ll-189" secondAttribute="bottom" constant="8" id="MtK-cG-EGV"/>
-                                    <constraint firstItem="F4u-Ll-189" firstAttribute="top" secondItem="fUh-TR-qiq" secondAttribute="bottom" constant="8" id="Oi9-uO-Auj"/>
                                     <constraint firstItem="ZR7-ed-CK3" firstAttribute="top" secondItem="7Vv-K1-PWi" secondAttribute="top" constant="50" id="Po6-jp-vB6"/>
-                                    <constraint firstAttribute="trailing" secondItem="ikp-ge-CzC" secondAttribute="trailing" constant="336" id="QaM-AU-K1U"/>
-                                    <constraint firstItem="GnK-UJ-e4K" firstAttribute="top" secondItem="DqF-o1-rBf" secondAttribute="bottom" constant="8" id="ROG-TX-4yQ"/>
                                     <constraint firstItem="RWs-iC-obL" firstAttribute="top" secondItem="xgl-hL-FP8" secondAttribute="bottom" id="T2D-bn-5Uq"/>
                                     <constraint firstItem="xgl-hL-FP8" firstAttribute="leading" secondItem="7Vv-K1-PWi" secondAttribute="leading" constant="338" id="UYH-Ej-72O"/>
-                                    <constraint firstItem="fUh-TR-qiq" firstAttribute="top" secondItem="GnK-UJ-e4K" secondAttribute="bottom" constant="8" id="Xb7-1F-fa6"/>
-                                    <constraint firstAttribute="trailing" secondItem="F4u-Ll-189" secondAttribute="trailing" constant="20" id="aUr-Fi-ZWu"/>
-                                    <constraint firstItem="ikp-ge-CzC" firstAttribute="leading" secondItem="7Vv-K1-PWi" secondAttribute="leading" constant="339" id="ctK-Zz-tJa"/>
+                                    <constraint firstAttribute="trailing" secondItem="DqF-o1-rBf" secondAttribute="trailing" constant="17" id="deP-A8-5B4"/>
                                     <constraint firstItem="ZR7-ed-CK3" firstAttribute="leading" secondItem="7Vv-K1-PWi" secondAttribute="leading" constant="387" id="dgG-fR-V3b"/>
                                     <constraint firstItem="DqF-o1-rBf" firstAttribute="top" secondItem="RWs-iC-obL" secondAttribute="bottom" constant="30" id="iBD-SU-bP4"/>
-                                    <constraint firstItem="fUh-TR-qiq" firstAttribute="leading" secondItem="7Vv-K1-PWi" secondAttribute="leading" constant="338" id="ltF-iu-di7"/>
-                                    <constraint firstAttribute="bottom" secondItem="ikp-ge-CzC" secondAttribute="bottom" constant="26" id="ml5-Pk-3Cg"/>
                                     <constraint firstItem="xgl-hL-FP8" firstAttribute="top" secondItem="ZR7-ed-CK3" secondAttribute="bottom" constant="30" id="rt9-ma-KJV"/>
-                                    <constraint firstItem="GnK-UJ-e4K" firstAttribute="leading" secondItem="7Vv-K1-PWi" secondAttribute="leading" constant="338" id="ykf-cQ-VLs"/>
+                                    <constraint firstAttribute="bottom" secondItem="DqF-o1-rBf" secondAttribute="bottom" constant="272" id="wy7-Mi-WXp"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
