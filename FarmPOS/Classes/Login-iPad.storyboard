@@ -149,7 +149,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="672"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Of2-WG-6s5">
-                                <rect key="frame" x="262" y="510" width="500" height="80"/>
+                                <rect key="frame" x="262" y="500" width="500" height="80"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                 <state key="normal" title="CREATE AN ACCOUNT" backgroundImage="green_btn">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -159,13 +159,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKu-yN-fde">
-                                <rect key="frame" x="494.5" y="474" width="35" height="28"/>
+                                <rect key="frame" x="494.5" y="464" width="35" height="28"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TS5-cz-Eig">
-                                <rect key="frame" x="262" y="386" width="500" height="80"/>
+                                <rect key="frame" x="262" y="376" width="500" height="80"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                 <state key="normal" title="GUEST CHECKOUT" backgroundImage="green_btn">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -220,7 +220,7 @@
                                 </constraints>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y59-Hd-vFr">
-                                <rect key="frame" x="262" y="190" width="500" height="80"/>
+                                <rect key="frame" x="262" y="180" width="500" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="500" id="UCj-nQ-59X"/>
                                     <constraint firstAttribute="height" constant="80" id="bry-l6-7Gg"/>
@@ -235,13 +235,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select if you'd like to buy from the Farmstand" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAn-DG-2lQ">
-                                <rect key="frame" x="262" y="278" width="500" height="28"/>
+                                <rect key="frame" x="262" y="268" width="500" height="28"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkt-j6-Ecq">
-                                <rect key="frame" x="384" y="350" width="256" height="28"/>
+                                <rect key="frame" x="384" y="340" width="256" height="28"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -281,7 +281,7 @@
                             <constraint firstItem="gUo-qu-aGP" firstAttribute="centerY" secondItem="THF-oy-dmN" secondAttribute="centerY" id="ilS-56-SC6"/>
                             <constraint firstItem="uAn-DG-2lQ" firstAttribute="trailing" secondItem="y59-Hd-vFr" secondAttribute="trailing" id="kwj-Vv-t1S"/>
                             <constraint firstItem="tTf-Pw-UWc" firstAttribute="bottom" secondItem="gUo-qu-aGP" secondAttribute="bottom" id="oBU-EG-sLP"/>
-                            <constraint firstItem="y59-Hd-vFr" firstAttribute="top" secondItem="jpE-5w-Nmt" secondAttribute="bottom" constant="40" id="psl-G2-EGK"/>
+                            <constraint firstItem="y59-Hd-vFr" firstAttribute="top" secondItem="jpE-5w-Nmt" secondAttribute="bottom" constant="30" id="psl-G2-EGK"/>
                             <constraint firstItem="gkt-j6-Ecq" firstAttribute="centerX" secondItem="Pmf-Kz-i7B" secondAttribute="centerX" id="qV9-WE-TIS"/>
                             <constraint firstItem="FPm-3G-m1a" firstAttribute="trailing" secondItem="gUo-qu-aGP" secondAttribute="trailing" constant="11" id="qWv-yf-w2h"/>
                             <constraint firstItem="Of2-WG-6s5" firstAttribute="width" secondItem="TS5-cz-Eig" secondAttribute="width" id="u7d-xv-ySv"/>
