@@ -311,6 +311,7 @@
 		E972DD452507944C008E0652 /* PaymentCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD4325079213008E0652 /* PaymentCardController.swift */; };
 		E972DD47250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD46250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift */; };
 		E972DD48250A2F1F008E0652 /* FPPayWithPaymentCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972DD46250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift */; };
+		E994DB2D29D2CB3B00102970 /* FarmstandCartDEV-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E994DB2C29D2CB3B00102970 /* FarmstandCartDEV-Info.plist */; };
 		E9988B4529BA306D00C81E1A /* FPPayWithVenmoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9988B4429BA306D00C81E1A /* FPPayWithVenmoViewController.swift */; };
 		E9988B4629BA306D00C81E1A /* FPPayWithVenmoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9988B4429BA306D00C81E1A /* FPPayWithVenmoViewController.swift */; };
 /* End PBXBuildFile section */
@@ -484,11 +485,11 @@
 		E90DDA64252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPCustomerManageBalanceViewController.swift; sourceTree = "<group>"; };
 		E90DDA67252E14C8004DB111 /* FPCustomerManageBalanceOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPCustomerManageBalanceOption.swift; sourceTree = "<group>"; };
 		E92BF93724EBBC77002CB596 /* Farmstand Cart (DEV).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmstand Cart (DEV).app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E92BF93824EBBC78002CB596 /* FarmstandCartDEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FarmstandCartDEV-Info.plist"; path = "/Users/denismendica/Projects/toptal/Meadowstone Farm/FarmPOS-MobileApp/FarmstandCartDEV-Info.plist"; sourceTree = "<absolute>"; };
 		E92BF93F24F0124A002CB596 /* DataModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DataModel 3.xcdatamodel"; sourceTree = "<group>"; };
 		E9445536252B1D08002AD1BD /* FPPaymentCardProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPPaymentCardProcessor.swift; sourceTree = "<group>"; };
 		E972DD4325079213008E0652 /* PaymentCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardController.swift; sourceTree = "<group>"; };
 		E972DD46250A2CEC008E0652 /* FPPayWithPaymentCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPPayWithPaymentCardViewController.swift; sourceTree = "<group>"; };
+		E994DB2C29D2CB3B00102970 /* FarmstandCartDEV-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FarmstandCartDEV-Info.plist"; sourceTree = "<group>"; };
 		E9988B4429BA306D00C81E1A /* FPPayWithVenmoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPPayWithVenmoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -951,7 +952,7 @@
 			children = (
 				813682C2196F5BD900BE4E90 /* gift_card_FAQ.html */,
 				81DB7820195C2A860021DE57 /* FarmstandCart-Info.plist */,
-				E92BF93824EBBC78002CB596 /* FarmstandCartDEV-Info.plist */,
+				E994DB2C29D2CB3B00102970 /* FarmstandCartDEV-Info.plist */,
 				81EE76841E13F88F00CCCF6B /* Farmstand Cart.entitlements */,
 				81EE76831E13F88C00CCCF6B /* FPOS Dev.entitlements */,
 				81C2335B1A499EB5003E9239 /* bridge.h */,
@@ -1116,6 +1117,7 @@
 				81DD91D71977DC810056754B /* FPTransactionCell.xib in Resources */,
 				81210F87196B5AE200F14458 /* TODO in Resources */,
 				8108AF4419ACF91200869B86 /* FPUnsyncedPurchaseCell.xib in Resources */,
+				E994DB2D29D2CB3B00102970 /* FarmstandCartDEV-Info.plist in Resources */,
 				813682C3196F5BD900BE4E90 /* gift_card_FAQ.html in Resources */,
 				81DD3D2719C98C24002CCBF3 /* Main.storyboard in Resources */,
 				81BBEA4C19925F9E006310F7 /* FPOrderCell.xib in Resources */,
@@ -1711,7 +1713,7 @@
 					"$(inherited)",
 					"COCOAPODS=1",
 				);
-				INFOPLIST_FILE = "FarmstandCartDEV-Info.plist";
+				INFOPLIST_FILE = "FarmPOS/FarmstandCartDEV-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0;
@@ -1737,7 +1739,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4268HQ9ZMJ;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = "FarmstandCartDEV-Info.plist";
+				INFOPLIST_FILE = "FarmPOS/FarmstandCartDEV-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0;
