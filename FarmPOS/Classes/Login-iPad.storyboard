@@ -167,6 +167,9 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TS5-cz-Eig">
                                 <rect key="frame" x="252" y="376" width="520" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="520" id="Tpt-iH-1dG"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                 <state key="normal" title="GUEST CHECKOUT" backgroundImage="green_btn">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -222,13 +225,13 @@
                                 </constraints>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y59-Hd-vFr">
-                                <rect key="frame" x="252" y="180" width="520" height="80"/>
+                                <rect key="frame" x="158" y="180" width="708" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="520" id="UCj-nQ-59X"/>
                                     <constraint firstAttribute="height" constant="80" id="bry-l6-7Gg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
-                                <state key="normal" title="CUSTOMER CHECKOUT" backgroundImage="green_btn">
+                                <inset key="contentEdgeInsets" minX="32" minY="0.0" maxX="32" maxY="0.0"/>
+                                <state key="normal" title="EXISTING CUSTOMER CHECKOUT" backgroundImage="green_btn">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -237,7 +240,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select if you'd like to buy from the Farmstand" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAn-DG-2lQ">
-                                <rect key="frame" x="252" y="268" width="520" height="28"/>
+                                <rect key="frame" x="158" y="268" width="708" height="28"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -262,7 +265,6 @@
                             <constraint firstItem="tTf-Pw-UWc" firstAttribute="leading" secondItem="GxK-cI-owW" secondAttribute="trailing" constant="8" symbolic="YES" id="1E1-Qt-9no"/>
                             <constraint firstItem="Pmf-Kz-i7B" firstAttribute="leading" secondItem="nfk-eB-HV0" secondAttribute="leading" id="5f0-rz-GvC"/>
                             <constraint firstItem="uAn-DG-2lQ" firstAttribute="centerX" secondItem="Pmf-Kz-i7B" secondAttribute="centerX" id="9L4-KY-kB3"/>
-                            <constraint firstItem="TS5-cz-Eig" firstAttribute="width" secondItem="y59-Hd-vFr" secondAttribute="width" id="Dgp-Ef-Llj"/>
                             <constraint firstItem="GxK-cI-owW" firstAttribute="top" secondItem="THF-oy-dmN" secondAttribute="bottom" constant="20" id="EPc-fU-i0U"/>
                             <constraint firstItem="Pmf-Kz-i7B" firstAttribute="bottom" secondItem="Eqt-TG-fHe" secondAttribute="top" id="Gb4-Dq-Y7J"/>
                             <constraint firstItem="y59-Hd-vFr" firstAttribute="leading" secondItem="uAn-DG-2lQ" secondAttribute="leading" id="LNl-in-5Ba"/>
