@@ -84,7 +84,13 @@ class FPAccountSetupViewController: FPRotationViewController {
             
             contentLabel.attributedText = attrText
         } else {
-            contentLabel.text = "\(FPUser.activeUser()!.farm!.name) uses an old fashion account system for customer to purchase farmstand items.\nCustomer creates a simple account by completing the following steps.\nOnce an account is created customers can select items from the Farmstand and \"put it on the account\". \(FPUser.activeUser()!.farm!.name) will send the customer an account statement at the end of the month. Customers will have fifteen (15) days to pay the monthly statement.\nCustomers can also choose to pay via credit/debit card, cash or check.\n\nTo setup an account press the Next button below."
+            contentLabel.text = """
+            Meadowstone Farm uses an account system for customers to purchase farmstand items. 
+            After the short process of setting up an account the customer can receive a $10 credit by pre-purchasing $100 of Farm Bucks. 
+            Once an account is created customers login using a phone number and 2 digit pin code and then can select items from the Farmstand and "put it on the account”. A receipt of purchases will be sent to the email provided during the account setup. Thank you for supporting Meadowstone Farm!
+
+            To set up an account press the Next button below.
+            """
             contentLabel.font = UIFont(name: "HelveticaNeue-Light", size: 21)
         }
     }
