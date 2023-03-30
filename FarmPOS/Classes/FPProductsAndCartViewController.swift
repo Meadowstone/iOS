@@ -12,6 +12,7 @@ import MBProgressHUD
 
 class FPProductsAndCartViewController: FPRotationViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverControllerDelegate, UIAlertViewDelegate, UISearchBarDelegate, UITextFieldDelegate, FPProductCartCellDelegate, FPCartViewDelegate, FPProductViewControllerDelegate, FPProductCategoriesFooterViewDelegate {
     
+    var isComingFromSignup = false
     var showingCategories = false
     var popover: UIPopoverController?
     var cartView: FPCartView!
@@ -36,8 +37,10 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
     @IBOutlet var cartPlaceholderView: UIView!
     @IBOutlet weak var categoriesFooterPlaceholderView: UIView!
     
-    class func productsAndCartViewController() -> FPProductsAndCartViewController {
-        return FPStoryboardManager.productsAndCartStoryboard().instantiateViewController(withIdentifier: "FPProductsAndCartViewController") as! FPProductsAndCartViewController
+    class func productsAndCartViewController(isComingFromSignup: Bool = false) -> FPProductsAndCartViewController {
+        let viewController = FPStoryboardManager.productsAndCartStoryboard().instantiateViewController(withIdentifier: "FPProductsAndCartViewController") as! FPProductsAndCartViewController
+        viewController.isComingFromSignup = isComingFromSignup
+        return viewController
     }
     
     deinit {
@@ -284,6 +287,11 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         }
         //@warning data reload added
         tableView.reloadData()
+        
+        if isComingFromSignup {
+            displayCustomerManageBalanceViewController()
+            isComingFromSignup = false
+        }
     }
     
     @objc func dismiss() {
@@ -450,33 +458,7 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
     }
     
     @objc func manageBalancePressed() {
-        let manageBalanceViewController = FPCustomerManageBalanceViewController()
-        manageBalanceViewController.cancelTapped = { [weak self] in
-            self?.popover?.dismiss(animated: false)
-            self?.addKeyboardObservers()
-        }
-        manageBalanceViewController.errorWhileContactingFarmServer = { [weak self] errorMessage in
-            self?.popover?.dismiss(animated: false)
-            let fullErrorMessage = """
-                Your card was successfully charged, but there was an error while updating your balance:
-
-                \(errorMessage)
-                
-                Please contact a farm worker for help.
-                """
-            FPAlertManager.showMessage(fullErrorMessage, withTitle: "Error")
-        }
-        manageBalanceViewController.balanceUpdated = { [weak self] in
-            self?.updateUI()
-            self?.popover?.dismiss(animated: false)
-            FPAlertManager.showMessage("", withTitle: "Balance updated!")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-                self?.addKeyboardObservers()
-            }
-        }
-        let navigationController = UINavigationController(rootViewController: manageBalanceViewController)
-        removeKeyboardObservers()
-        displayPopoverInViewController(navigationController)
+        displayCustomerManageBalanceViewController()
     }
     
     @objc func balancePressed() {
@@ -609,6 +591,36 @@ class FPProductsAndCartViewController: FPRotationViewController, UITableViewDele
         let sortDescriptors = [NSSortDescriptor(key: "onSaleNow", ascending: false), NSSortDescriptor(key: "name", ascending: true)]
         let p = (products as NSArray).sortedArray(using: sortDescriptors) as! [FPProduct]
         return p
+    }
+    
+    func displayCustomerManageBalanceViewController() {
+        let manageBalanceViewController = FPCustomerManageBalanceViewController()
+        manageBalanceViewController.cancelTapped = { [weak self] in
+            self?.popover?.dismiss(animated: false)
+            self?.addKeyboardObservers()
+        }
+        manageBalanceViewController.errorWhileContactingFarmServer = { [weak self] errorMessage in
+            self?.popover?.dismiss(animated: false)
+            let fullErrorMessage = """
+                Your card was successfully charged, but there was an error while updating your balance:
+
+                \(errorMessage)
+                
+                Please contact a farm worker for help.
+                """
+            FPAlertManager.showMessage(fullErrorMessage, withTitle: "Error")
+        }
+        manageBalanceViewController.balanceUpdated = { [weak self] in
+            self?.updateUI()
+            self?.popover?.dismiss(animated: false)
+            FPAlertManager.showMessage("", withTitle: "Balance updated!")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+                self?.addKeyboardObservers()
+            }
+        }
+        let navigationController = UINavigationController(rootViewController: manageBalanceViewController)
+        removeKeyboardObservers()
+        displayPopoverInViewController(navigationController)
     }
     
     // UITableView delegate and data source

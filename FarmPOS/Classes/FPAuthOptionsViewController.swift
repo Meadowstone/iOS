@@ -35,7 +35,7 @@ class FPAuthOptionsViewController: FPRotationViewController {
                 FPAlertManager.showMessage(errorMessage, withTitle: "Error")
                 return
             }
-            self?.customerAuthenticated(nil)
+            self?.customerAuthenticated(nil, isComingFromSignup: false)
             FPProduct.addDiscounts(using: productDescriptors ?? [])
         }
         
@@ -48,7 +48,7 @@ class FPAuthOptionsViewController: FPRotationViewController {
         let completion = { [weak self] (customer: FPCustomer?) -> Void in
             self!.popover!.dismiss(animated: false)
             if let c = customer {
-                self!.customerAuthenticated(c)
+                self!.customerAuthenticated(c, isComingFromSignup: true)
             }
         }
         let vc = FPAccountSetupViewController.accountSetupViewControllerWithCompletion(completion)
@@ -72,9 +72,10 @@ class FPAuthOptionsViewController: FPRotationViewController {
         updateUI()
     }
     
-    func customerAuthenticated(_ customer: FPCustomer?) {
+    func customerAuthenticated(_ customer: FPCustomer?, isComingFromSignup: Bool) {
         FPCustomer.setActiveCustomer(customer)
-        let vc = FPProductsAndCartViewController.productsAndCartViewController()
+        let vc = FPProductsAndCartViewController.productsAndCartViewController(
+            isComingFromSignup: isComingFromSignup)
         let nc = UINavigationController(rootViewController: vc)
         FPAppDelegate.instance().window!.rootViewController = nc
     }
