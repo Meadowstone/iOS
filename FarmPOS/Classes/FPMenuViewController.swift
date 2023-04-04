@@ -54,8 +54,8 @@ class FPMenuViewController: FPRotationViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
         
         let hiv = UIImageView(image: UIImage(named: "farmstand_logo"))
-        hiv.contentMode = .center
-        hiv.frame = CGRect(x: 0.0, y: 0.0, width: hiv.image!.size.width, height: hiv.image!.size.height + 40.0)
+        hiv.contentMode = .scaleAspectFit
+        hiv.frame = CGRect(x: 0.0, y: 0.0, width: 253, height: 130)
         tableView.tableHeaderView = hiv
         
         tableView.contentInset = UIEdgeInsets(top: 15.0, left: 0.0, bottom: 0.0, right: 0.0)
