@@ -447,7 +447,7 @@
 		81CD1DA6196A90D300EEAD8F /* FPProductCartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPProductCartCell.xib; sourceTree = "<group>"; };
 		81CFDDB219CAFB37003BB974 /* FPProductCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPProductCreateViewController.swift; sourceTree = "<group>"; };
 		81D23F871966B66A00A330E0 /* FPCustomerCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCustomerCreateViewController.swift; sourceTree = "<group>"; };
-		81DB781C195C2A860021DE57 /* Farmstand Cart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmstand Cart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81DB781C195C2A860021DE57 /* Meadowstone Farm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meadowstone Farm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81DB7820195C2A860021DE57 /* FarmstandCart-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FarmstandCart-Info.plist"; sourceTree = "<group>"; };
 		81DC1D4A1B6674E1002029C8 /* FPCreateProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCreateProductViewController.swift; sourceTree = "<group>"; };
 		81DC1D7E1B66DE27002029C8 /* FPNamable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNamable.swift; sourceTree = "<group>"; };
@@ -484,7 +484,7 @@
 		A2E9382627A32475009C8464 /* FPPayWithTerminalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPPayWithTerminalListViewController.swift; sourceTree = "<group>"; };
 		E90DDA64252E12C7004DB111 /* FPCustomerManageBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPCustomerManageBalanceViewController.swift; sourceTree = "<group>"; };
 		E90DDA67252E14C8004DB111 /* FPCustomerManageBalanceOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPCustomerManageBalanceOption.swift; sourceTree = "<group>"; };
-		E92BF93724EBBC77002CB596 /* Farmstand Cart (DEV).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmstand Cart (DEV).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E92BF93724EBBC77002CB596 /* Meadowstone Farm (DEV).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meadowstone Farm (DEV).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92BF93F24F0124A002CB596 /* DataModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DataModel 3.xcdatamodel"; sourceTree = "<group>"; };
 		E9445536252B1D08002AD1BD /* FPPaymentCardProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPPaymentCardProcessor.swift; sourceTree = "<group>"; };
 		E972DD4325079213008E0652 /* PaymentCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardController.swift; sourceTree = "<group>"; };
@@ -931,8 +931,8 @@
 		81DB781D195C2A860021DE57 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				81DB781C195C2A860021DE57 /* Farmstand Cart.app */,
-				E92BF93724EBBC77002CB596 /* Farmstand Cart (DEV).app */,
+				81DB781C195C2A860021DE57 /* Meadowstone Farm.app */,
+				E92BF93724EBBC77002CB596 /* Meadowstone Farm (DEV).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1038,7 +1038,7 @@
 			);
 			name = "Farmstand Cart";
 			productName = FarmPOS;
-			productReference = 81DB781C195C2A860021DE57 /* Farmstand Cart.app */;
+			productReference = 81DB781C195C2A860021DE57 /* Meadowstone Farm.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E92BF88E24EBBC77002CB596 /* Farmstand Cart (DEV) */ = {
@@ -1057,7 +1057,7 @@
 			);
 			name = "Farmstand Cart (DEV)";
 			productName = FarmPOS;
-			productReference = E92BF93724EBBC77002CB596 /* Farmstand Cart (DEV).app */;
+			productReference = E92BF93724EBBC77002CB596 /* Meadowstone Farm (DEV).app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1609,7 +1609,7 @@
 				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDebug";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meadowstonefarm.farmpos;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Meadowstone Farm";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = FarmPOS/bridge.h;
@@ -1690,7 +1690,7 @@
 				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meadowstonefarm.farmpos;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Meadowstone Farm";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = FarmPOS/bridge.h;
@@ -1719,7 +1719,7 @@
 				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDebug -DDevbuild";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meadowstonefarm.farmposdev;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Meadowstone Farm (DEV)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = FarmPOS/bridge.h;
@@ -1745,7 +1745,7 @@
 				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDevbuild";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meadowstonefarm.farmposdev;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Meadowstone Farm (DEV)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = FarmPOS/bridge.h;
