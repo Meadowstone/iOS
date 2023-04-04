@@ -25,15 +25,15 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1XM-Na-Mjj">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="farmstand_logo" translatesAutoresizingMaskIntoConstraints="NO" id="YwI-Rp-pdw">
-                                        <rect key="frame" x="386" y="122" width="253" height="130"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="farmstand_logo" translatesAutoresizingMaskIntoConstraints="NO" id="YwI-Rp-pdw">
+                                        <rect key="frame" x="386" y="70" width="253" height="202"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="130" id="RD1-5n-KWV"/>
+                                            <constraint firstAttribute="height" constant="202" id="RD1-5n-KWV"/>
                                             <constraint firstAttribute="width" constant="253" id="pCw-ym-Kba"/>
                                         </constraints>
                                     </imageView>
                                     <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" " placeholder="Farm ID" textAlignment="center" minimumFontSize="17" background="input_bg" translatesAutoresizingMaskIntoConstraints="NO" id="rCV-CB-xqw">
-                                        <rect key="frame" x="338" y="297" width="349" height="48"/>
+                                        <rect key="frame" x="338" y="317" width="349" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="7Zg-0O-Qeh"/>
                                             <constraint firstAttribute="width" constant="349" id="hts-G8-moT"/>
@@ -46,7 +46,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="center" minimumFontSize="17" background="input_bg" translatesAutoresizingMaskIntoConstraints="NO" id="JxW-st-fge">
-                                        <rect key="frame" x="338" y="345" width="349" height="60"/>
+                                        <rect key="frame" x="338" y="365" width="349" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="ZPv-Nc-IWX"/>
                                             <constraint firstAttribute="width" constant="349" id="bQO-GF-1Sy"/>
@@ -58,7 +58,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="input_bg" translatesAutoresizingMaskIntoConstraints="NO" id="LCf-Xf-afg">
-                                        <rect key="frame" x="338" y="405" width="349" height="60"/>
+                                        <rect key="frame" x="338" y="425" width="349" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="fQO-m0-e4Y"/>
                                             <constraint firstAttribute="width" constant="349" id="gSY-Nn-4j3"/>
@@ -70,7 +70,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnV-cd-vy7">
-                                        <rect key="frame" x="338" y="525" width="349" height="60"/>
+                                        <rect key="frame" x="338" y="545" width="349" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="KFM-1S-SWO"/>
                                             <constraint firstAttribute="width" constant="349" id="dFe-C7-H8q"/>
@@ -85,7 +85,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="YwI-Rp-pdw" firstAttribute="top" secondItem="1XM-Na-Mjj" secondAttribute="top" constant="122" id="0fH-l0-5Ha"/>
+                                    <constraint firstItem="YwI-Rp-pdw" firstAttribute="top" secondItem="1XM-Na-Mjj" secondAttribute="top" constant="70" id="0fH-l0-5Ha"/>
                                     <constraint firstItem="rCV-CB-xqw" firstAttribute="top" secondItem="YwI-Rp-pdw" secondAttribute="bottom" constant="45" id="3we-si-zdI"/>
                                     <constraint firstItem="JxW-st-fge" firstAttribute="top" secondItem="rCV-CB-xqw" secondAttribute="bottom" id="71V-ox-ObW"/>
                                     <constraint firstAttribute="trailing" secondItem="LCf-Xf-afg" secondAttribute="trailing" constant="337" id="ARu-b7-P2s"/>
@@ -179,8 +179,12 @@
                                     <action selector="guestPressed:" destination="eD9-Mw-tTL" eventType="touchUpInside" id="f3j-cl-fbv"/>
                                 </connections>
                             </button>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="farmstand_logo" translatesAutoresizingMaskIntoConstraints="NO" id="jpE-5w-Nmt">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="farmstand_logo" translatesAutoresizingMaskIntoConstraints="NO" id="jpE-5w-Nmt">
                                 <rect key="frame" x="385.5" y="20" width="253" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="be2-90-me7"/>
+                                    <constraint firstAttribute="width" constant="253" id="gk3-rC-QDj"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTf-Pw-UWc">
                                 <rect key="frame" x="448" y="592" width="260" height="44"/>
@@ -330,7 +334,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Vv-K1-PWi">
                                 <rect key="frame" x="0.0" y="0.0" width="704" height="672"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="farmstand_logo" translatesAutoresizingMaskIntoConstraints="NO" id="ZR7-ed-CK3">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="farmstand_logo" translatesAutoresizingMaskIntoConstraints="NO" id="ZR7-ed-CK3">
                                         <rect key="frame" x="387" y="50" width="253" height="130"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="130" id="2Lx-23-0AB"/>
@@ -532,7 +536,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4pe-Ui-3ft">
                                 <rect key="frame" x="0.0" y="0.0" width="704" height="672"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="farmstand_logo" translatesAutoresizingMaskIntoConstraints="NO" id="z2B-FX-rX4">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="farmstand_logo" translatesAutoresizingMaskIntoConstraints="NO" id="z2B-FX-rX4">
                                         <rect key="frame" x="386" y="81" width="253" height="130"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="130" id="4sC-kx-FLj"/>
@@ -908,7 +912,7 @@
     </scenes>
     <resources>
         <image name="attention_mark" width="50" height="50"/>
-        <image name="farmstand_logo" width="253" height="130"/>
+        <image name="farmstand_logo" width="750" height="670"/>
         <image name="green_btn" width="10.5" height="40"/>
         <image name="input_bg" width="250" height="44"/>
         <image name="ipad_domain_btn" width="72" height="42"/>
