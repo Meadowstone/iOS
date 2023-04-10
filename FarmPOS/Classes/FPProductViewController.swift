@@ -83,8 +83,11 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
             yOffset = existingProductLabel.frame.size.height + existingProductLabel.frame.origin.y + 8.0
         }
         
-        // Rental
-        if cartProduct.product.rental {
+        // Notes
+        let supportsNotes =
+            cartProduct.product.rental ||
+            cartProduct.product.name == "Miscellaneous"
+        if supportsNotes {
             // Line
             notesDelimiterView = UIView(frame: CGRect(x: 20.0, y: yOffset, width: view.bounds.size.width - 40.0, height: 1.0))
             notesDelimiterView?.autoresizingMask = .flexibleWidth
@@ -93,10 +96,9 @@ class FPProductViewController: FPRotationViewController, UIAlertViewDelegate, UI
             
             yOffset += 1.0
             
-            // Notes
             notesTextField = UITextField(frame: CGRect(x: 20.0, y: yOffset, width: view.bounds.size.width - 40.0, height: 48.0))
             notesTextField!.delegate = self
-            notesTextField!.placeholder = "Rental notes"
+            notesTextField!.placeholder = cartProduct.product.rental ? "Rental notes" : "Notes"
             notesTextField!.attributedPlaceholder = NSAttributedString(string : notesTextField!.placeholder!, attributes: [.foregroundColor: UIColor(red: 144.0 / 255.0, green: 144.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)])
             notesTextField!.autoresizingMask = .flexibleWidth
             notesTextField!.textAlignment = .center

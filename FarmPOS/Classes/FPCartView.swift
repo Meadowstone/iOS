@@ -280,7 +280,7 @@ class FPCartView: UIView, UIAlertViewDelegate, UITableViewDelegate, UITableViewD
                 pInfo["price"] = cp.product.price
             }
             
-            if cp.product.rental {
+            if cp.product.rental || cp.product.name == "Miscellaneous" {
                 pInfo["notes"] = cp.notes
             }
             
