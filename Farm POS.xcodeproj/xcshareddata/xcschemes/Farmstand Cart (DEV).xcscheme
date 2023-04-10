@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E92BF88E24EBBC77002CB596"
-               BuildableName = "Farmstand Cart (DEV).app"
+               BuildableName = "Meadowstone Farm (DEV).app"
                BlueprintName = "Farmstand Cart (DEV)"
                ReferencedContainer = "container:Farm POS.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E92BF88E24EBBC77002CB596"
-            BuildableName = "Farmstand Cart (DEV).app"
+            BuildableName = "Meadowstone Farm (DEV).app"
             BlueprintName = "Farmstand Cart (DEV)"
             ReferencedContainer = "container:Farm POS.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E92BF88E24EBBC77002CB596"
-            BuildableName = "Farmstand Cart (DEV).app"
+            BuildableName = "Meadowstone Farm (DEV).app"
             BlueprintName = "Farmstand Cart (DEV)"
             ReferencedContainer = "container:Farm POS.xcodeproj">
          </BuildableReference>
