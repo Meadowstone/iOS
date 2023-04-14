@@ -35,13 +35,12 @@ class FPSelectPriceViewController: FPRotationViewController {
     }
     
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {
-        let tfText = sender.text!
-        if (tfText as NSString).length > 0 {
-            let text = (tfText as NSString).substring(from: (tfText as NSString).length - 1)
-            sender.text = (tfText as NSString).substring(to: (tfText as NSString).length - 1)
-            let t = FPInputValidator.preprocessCurrencyText(text, relativeTo: tfText)
-            if FPInputValidator.shouldAddString(t, toString: tfText, maxInputCount: Int.max, isDecimal: true) {
-                sender.text = tfText + t
+        if (sender.text! as NSString).length > 0 {
+            let text = (sender.text! as NSString).substring(from: (sender.text! as NSString).length - 1)
+            sender.text = (sender.text! as NSString).substring(to: (sender.text! as NSString).length - 1)
+            let t = FPInputValidator.preprocessCurrencyText(text, relativeTo: sender.text!)
+            if FPInputValidator.shouldAddString(t, toString: sender.text!, maxInputCount: Int.max, isDecimal: true) {
+                sender.text = sender.text! + t
             }
         }
     }
